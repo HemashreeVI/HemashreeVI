@@ -143,7 +143,7 @@ Offline-first, privacy-friendly voice assistant: opens apps, system controls, ba
 | 🧠 **IBM** | Generative AI certification, *Gen AI Using IBM watsonx* |
 | 🎨 **Leadership** | Team Leader, CodeYGen Club · Design Lead, Fitness Club |
 
-🎓 **VIT Chennai**: B.Tech CSE, Cyber-Physical Systems · CGPA 7.81 · Aug 2023 – present
+
 
 ---
 
