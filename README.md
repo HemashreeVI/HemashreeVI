@@ -72,7 +72,7 @@
 
 ## 🛤️ My journey
 
-<img src="./assets/journey.svg" alt="Timeline: VIT Chennai 2023, research internship 2025, Singapore NUS and SuperAI 2025, 97% dental X-ray model 2025, patent co-inventor 2025–26, backend and DevOps 2026, building 4 more projects now" width="100%"/>
+<img src="./journey.svg" alt="Timeline: VIT Chennai 2023, research internship 2025, Singapore NUS and SuperAI 2025, 97% dental X-ray model 2025, patent co-inventor 2025–26, backend and DevOps 2026, building 4 more projects now" width="100%"/>
 
 </div>
 
