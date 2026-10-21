@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="Animated timeline of Hemashree's journey from 2023 to now">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#151A35"/></linearGradient>
+    <linearGradient id="road" gradientUnits="userSpaceOnUse" x1="70" y1="0" x2="1130" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset=".5" stop-color="#38BDF8"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#38BDF8" fill-opacity=".14"/></pattern>
+    <filter id="gl" filterUnits="userSpaceOnUse" x="0" y="0" width="1200" height="430"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <path id="p" d="M70 215 C 190 215, 190 215, 290 215 S 430 215, 510 215 S 650 215, 730 215 S 870 215, 950 215 S 1090 215, 1130 215"/>
+  </defs>
+  <style>
+    text{white-space:pre}
+    .t{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}.m{font-family:ui-monospace,Consolas,monospace}
+    .road{stroke-dasharray:1100;stroke-dashoffset:1100;animation:road 12s ease-in-out infinite}
+    @keyframes road{0%{stroke-dashoffset:1100}45%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:1100}}
+    .st{opacity:0;animation:st 12s ease-out infinite}
+    @keyframes st{0%{opacity:0;transform:translateY(8px)}4%{opacity:1;transform:none}88%{opacity:1}96%{opacity:0}100%{opacity:0}}
+    .s1{animation-delay:.2s}.s2{animation-delay:1s}.s3{animation-delay:1.8s}.s4{animation-delay:2.6s}.s5{animation-delay:3.4s}.s6{animation-delay:4.2s}.s7{animation-delay:5s}
+    .card{fill:#111733;stroke-opacity:.55}
+    .now{animation:now 1.4s ease-in-out infinite}@keyframes now{50%{opacity:.35}}
+  </style>
+  <rect width="1200" height="430" rx="22" fill="url(#bg)"/><rect width="1200" height="430" rx="22" fill="url(#g)"/>
+  <text x="600" y="48" text-anchor="middle" class="t" font-size="26" font-weight="700" fill="#E0F2FE">The journey so far</text>
+  <text x="600" y="76" text-anchor="middle" class="m" font-size="13" fill="#7DD3FC" opacity=".8">2023 → now · each stop added something new to the toolbox</text>
+
+  <use href="#p" fill="none" stroke="#1E2547" stroke-width="8" stroke-linecap="round"/>
+  <use href="#p" class="road" fill="none" stroke="url(#road)" stroke-width="4" stroke-linecap="round" filter="url(#gl)"/>
+
+  <!-- stops: alternating above / below -->
+  <g class="st s1"><circle cx="70" cy="215" r="11" fill="#7C3AED"/>
+    <rect class="card" x="20" y="100" width="170" height="86" rx="12" stroke="#7C3AED"/>
+    <text x="36" y="126" class="m" font-size="12" fill="#A78BFA">AUG 2023</text>
+    <text x="36" y="150" class="t" font-size="16" font-weight="700" fill="#F1F5F9">🎓 VIT Chennai</text>
+    <text x="36" y="172" class="t" font-size="12.5" fill="#94A3B8">B.Tech CSE · Cyber Physical</text></g>
+
+  <g class="st s2"><circle cx="250" cy="215" r="11" fill="#8B5CF6"/>
+    <rect class="card" x="170" y="246" width="190" height="86" rx="12" stroke="#8B5CF6"/>
+    <text x="186" y="272" class="m" font-size="12" fill="#A78BFA">MAY – JUL 2025</text>
+    <text x="186" y="296" class="t" font-size="16" font-weight="700" fill="#F1F5F9">🔬 Research intern</text>
+    <text x="186" y="318" class="t" font-size="12.5" fill="#94A3B8">Pose estimation · MMPose</text></g>
+
+  <g class="st s3"><circle cx="420" cy="215" r="11" fill="#6366F1"/>
+    <rect class="card" x="330" y="90" width="200" height="96" rx="12" stroke="#6366F1"/>
+    <text x="346" y="116" class="m" font-size="12" fill="#A5B4FC">JUN 2025</text>
+    <text x="346" y="140" class="t" font-size="16" font-weight="700" fill="#F1F5F9">🌏 Singapore</text>
+    <text x="346" y="160" class="t" font-size="12.5" fill="#94A3B8">NUS Industry 4.0 · SuperAI</text>
+    <text x="346" y="177" class="t" font-size="12.5" fill="#94A3B8">+ IBM Gen AI certified</text></g>
+
+  <g class="st s4"><circle cx="590" cy="215" r="11" fill="#38BDF8"/>
+    <rect class="card" x="500" y="246" width="190" height="86" rx="12" stroke="#38BDF8"/>
+    <text x="516" y="272" class="m" font-size="12" fill="#7DD3FC">JUL – SEP 2025</text>
+    <text x="516" y="296" class="t" font-size="16" font-weight="700" fill="#F1F5F9">🦷 97% on X-rays</text>
+    <text x="516" y="318" class="t" font-size="12.5" fill="#94A3B8">YOLOv9 · 13,000+ images</text></g>
+
+  <g class="st s5"><circle cx="760" cy="215" r="11" fill="#22D3EE"/>
+    <rect class="card" x="670" y="100" width="190" height="86" rx="12" stroke="#22D3EE"/>
+    <text x="686" y="126" class="m" font-size="12" fill="#67E8F9">2025 – 26</text>
+    <text x="686" y="150" class="t" font-size="16" font-weight="700" fill="#F1F5F9">📜 Patent co-inventor</text>
+    <text x="686" y="172" class="t" font-size="12.5" fill="#94A3B8">Smart walker · filing</text></g>
+
+  <g class="st s6"><circle cx="930" cy="215" r="11" fill="#2DD4BF"/>
+    <rect class="card" x="840" y="246" width="200" height="86" rx="12" stroke="#2DD4BF"/>
+    <text x="856" y="272" class="m" font-size="12" fill="#5EEAD4">2026</text>
+    <text x="856" y="296" class="t" font-size="16" font-weight="700" fill="#F1F5F9">⚙️ Backend &amp; DevOps</text>
+    <text x="856" y="318" class="t" font-size="12.5" fill="#94A3B8">RootLens · TriageIQ</text></g>
+
+  <g class="st s7"><circle cx="1130" cy="215" r="11" fill="#34D399"/><circle class="now" cx="1130" cy="215" r="20" fill="none" stroke="#34D399" stroke-width="2"/>
+    <rect class="card" x="1000" y="100" width="180" height="86" rx="12" stroke="#34D399"/>
+    <text x="1016" y="126" class="m" font-size="12" fill="#6EE7B7">NOW</text>
+    <text x="1016" y="150" class="t" font-size="16" font-weight="700" fill="#F1F5F9">🚧 Building 4 more</text>
+    <text x="1016" y="172" class="t" font-size="12.5" fill="#94A3B8">+ grinding LeetCode</text></g>
+
+  <text x="600" y="392" text-anchor="middle" class="m" font-size="12.5" fill="#64748B">next stop → your team?</text>
+</svg>
