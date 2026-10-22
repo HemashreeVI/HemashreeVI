@@ -50,10 +50,10 @@
 <img src="./assets/cards/title-building.svg" width="100%" alt="05 In progress: Currently building.">
 <img src="./assets/cards/building.svg" width="100%" alt="Currently building: Pulse, a free status page on GitHub Actions and Pages (step 1 of 5); PortPilot, find and free busy ports (planned); BST Playground, animated binary search trees (planned); Pit Wall, F1 race replays (planned); LeetCode Solutions in Java (daily).">
 <p align="center">
-  <a href="https://github.com/HemashreeVI/pulse"><img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=14101F" alt="Pulse"></a>
+  <img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=14101F" alt="Pulse">
   <a href="https://github.com/HemashreeVI/portpilot"><img src="https://img.shields.io/badge/PortPilot-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="PortPilot"></a>
   <a href="https://github.com/HemashreeVI/bst-playground"><img src="https://img.shields.io/badge/BST_Playground-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="BST Playground"></a>
-  <a href="https://github.com/HemashreeVI/pit-wall"><img src="https://img.shields.io/badge/Pit_Wall-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="Pit Wall"></a>
+  <img src="https://img.shields.io/badge/Pit_Wall-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="Pit Wall">
   <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=14101F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
 </p>
 
