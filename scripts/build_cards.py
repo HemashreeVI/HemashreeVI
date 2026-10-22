@@ -207,7 +207,7 @@ MILESTONES = [
     ("IBM", "Generative AI certification",
      "Gen AI Using IBM watsonx."),
     ("日本語", "Japanese",
-     "Completed a Japanese language course."),
+     "Studied Japanese as a subject at VIT Chennai."),
     ("LEAD", "Leadership",
      "Team Leader, CodeYGen Club · Design Lead, Fitness Club."),
 ]

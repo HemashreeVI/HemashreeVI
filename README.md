@@ -64,7 +64,7 @@
 </p>
 
 <img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
-<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Completed a Japanese language course. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
+<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
 
 <img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
