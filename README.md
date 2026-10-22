@@ -1,264 +1,92 @@
-<div align="center">
-
-<img src="./assets/hero.svg" alt="Hemashree V I — Building systems that see, decide and keep people safe" width="100%"/>
-
-<a href="https://github.com/HemashreeVI">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=20&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&width=760&height=40&lines=Computer+Vision+%C2%B7+Reinforcement+Learning;Embedded+Sensing+%C2%B7+Intrusion+Detection;Co-inventor+%E2%80%94+smart+walker+patent+%28filing+in+progress%29;Backend+%26+DevOps+%C2%B7+Kafka+%C2%B7+Docker+%C2%B7+FastAPI;%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%21+I+speak+4+languages+%F0%9F%87%AF%F0%9F%87%B5;Let%27s+build+something+that+keeps+people+safe" alt="Typing animation"/>
+<a href="https://hemashreevi.github.io">
+  <img src="./assets/cards/hero.svg" width="100%" alt="HEMASHREE, Software Engineer. B.Tech Computer Science Engineering at VIT Chennai. Building systems that see, decide and keep people safe.">
 </a>
 
-<br/>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hema-shree-373622289)
-[![Portfolio](https://img.shields.io/badge/Portfolio-View_site-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white)](https://hemashreevi.github.io)
-[![Email](https://img.shields.io/badge/Email-Say_hi-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shreejith2005@gmail.com)
-
-<img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=Profile+views&color=7C3AED&style=flat-square" alt="Profile views"/>
-<img src="https://img.shields.io/badge/📍-Chennai,_India-38BDF8?style=flat-square" alt="Location"/>
-<img src="https://img.shields.io/badge/🟢-Open_to_opportunities-34D399?style=flat-square" alt="Open to work"/>
-
-</div>
-
----
-
-<div align="center">
-
-## 🖥️ `./about.sh`
-
-<img src="./assets/terminal.svg" alt="Animated terminal introducing Hemashree" width="86%"/>
-
-</div>
-
----
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🔭 Right now
-- 🛠️ Building **RootLens**, AI-assisted root-cause analysis for microservices
-- 🎫 Building **TriageIQ**, real-time LLM ticket triage with Kafka and RAG
-- 🌳 Learning **binary search trees in Java** and solving LeetCode daily
-- 🏎️ Starting **Pit Wall**, an F1 race replay built on real GPS data
-
-</td>
-<td width="50%" valign="top">
-
-### ⚡ Quick facts
-- 📜 **Co-inventor** on a smart walker patent *(filing in progress)*
-- 🌏 Went to **Singapore** for NUS Industry 4.0 and SuperAI 2025
-- 🦷 Hit **~97% accuracy** on 13,000+ dental X-rays
-- 🗣️ Speaks **Tamil · English · Hindi · 日本語**
-- 🎨 Design Lead by night: posters, creatives and this README
-
-</td>
-</tr>
-</table>
-
----
-
-<div align="center">
-
-## 🧠 How I think about problems
-
-<sub>Every project I build follows the same loop: perceive the world, decide, and make someone safer.</sub>
-
-<img src="./assets/pipeline.svg" alt="Sense, Decide, Protect pipeline" width="100%"/>
-
-</div>
-
----
-
-<div align="center">
-
-## 🛤️ My journey
-
-<img src="./journey.svg" alt="Timeline: VIT Chennai 2023, research internship 2025, Singapore NUS and SuperAI 2025, 97% dental X-ray model 2025, patent co-inventor 2025–26, backend and DevOps 2026, building 4 more projects now" width="100%"/>
-
-</div>
-
----
-
-## 🚀 Featured projects
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🦷 Dental Malocclusion Detection
-YOLOv9 pipeline that detects **31 dental conditions** and analyses teeth alignment from X-rays. **~97% accuracy** on a **13,000+** image dataset, with Grad-CAM explanations, FDI tooth mapping, a Gradio app and PDF reports.
-
-<img src="https://skillicons.dev/icons?i=py,pytorch,opencv&theme=dark&perline=6" height="32" alt="tech"/> ![YOLOv9](https://img.shields.io/badge/YOLOv9-7C3AED?style=flat-square) ![Grad-CAM](https://img.shields.io/badge/Grad--CAM-7C3AED?style=flat-square) ![Gradio](https://img.shields.io/badge/Gradio-F97316?style=flat-square&logo=gradio&logoColor=white)
-
-[**→ View repo**](https://github.com/HemashreeVI/AI_Malocclusion_Detection)
-
-</td>
-<td width="50%" valign="top">
-
-### 🔍 RootLens
-AI-assisted reliability platform: detects failures across **FastAPI microservices**, gathers evidence, **ranks root causes** and records every incident, with chaos testing, CI and versioned deploys.
-
-<img src="https://skillicons.dev/icons?i=py,fastapi,docker,prometheus,grafana,sqlite&theme=dark" height="32" alt="tech"/>
-
-[**→ View repo**](https://github.com/HemashreeVI/rootlens)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🎫 TriageIQ
-Real-time support-ticket triage: tickets stream through **Kafka**, a **local LLM** classifies and prioritises them, and **RAG** over past tickets drafts the reply, all shown on a live dashboard.
-
-<img src="https://skillicons.dev/icons?i=py,kafka,fastapi,docker&theme=dark" height="32" alt="tech"/> ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white) ![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=flat-square)
-
-[**→ View repo**](https://github.com/HemashreeVI/TriageIQ)
-
-</td>
-<td width="50%" valign="top">
-
-### 🦯 Smart Walker (patent)
-Co-invented IoT walker that *predicts* fall risk using dual IMUs and load cells with sensor fusion. Runs standalone on Arduino for under USD 30. **Filing in progress.**
-
-<img src="https://skillicons.dev/icons?i=arduino,cpp&theme=dark" height="32" alt="tech"/> ![MPU6050](https://img.shields.io/badge/MPU6050-00979D?style=flat-square) ![HX711](https://img.shields.io/badge/HX711-00979D?style=flat-square)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🤖 RL Rover for Hazard Detection
-A simulated rover that learns to explore a disaster area and *discovers* hazards through perception. Tabular Q-learning plus a lightweight CNN, with a 4-way reward ablation.
-
-<img src="https://skillicons.dev/icons?i=py,pytorch&theme=dark" height="32" alt="tech"/> ![Q-Learning](https://img.shields.io/badge/Q--Learning-0E9F6E?style=flat-square)
-
-[**→ View repo**](https://github.com/HemashreeVI/Rover)
-
-</td>
-<td width="50%" valign="top">
-
-### 🥬 Smart Grocer
-Multimodal system for **fresh-produce spoilage detection**, item localization and **expiry-aware retail inventory management**.
-
-<img src="https://skillicons.dev/icons?i=py,opencv,raspberrypi&theme=dark" height="32" alt="tech"/>
-
-[**→ View repo**](https://github.com/HemashreeVI/smart-grocer)
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary><b>➕ More projects: Intrusion Detection · Jarvis</b></summary>
-<br/>
-
-| Project | What it does | Tech |
-|---|---|---|
-| 🛡️ **Intrusion Detection & Threat Modeling** | Behavioral IDS for a simulated bank: risk scoring across login, access and transactions, automated responses, audit logs | `Python` `IDS` `Threat Modeling` |
-| 🎙️ **[Jarvis](https://github.com/HemashreeVI/JarvisAI)** | Offline, privacy-friendly voice assistant: opens apps, system controls, battery/status and stock notifications | `Python` `SpeechRecognition` |
-
-</details>
-
----
-
-## 🚧 Currently building
-
-<div align="center">
-
-| | Project | What it is | Status |
-|:-:|---|---|:-:|
-| 💓 | **[Pulse](https://github.com/HemashreeVI/pulse)** | A free status page that runs entirely on GitHub Actions + Pages | ![](https://img.shields.io/badge/step-1_of_5-34D399?style=flat-square) |
-| 🧭 | **[PortPilot](https://github.com/HemashreeVI/portpilot)** | Find what's using a port (even Docker containers) and free it with one key | ![](https://img.shields.io/badge/planned-60A5FA?style=flat-square) |
-| 🌳 | **[BST Playground](https://github.com/HemashreeVI/bst-playground)** | Watch binary search tree operations animate, step by step | ![](https://img.shields.io/badge/planned-FBBF24?style=flat-square) |
-| 🏎️ | **[Pit Wall](https://github.com/HemashreeVI/pit-wall)** | Replay real F1 races with a GPS track map and live leaderboard | ![](https://img.shields.io/badge/planned-E10600?style=flat-square) |
-| ☕ | **[LeetCode Solutions](https://github.com/HemashreeVI/leetcode-solutions)** | Clean, commented Java solutions, intuition first | ![](https://img.shields.io/badge/daily-FFA116?style=flat-square&logo=leetcode&logoColor=black) |
-
-</div>
-
----
-
-## 🧰 Tech & tools
-
-<div align="center">
-
-<table>
-<tr><td align="center" width="200"><b>💻 Languages</b></td>
-<td><img src="https://skillicons.dev/icons?i=py,java,cpp,js,html,css&theme=dark" alt="Languages"/></td></tr>
-<tr><td align="center"><b>🧠 AI & Vision</b></td>
-<td><img src="https://skillicons.dev/icons?i=pytorch,tensorflow,opencv&theme=dark" alt="AI"/><br/>
-<img src="https://img.shields.io/badge/YOLOv8%2Fv9-7C3AED?style=flat-square" alt="YOLO"/> <img src="https://img.shields.io/badge/Grad--CAM-7C3AED?style=flat-square" alt="Grad-CAM"/> <img src="https://img.shields.io/badge/MMPose-7C3AED?style=flat-square" alt="MMPose"/> <img src="https://img.shields.io/badge/Q--learning-0E9F6E?style=flat-square" alt="Q-learning"/> <img src="https://img.shields.io/badge/RAG-0E9F6E?style=flat-square" alt="RAG"/> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama"/> <img src="https://img.shields.io/badge/IBM_watsonx-052FAD?style=flat-square&logo=ibm&logoColor=white" alt="watsonx"/></td></tr>
-<tr><td align="center"><b>🔌 Embedded & IoT</b></td>
-<td><img src="https://skillicons.dev/icons?i=arduino,raspberrypi&theme=dark" alt="Embedded"/><br/>
-<img src="https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white" alt="ESP32"/> <img src="https://img.shields.io/badge/Sensor_fusion-0E9F6E?style=flat-square" alt="Sensor fusion"/> <img src="https://img.shields.io/badge/LIDAR_SLAM-0E9F6E?style=flat-square" alt="SLAM"/></td></tr>
-<tr><td align="center"><b>⚙️ Backend & DevOps</b></td>
-<td><img src="https://skillicons.dev/icons?i=fastapi,flask,docker,kafka,prometheus,grafana,githubactions&theme=dark" alt="Backend"/></td></tr>
-<tr><td align="center"><b>🗄️ Data</b></td>
-<td><img src="https://skillicons.dev/icons?i=sqlite,mysql,firebase&theme=dark" alt="Data"/><br/>
-<img src="https://img.shields.io/badge/Qdrant-DC244C?style=flat-square" alt="Qdrant"/></td></tr>
-<tr><td align="center"><b>🛡️ Security</b></td>
-<td><img src="https://img.shields.io/badge/Intrusion_detection-E11D48?style=flat-square" alt="IDS"/> <img src="https://img.shields.io/badge/Threat_modeling-E11D48?style=flat-square" alt="Threat modeling"/> <img src="https://img.shields.io/badge/Risk_scoring-E11D48?style=flat-square" alt="Risk scoring"/></td></tr>
-<tr><td align="center"><b>🧪 Tools</b></td>
-<td><img src="https://skillicons.dev/icons?i=git,github,vscode,linux,windows,powershell&theme=dark" alt="Tools"/><br/>
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter"/> <img src="https://img.shields.io/badge/Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=black" alt="Colab"/> <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white" alt="Kaggle"/> <img src="https://img.shields.io/badge/Roboflow-6706CE?style=flat-square&logo=roboflow&logoColor=white" alt="Roboflow"/> <img src="https://img.shields.io/badge/Gradio-F97316?style=flat-square&logo=gradio&logoColor=white" alt="Gradio"/></td></tr>
-</table>
-
-</div>
-
----
-
-## 🏅 Milestones
-
-| | |
-|---|---|
-| 📜 **Patent** *(filing in progress)* | IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance. Co-inventor; inventive disclosure filed with IIPRD |
-| 🔬 **Research Intern, VIT Chennai** | Human pose estimation with MMPose, validated against Kinovea ground truth (May–Jul 2025) |
-| 🌏 **NUS** | Introduction to Industry 4.0 Programme, National University of Singapore (Jun 2025) |
-| 🤖 **SuperAI 2025** | Marina Bay Sands, Singapore |
-| 🧠 **IBM** | Generative AI certification, *Gen AI Using IBM watsonx* |
-| 🗾 **Japanese** | Completed a Japanese language course |
-| 🎨 **Leadership** | Team Leader, CodeYGen Club · Design Lead, Fitness Club |
-
----
-
-## 🎮 Play on my portfolio
-
-<div align="center">
-
-My [portfolio](https://hemashreevi.github.io) isn't just a page to read. It has **4 mini-games** built from my projects:
-
-| 🦯 Keep them standing | 🥭 Freshness check | 🔍 Incident hunt | あ Hiragana sprint |
-|:-:|:-:|:-:|:-:|
-| Stop a fall before it happens | Save a mango from spoiling | Find the broken microservice | Test your Japanese |
-
-Plus a **3D LIDAR hero**, a **"Hiring for…" switch** that reshapes the page for your role, and **Detection mode** (press <kbd>D</kbd>).
-
-[![Play now](https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7C3AED?style=for-the-badge)](https://hemashreevi.github.io)
-
-</div>
-
----
-
-<div align="center">
-
-## 🧊 My contributions, in 3D
-
-<img src="./profile-3d-contrib/profile-night-view.svg" alt="3D contribution graph" width="100%"/>
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/github-snake-dark.svg" alt="Contribution snake" width="100%"/>
-
-<br/><br/>
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=HemashreeVI&show_icons=true&hide_border=true&theme=tokyonight&title_color=38BDF8&icon_color=A78BFA&bg_color=0B1020" alt="GitHub stats"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HemashreeVI&layout=compact&hide_border=true&theme=tokyonight&title_color=38BDF8&bg_color=0B1020" alt="Top languages"/>
-
-<img src="https://streak-stats.demolab.com?user=HemashreeVI&theme=tokyonight&hide_border=true&background=0B1020&ring=7C3AED&fire=38BDF8&currStreakLabel=38BDF8" alt="GitHub streak" width="70%"/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=HemashreeVI&bg_color=0B1020&color=A78BFA&line=38BDF8&point=FFFFFF&area=true&area_color=7C3AED&hide_border=true&custom_title=Contribution%20activity" alt="Activity graph" width="100%"/>
-
-</div>
-
----
+<p align="center">
+  <a href="https://www.linkedin.com/in/hema-shree-373622289"><img src="https://img.shields.io/badge/LinkedIn-Connect-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>
+  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Portfolio"></a>
+  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-Say_hi-7B61D9?style=for-the-badge&labelColor=14101F&logo=gmail&logoColor=E8E6F0" alt="Email"></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=Profile+views&color=7B61D9&style=flat-square" alt="Profile views">
+  <img src="https://img.shields.io/badge/📍-Chennai,_India-3E3463?style=flat-square" alt="Location">
+  <img src="https://img.shields.io/badge/🟢-Open_to_opportunities-3E3463?style=flat-square" alt="Open to opportunities">
+</p>
+
+<img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
+<img src="./assets/cards/about.svg" width="100%" alt="Animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
+<img src="./assets/cards/now.svg" width="100%" alt="Right now: building RootLens, AI-assisted root-cause analysis for microservices; building TriageIQ, real-time LLM ticket triage with Kafka and RAG; learning binary search trees in Java and solving LeetCode daily; starting Pit Wall, an F1 race replay built on real GPS data. Quick facts: co-inventor on a smart walker patent (filing in progress); went to Singapore for NUS Industry 4.0 and SuperAI 2025; ~97% accuracy on 13,000+ dental X-rays; speaks Tamil, English, Hindi and Japanese; Design Lead by night.">
+
+<img src="./assets/cards/title-think.svg" width="100%" alt="02 Philosophy: How I think about problems.">
+<img src="./assets/cards/pipeline.svg" width="100%" alt="Sense, Decide, Protect: a closed feedback loop. Sense with X-rays, IMUs, load cells, pose estimation and sensors. Decide with YOLOv9, Q-learning, CNNs, risk scoring and fusion. Protect with fall alerts, hazard maps and automated IDS responses.">
+
+<img src="./assets/cards/title-journey.svg" width="100%" alt="03 Journey: The road so far.">
+<img src="./assets/cards/journey.svg" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; 97% on dental X-rays Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026; now building 4 more projects.">
+
+<img src="./assets/cards/title-work.svg" width="100%" alt="04 Selected work: Things I've built.">
+
+<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions with ~97% accuracy on 13,000+ X-rays, with Grad-CAM, FDI tooth mapping, a Gradio app and PDF reports."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Dental Malocclusion Detection repository"></a></p>
+
+<a href="https://github.com/HemashreeVI/rootlens"><img src="./assets/cards/project-rootlens.svg" width="100%" alt="RootLens: AI-assisted reliability platform that detects failures across FastAPI microservices, gathers evidence, ranks root causes and records every incident, with chaos testing, CI and versioned deploys."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/rootlens"><img src="https://img.shields.io/badge/Repository-RootLens-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="RootLens repository"></a></p>
+
+<a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: tickets stream through Kafka, a local LLM classifies and prioritises them, and RAG over past tickets drafts the reply, all on a live dashboard."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="TriageIQ repository"></a></p>
+
+<img src="./assets/cards/project-walker.svg" width="100%" alt="Smart Walker (patent, filing in progress): co-invented IoT walker that predicts fall risk using dual IMUs and load cells with sensor fusion; runs standalone on Arduino for under USD 30.">
+
+<a href="https://github.com/HemashreeVI/Rover"><img src="./assets/cards/project-rover.svg" width="100%" alt="RL Rover for Hazard Detection: a simulated rover that learns to explore a disaster area and discovers hazards through perception, using tabular Q-learning, a lightweight CNN and a 4-way reward ablation."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/Rover"><img src="https://img.shields.io/badge/Repository-RL_Rover-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="RL Rover repository"></a></p>
+
+<a href="https://github.com/HemashreeVI/smart-grocer"><img src="./assets/cards/project-grocer.svg" width="100%" alt="Smart Grocer: multimodal fresh-produce spoilage detection, item localization and expiry-aware retail inventory management."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/smart-grocer"><img src="https://img.shields.io/badge/Repository-Smart_Grocer-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Smart Grocer repository"></a></p>
+
+<img src="./assets/cards/project-more.svg" width="100%" alt="More projects: Intrusion Detection and Threat Modeling, a behavioral IDS for a simulated bank; Jarvis, an offline privacy-friendly voice assistant.">
+<p align="center"><a href="https://github.com/HemashreeVI/JarvisAI"><img src="https://img.shields.io/badge/Repository-Jarvis-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Jarvis repository"></a></p>
+
+<img src="./assets/cards/title-building.svg" width="100%" alt="05 In progress: Currently building.">
+<img src="./assets/cards/building.svg" width="100%" alt="Currently building: Pulse, a free status page on GitHub Actions and Pages (step 1 of 5); PortPilot, find and free busy ports (planned); BST Playground, animated binary search trees (planned); Pit Wall, F1 race replays (planned); LeetCode Solutions in Java (daily).">
+<p align="center">
+  <a href="https://github.com/HemashreeVI/pulse"><img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=14101F" alt="Pulse"></a>
+  <a href="https://github.com/HemashreeVI/portpilot"><img src="https://img.shields.io/badge/PortPilot-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="PortPilot"></a>
+  <a href="https://github.com/HemashreeVI/bst-playground"><img src="https://img.shields.io/badge/BST_Playground-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="BST Playground"></a>
+  <a href="https://github.com/HemashreeVI/pit-wall"><img src="https://img.shields.io/badge/Pit_Wall-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="Pit Wall"></a>
+  <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=14101F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
+</p>
+
+<img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
+<img src="./assets/cards/toolkit.svg" width="100%" alt="Languages: Python, Java, C++, JavaScript, HTML, CSS. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Embedded and IoT: Arduino, Raspberry Pi, ESP32, sensor fusion, LIDAR SLAM. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Data: SQLite, MySQL, Firebase, Qdrant. Security: intrusion detection, threat modeling, risk scoring. Tools: Git, GitHub, VS Code, Linux, Windows, PowerShell, Jupyter, Colab, Kaggle, Roboflow, Gradio. Spoken: Tamil, English, Hindi, Japanese.">
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,java,cpp,js,html,css,pytorch,tensorflow,opencv,arduino,raspberrypi,fastapi,flask,docker,kafka,prometheus,grafana,githubactions,sqlite,mysql,firebase,git,github,vscode,linux&theme=dark&perline=13" alt="Tech stack icons">
+</p>
+
+<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
+<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Completed a Japanese language course. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
+
+<img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
+<a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
+<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F" alt="Play now"></a></p>
+
+<img src="./assets/cards/title-commits.svg" width="100%" alt="09 Commit log: A year of building.">
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/github-snake-lavender.svg" width="100%" alt="Contribution snake">
+</p>
+<p align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=HemashreeVI&show_icons=true&hide_border=true&hide_rank=true&border_radius=16&bg_color=14101F&title_color=D9CEFF&text_color=C9C5D8&icon_color=B7A4F2" alt="GitHub stats">
+  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HemashreeVI&layout=compact&hide_border=true&border_radius=16&bg_color=14101F&title_color=D9CEFF&text_color=C9C5D8" alt="Top languages">
+</p>
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=HemashreeVI&hide_border=true&border_radius=16&background=14101F&ring=B7A4F2&fire=D9CEFF&currStreakLabel=D9CEFF&sideLabels=C9C5D8&currStreakNum=E8E6F0&sideNums=E8E6F0&dates=9A93B4&stroke=3E3463" width="70%" alt="GitHub streak">
+</p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=HemashreeVI&bg_color=14101F&color=C9C5D8&line=B7A4F2&point=FFFFFF&area=true&area_color=7B61D9&hide_border=true&radius=16&custom_title=Contribution%20activity" width="100%" alt="Activity graph">
+</p>
 
 <details>
 <summary><b>🤫 Things you won't find on my résumé</b></summary>
@@ -271,19 +99,12 @@ Plus a **3D LIDAR hero**, a **"Hiring for…" switch** that reshapes the page fo
 
 </details>
 
----
+<img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
 
-<div align="center">
+<p align="center">
+  <a href="https://www.linkedin.com/in/hema-shree-373622289"><img src="https://img.shields.io/badge/LinkedIn-hema--shree-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>
+  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Portfolio"></a>
+  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-7B61D9?style=for-the-badge&labelColor=14101F&logo=gmail&logoColor=E8E6F0" alt="Email"></a>
+</p>
 
-### 💬 Let's build something that keeps people safe.
-Open to roles in **cybersecurity · computer vision · cyber-physical systems · backend & DevOps**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hema-shree-373622289)
-[![Portfolio](https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white)](https://hemashreevi.github.io)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shreejith2005@gmail.com)
-
-<sub>よろしくお願いします 🙇‍♀️</sub>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:7C3AED,50:2A6F97,100:0B1020&section=footer" width="100%" alt="footer wave"/>
-
-</div>
+<a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>

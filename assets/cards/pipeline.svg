@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 330" width="1200" height="330" role="img" aria-labelledby="pipe-t pipe-d">
+<title id="pipe-t">Sense, Decide, Protect</title>
+<desc id="pipe-d">SENSE: X-rays · IMU + load cells, pose estimation · sensors → DECIDE: YOLOv9 · Q-learning · CNN, risk scoring · fusion → PROTECT: fall alerts · hazard maps, automated IDS responses</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="pipe-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#1C1630"/>
+    <stop offset=".55" stop-color="#14101F"/>
+    <stop offset="1" stop-color="#0B0912"/>
+  </radialGradient>
+  <radialGradient id="pipe-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="pipe-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="pipe-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C9C5D8"/>
+    <stop offset="1" stop-color="#B7A4F2"/>
+  </linearGradient>
+  <linearGradient id="pipe-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="pipe-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="pipe-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#pipe-bg)" stroke="#2D2647"/>
+<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#pipe-grid)"/>
+<ellipse cx="600" cy="165" rx="420" ry="231" fill="url(#pipe-glowA)"/>
+<ellipse cx="600" cy="165" rx="300" ry="165" fill="url(#pipe-glowB)"/>
+<g>
+<rect x="70" y="60" width="300" height="180" rx="18" fill="#17122A" stroke="#3E3463"/>
+<circle cx="110" cy="100" r="16" fill="none" stroke="#B7A4F2"/>
+<circle cx="110" cy="100" r="5" fill="#D9CEFF" class="pulse" style="animation-delay:0.0s"/>
+<text x="138" y="98" class="mono" font-size="11" fill="#9A93B4" text-anchor="start" letter-spacing="2">01</text>
+<text x="138" y="115" class="mono" font-size="10" fill="#B7A4F2" text-anchor="start" letter-spacing="2">PERCEIVE THE WORLD</text>
+<text x="94" y="168" class="serif" font-size="34" fill="#E8E6F0" text-anchor="start" letter-spacing="4">SENSE</text>
+<text x="94" y="198" class="mono" font-size="13" fill="#C9C5D8" text-anchor="start" >X-rays · IMU + load cells</text>
+<text x="94" y="220" class="mono" font-size="13" fill="#9A93B4" text-anchor="start" >pose estimation · sensors</text>
+</g><path d="M376 150H444" stroke="#B7A4F2" stroke-dasharray="3 5"/>
+<path d="M436 144l8 6-8 6" fill="none" stroke="#B7A4F2"/>
+<circle r="3.5" fill="#fff"><animateMotion dur="1.8s" repeatCount="indefinite" path="M376 150H440" begin="0.0s"/></circle>
+<g>
+<rect x="450" y="60" width="300" height="180" rx="18" fill="#17122A" stroke="#3E3463"/>
+<circle cx="490" cy="100" r="16" fill="none" stroke="#B7A4F2"/>
+<circle cx="490" cy="100" r="5" fill="#D9CEFF" class="pulse" style="animation-delay:0.8s"/>
+<text x="518" y="98" class="mono" font-size="11" fill="#9A93B4" text-anchor="start" letter-spacing="2">02</text>
+<text x="518" y="115" class="mono" font-size="10" fill="#B7A4F2" text-anchor="start" letter-spacing="2">REASON ABOUT IT</text>
+<text x="474" y="168" class="serif" font-size="34" fill="#E8E6F0" text-anchor="start" letter-spacing="4">DECIDE</text>
+<text x="474" y="198" class="mono" font-size="13" fill="#C9C5D8" text-anchor="start" >YOLOv9 · Q-learning · CNN</text>
+<text x="474" y="220" class="mono" font-size="13" fill="#9A93B4" text-anchor="start" >risk scoring · fusion</text>
+</g><path d="M756 150H824" stroke="#B7A4F2" stroke-dasharray="3 5"/>
+<path d="M816 144l8 6-8 6" fill="none" stroke="#B7A4F2"/>
+<circle r="3.5" fill="#fff"><animateMotion dur="1.8s" repeatCount="indefinite" path="M756 150H820" begin="0.9s"/></circle>
+<g>
+<rect x="830" y="60" width="300" height="180" rx="18" fill="#17122A" stroke="#3E3463"/>
+<circle cx="870" cy="100" r="16" fill="none" stroke="#B7A4F2"/>
+<circle cx="870" cy="100" r="5" fill="#D9CEFF" class="pulse" style="animation-delay:1.6s"/>
+<text x="898" y="98" class="mono" font-size="11" fill="#9A93B4" text-anchor="start" letter-spacing="2">03</text>
+<text x="898" y="115" class="mono" font-size="10" fill="#B7A4F2" text-anchor="start" letter-spacing="2">MAKE SOMEONE SAFER</text>
+<text x="854" y="168" class="serif" font-size="34" fill="#E8E6F0" text-anchor="start" letter-spacing="4">PROTECT</text>
+<text x="854" y="198" class="mono" font-size="13" fill="#C9C5D8" text-anchor="start" >fall alerts · hazard maps</text>
+<text x="854" y="220" class="mono" font-size="13" fill="#9A93B4" text-anchor="start" >automated IDS responses</text>
+</g><path d="M980 240 V282 H220 V244" fill="none" stroke="#B7A4F2" stroke-opacity=".5" stroke-dasharray="3 6"/>
+<path d="M214 252l6-8 6 8" fill="none" stroke="#B7A4F2" stroke-opacity=".7"/>
+<circle r="3" fill="#D9CEFF"><animateMotion dur="5s" repeatCount="indefinite" path="M980 240 V282 H220 V244"/></circle>
+<text x="600" y="300" class="mono" font-size="11" fill="#B7A4F2" text-anchor="middle" letter-spacing="4">CLOSED FEEDBACK LOOP</text>
+<text x="600" y="38" class="serif" font-size="14" fill="#9A93B4" text-anchor="middle" font-style="italic">Every project follows the same loop: perceive the world, decide, and make someone safer.</text>
+</svg>

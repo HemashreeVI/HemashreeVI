@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 318" width="1200" height="318" role="img" aria-labelledby="proj-t proj-d">
+<title id="proj-t">Smart Walker</title>
+<desc id="proj-d">Smart Walker: A walker that predicts a fall before it happens. Dual IMUs + load cells · sensor fusion · fall-risk prediction · standalone on Arduino. 2× IMU + load cells, fused; &lt; $30 standalone on Arduino; Patent co-inventor. Tech: Arduino, C++, MPU6050, HX711, Sensor fusion</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="proj-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#1C1630"/>
+    <stop offset=".55" stop-color="#14101F"/>
+    <stop offset="1" stop-color="#0B0912"/>
+  </radialGradient>
+  <radialGradient id="proj-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="proj-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="proj-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C9C5D8"/>
+    <stop offset="1" stop-color="#B7A4F2"/>
+  </linearGradient>
+  <linearGradient id="proj-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="proj-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="proj-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+
+<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-bg)" stroke="#2D2647"/>
+<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-grid)"/>
+<ellipse cx="960" cy="127" rx="420" ry="223" fill="url(#proj-glowA)"/>
+<ellipse cx="240" cy="191" rx="300" ry="159" fill="url(#proj-glowB)"/>
+<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#8FE3C8"/><stop offset="1" stop-color="#F0A8D0"/></linearGradient></defs>
+<text x="40" y="44" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">04 · IoT · PATENT (FILING IN PROGRESS)</text>
+<text x="38" y="96" class="serif" font-size="44" fill="url(#proj-silver)" text-anchor="start" >Smart Walker</text>
+<text x="40" y="128" class="serif" font-size="17" fill="#C9C5D8" text-anchor="start" font-style="italic">A walker that predicts a fall before it happens.</text>
+<text x="40" y="154" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >BUILT › Dual IMUs + load cells · sensor fusion · fall-risk prediction · standalone on</text><text x="40" y="172" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >         Arduino</text>
+<rect x="40" y="186" width="680" height="1" fill="#3E3463"/>
+<text x="40" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >2× IMU</text><text x="40" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >+ load cells, fused</text><text x="265" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >&lt; $30</text><text x="265" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >standalone on Arduino</text><text x="490" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >Patent</text><text x="490" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >co-inventor</text>
+<rect x="40" y="264" width="67" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="51" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Arduino</text>
+<rect x="114.83500000000001" y="264" width="41" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="125.83500000000001" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >C++</text>
+<rect x="164.05" y="264" width="67" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="175.05" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >MPU6050</text>
+<rect x="238.88500000000002" y="264" width="54" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="249.88500000000002" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >HX711</text>
+<rect x="300.91" y="264" width="105" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="311.91" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Sensor fusion</text>
+<g class="float">
+<rect x="850" y="54" width="310" height="200" rx="16" fill="#0B0912" stroke="#3E3463"/>
+<text x="868" y="80" class="mono" font-size="10" fill="#9A93B4" text-anchor="start" >IMU-1 · IMU-2 · load cells</text>
+<polyline points="870.0,144.0 872.7,147.6 875.4,151.2 878.1,154.5 880.8,157.6 883.5,160.3 886.2,162.5 888.9,164.2 891.6,165.4 894.3,165.9 897.0,165.9 899.7,165.2 902.4,164.0 905.1,162.2 907.8,159.9 910.5,157.2 913.2,154.1 915.9,150.7 918.6,147.1 921.3,143.4 924.0,139.8 926.7,136.3 929.4,133.0 932.1,130.0 934.8,127.4 937.5,125.2 940.2,123.6 942.9,122.5 945.6,122.0 948.3,122.2 951.0,122.9 953.7,124.2 956.4,126.1 959.1,128.5 961.8,131.3 964.5,134.4 967.2,137.9 969.9,141.4 972.6,145.1 975.3,148.7 978.0,152.2 980.7,155.5 983.4,158.5 986.1,161.0 988.8,163.1 991.5,164.6 994.2,165.6 996.9,166.0 999.6,165.8 1002.3,164.9 1005.0,163.5 1007.7,161.6 1010.4,159.1 1013.1,156.3 1015.8,153.1 1018.5,149.6 1021.2,146.0 1023.9,142.3 1026.6,138.7 1029.3,135.3 1032.0,132.0 1034.7,129.1 1037.4,126.7 1040.1,124.6 1042.8,123.2 1045.5,122.3 1048.2,122.0 1050.9,122.3 1053.6,123.2 1056.3,124.7 1059.0,126.8 1061.7,116.0 1064.4,121.6 1067.1,127.7 1069.8,134.3 1072.5,141.2 1075.2,148.2 1077.9,155.0 1080.6,161.6 1083.3,167.6 1086.0,173.0 1088.7,177.6 1091.4,181.3 1094.1,183.9 1096.8,185.4 1099.5,185.8 1102.2,185.0 1104.9,183.1 1107.6,180.1 1110.3,176.1 1113.0,171.2 1115.7,165.5 1118.4,159.3 1121.1,152.6 1123.8,145.7 1126.5,138.8 1129.2,132.0 1131.9,125.5 1134.6,119.5 1137.3,114.2" fill="none" stroke="#B7A4F2" stroke-width="1.6" stroke-dasharray="600" stroke-dashoffset="600">
+  <animate attributeName="stroke-dashoffset" values="600;0;0" keyTimes="0;.7;1" dur="4s" repeatCount="indefinite"/>
+</polyline>
+<rect x="1060" y="94" width="80" height="100" fill="#F0A8D0" fill-opacity=".08" stroke="#F0A8D0" stroke-dasharray="3 3"/>
+<text x="1100" y="210" class="mono" font-size="10" fill="#F0A8D0" text-anchor="middle" >FALL RISK ↑</text>
+<rect x="868" y="222" width="274" height="8" rx="4" fill="#17122A"/>
+<rect x="868" y="222" width="40" height="8" rx="4" fill="url(#proj-risk)">
+  <animate attributeName="width" values="40;40;250;250" keyTimes="0;.5;.75;1" dur="4s" repeatCount="indefinite"/>
+</rect></g>
+
+</svg>
