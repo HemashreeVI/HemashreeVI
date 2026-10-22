@@ -9,9 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=Profile+views&color=7B61D9&style=flat-square" alt="Profile views">
+  <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-3E3463?style=flat-square" alt="B.Tech CSE at VIT Chennai">
   <img src="https://img.shields.io/badge/📍-Chennai,_India-3E3463?style=flat-square" alt="Location">
   <img src="https://img.shields.io/badge/🟢-Open_to_opportunities-3E3463?style=flat-square" alt="Open to opportunities">
+  <img src="https://img.shields.io/badge/📜-Patent_co--inventor-3E3463?style=flat-square" alt="Patent co-inventor">
 </p>
 
 <img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
