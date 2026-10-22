@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C77B9B}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="proj-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#2A0E1B"/>
-    <stop offset=".55" stop-color="#190B12"/>
-    <stop offset="1" stop-color="#10070C"/>
+    <stop offset="0" stop-color="#1C1630"/>
+    <stop offset=".55" stop-color="#14101F"/>
+    <stop offset="1" stop-color="#0B0912"/>
   </radialGradient>
   <radialGradient id="proj-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#701A3D" stop-opacity=".45"/>
-    <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
+    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="proj-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#F8F0F3" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#F8F0F3" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="proj-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#D8C4CD"/>
-    <stop offset="1" stop-color="#C77B9B"/>
+    <stop offset=".5" stop-color="#C9C5D8"/>
+    <stop offset="1" stop-color="#B7A4F2"/>
   </linearGradient>
   <linearGradient id="proj-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C77B9B" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C77B9B" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C77B9B" stop-opacity="0"/>
+    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
   </linearGradient>
   <pattern id="proj-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C77B9B" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
   </pattern>
   <filter id="proj-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
@@ -52,31 +52,31 @@
 </defs>
 
 
-<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-bg)" stroke="#3A1828"/>
+<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-bg)" stroke="#2D2647"/>
 <rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-grid)"/>
 <ellipse cx="960" cy="127" rx="420" ry="223" fill="url(#proj-glowA)"/>
 <ellipse cx="240" cy="191" rx="300" ry="159" fill="url(#proj-glowB)"/>
-<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#8FE3C8"/><stop offset="1" stop-color="#FF8FB1"/></linearGradient></defs>
-<text x="40" y="44" class="mono" font-size="11" fill="#C77B9B" text-anchor="start" letter-spacing="3">01 · COMPUTER VISION · HEALTHCARE</text>
+<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#8FE3C8"/><stop offset="1" stop-color="#F0A8D0"/></linearGradient></defs>
+<text x="40" y="44" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">01 · COMPUTER VISION · HEALTHCARE</text>
 <text x="38" y="96" class="serif" font-size="44" fill="url(#proj-silver)" text-anchor="start" >Dental Malocclusion Detection</text>
-<text x="40" y="128" class="serif" font-size="17" fill="#D8C4CD" text-anchor="start" font-style="italic">Reads dental X-rays and explains what it sees.</text>
-<text x="40" y="154" class="mono" font-size="12" fill="#B6A3AC" text-anchor="start" >BUILT › YOLOv9 pipeline · Grad-CAM explanations · FDI tooth mapping · Gradio app · PDF</text><text x="40" y="172" class="mono" font-size="12" fill="#B6A3AC" text-anchor="start" >         reports</text>
-<rect x="40" y="186" width="680" height="1" fill="#4E2236"/>
-<text x="40" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >31</text><text x="40" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >dental conditions detected</text><text x="265" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >~97%</text><text x="265" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >accuracy</text><text x="490" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >13,000+</text><text x="490" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >X-ray dataset</text>
-<rect x="40" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="51" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Python</text>
-<rect x="108.43" y="264" width="67" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="119.43" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >PyTorch</text>
-<rect x="183.26500000000001" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="194.26500000000001" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >OpenCV</text>
-<rect x="251.69500000000002" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="262.69500000000005" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >YOLOv9</text>
-<rect x="320.125" y="264" width="73" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="331.125" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Grad-CAM</text>
-<rect x="401.365" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="412.365" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Gradio</text>
+<text x="40" y="128" class="serif" font-size="17" fill="#C9C5D8" text-anchor="start" font-style="italic">Reads dental X-rays and explains what it sees.</text>
+<text x="40" y="154" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >BUILT › YOLOv9 pipeline · Grad-CAM explanations · FDI tooth mapping · Gradio app · PDF</text><text x="40" y="172" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >         reports</text>
+<rect x="40" y="186" width="680" height="1" fill="#3E3463"/>
+<text x="40" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >31</text><text x="40" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >dental conditions detected</text><text x="265" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >~97%</text><text x="265" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >accuracy</text><text x="490" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >13,000+</text><text x="490" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >X-ray dataset</text>
+<rect x="40" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="51" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Python</text>
+<rect x="108.43" y="264" width="67" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="119.43" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >PyTorch</text>
+<rect x="183.26500000000001" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="194.26500000000001" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >OpenCV</text>
+<rect x="251.69500000000002" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="262.69500000000005" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >YOLOv9</text>
+<rect x="320.125" y="264" width="73" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="331.125" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Grad-CAM</text>
+<rect x="401.365" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="412.365" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Gradio</text>
 <g class="float">
-<rect x="850" y="54" width="310" height="200" rx="16" fill="#10070C" stroke="#4E2236"/>
-<rect x="870" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="870" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="904" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="904" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="938" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="938" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="972" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="972" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="1006" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="1006" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="1040" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="1040" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="1074" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="1074" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/><rect x="1108" y="94" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".14" stroke="#F8F0F3" stroke-opacity=".35"/><rect x="1108" y="164" width="26" height="54" rx="10" fill="#F8F0F3" fill-opacity=".12" stroke="#F8F0F3" stroke-opacity=".3"/>
-<rect x="934" y="88" width="68" height="66" fill="none" stroke="#FF8FB1" stroke-width="1.5"/>
-<text x="934" y="82" class="mono" font-size="10" fill="#FF8FB1" text-anchor="start" >malocclusion 0.97</text>
+<rect x="850" y="54" width="310" height="200" rx="16" fill="#0B0912" stroke="#3E3463"/>
+<rect x="870" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="870" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="904" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="904" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="938" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="938" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="972" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="972" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="1006" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="1006" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="1040" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="1040" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="1074" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="1074" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/><rect x="1108" y="94" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".14" stroke="#E8E6F0" stroke-opacity=".35"/><rect x="1108" y="164" width="26" height="54" rx="10" fill="#E8E6F0" fill-opacity=".12" stroke="#E8E6F0" stroke-opacity=".3"/>
+<rect x="934" y="88" width="68" height="66" fill="none" stroke="#F0A8D0" stroke-width="1.5"/>
+<text x="934" y="82" class="mono" font-size="10" fill="#F0A8D0" text-anchor="start" >malocclusion 0.97</text>
 <rect x="1036" y="158" width="40" height="66" fill="none" stroke="#8FE3C8" stroke-width="1.5"/>
 <text x="1010" y="240" class="mono" font-size="10" fill="#8FE3C8" text-anchor="start" >FDI 36 · caries 0.91</text>
-<rect x="850" y="54" width="310" height="3" fill="#C77B9B" opacity=".8">
+<rect x="850" y="54" width="310" height="3" fill="#B7A4F2" opacity=".8">
   <animate attributeName="y" values="62;244;62" dur="4s" repeatCount="indefinite"/>
 </rect></g>
 

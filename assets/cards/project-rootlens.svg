@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C77B9B}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="proj-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#2A0E1B"/>
-    <stop offset=".55" stop-color="#190B12"/>
-    <stop offset="1" stop-color="#10070C"/>
+    <stop offset="0" stop-color="#1C1630"/>
+    <stop offset=".55" stop-color="#14101F"/>
+    <stop offset="1" stop-color="#0B0912"/>
   </radialGradient>
   <radialGradient id="proj-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#701A3D" stop-opacity=".45"/>
-    <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
+    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="proj-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#F8F0F3" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#F8F0F3" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="proj-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#D8C4CD"/>
-    <stop offset="1" stop-color="#C77B9B"/>
+    <stop offset=".5" stop-color="#C9C5D8"/>
+    <stop offset="1" stop-color="#B7A4F2"/>
   </linearGradient>
   <linearGradient id="proj-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C77B9B" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C77B9B" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C77B9B" stop-opacity="0"/>
+    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
   </linearGradient>
   <pattern id="proj-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C77B9B" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
   </pattern>
   <filter id="proj-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
@@ -52,25 +52,25 @@
 </defs>
 
 
-<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-bg)" stroke="#3A1828"/>
+<rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-bg)" stroke="#2D2647"/>
 <rect x="1" y="1" width="1198" height="316" rx="22" fill="url(#proj-grid)"/>
 <ellipse cx="960" cy="127" rx="420" ry="223" fill="url(#proj-glowA)"/>
 <ellipse cx="240" cy="191" rx="300" ry="159" fill="url(#proj-glowB)"/>
-<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#8FE3C8"/><stop offset="1" stop-color="#FF8FB1"/></linearGradient></defs>
-<text x="40" y="44" class="mono" font-size="11" fill="#C77B9B" text-anchor="start" letter-spacing="3">02 · RELIABILITY · AIOPS</text>
+<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#8FE3C8"/><stop offset="1" stop-color="#F0A8D0"/></linearGradient></defs>
+<text x="40" y="44" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">02 · RELIABILITY · AIOPS</text>
 <text x="38" y="96" class="serif" font-size="44" fill="url(#proj-silver)" text-anchor="start" >RootLens</text>
-<text x="40" y="128" class="serif" font-size="17" fill="#D8C4CD" text-anchor="start" font-style="italic">When a microservice breaks, it tells you why.</text>
-<text x="40" y="154" class="mono" font-size="12" fill="#B6A3AC" text-anchor="start" >BUILT › Detects failures across FastAPI services · gathers evidence · ranks root causes ·</text><text x="40" y="172" class="mono" font-size="12" fill="#B6A3AC" text-anchor="start" >         records incidents</text>
-<rect x="40" y="186" width="680" height="1" fill="#4E2236"/>
-<text x="40" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >Detect</text><text x="40" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >failures across services</text><text x="265" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >Rank</text><text x="265" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >root causes by evidence</text><text x="490" y="222" class="serif" font-size="30" fill="#F8F0F3" text-anchor="start" >Record</text><text x="490" y="245" class="sans" font-size="13" fill="#B6A3AC" text-anchor="start" >every incident</text>
-<rect x="40" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="51" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Python</text>
-<rect x="108.43" y="264" width="67" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="119.43" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >FastAPI</text>
-<rect x="183.26500000000001" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="194.26500000000001" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Docker</text>
-<rect x="251.69500000000002" y="264" width="86" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="262.69500000000005" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Prometheus</text>
-<rect x="345.745" y="264" width="67" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="356.745" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Grafana</text>
-<rect x="420.58000000000004" y="264" width="60" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="431.58000000000004" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >SQLite</text>
-<rect x="489.01000000000005" y="264" width="92" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="500.01000000000005" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >Chaos tests</text>
-<rect x="589.465" y="264" width="35" height="24" rx="12" fill="#1F0C16" stroke="#4E2236"/><text x="600.465" y="280" class="mono" font-size="10.5" fill="#D8C4CD" text-anchor="start" >CI</text>
-<g class="float"><rect x="850" y="54" width="310" height="200" rx="16" fill="#10070C" stroke="#4E2236"/><path d="M910 104L1030 94" stroke="#C77B9B" stroke-opacity=".35"/><path d="M910 104L960 174" stroke="#C77B9B" stroke-opacity=".35"/><path d="M960 174L1090 164" stroke="#C77B9B" stroke-opacity=".35"/><path d="M1030 94L1090 164" stroke="#C77B9B" stroke-opacity=".35"/><path d="M1090 164L1030 214" stroke="#C77B9B" stroke-opacity=".35"/><path d="M960 174L1030 214" stroke="#C77B9B" stroke-opacity=".35"/><circle cx="910" cy="104" r="9" fill="#1F0C16" stroke="#C77B9B" stroke-width="1.5"/><text x="910" y="130" class="mono" font-size="10" fill="#B6A3AC" text-anchor="middle" >gateway</text><circle cx="1030" cy="94" r="9" fill="#1F0C16" stroke="#C77B9B" stroke-width="1.5"/><text x="1030" y="120" class="mono" font-size="10" fill="#B6A3AC" text-anchor="middle" >auth</text><circle cx="960" cy="174" r="9" fill="#1F0C16" stroke="#C77B9B" stroke-width="1.5"/><text x="960" y="200" class="mono" font-size="10" fill="#B6A3AC" text-anchor="middle" >orders</text><circle cx="1090" cy="164" r="12" fill="#1F0C16" stroke="#FF8FB1" stroke-width="1.5"/><circle cx="1090" cy="164" r="12" fill="none" stroke="#FF8FB1"><animate attributeName="r" values="12;28" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.8s" repeatCount="indefinite"/></circle><text x="1090" y="190" class="mono" font-size="10" fill="#FF8FB1" text-anchor="middle" >payments</text><circle cx="1030" cy="214" r="9" fill="#1F0C16" stroke="#C77B9B" stroke-width="1.5"/><text x="1030" y="240" class="mono" font-size="10" fill="#B6A3AC" text-anchor="middle" >db</text><text x="866" y="76" class="mono" font-size="10" fill="#FF8FB1" text-anchor="start" >root cause #1 → payments (p=0.82)</text></g>
+<text x="40" y="128" class="serif" font-size="17" fill="#C9C5D8" text-anchor="start" font-style="italic">When a microservice breaks, it tells you why.</text>
+<text x="40" y="154" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >BUILT › Detects failures across FastAPI services · gathers evidence · ranks root causes ·</text><text x="40" y="172" class="mono" font-size="12" fill="#9A93B4" text-anchor="start" >         records incidents</text>
+<rect x="40" y="186" width="680" height="1" fill="#3E3463"/>
+<text x="40" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >Detect</text><text x="40" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >failures across services</text><text x="265" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >Rank</text><text x="265" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >root causes by evidence</text><text x="490" y="222" class="serif" font-size="30" fill="#E8E6F0" text-anchor="start" >Record</text><text x="490" y="245" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >every incident</text>
+<rect x="40" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="51" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Python</text>
+<rect x="108.43" y="264" width="67" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="119.43" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >FastAPI</text>
+<rect x="183.26500000000001" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="194.26500000000001" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Docker</text>
+<rect x="251.69500000000002" y="264" width="86" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="262.69500000000005" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Prometheus</text>
+<rect x="345.745" y="264" width="67" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="356.745" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Grafana</text>
+<rect x="420.58000000000004" y="264" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="431.58000000000004" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >SQLite</text>
+<rect x="489.01000000000005" y="264" width="92" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="500.01000000000005" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Chaos tests</text>
+<rect x="589.465" y="264" width="35" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="600.465" y="280" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >CI</text>
+<g class="float"><rect x="850" y="54" width="310" height="200" rx="16" fill="#0B0912" stroke="#3E3463"/><path d="M910 104L1030 94" stroke="#B7A4F2" stroke-opacity=".35"/><path d="M910 104L960 174" stroke="#B7A4F2" stroke-opacity=".35"/><path d="M960 174L1090 164" stroke="#B7A4F2" stroke-opacity=".35"/><path d="M1030 94L1090 164" stroke="#B7A4F2" stroke-opacity=".35"/><path d="M1090 164L1030 214" stroke="#B7A4F2" stroke-opacity=".35"/><path d="M960 174L1030 214" stroke="#B7A4F2" stroke-opacity=".35"/><circle cx="910" cy="104" r="9" fill="#17122A" stroke="#B7A4F2" stroke-width="1.5"/><text x="910" y="130" class="mono" font-size="10" fill="#9A93B4" text-anchor="middle" >gateway</text><circle cx="1030" cy="94" r="9" fill="#17122A" stroke="#B7A4F2" stroke-width="1.5"/><text x="1030" y="120" class="mono" font-size="10" fill="#9A93B4" text-anchor="middle" >auth</text><circle cx="960" cy="174" r="9" fill="#17122A" stroke="#B7A4F2" stroke-width="1.5"/><text x="960" y="200" class="mono" font-size="10" fill="#9A93B4" text-anchor="middle" >orders</text><circle cx="1090" cy="164" r="12" fill="#17122A" stroke="#F0A8D0" stroke-width="1.5"/><circle cx="1090" cy="164" r="12" fill="none" stroke="#F0A8D0"><animate attributeName="r" values="12;28" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.8s" repeatCount="indefinite"/></circle><text x="1090" y="190" class="mono" font-size="10" fill="#F0A8D0" text-anchor="middle" >payments</text><circle cx="1030" cy="214" r="9" fill="#17122A" stroke="#B7A4F2" stroke-width="1.5"/><text x="1030" y="240" class="mono" font-size="10" fill="#9A93B4" text-anchor="middle" >db</text><text x="866" y="76" class="mono" font-size="10" fill="#F0A8D0" text-anchor="start" >root cause #1 → payments (p=0.82)</text></g>
 
 </svg>
