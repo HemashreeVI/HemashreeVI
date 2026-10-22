@@ -20,20 +20,20 @@ PHOTO = ROOT / "assets" / "photo.jpg"
 
 # ---------------------------------------------------------------- palette
 C = {
-    "bg0": "#0B0912",
-    "bg1": "#14101F",
-    "bg2": "#1C1630",
-    "panel": "#17122A",
-    "line": "#2D2647",
-    "line2": "#3E3463",
-    "violet": "#7B61D9",
-    "lav": "#B7A4F2",
-    "lilac": "#D9CEFF",
-    "silver": "#E8E6F0",
-    "mist": "#C9C5D8",
-    "muted": "#9A93B4",
-    "dim": "#6B6489",
-    "rose": "#F0A8D0",
+    "bg0": "#10070C",
+    "bg1": "#190B12",
+    "bg2": "#2A0E1B",
+    "panel": "#1F0C16",
+    "line": "#3A1828",
+    "line2": "#4E2236",
+    "violet": "#701A3D",
+    "lav": "#C77B9B",
+    "lilac": "#E5B5C7",
+    "silver": "#F8F0F3",
+    "mist": "#D8C4CD",
+    "muted": "#B6A3AC",
+    "dim": "#7C6570",
+    "rose": "#FF8FB1",
     "mint": "#8FE3C8",
 }
 
@@ -864,9 +864,9 @@ def build_games():
 {text(x + 136, 224, name, 19, C['silver'], 'serif', 'middle')}
 {text(x + 136, 248, what, 12.5, C['muted'], 'sans', 'middle')}
 </g>""")
-    parts.append(f'<text x="600" y="310" class="sans" font-size="14" fill="{C["muted"]}" text-anchor="middle">Plus a <tspan fill="{C["silver"]}">3D LIDAR hero</tspan>, a <tspan fill="{C["silver"]}">"Hiring for…" switch</tspan> that reshapes the page for your role, and <tspan fill="{C["silver"]}">Detection mode</tspan> (press <tspan class="mono" fill="{C["lilac"]}">D</tspan>).</text>')
+    parts.append(f'<text x="600" y="310" class="sans" font-size="14" fill="{C["muted"]}" text-anchor="middle">Plus <tspan fill="{C["silver"]}">F1 start lights</tspan>, a <tspan fill="{C["silver"]}">car that drives you between sections</tspan>, and a classic site with a <tspan fill="{C["silver"]}">3D LIDAR hero</tspan> and <tspan fill="{C["silver"]}">Detection mode</tspan>.</text>')
     parts.append(text(600, 338, "hemashreevi.github.io", 12, C['lav'], 'mono', 'middle', 'letter-spacing="3"'))
-    desc = "Portfolio mini-games: " + "; ".join(f"{n}: {w}" for n, w, _ in GAMES) + ". Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."
+    desc = "Portfolio mini-games: " + "; ".join(f"{n}: {w}" for n, w, _ in GAMES) + ". Plus F1 start lights, a car that drives you between sections, and a classic site with a 3D LIDAR hero and Detection mode."
     write("games.svg", svg(W, H, u, "Play on my portfolio", desc, "".join(parts)))
 
 

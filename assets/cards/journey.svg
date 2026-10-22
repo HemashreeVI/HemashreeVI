@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C77B9B}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,111 +21,111 @@
 
 <defs>
   <radialGradient id="jour-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#1C1630"/>
-    <stop offset=".55" stop-color="#14101F"/>
-    <stop offset="1" stop-color="#0B0912"/>
+    <stop offset="0" stop-color="#2A0E1B"/>
+    <stop offset=".55" stop-color="#190B12"/>
+    <stop offset="1" stop-color="#10070C"/>
   </radialGradient>
   <radialGradient id="jour-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
-    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#701A3D" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="jour-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
+    <stop offset="0" stop-color="#F8F0F3" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#F8F0F3" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="jour-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C9C5D8"/>
-    <stop offset="1" stop-color="#B7A4F2"/>
+    <stop offset=".5" stop-color="#D8C4CD"/>
+    <stop offset="1" stop-color="#C77B9B"/>
   </linearGradient>
   <linearGradient id="jour-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset="0" stop-color="#C77B9B" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C77B9B" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C77B9B" stop-opacity="0"/>
   </linearGradient>
   <pattern id="jour-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#C77B9B" stroke-opacity=".05"/>
   </pattern>
   <filter id="jour-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
   </filter>
 </defs>
 
-<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-bg)" stroke="#2D2647"/>
+<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-bg)" stroke="#3A1828"/>
 <rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-grid)"/>
 <ellipse cx="360" cy="200" rx="420" ry="280" fill="url(#jour-glowA)"/>
-<ellipse cx="840" cy="200" rx="300" ry="200" fill="url(#jour-glowB)"/><path d="M90 200H1110" stroke="#3E3463" stroke-width="2"/>
+<ellipse cx="840" cy="200" rx="300" ry="200" fill="url(#jour-glowB)"/><path d="M90 200H1110" stroke="#4E2236" stroke-width="2"/>
 <path d="M90 200H1110" stroke="url(#jour-silver)" stroke-width="2" stroke-dasharray="1020" stroke-dashoffset="1020">
   <animate attributeName="stroke-dashoffset" values="1020;0;0" keyTimes="0;.6;1" dur="8s" repeatCount="indefinite"/>
 </path>
-<path d="M90 192V174" stroke="#3E3463"/>
-<circle cx="90" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="90" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<path d="M90 192V174" stroke="#4E2236"/>
+<circle cx="90" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="90" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.000;0.020;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="16" y="52" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="90" y="78" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">AUG 2023</text>
-<text x="90" y="108" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >VIT Chennai</text>
-<text x="90" y="136" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >B.Tech CSE</text>
-<text x="90" y="156" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >Cyber Physical</text>
-<path d="M260 208V226" stroke="#3E3463"/>
-<circle cx="260" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="260" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="16" y="52" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="90" y="78" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">AUG 2023</text>
+<text x="90" y="108" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >VIT Chennai</text>
+<text x="90" y="136" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >B.Tech CSE</text>
+<text x="90" y="156" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >Cyber Physical</text>
+<path d="M260 208V226" stroke="#4E2236"/>
+<circle cx="260" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="260" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.100;0.120;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="186" y="226" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="260" y="252" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">MAY–JUL 2025</text>
-<text x="260" y="282" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >Research intern</text>
-<text x="260" y="310" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >Pose estimation</text>
-<text x="260" y="330" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >MMPose</text>
-<path d="M430 192V174" stroke="#3E3463"/>
-<circle cx="430" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="430" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="186" y="226" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="260" y="252" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">MAY–JUL 2025</text>
+<text x="260" y="282" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >Research intern</text>
+<text x="260" y="310" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >Pose estimation</text>
+<text x="260" y="330" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >MMPose</text>
+<path d="M430 192V174" stroke="#4E2236"/>
+<circle cx="430" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="430" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.200;0.220;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="356" y="52" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="430" y="78" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">JUN 2025</text>
-<text x="430" y="108" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >Singapore</text>
-<text x="430" y="136" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >NUS Industry 4.0</text>
-<text x="430" y="156" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >SuperAI · IBM Gen AI</text>
-<path d="M600 208V226" stroke="#3E3463"/>
-<circle cx="600" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="600" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="356" y="52" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="430" y="78" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">JUN 2025</text>
+<text x="430" y="108" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >Singapore</text>
+<text x="430" y="136" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >NUS Industry 4.0</text>
+<text x="430" y="156" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >SuperAI · IBM Gen AI</text>
+<path d="M600 208V226" stroke="#4E2236"/>
+<circle cx="600" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="600" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.300;0.320;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="526" y="226" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="600" y="252" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">JUL–SEP 2025</text>
-<text x="600" y="282" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >97% on X-rays</text>
-<text x="600" y="310" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >YOLOv9</text>
-<text x="600" y="330" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >13,000+ images</text>
-<path d="M770 192V174" stroke="#3E3463"/>
-<circle cx="770" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="770" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="526" y="226" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="600" y="252" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">JUL–SEP 2025</text>
+<text x="600" y="282" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >97% on X-rays</text>
+<text x="600" y="310" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >YOLOv9</text>
+<text x="600" y="330" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >13,000+ images</text>
+<path d="M770 192V174" stroke="#4E2236"/>
+<circle cx="770" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="770" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.400;0.420;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="696" y="52" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="770" y="78" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">2025–26</text>
-<text x="770" y="108" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >Patent co-inventor</text>
-<text x="770" y="136" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >Smart walker</text>
-<text x="770" y="156" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >filing in progress</text>
-<path d="M940 208V226" stroke="#3E3463"/>
-<circle cx="940" cy="200" r="7" fill="#0B0912" stroke="#B7A4F2" stroke-width="2"/>
-<circle cx="940" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="696" y="52" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="770" y="78" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">2025–26</text>
+<text x="770" y="108" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >Patent co-inventor</text>
+<text x="770" y="136" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >Smart walker</text>
+<text x="770" y="156" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >filing in progress</text>
+<path d="M940 208V226" stroke="#4E2236"/>
+<circle cx="940" cy="200" r="7" fill="#10070C" stroke="#C77B9B" stroke-width="2"/>
+<circle cx="940" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.500;0.520;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="866" y="226" width="148" height="122" rx="14" fill="#17122A" stroke="#3E3463" />
-<text x="940" y="252" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">2026</text>
-<text x="940" y="282" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >Backend &amp; DevOps</text>
-<text x="940" y="310" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >RootLens</text>
-<text x="940" y="330" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >TriageIQ</text>
-<path d="M1110 192V174" stroke="#3E3463"/>
-<circle cx="1110" cy="200" r="9" fill="#0B0912" stroke="#D9CEFF" stroke-width="2"/>
-<circle cx="1110" cy="200" r="3" fill="#E8E6F0" opacity="0">
+<rect x="866" y="226" width="148" height="122" rx="14" fill="#1F0C16" stroke="#4E2236" />
+<text x="940" y="252" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">2026</text>
+<text x="940" y="282" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >Backend &amp; DevOps</text>
+<text x="940" y="310" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >RootLens</text>
+<text x="940" y="330" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >TriageIQ</text>
+<path d="M1110 192V174" stroke="#4E2236"/>
+<circle cx="1110" cy="200" r="9" fill="#10070C" stroke="#E5B5C7" stroke-width="2"/>
+<circle cx="1110" cy="200" r="3" fill="#F8F0F3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.600;0.620;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="1036" y="52" width="148" height="122" rx="14" fill="#17122A" stroke="#D9CEFF" stroke-dasharray="4 4"/>
-<text x="1110" y="78" class="mono" font-size="10" fill="#B7A4F2" text-anchor="middle" letter-spacing="1.5">NOW</text>
-<text x="1110" y="108" class="serif" font-size="16" fill="#E8E6F0" text-anchor="middle" >Building 4 more</text>
-<text x="1110" y="136" class="sans" font-size="12" fill="#C9C5D8" text-anchor="middle" >+ grinding LeetCode</text>
-<text x="1110" y="156" class="sans" font-size="12" fill="#9A93B4" text-anchor="middle" >next stop: your team?</text>
+<rect x="1036" y="52" width="148" height="122" rx="14" fill="#1F0C16" stroke="#E5B5C7" stroke-dasharray="4 4"/>
+<text x="1110" y="78" class="mono" font-size="10" fill="#C77B9B" text-anchor="middle" letter-spacing="1.5">NOW</text>
+<text x="1110" y="108" class="serif" font-size="16" fill="#F8F0F3" text-anchor="middle" >Building 4 more</text>
+<text x="1110" y="136" class="sans" font-size="12" fill="#D8C4CD" text-anchor="middle" >+ grinding LeetCode</text>
+<text x="1110" y="156" class="sans" font-size="12" fill="#B6A3AC" text-anchor="middle" >next stop: your team?</text>
 </svg>

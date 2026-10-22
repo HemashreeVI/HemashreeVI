@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C77B9B}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,38 +21,38 @@
 
 <defs>
   <radialGradient id="bld-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#1C1630"/>
-    <stop offset=".55" stop-color="#14101F"/>
-    <stop offset="1" stop-color="#0B0912"/>
+    <stop offset="0" stop-color="#2A0E1B"/>
+    <stop offset=".55" stop-color="#190B12"/>
+    <stop offset="1" stop-color="#10070C"/>
   </radialGradient>
   <radialGradient id="bld-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
-    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#701A3D" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="bld-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
+    <stop offset="0" stop-color="#F8F0F3" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#F8F0F3" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="bld-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C9C5D8"/>
-    <stop offset="1" stop-color="#B7A4F2"/>
+    <stop offset=".5" stop-color="#D8C4CD"/>
+    <stop offset="1" stop-color="#C77B9B"/>
   </linearGradient>
   <linearGradient id="bld-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset="0" stop-color="#C77B9B" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C77B9B" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C77B9B" stop-opacity="0"/>
   </linearGradient>
   <pattern id="bld-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#C77B9B" stroke-opacity=".05"/>
   </pattern>
   <filter id="bld-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
   </filter>
 </defs>
 
-<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#bld-bg)" stroke="#2D2647"/>
+<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#bld-bg)" stroke="#3A1828"/>
 <rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#bld-grid)"/>
 <ellipse cx="240" cy="160" rx="420" ry="280" fill="url(#bld-glowA)"/>
-<ellipse cx="960" cy="240" rx="300" ry="200" fill="url(#bld-glowB)"/><rect x="32" y="32" width="1136" height="54" rx="14" fill="#17122A" stroke="#3E3463"/><text x="56" y="66" class="mono" font-size="12" fill="#6B6489" text-anchor="start" >01</text><text x="96" y="67" class="serif" font-size="20" fill="#E8E6F0" text-anchor="start" >Pulse</text><text x="300" y="65" class="sans" font-size="14" fill="#9A93B4" text-anchor="start" >A free status page that runs entirely on GitHub Actions + Pages</text><rect x="900" y="56" width="120" height="6" rx="3" fill="#0B0912"/><rect x="900" y="56" width="24" height="6" rx="3" fill="#8FE3C8"><animate attributeName="opacity" values=".5;1;.5" dur="2s" repeatCount="indefinite"/></rect><text x="1150" y="64" class="mono" font-size="10.5" fill="#8FE3C8" text-anchor="end" letter-spacing="2">STEP 1 OF 5</text><rect x="32" y="98" width="1136" height="54" rx="14" fill="#17122A" stroke="#3E3463"/><text x="56" y="132" class="mono" font-size="12" fill="#6B6489" text-anchor="start" >02</text><text x="96" y="133" class="serif" font-size="20" fill="#E8E6F0" text-anchor="start" >PortPilot</text><text x="300" y="131" class="sans" font-size="14" fill="#9A93B4" text-anchor="start" >Find what's using a port (even Docker containers) and free it with one key</text><path d="M900 125H1020" stroke="#B7A4F2" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="130" class="mono" font-size="10.5" fill="#B7A4F2" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="164" width="1136" height="54" rx="14" fill="#17122A" stroke="#3E3463"/><text x="56" y="198" class="mono" font-size="12" fill="#6B6489" text-anchor="start" >03</text><text x="96" y="199" class="serif" font-size="20" fill="#E8E6F0" text-anchor="start" >BST Playground</text><text x="300" y="197" class="sans" font-size="14" fill="#9A93B4" text-anchor="start" >Watch binary search tree operations animate, step by step</text><path d="M900 191H1020" stroke="#B7A4F2" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="196" class="mono" font-size="10.5" fill="#B7A4F2" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="230" width="1136" height="54" rx="14" fill="#17122A" stroke="#3E3463"/><text x="56" y="264" class="mono" font-size="12" fill="#6B6489" text-anchor="start" >04</text><text x="96" y="265" class="serif" font-size="20" fill="#E8E6F0" text-anchor="start" >Pit Wall</text><text x="300" y="263" class="sans" font-size="14" fill="#9A93B4" text-anchor="start" >Replay real F1 races with a GPS track map and live leaderboard</text><path d="M900 257H1020" stroke="#B7A4F2" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="262" class="mono" font-size="10.5" fill="#B7A4F2" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="296" width="1136" height="54" rx="14" fill="#17122A" stroke="#3E3463"/><text x="56" y="330" class="mono" font-size="12" fill="#6B6489" text-anchor="start" >05</text><text x="96" y="331" class="serif" font-size="20" fill="#E8E6F0" text-anchor="start" >LeetCode Solutions</text><text x="300" y="329" class="sans" font-size="14" fill="#9A93B4" text-anchor="start" >Clean, commented Java solutions, intuition first</text><circle class="pulse" cx="908" cy="323" r="4" fill="#F0A8D0"/><text x="1150" y="328" class="mono" font-size="10.5" fill="#F0A8D0" text-anchor="end" letter-spacing="2">DAILY</text>
+<ellipse cx="960" cy="240" rx="300" ry="200" fill="url(#bld-glowB)"/><rect x="32" y="32" width="1136" height="54" rx="14" fill="#1F0C16" stroke="#4E2236"/><text x="56" y="66" class="mono" font-size="12" fill="#7C6570" text-anchor="start" >01</text><text x="96" y="67" class="serif" font-size="20" fill="#F8F0F3" text-anchor="start" >Pulse</text><text x="300" y="65" class="sans" font-size="14" fill="#B6A3AC" text-anchor="start" >A free status page that runs entirely on GitHub Actions + Pages</text><rect x="900" y="56" width="120" height="6" rx="3" fill="#10070C"/><rect x="900" y="56" width="24" height="6" rx="3" fill="#8FE3C8"><animate attributeName="opacity" values=".5;1;.5" dur="2s" repeatCount="indefinite"/></rect><text x="1150" y="64" class="mono" font-size="10.5" fill="#8FE3C8" text-anchor="end" letter-spacing="2">STEP 1 OF 5</text><rect x="32" y="98" width="1136" height="54" rx="14" fill="#1F0C16" stroke="#4E2236"/><text x="56" y="132" class="mono" font-size="12" fill="#7C6570" text-anchor="start" >02</text><text x="96" y="133" class="serif" font-size="20" fill="#F8F0F3" text-anchor="start" >PortPilot</text><text x="300" y="131" class="sans" font-size="14" fill="#B6A3AC" text-anchor="start" >Find what's using a port (even Docker containers) and free it with one key</text><path d="M900 125H1020" stroke="#C77B9B" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="130" class="mono" font-size="10.5" fill="#C77B9B" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="164" width="1136" height="54" rx="14" fill="#1F0C16" stroke="#4E2236"/><text x="56" y="198" class="mono" font-size="12" fill="#7C6570" text-anchor="start" >03</text><text x="96" y="199" class="serif" font-size="20" fill="#F8F0F3" text-anchor="start" >BST Playground</text><text x="300" y="197" class="sans" font-size="14" fill="#B6A3AC" text-anchor="start" >Watch binary search tree operations animate, step by step</text><path d="M900 191H1020" stroke="#C77B9B" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="196" class="mono" font-size="10.5" fill="#C77B9B" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="230" width="1136" height="54" rx="14" fill="#1F0C16" stroke="#4E2236"/><text x="56" y="264" class="mono" font-size="12" fill="#7C6570" text-anchor="start" >04</text><text x="96" y="265" class="serif" font-size="20" fill="#F8F0F3" text-anchor="start" >Pit Wall</text><text x="300" y="263" class="sans" font-size="14" fill="#B6A3AC" text-anchor="start" >Replay real F1 races with a GPS track map and live leaderboard</text><path d="M900 257H1020" stroke="#C77B9B" stroke-opacity=".5" stroke-dasharray="2 5"/><text x="1150" y="262" class="mono" font-size="10.5" fill="#C77B9B" text-anchor="end" letter-spacing="2">PLANNED</text><rect x="32" y="296" width="1136" height="54" rx="14" fill="#1F0C16" stroke="#4E2236"/><text x="56" y="330" class="mono" font-size="12" fill="#7C6570" text-anchor="start" >05</text><text x="96" y="331" class="serif" font-size="20" fill="#F8F0F3" text-anchor="start" >LeetCode Solutions</text><text x="300" y="329" class="sans" font-size="14" fill="#B6A3AC" text-anchor="start" >Clean, commented Java solutions, intuition first</text><circle class="pulse" cx="908" cy="323" r="4" fill="#FF8FB1"/><text x="1150" y="328" class="mono" font-size="10.5" fill="#FF8FB1" text-anchor="end" letter-spacing="2">DAILY</text>
 </svg>
