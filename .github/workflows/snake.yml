@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Generate Snake, Pac-Man and activity graph
 
 on:
   schedule:
@@ -13,7 +13,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: Platane/snk/svg-only@v3
         with:
@@ -22,6 +22,20 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/github-snake-lavender.svg?palette=github-dark&color_snake=#D9CEFF&color_dots=#1C1630,#3E3463,#5B4A9A,#7B61D9,#B7A4F2
+      # Pac-Man eating the contribution grid. Same job as the snake: the deploy
+      # step below replaces the whole output branch with dist/.
+      - uses: abozanona/pacman-contribution-graph@v5.3.2
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          games: pacman
+      # Activity line graph, drawn here instead of relying on an external service
+      - uses: actions/checkout@v4
+        with:
+          path: repo
+      - run: python3 repo/scripts/activity_graph.py ${{ github.repository_owner }} dist/activity-graph.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
