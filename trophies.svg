@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="tro-t tro-d">
+<title id="tro-t">GitHub trophies of HemashreeVI</title>
+<desc id="tro-d">Commits: 156 (A); Stars: 4 (C); Followers: 2 (B); Repositories: 19 (A); Pull Requests: 11 (B); Issues: 2 (C); Experience: 1m (C)</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#B7A4F2}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="tro-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#1C1630"/>
+    <stop offset=".55" stop-color="#14101F"/>
+    <stop offset="1" stop-color="#0B0912"/>
+  </radialGradient>
+  <radialGradient id="tro-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7B61D9" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#7B61D9" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="tro-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#E8E6F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E8E6F0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="tro-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C9C5D8"/>
+    <stop offset="1" stop-color="#B7A4F2"/>
+  </linearGradient>
+  <linearGradient id="tro-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#B7A4F2" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#B7A4F2" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#B7A4F2" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="tro-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#B7A4F2" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="tro-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="1198" height="298" rx="22" fill="url(#tro-bg)" stroke="#2D2647"/>
+<rect x="1" y="1" width="1198" height="298" rx="22" fill="url(#tro-grid)"/>
+<ellipse cx="780" cy="75" rx="420" ry="210" fill="url(#tro-glowA)"/>
+<ellipse cx="420" cy="225" rx="300" ry="150" fill="url(#tro-glowB)"/><circle class="twinkle" cx="1093" cy="267" r="0.8" fill="#E8E6F0" style="animation-delay:0.1s"/>
+<circle class="twinkle" cx="376" cy="119" r="1.2" fill="#E8E6F0" style="animation-delay:0.5s"/>
+<circle class="twinkle" cx="243" cy="136" r="1" fill="#E8E6F0" style="animation-delay:2.5s"/>
+<circle class="twinkle" cx="1066" cy="48" r="1.6" fill="#E8E6F0" style="animation-delay:1.7s"/>
+<circle class="twinkle" cx="615" cy="211" r="1.2" fill="#E8E6F0" style="animation-delay:3.1s"/>
+<circle class="twinkle" cx="259" cy="29" r="1.2" fill="#E8E6F0" style="animation-delay:2.6s"/>
+<circle class="twinkle" cx="740" cy="272" r="1.2" fill="#E8E6F0" style="animation-delay:2.3s"/>
+<circle class="twinkle" cx="1018" cy="272" r="1.2" fill="#E8E6F0" style="animation-delay:2.6s"/>
+<circle class="twinkle" cx="385" cy="42" r="1.6" fill="#E8E6F0" style="animation-delay:0.7s"/>
+<circle class="twinkle" cx="580" cy="226" r="1" fill="#E8E6F0" style="animation-delay:0.7s"/>
+<circle class="twinkle" cx="227" cy="104" r="1" fill="#E8E6F0" style="animation-delay:2.3s"/>
+<circle class="twinkle" cx="115" cy="131" r="1.2" fill="#E8E6F0" style="animation-delay:3.8s"/>
+<circle class="twinkle" cx="345" cy="173" r="0.8" fill="#E8E6F0" style="animation-delay:1.5s"/>
+<circle class="twinkle" cx="355" cy="99" r="1.6" fill="#E8E6F0" style="animation-delay:2.2s"/>
+<circle class="twinkle" cx="320" cy="48" r="0.8" fill="#E8E6F0" style="animation-delay:2.8s"/>
+<circle class="twinkle" cx="981" cy="82" r="1" fill="#E8E6F0" style="animation-delay:3.7s"/>
+<circle class="twinkle" cx="708" cy="266" r="1" fill="#E8E6F0" style="animation-delay:1.8s"/>
+<circle class="twinkle" cx="59" cy="184" r="1.6" fill="#E8E6F0" style="animation-delay:0.1s"/>
+<circle class="twinkle" cx="959" cy="199" r="1" fill="#E8E6F0" style="animation-delay:3.2s"/>
+<circle class="twinkle" cx="1121" cy="160" r="1.6" fill="#E8E6F0" style="animation-delay:3.0s"/><text x="48" y="54" class="kick">TROPHIES</text><g class="float" style="animation-delay:-0.0s"><title>Commits: 156, next rank at 200</title>
+<defs><linearGradient id="tro-a" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#C9CCDA"/><stop offset=".45" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C9CCDA"/>
+</linearGradient></defs>
+<path d="M94 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-a)"/>
+<path d="M94 102h-10c0 14 8 20 14 20M146 102h10c0 14-8 20-14 20" fill="none" stroke="#C9CCDA" stroke-width="4" stroke-linecap="round"/>
+<rect x="116" y="138" width="8" height="12" fill="#C9CCDA"/>
+<rect x="104" y="150" width="32" height="10" rx="3" fill="url(#tro-a)"/>
+<rect x="98" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="94" y="94" width="52" height="6" rx="3" fill="#FFFFFF" opacity=".9"/></g><text x="120" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">A</text><text x="120" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Commits</text><text x="120" y="222" class="mono" font-size="13" fill="#C9CCDA" text-anchor="middle" >156</text><rect x="72" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="72" y="236" width="54" height="5" rx="2.5" fill="#C9CCDA"/><text x="120" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 200</text><g class="float" style="animation-delay:-0.6s"><title>Stars: 4, next rank at 10</title>
+<defs><linearGradient id="tro-c" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#D49A6A"/><stop offset=".45" stop-color="#F7D2B3"/><stop offset="1" stop-color="#D49A6A"/>
+</linearGradient></defs>
+<path d="M254 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-c)"/>
+<path d="M254 102h-10c0 14 8 20 14 20M306 102h10c0 14-8 20-14 20" fill="none" stroke="#D49A6A" stroke-width="4" stroke-linecap="round"/>
+<rect x="276" y="138" width="8" height="12" fill="#D49A6A"/>
+<rect x="264" y="150" width="32" height="10" rx="3" fill="url(#tro-c)"/>
+<rect x="258" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="254" y="94" width="52" height="6" rx="3" fill="#F7D2B3" opacity=".9"/></g><text x="280" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">C</text><text x="280" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Stars</text><text x="280" y="222" class="mono" font-size="13" fill="#D49A6A" text-anchor="middle" >4</text><rect x="232" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="232" y="236" width="32" height="5" rx="2.5" fill="#D49A6A"/><text x="280" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 10</text><g class="float" style="animation-delay:-1.2s"><title>Followers: 2, next rank at 5</title>
+<defs><linearGradient id="tro-b" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#D49A6A"/><stop offset=".45" stop-color="#F7D2B3"/><stop offset="1" stop-color="#D49A6A"/>
+</linearGradient></defs>
+<path d="M414 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-b)"/>
+<path d="M414 102h-10c0 14 8 20 14 20M466 102h10c0 14-8 20-14 20" fill="none" stroke="#D49A6A" stroke-width="4" stroke-linecap="round"/>
+<rect x="436" y="138" width="8" height="12" fill="#D49A6A"/>
+<rect x="424" y="150" width="32" height="10" rx="3" fill="url(#tro-b)"/>
+<rect x="418" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="414" y="94" width="52" height="6" rx="3" fill="#F7D2B3" opacity=".9"/></g><text x="440" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">B</text><text x="440" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Followers</text><text x="440" y="222" class="mono" font-size="13" fill="#D49A6A" text-anchor="middle" >2</text><rect x="392" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="392" y="236" width="3" height="5" rx="2.5" fill="#D49A6A"/><text x="440" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 5</text><g class="float" style="animation-delay:-1.8s"><title>Repositories: 19, next rank at 20</title>
+<defs><linearGradient id="tro-a" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#C9CCDA"/><stop offset=".45" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C9CCDA"/>
+</linearGradient></defs>
+<path d="M574 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-a)"/>
+<path d="M574 102h-10c0 14 8 20 14 20M626 102h10c0 14-8 20-14 20" fill="none" stroke="#C9CCDA" stroke-width="4" stroke-linecap="round"/>
+<rect x="596" y="138" width="8" height="12" fill="#C9CCDA"/>
+<rect x="584" y="150" width="32" height="10" rx="3" fill="url(#tro-a)"/>
+<rect x="578" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="574" y="94" width="52" height="6" rx="3" fill="#FFFFFF" opacity=".9"/></g><text x="600" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">A</text><text x="600" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Repositories</text><text x="600" y="222" class="mono" font-size="13" fill="#C9CCDA" text-anchor="middle" >19</text><rect x="552" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="552" y="236" width="86" height="5" rx="2.5" fill="#C9CCDA"/><text x="600" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 20</text><g class="float" style="animation-delay:-2.4s"><title>Pull Requests: 11, next rank at 20</title>
+<defs><linearGradient id="tro-b" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#D49A6A"/><stop offset=".45" stop-color="#F7D2B3"/><stop offset="1" stop-color="#D49A6A"/>
+</linearGradient></defs>
+<path d="M734 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-b)"/>
+<path d="M734 102h-10c0 14 8 20 14 20M786 102h10c0 14-8 20-14 20" fill="none" stroke="#D49A6A" stroke-width="4" stroke-linecap="round"/>
+<rect x="756" y="138" width="8" height="12" fill="#D49A6A"/>
+<rect x="744" y="150" width="32" height="10" rx="3" fill="url(#tro-b)"/>
+<rect x="738" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="734" y="94" width="52" height="6" rx="3" fill="#F7D2B3" opacity=".9"/></g><text x="760" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">B</text><text x="760" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Pull Requests</text><text x="760" y="222" class="mono" font-size="13" fill="#D49A6A" text-anchor="middle" >11</text><rect x="712" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="712" y="236" width="10" height="5" rx="2.5" fill="#D49A6A"/><text x="760" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 20</text><g class="float" style="animation-delay:-3.0s"><title>Issues: 2, next rank at 10</title>
+<defs><linearGradient id="tro-c" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#D49A6A"/><stop offset=".45" stop-color="#F7D2B3"/><stop offset="1" stop-color="#D49A6A"/>
+</linearGradient></defs>
+<path d="M894 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-c)"/>
+<path d="M894 102h-10c0 14 8 20 14 20M946 102h10c0 14-8 20-14 20" fill="none" stroke="#D49A6A" stroke-width="4" stroke-linecap="round"/>
+<rect x="916" y="138" width="8" height="12" fill="#D49A6A"/>
+<rect x="904" y="150" width="32" height="10" rx="3" fill="url(#tro-c)"/>
+<rect x="898" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="894" y="94" width="52" height="6" rx="3" fill="#F7D2B3" opacity=".9"/></g><text x="920" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">C</text><text x="920" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Issues</text><text x="920" y="222" class="mono" font-size="13" fill="#D49A6A" text-anchor="middle" >2</text><rect x="872" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="872" y="236" width="11" height="5" rx="2.5" fill="#D49A6A"/><text x="920" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 10</text><g class="float" style="animation-delay:-3.6s"><title>Experience: 1m, next rank at 6m</title>
+<defs><linearGradient id="tro-c" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#D49A6A"/><stop offset=".45" stop-color="#F7D2B3"/><stop offset="1" stop-color="#D49A6A"/>
+</linearGradient></defs>
+<path d="M1054 98h52v8c0 18-10 30-26 32-16-2-26-14-26-32z" fill="url(#tro-c)"/>
+<path d="M1054 102h-10c0 14 8 20 14 20M1106 102h10c0 14-8 20-14 20" fill="none" stroke="#D49A6A" stroke-width="4" stroke-linecap="round"/>
+<rect x="1076" y="138" width="8" height="12" fill="#D49A6A"/>
+<rect x="1064" y="150" width="32" height="10" rx="3" fill="url(#tro-c)"/>
+<rect x="1058" y="162" width="44" height="10" rx="3" fill="#0B0912" stroke="#3E3463"/>
+<rect x="1054" y="94" width="52" height="6" rx="3" fill="#F7D2B3" opacity=".9"/></g><text x="1080" y="128" text-anchor="middle" class="serif" font-size="20" font-weight="700" fill="#0B0912">C</text><text x="1080" y="200" class="sans" font-size="14" fill="#E8E6F0" text-anchor="middle" >Experience</text><text x="1080" y="222" class="mono" font-size="13" fill="#D49A6A" text-anchor="middle" >1m</text><rect x="1032" y="236" width="96" height="5" rx="2.5" fill="#2D2647"/><rect x="1032" y="236" width="3" height="5" rx="2.5" fill="#D49A6A"/><text x="1080" y="258" class="mono" font-size="11" fill="#9A93B4" text-anchor="middle" >next: 6m</text><text x="1152" y="54" class="mono" font-size="13" fill="#9A93B4" text-anchor="end" >7/7 unlocked</text>
+</svg>
