@@ -36,6 +36,8 @@ jobs:
       - run: python3 repo/scripts/activity_graph.py ${{ github.repository_owner }} dist/activity-graph.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # GitHub achievements card (scraped from the public profile; keeps the last card on failure)
+      - run: python3 repo/scripts/achievements.py ${{ github.repository_owner }} dist/achievements.svg
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
