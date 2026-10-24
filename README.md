@@ -15,6 +15,7 @@
   <img src="https://img.shields.io/badge/📜-Patent_co--inventor-3E3463?style=flat-square" alt="Patent co-inventor">
 </p>
 
+<img src="./assets/cards/robots.svg" width="100%" alt="Two cute robots: Byte, glossy white with a black visor and glowing arc eyes, floats and waves; Mochi, white and pink with headphones and wings, flaps and sends little hearts.">
 <img src="./assets/cards/pixel-cats.svg" width="100%" alt="The build crew: five pixel-art cats. A lavender cat in sunglasses and a pink cat stroll across saying git push and LGTM, a mint cat hops by saying konnichiwa, a yellow cat in glasses types on a laptop, and a blue cat naps.">
 
 <img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
