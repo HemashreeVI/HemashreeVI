@@ -15,6 +15,8 @@
   <img src="https://img.shields.io/badge/📜-Patent_co--inventor-3E3463?style=flat-square" alt="Patent co-inventor">
 </p>
 
+<img src="./assets/cards/pixel-cats.svg" width="100%" alt="The build crew: five pixel-art cats. A lavender cat in sunglasses and a pink cat stroll across saying git push and LGTM, a mint cat hops by saying konnichiwa, a yellow cat in glasses types on a laptop, and a blue cat naps.">
+
 <img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
 <img src="./assets/cards/about.svg" width="100%" alt="Animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
 <img src="./assets/cards/now.svg" width="100%" alt="Right now: building RootLens, AI-assisted root-cause analysis for microservices; building TriageIQ, real-time LLM ticket triage with Kafka and RAG; learning binary search trees in Java and solving LeetCode daily; starting Pit Wall, an F1 race replay built on real GPS data. Quick facts: co-inventor on a smart walker patent (filing in progress); went to Singapore for NUS Industry 4.0 and SuperAI 2025; ~97% accuracy on 13,000+ dental X-rays; speaks Tamil, English, Hindi and Japanese; Design Lead by night.">
