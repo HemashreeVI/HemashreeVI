@@ -83,7 +83,7 @@ RIGHT_NOW = [
 QUICK_FACTS = [
     ("Co-inventor", "on a smart walker patent (filing in progress)"),
     ("Singapore", "NUS Industry 4.0 and SuperAI 2025"),
-    ("~97% accuracy", "on 13,000+ dental X-rays"),
+    ("31 dental conditions", "detected on 13,000+ X-rays"),
     ("4 languages", "Tamil · English · Hindi · 日本語"),
     ("Design Lead by night", "posters, creatives and this README"),
 ]
@@ -98,7 +98,7 @@ JOURNEY = [
     ("AUG 2023", "VIT Chennai", ["B.Tech CSE", "Cyber Physical"]),
     ("MAY–JUL 2025", "Research intern", ["Pose estimation", "MMPose"]),
     ("JUN 2025", "Singapore", ["NUS Industry 4.0", "SuperAI · IBM Gen AI"]),
-    ("JUL–SEP 2025", "97% on X-rays", ["YOLOv9", "13,000+ images"]),
+    ("JUL–SEP 2025", "Dental X-ray AI", ["YOLOv9 · 31 classes", "13,000+ images"]),
     ("2025–26", "Patent co-inventor", ["Smart walker", "filing in progress"]),
     ("2026", "Backend & DevOps", ["RootLens", "TriageIQ"]),
     ("NOW", "Building 4 more", ["+ grinding LeetCode", "next stop: your team?"]),
@@ -110,9 +110,9 @@ PROJECTS = [
         "kicker": "01 · COMPUTER VISION · HEALTHCARE",
         "name": "Dental Malocclusion Detection",
         "pitch": "Reads dental X-rays and explains what it sees.",
-        "built": "YOLOv9 pipeline · Grad-CAM explanations · FDI tooth mapping · Gradio app · PDF reports",
-        "stats": [("31", "dental conditions detected"), ("~97%", "accuracy"), ("13,000+", "X-ray dataset")],
-        "tags": ["Python", "PyTorch", "OpenCV", "YOLOv9", "Grad-CAM", "Gradio"],
+        "built": "YOLOv9 pipeline · per-finding HiResCAM · FDI tooth chart · Gradio app · PDF reports",
+        "stats": [("31", "dental conditions detected"), ("38.7%", "test mAP@50"), ("13,000+", "X-ray dataset")],
+        "tags": ["Python", "PyTorch", "OpenCV", "YOLOv9", "HiResCAM", "Gradio"],
         "motif": "xray",
     },
     {
@@ -654,7 +654,7 @@ def motif(kind, x, y):
 <rect x="{x}" y="{y}" width="310" height="200" rx="16" fill="{C['bg0']}" stroke="{C['line2']}"/>
 {''.join(teeth)}
 <rect x="{x + 84}" y="{y + 34}" width="68" height="66" fill="none" stroke="{C['rose']}" stroke-width="1.5"/>
-{text(x + 84, y + 28, "malocclusion 0.97", 10, C['rose'], 'mono')}
+{text(x + 84, y + 28, "impacted 0.88", 10, C['rose'], 'mono')}
 <rect x="{x + 186}" y="{y + 104}" width="40" height="66" fill="none" stroke="{C['mint']}" stroke-width="1.5"/>
 {text(x + 160, y + 186, "FDI 36 · caries 0.91", 10, C['mint'], 'mono')}
 <rect x="{x}" y="{y}" width="310" height="3" fill="{L}" opacity=".8">
