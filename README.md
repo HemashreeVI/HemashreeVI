@@ -111,6 +111,10 @@
 <img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
 
 <p align="center">
+  <img src="./assets/portrait-dots.png" width="100%" alt="Hemashree drawn in thousands of coloured dots, with lavender-to-cyan orbit rings and HEMASHREE in pixel-block letters.">
+</p>
+
+<p align="center">
   <a href="https://www.linkedin.com/in/hema-shree-373622289"><img src="https://img.shields.io/badge/LinkedIn-hema--shree-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>
   <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Portfolio"></a>
   <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-7B61D9?style=for-the-badge&labelColor=14101F&logo=gmail&logoColor=E8E6F0" alt="Email"></a>
