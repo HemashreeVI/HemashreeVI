@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="term-t term-d">
+<title id="term-t">hemashree@vit-chennai</title>
+<desc id="term-d">Animated terminal. ./boot --profile prints HEMASHREE in pixel letters: Software Engineer, Computer Vision, Cyber-Physical Systems. neofetch lists: user: Hemashree; role: Software Engineer; edu: B.Tech CSE · VIT Chennai; focus: Vision · RL · Embedded · Security; langs: Python · Java · C++ · JavaScript; stack: PyTorch · FastAPI · Docker · Kafka; patent: smart walker (filing in progress); motto: build things that keep people safe; status: open to opportunities.</desc>
+<defs>
+ <linearGradient id="g" x1="282.0" y1="0" x2="918.0" y2="0" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#8FB8FF"/><stop offset=".35" stop-color="#B7A4F2"/><stop offset=".6" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/>
+ </linearGradient>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B7A4F2"/><stop offset=".5" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/></linearGradient>
+ <filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" opacity=".018"/></pattern>
+</defs>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:19px;fill:#E8E6F0}
+.u{fill:#8FE3C8} .p{fill:#9A93B4} .k{fill:#B7A4F2;font-weight:700} .ar{fill:#6E6690} .dim{fill:#9A93B4} .ok{fill:#8FE3C8}
+.lab{font-size:12px;letter-spacing:3px;fill:#6E6690}
+.net line{stroke:#B7A4F2;stroke-opacity:.16;stroke-width:1}
+.in{opacity:0;animation:in .45s ease-out forwards}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.type{animation:type 1s steps(18) forwards}
+@keyframes type{from{width:0}to{width:360px}}
+.cur{animation:blink 1s steps(1) infinite} @keyframes blink{50%{opacity:0}}
+.dot{animation:pulse 2s ease-in-out infinite} @keyframes pulse{50%{opacity:.35}}
+.flick{animation:flick 6s linear infinite} @keyframes flick{0%,96%,100%{opacity:1}97%{opacity:.7}98%{opacity:1}99%{opacity:.8}}
+</style>
+<rect x="6" y="6" width="1188" height="788" rx="22" fill="#0E0B17" stroke="url(#frame)" stroke-width="2"/>
+<rect x="7" y="7" width="1186" height="54" rx="21" fill="#17122A"/>
+<rect x="7" y="40" width="1186" height="21" fill="#17122A"/>
+<line x1="7" y1="61" x2="1193" y2="61" stroke="#2A2340"/>
+<circle cx="42" cy="34" r="8" fill="#FF6B6B"/><circle cx="70" cy="34" r="8" fill="#FFC048"/><circle cx="98" cy="34" r="8" fill="#4ED98B"/>
+<text x="600.0" y="40" text-anchor="middle" class="dim" style="font-size:16px">hemashree@vit-chennai: ~</text>
+<rect x="7" y="61" width="1186" height="732" fill="url(#scan)"/>
+
+<g class="in" style="animation-delay:.2s"><text x="44" y="110"><tspan class="u">hemashree@vit-chennai</tspan><tspan class="p">:~$</tspan>  ./boot --profile</text></g>
+<g class="in flick" style="animation-delay:.8s" transform="translate(282,134)">
+ <path d="M0 0h11v11h-11zM48 0h11v11h-11zM0 12h11v11h-11zM48 12h11v11h-11zM0 24h11v11h-11zM48 24h11v11h-11zM0 36h11v11h-11zM12 36h11v11h-11zM24 36h11v11h-11zM36 36h11v11h-11zM48 36h11v11h-11zM0 48h11v11h-11zM48 48h11v11h-11zM0 60h11v11h-11zM48 60h11v11h-11zM0 72h11v11h-11zM48 72h11v11h-11zM72 0h11v11h-11zM84 0h11v11h-11zM96 0h11v11h-11zM108 0h11v11h-11zM120 0h11v11h-11zM72 12h11v11h-11zM72 24h11v11h-11zM72 36h11v11h-11zM84 36h11v11h-11zM96 36h11v11h-11zM108 36h11v11h-11zM72 48h11v11h-11zM72 60h11v11h-11zM72 72h11v11h-11zM84 72h11v11h-11zM96 72h11v11h-11zM108 72h11v11h-11zM120 72h11v11h-11zM144 0h11v11h-11zM192 0h11v11h-11zM144 12h11v11h-11zM156 12h11v11h-11zM180 12h11v11h-11zM192 12h11v11h-11zM144 24h11v11h-11zM168 24h11v11h-11zM192 24h11v11h-11zM144 36h11v11h-11zM168 36h11v11h-11zM192 36h11v11h-11zM144 48h11v11h-11zM192 48h11v11h-11zM144 60h11v11h-11zM192 60h11v11h-11zM144 72h11v11h-11zM192 72h11v11h-11zM228 0h11v11h-11zM240 0h11v11h-11zM252 0h11v11h-11zM216 12h11v11h-11zM264 12h11v11h-11zM216 24h11v11h-11zM264 24h11v11h-11zM216 36h11v11h-11zM228 36h11v11h-11zM240 36h11v11h-11zM252 36h11v11h-11zM264 36h11v11h-11zM216 48h11v11h-11zM264 48h11v11h-11zM216 60h11v11h-11zM264 60h11v11h-11zM216 72h11v11h-11zM264 72h11v11h-11zM300 0h11v11h-11zM312 0h11v11h-11zM324 0h11v11h-11zM336 0h11v11h-11zM288 12h11v11h-11zM288 24h11v11h-11zM300 36h11v11h-11zM312 36h11v11h-11zM324 36h11v11h-11zM336 48h11v11h-11zM336 60h11v11h-11zM288 72h11v11h-11zM300 72h11v11h-11zM312 72h11v11h-11zM324 72h11v11h-11zM360 0h11v11h-11zM408 0h11v11h-11zM360 12h11v11h-11zM408 12h11v11h-11zM360 24h11v11h-11zM408 24h11v11h-11zM360 36h11v11h-11zM372 36h11v11h-11zM384 36h11v11h-11zM396 36h11v11h-11zM408 36h11v11h-11zM360 48h11v11h-11zM408 48h11v11h-11zM360 60h11v11h-11zM408 60h11v11h-11zM360 72h11v11h-11zM408 72h11v11h-11zM432 0h11v11h-11zM444 0h11v11h-11zM456 0h11v11h-11zM468 0h11v11h-11zM432 12h11v11h-11zM480 12h11v11h-11zM432 24h11v11h-11zM480 24h11v11h-11zM432 36h11v11h-11zM444 36h11v11h-11zM456 36h11v11h-11zM468 36h11v11h-11zM432 48h11v11h-11zM456 48h11v11h-11zM432 60h11v11h-11zM468 60h11v11h-11zM432 72h11v11h-11zM480 72h11v11h-11zM504 0h11v11h-11zM516 0h11v11h-11zM528 0h11v11h-11zM540 0h11v11h-11zM552 0h11v11h-11zM504 12h11v11h-11zM504 24h11v11h-11zM504 36h11v11h-11zM516 36h11v11h-11zM528 36h11v11h-11zM540 36h11v11h-11zM504 48h11v11h-11zM504 60h11v11h-11zM504 72h11v11h-11zM516 72h11v11h-11zM528 72h11v11h-11zM540 72h11v11h-11zM552 72h11v11h-11zM576 0h11v11h-11zM588 0h11v11h-11zM600 0h11v11h-11zM612 0h11v11h-11zM624 0h11v11h-11zM576 12h11v11h-11zM576 24h11v11h-11zM576 36h11v11h-11zM588 36h11v11h-11zM600 36h11v11h-11zM612 36h11v11h-11zM576 48h11v11h-11zM576 60h11v11h-11zM576 72h11v11h-11zM588 72h11v11h-11zM600 72h11v11h-11zM612 72h11v11h-11zM624 72h11v11h-11z" transform="translate(6,6)" fill="none" stroke="#B7A4F2" stroke-opacity=".45" stroke-width="1.2"/>
+ <path d="M0 0h11v11h-11zM48 0h11v11h-11zM0 12h11v11h-11zM48 12h11v11h-11zM0 24h11v11h-11zM48 24h11v11h-11zM0 36h11v11h-11zM12 36h11v11h-11zM24 36h11v11h-11zM36 36h11v11h-11zM48 36h11v11h-11zM0 48h11v11h-11zM48 48h11v11h-11zM0 60h11v11h-11zM48 60h11v11h-11zM0 72h11v11h-11zM48 72h11v11h-11zM72 0h11v11h-11zM84 0h11v11h-11zM96 0h11v11h-11zM108 0h11v11h-11zM120 0h11v11h-11zM72 12h11v11h-11zM72 24h11v11h-11zM72 36h11v11h-11zM84 36h11v11h-11zM96 36h11v11h-11zM108 36h11v11h-11zM72 48h11v11h-11zM72 60h11v11h-11zM72 72h11v11h-11zM84 72h11v11h-11zM96 72h11v11h-11zM108 72h11v11h-11zM120 72h11v11h-11zM144 0h11v11h-11zM192 0h11v11h-11zM144 12h11v11h-11zM156 12h11v11h-11zM180 12h11v11h-11zM192 12h11v11h-11zM144 24h11v11h-11zM168 24h11v11h-11zM192 24h11v11h-11zM144 36h11v11h-11zM168 36h11v11h-11zM192 36h11v11h-11zM144 48h11v11h-11zM192 48h11v11h-11zM144 60h11v11h-11zM192 60h11v11h-11zM144 72h11v11h-11zM192 72h11v11h-11zM228 0h11v11h-11zM240 0h11v11h-11zM252 0h11v11h-11zM216 12h11v11h-11zM264 12h11v11h-11zM216 24h11v11h-11zM264 24h11v11h-11zM216 36h11v11h-11zM228 36h11v11h-11zM240 36h11v11h-11zM252 36h11v11h-11zM264 36h11v11h-11zM216 48h11v11h-11zM264 48h11v11h-11zM216 60h11v11h-11zM264 60h11v11h-11zM216 72h11v11h-11zM264 72h11v11h-11zM300 0h11v11h-11zM312 0h11v11h-11zM324 0h11v11h-11zM336 0h11v11h-11zM288 12h11v11h-11zM288 24h11v11h-11zM300 36h11v11h-11zM312 36h11v11h-11zM324 36h11v11h-11zM336 48h11v11h-11zM336 60h11v11h-11zM288 72h11v11h-11zM300 72h11v11h-11zM312 72h11v11h-11zM324 72h11v11h-11zM360 0h11v11h-11zM408 0h11v11h-11zM360 12h11v11h-11zM408 12h11v11h-11zM360 24h11v11h-11zM408 24h11v11h-11zM360 36h11v11h-11zM372 36h11v11h-11zM384 36h11v11h-11zM396 36h11v11h-11zM408 36h11v11h-11zM360 48h11v11h-11zM408 48h11v11h-11zM360 60h11v11h-11zM408 60h11v11h-11zM360 72h11v11h-11zM408 72h11v11h-11zM432 0h11v11h-11zM444 0h11v11h-11zM456 0h11v11h-11zM468 0h11v11h-11zM432 12h11v11h-11zM480 12h11v11h-11zM432 24h11v11h-11zM480 24h11v11h-11zM432 36h11v11h-11zM444 36h11v11h-11zM456 36h11v11h-11zM468 36h11v11h-11zM432 48h11v11h-11zM456 48h11v11h-11zM432 60h11v11h-11zM468 60h11v11h-11zM432 72h11v11h-11zM480 72h11v11h-11zM504 0h11v11h-11zM516 0h11v11h-11zM528 0h11v11h-11zM540 0h11v11h-11zM552 0h11v11h-11zM504 12h11v11h-11zM504 24h11v11h-11zM504 36h11v11h-11zM516 36h11v11h-11zM528 36h11v11h-11zM540 36h11v11h-11zM504 48h11v11h-11zM504 60h11v11h-11zM504 72h11v11h-11zM516 72h11v11h-11zM528 72h11v11h-11zM540 72h11v11h-11zM552 72h11v11h-11zM576 0h11v11h-11zM588 0h11v11h-11zM600 0h11v11h-11zM612 0h11v11h-11zM624 0h11v11h-11zM576 12h11v11h-11zM576 24h11v11h-11zM576 36h11v11h-11zM588 36h11v11h-11zM600 36h11v11h-11zM612 36h11v11h-11zM576 48h11v11h-11zM576 60h11v11h-11zM576 72h11v11h-11zM588 72h11v11h-11zM600 72h11v11h-11zM612 72h11v11h-11zM624 72h11v11h-11z" fill="url(#g)" filter="url(#glow)"/>
+</g>
+<g class="in" style="animation-delay:1.3s"><text x="600.0" y="262" text-anchor="middle" class="dim">[ Software Engineer  ·  Computer Vision  ·  CPS ]</text></g>
+
+<g class="in" style="animation-delay:1.8s"><text x="44" y="324"><tspan class="u">hemashree@vit-chennai</tspan><tspan class="p">:~$</tspan>  neofetch</text></g>
+<g class="in" style="animation-delay:2.2s">
+<g class="net">
+<line x1="150" y1="409" x2="285" y2="384"/>
+<line x1="150" y1="409" x2="285" y2="446"/>
+<line x1="150" y1="409" x2="285" y2="508"/>
+<line x1="150" y1="409" x2="285" y2="570"/>
+<line x1="150" y1="409" x2="285" y2="632"/>
+<line x1="150" y1="508" x2="285" y2="384"/>
+<line x1="150" y1="508" x2="285" y2="446"/>
+<line x1="150" y1="508" x2="285" y2="508"/>
+<line x1="150" y1="508" x2="285" y2="570"/>
+<line x1="150" y1="508" x2="285" y2="632"/>
+<line x1="150" y1="607" x2="285" y2="384"/>
+<line x1="150" y1="607" x2="285" y2="446"/>
+<line x1="150" y1="607" x2="285" y2="508"/>
+<line x1="150" y1="607" x2="285" y2="570"/>
+<line x1="150" y1="607" x2="285" y2="632"/>
+<line x1="285" y1="384" x2="420" y2="384"/>
+<line x1="285" y1="384" x2="420" y2="446"/>
+<line x1="285" y1="384" x2="420" y2="508"/>
+<line x1="285" y1="384" x2="420" y2="570"/>
+<line x1="285" y1="384" x2="420" y2="632"/>
+<line x1="285" y1="446" x2="420" y2="384"/>
+<line x1="285" y1="446" x2="420" y2="446"/>
+<line x1="285" y1="446" x2="420" y2="508"/>
+<line x1="285" y1="446" x2="420" y2="570"/>
+<line x1="285" y1="446" x2="420" y2="632"/>
+<line x1="285" y1="508" x2="420" y2="384"/>
+<line x1="285" y1="508" x2="420" y2="446"/>
+<line x1="285" y1="508" x2="420" y2="508"/>
+<line x1="285" y1="508" x2="420" y2="570"/>
+<line x1="285" y1="508" x2="420" y2="632"/>
+<line x1="285" y1="570" x2="420" y2="384"/>
+<line x1="285" y1="570" x2="420" y2="446"/>
+<line x1="285" y1="570" x2="420" y2="508"/>
+<line x1="285" y1="570" x2="420" y2="570"/>
+<line x1="285" y1="570" x2="420" y2="632"/>
+<line x1="285" y1="632" x2="420" y2="384"/>
+<line x1="285" y1="632" x2="420" y2="446"/>
+<line x1="285" y1="632" x2="420" y2="508"/>
+<line x1="285" y1="632" x2="420" y2="570"/>
+<line x1="285" y1="632" x2="420" y2="632"/>
+<line x1="420" y1="384" x2="545" y2="446"/>
+<line x1="420" y1="384" x2="545" y2="570"/>
+<line x1="420" y1="446" x2="545" y2="446"/>
+<line x1="420" y1="446" x2="545" y2="570"/>
+<line x1="420" y1="508" x2="545" y2="446"/>
+<line x1="420" y1="508" x2="545" y2="570"/>
+<line x1="420" y1="570" x2="545" y2="446"/>
+<line x1="420" y1="570" x2="545" y2="570"/>
+<line x1="420" y1="632" x2="545" y2="446"/>
+<line x1="420" y1="632" x2="545" y2="570"/>
+</g>
+<circle r="3" fill="#7FE0E8"><animateMotion dur="2.4s" begin="0.00s" repeatCount="indefinite" path="M285 446L420 384"/></circle>
+<circle r="3" fill="#F0A8D0"><animateMotion dur="2.9s" begin="0.35s" repeatCount="indefinite" path="M150 508L285 632"/></circle>
+<circle r="3" fill="#B7A4F2"><animateMotion dur="3.4s" begin="0.70s" repeatCount="indefinite" path="M285 508L420 384"/></circle>
+<circle r="3" fill="#7FE0E8"><animateMotion dur="3.9s" begin="1.05s" repeatCount="indefinite" path="M420 384L545 570"/></circle>
+<circle r="3" fill="#F0A8D0"><animateMotion dur="2.4s" begin="1.40s" repeatCount="indefinite" path="M150 409L285 570"/></circle>
+<circle r="3" fill="#B7A4F2"><animateMotion dur="2.9s" begin="1.75s" repeatCount="indefinite" path="M150 409L285 632"/></circle>
+<circle r="3" fill="#7FE0E8"><animateMotion dur="3.4s" begin="2.10s" repeatCount="indefinite" path="M285 570L420 632"/></circle>
+<circle r="3" fill="#F0A8D0"><animateMotion dur="3.9s" begin="2.45s" repeatCount="indefinite" path="M150 508L285 446"/></circle>
+<circle r="3" fill="#B7A4F2"><animateMotion dur="2.4s" begin="2.80s" repeatCount="indefinite" path="M285 446L420 570"/></circle>
+<circle cx="150" cy="409" r="11" fill="#14101F" stroke="#7FE0E8" stroke-width="2.4"/><circle cx="150" cy="409" r="4.5" fill="#7FE0E8" opacity=".85"/>
+<circle cx="150" cy="508" r="11" fill="#14101F" stroke="#7FE0E8" stroke-width="2.4"/><circle cx="150" cy="508" r="4.5" fill="#7FE0E8" opacity=".85"/>
+<circle cx="150" cy="607" r="11" fill="#14101F" stroke="#7FE0E8" stroke-width="2.4"/><circle cx="150" cy="607" r="4.5" fill="#7FE0E8" opacity=".85"/>
+<circle cx="285" cy="384" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="285" cy="384" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="285" cy="446" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="285" cy="446" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="285" cy="508" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="285" cy="508" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="285" cy="570" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="285" cy="570" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="285" cy="632" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="285" cy="632" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="420" cy="384" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="420" cy="384" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="420" cy="446" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="420" cy="446" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="420" cy="508" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="420" cy="508" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="420" cy="570" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="420" cy="570" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="420" cy="632" r="11" fill="#14101F" stroke="#B7A4F2" stroke-width="2.4"/><circle cx="420" cy="632" r="4.5" fill="#B7A4F2" opacity=".85"/>
+<circle cx="545" cy="446" r="11" fill="#14101F" stroke="#F0A8D0" stroke-width="2.4"/><circle cx="545" cy="446" r="4.5" fill="#F0A8D0" opacity=".85"/>
+<circle cx="545" cy="570" r="11" fill="#14101F" stroke="#F0A8D0" stroke-width="2.4"/><circle cx="545" cy="570" r="4.5" fill="#F0A8D0" opacity=".85"/>
+<text x="150" y="674" class="lab" text-anchor="middle">sense</text>
+<text x="352" y="674" class="lab" text-anchor="middle">decide</text>
+<text x="545" y="674" class="lab" text-anchor="middle">protect</text>
+</g>
+
+<g class="in" style="animation-delay:2.40s"><text x="628" y="384"><tspan class="k">user</tspan></text><text x="738" y="384" class="ar">▸</text><text x="768" y="384">Hemashree</text></g>
+<g class="in" style="animation-delay:2.58s"><text x="628" y="420"><tspan class="k">role</tspan></text><text x="738" y="420" class="ar">▸</text><text x="768" y="420">Software Engineer</text></g>
+<g class="in" style="animation-delay:2.76s"><text x="628" y="456"><tspan class="k">edu</tspan></text><text x="738" y="456" class="ar">▸</text><text x="768" y="456">B.Tech CSE · VIT Chennai</text></g>
+<g class="in" style="animation-delay:2.94s"><text x="628" y="492"><tspan class="k">focus</tspan></text><text x="738" y="492" class="ar">▸</text><text x="768" y="492">Vision · RL · Embedded · Security</text></g>
+<g class="in" style="animation-delay:3.12s"><text x="628" y="528"><tspan class="k">langs</tspan></text><text x="738" y="528" class="ar">▸</text><text x="768" y="528">Python · Java · C++ · JavaScript</text></g>
+<g class="in" style="animation-delay:3.30s"><text x="628" y="564"><tspan class="k">stack</tspan></text><text x="738" y="564" class="ar">▸</text><text x="768" y="564">PyTorch · FastAPI · Docker · Kafka</text></g>
+<g class="in" style="animation-delay:3.48s"><text x="628" y="600"><tspan class="k">patent</tspan></text><text x="738" y="600" class="ar">▸</text><text x="768" y="600">smart walker (filing in progress)</text></g>
+<g class="in" style="animation-delay:3.66s"><text x="628" y="636"><tspan class="k">motto</tspan></text><text x="738" y="636" class="ar">▸</text><text x="768" y="636">build things that keep people safe</text></g>
+<g class="in" style="animation-delay:3.84s"><text x="628" y="672"><tspan class="k">status</tspan></text><text x="738" y="672" class="ar">▸</text><text x="768" y="672" class="ok">open to opportunities</text><circle class="dot" cx="1032" cy="666" r="7" fill="#4ED98B"/></g>
+<g class="in" style="animation-delay:4.04s"><rect x="628" y="696" width="44" height="22" rx="4" fill="#FF6B6B"/><rect x="678" y="696" width="44" height="22" rx="4" fill="#FFC048"/><rect x="728" y="696" width="44" height="22" rx="4" fill="#4ED98B"/><rect x="778" y="696" width="44" height="22" rx="4" fill="#7FE0E8"/><rect x="828" y="696" width="44" height="22" rx="4" fill="#B7A4F2"/><rect x="878" y="696" width="44" height="22" rx="4" fill="#F0A8D0"/><rect x="928" y="696" width="44" height="22" rx="4" fill="#E8E6F0"/><rect x="978" y="696" width="44" height="22" rx="4" fill="#2A2340"/></g>
+<g class="in" style="animation-delay:4.4s"><text x="44" y="758"><tspan class="u">hemashree@vit-chennai</tspan><tspan class="p">:~$</tspan>  echo "let's build something"</text>
+<rect class="cur" x="666" y="740" width="12" height="24" fill="#B7A4F2"/></g>
+</svg>

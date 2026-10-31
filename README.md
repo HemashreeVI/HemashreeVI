@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=B7A4F2&style=flat-square" alt="Profile views">
+  <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E8E6F0&color=7FE0E8&labelColor=14101F" alt="GitHub followers"></a>
+  <img src="https://img.shields.io/badge/STATUS-OPEN_TO_WORK-8FE3C8?style=flat-square&labelColor=14101F" alt="Status: open to work">
+</p>
+
+<a href="https://hemashreevi.github.io">
+  <img src="./assets/cards/terminal.svg" width="100%" alt="Animated terminal. ./boot --profile prints HEMASHREE in pixel letters: Software Engineer, Computer Vision, CPS. neofetch: role Software Engineer; B.Tech CSE at VIT Chennai; focus vision, RL, embedded, security; languages Python, Java, C++, JavaScript; stack PyTorch, FastAPI, Docker, Kafka; patent smart walker (filing in progress); status open to opportunities.">
+</a>
+
 <a href="https://hemashreevi.github.io">
   <img src="./assets/cards/hero.svg" width="100%" alt="HEMASHREE, Software Engineer. B.Tech Computer Science Engineering at VIT Chennai. Building systems that see, decide and keep people safe.">
 </a>
