@@ -65,7 +65,22 @@
   <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=14101F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
 </p>
 
-<img src="./assets/cards/title-chess.svg" width="100%" alt="Intermission: Your move, visitor. Play chess on my profile.">
+<img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
+<img src="./assets/cards/toolkit.svg" width="100%" alt="Languages: Python, Java, C++, JavaScript, HTML, CSS. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Embedded and IoT: Arduino, Raspberry Pi, ESP32, sensor fusion, LIDAR SLAM. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Data: SQLite, MySQL, Firebase, Qdrant. Security: intrusion detection, threat modeling, risk scoring. Tools: Git, GitHub, VS Code, Linux, Windows, PowerShell, Jupyter, Colab, Kaggle, Roboflow, Gradio. Spoken: Tamil, English, Hindi, Japanese.">
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,java,cpp,js,html,css,pytorch,tensorflow,opencv,arduino,raspberrypi,fastapi,flask,docker,kafka,prometheus,grafana,githubactions,sqlite,mysql,firebase,git,github,vscode,linux&theme=dark&perline=13" alt="Tech stack icons">
+</p>
+
+<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
+<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
+<a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
+<img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
+
+<img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
+<a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
+<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F" alt="Play now"></a></p>
+
+<p align="center"><b>♟️ Or play chess right here: you're White, a Stockfish bot plays Black.</b></p>
 
 <!-- CHESS:START -->
 
@@ -101,21 +116,6 @@
 </details>
 
 <!-- CHESS:END -->
-
-<img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
-<img src="./assets/cards/toolkit.svg" width="100%" alt="Languages: Python, Java, C++, JavaScript, HTML, CSS. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Embedded and IoT: Arduino, Raspberry Pi, ESP32, sensor fusion, LIDAR SLAM. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Data: SQLite, MySQL, Firebase, Qdrant. Security: intrusion detection, threat modeling, risk scoring. Tools: Git, GitHub, VS Code, Linux, Windows, PowerShell, Jupyter, Colab, Kaggle, Roboflow, Gradio. Spoken: Tamil, English, Hindi, Japanese.">
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=py,java,cpp,js,html,css,pytorch,tensorflow,opencv,arduino,raspberrypi,fastapi,flask,docker,kafka,prometheus,grafana,githubactions,sqlite,mysql,firebase,git,github,vscode,linux&theme=dark&perline=13" alt="Tech stack icons">
-</p>
-
-<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
-<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
-<a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
-<img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
-
-<img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
-<a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
-<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F" alt="Play now"></a></p>
 
 <img src="./assets/cards/title-commits.svg" width="100%" alt="09 Commit log: A year of building.">
 
