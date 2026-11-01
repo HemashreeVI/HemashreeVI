@@ -35,6 +35,11 @@ jobs:
       - run: python3 repo/scripts/trophies.py ${{ github.repository_owner }} dist/trophies.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Stats, top languages and streak cards (replaces the often-down public
+      # github-readme-stats and streak-stats services; keeps the last cards on failure)
+      - run: python3 repo/scripts/stats_cards.py ${{ github.repository_owner }} dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output

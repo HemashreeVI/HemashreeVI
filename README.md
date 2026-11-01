@@ -98,11 +98,11 @@
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/pacman-contribution-graph-dark.svg" width="100%" alt="Pac-Man eating the contribution graph">
 </p>
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=HemashreeVI&show_icons=true&hide_border=true&hide_rank=true&border_radius=16&bg_color=14101F&title_color=D9CEFF&text_color=C9C5D8&icon_color=B7A4F2" alt="GitHub stats">
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HemashreeVI&layout=compact&hide_border=true&border_radius=16&bg_color=14101F&title_color=D9CEFF&text_color=C9C5D8" alt="Top languages">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/stats.svg" width="49%" alt="GitHub stats: stars, commits, pull requests, issues and repositories contributed to. Updated automatically twice a day.">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/top-langs.svg" width="49%" alt="Most used languages across my repositories. Updated automatically twice a day.">
 </p>
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=HemashreeVI&hide_border=true&border_radius=16&background=14101F&ring=B7A4F2&fire=D9CEFF&currStreakLabel=D9CEFF&sideLabels=C9C5D8&currStreakNum=E8E6F0&sideNums=E8E6F0&dates=9A93B4&stroke=3E3463" width="70%" alt="GitHub streak">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/streak.svg" width="100%" alt="Contribution streak: total contributions, current streak and longest streak. Updated automatically twice a day.">
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/activity-graph.svg" width="100%" alt="Contribution activity over the last 31 days">
