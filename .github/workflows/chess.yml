@@ -1,0 +1,60 @@
+# Profile chess: a visitor's move arrives as an issue titled "chess|move|e2e4"
+# (or "chess|new"). This plays it, lets the bot reply, redraws the board and
+# README, then answers and closes the issue.
+name: Chess
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+# One move at a time, in the order they arrive.
+concurrency:
+  group: chess
+  cancel-in-progress: false
+
+jobs:
+  move:
+    if: startsWith(github.event.issue.title, 'chess|')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install python-chess and Stockfish
+        run: |
+          pip install --quiet chess
+          sudo apt-get install -y -qq stockfish > /dev/null || echo "no stockfish; the bot will play random moves"
+      - name: Play the move
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: python3 scripts/chess_game.py play
+      - name: Commit the new board
+        env:
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: |
+          git add chess/board.svg chess/state.json README.md
+          if git diff --cached --quiet; then
+            echo "Board unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet --message "chess: move by @${ISSUE_USER}"
+          for i in 1 2 3 4; do
+            git pull --rebase --quiet && git push --quiet && exit 0
+            sleep $((i * 3))
+          done
+          exit 1
+      - name: Reply and close the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          [ -s chess/comment.md ] || echo "Something went wrong playing that move. Please try again from the profile README. ♟️" > chess/comment.md
+          gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file chess/comment.md
+          gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY"

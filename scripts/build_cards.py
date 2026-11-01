@@ -896,6 +896,7 @@ def main():
         ("03", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
         ("04", "SELECTED WORK", "Things I've", "built.", "FEATURED PROJECTS", "work"),
         ("05", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
+        ("♟", "INTERMISSION", "Your move,", "visitor.", "PLAY CHESS ON MY PROFILE", "chess"),
         ("06", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
         ("07", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
         ("08", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),

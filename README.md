@@ -5,10 +5,6 @@
 </p>
 
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/cards/terminal.svg" width="100%" alt="Animated terminal. ./boot --profile prints HEMASHREE in pixel letters: Software Engineer, Computer Vision, CPS. neofetch: role Software Engineer; B.Tech CSE at VIT Chennai; focus vision, RL, embedded, security; languages Python, Java, C++, JavaScript; stack PyTorch, FastAPI, Docker, Kafka; patent smart walker (filing in progress); status open to opportunities.">
-</a>
-
-<a href="https://hemashreevi.github.io">
   <img src="./assets/cards/hero.svg" width="100%" alt="HEMASHREE, Software Engineer. B.Tech Computer Science Engineering at VIT Chennai. Building systems that see, decide and keep people safe.">
 </a>
 
@@ -68,6 +64,31 @@
   <img src="https://img.shields.io/badge/Pit_Wall-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="Pit Wall">
   <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=14101F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
 </p>
+
+<img src="./assets/cards/title-chess.svg" width="100%" alt="Intermission: Your move, visitor. Play chess on my profile.">
+
+<!-- CHESS:START -->
+
+<p align="center">
+  <img src="./chess/board.svg?v=1000" width="100%" alt="Profile chess board, game 1. You play White against a Stockfish bot.">
+</p>
+
+<p align="center"><b>Click a move to play it.</b> GitHub opens an issue; press <b>Create</b> and the bot replies in about a minute.</p>
+
+| Piece | From | Moves |
+| :-- | :-: | :-- |
+| ♙ Pawn | `a2` | [a3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ca2a3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [a4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ca2a4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `b2` | [b3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cb2b3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [b4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cb2b4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `c2` | [c3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cc2c3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [c4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cc2c4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `d2` | [d3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cd2d3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [d4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cd2d4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `e2` | [e3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ce2e3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [e4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ce2e4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `f2` | [f3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cf2f3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [f4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cf2f4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `g2` | [g3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cg2g3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [g4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cg2g4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♙ Pawn | `h2` | [h3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ch2h3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [h4](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Ch2h4&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♘ Knight | `b1` | [Na3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cb1a3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [Nc3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cb1c3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+| ♘ Knight | `g1` | [Nf3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cg1f3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) · [Nh3](https://github.com/HemashreeVI/HemashreeVI/issues/new?title=chess%7Cmove%7Cg1h3&body=Press%20%2A%2ACreate%2A%2A%20to%20play%20this%20move.%20The%20bot%20replies%20and%20the%20board%20updates%20in%20about%20a%20minute.) |
+
+<!-- CHESS:END -->
 
 <img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
 <img src="./assets/cards/toolkit.svg" width="100%" alt="Languages: Python, Java, C++, JavaScript, HTML, CSS. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Embedded and IoT: Arduino, Raspberry Pi, ESP32, sensor fusion, LIDAR SLAM. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Data: SQLite, MySQL, Firebase, Qdrant. Security: intrusion detection, threat modeling, risk scoring. Tools: Git, GitHub, VS Code, Linux, Windows, PowerShell, Jupyter, Colab, Kaggle, Roboflow, Gradio. Spoken: Tamil, English, Hindi, Japanese.">
