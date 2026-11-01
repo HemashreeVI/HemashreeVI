@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draws the README's trophy card (ranked GitHub stats) as an SVG.
 
-Runs in the snake workflow, which publishes dist/ to the `output` branch:
+Runs in the profile-cards workflow, which publishes dist/ to the `output` branch:
 
     GITHUB_TOKEN=... python3 scripts/trophies.py HemashreeVI dist/trophies.svg
 

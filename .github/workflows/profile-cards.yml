@@ -1,4 +1,4 @@
-name: Generate Snake, Pac-Man and activity graph
+name: Generate Pac-Man, activity graph and stat cards
 
 on:
   schedule:
@@ -15,15 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-snake-lavender.svg?palette=github-dark&color_snake=#D9CEFF&color_dots=#1C1630,#3E3463,#5B4A9A,#7B61D9,#B7A4F2
-      # Pac-Man eating the contribution grid. Same job as the snake: the deploy
-      # step below replaces the whole output branch with dist/.
+      # Pac-Man eating the contribution grid. The deploy step below replaces
+      # the whole output branch with dist/.
       - uses: abozanona/pacman-contribution-graph@v5.3.2
         with:
           github_user_name: ${{ github.repository_owner }}

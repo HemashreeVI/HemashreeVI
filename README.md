@@ -90,7 +90,9 @@
   <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/github-snake-lavender.svg" width="100%" alt="Contribution snake">
+  <img src="koi/koi.gif" width="256" alt="My git koi: a pixel-art koi drawn every night from my public GitHub activity. Languages colour it, contributions grow it, streaks mark it.">
+  <br>
+  <sub>🐟 My <a href="https://github.com/HemashreeVI/git-koi">git koi</a>, redrawn every night from the day's activity</sub>
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/pacman-contribution-graph-dark.svg" width="100%" alt="Pac-Man eating the contribution graph">
@@ -118,10 +120,6 @@
 </details>
 
 <img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
-
-<p align="center">
-  <img src="./assets/portrait-dots.png" width="100%" alt="Hemashree drawn in thousands of coloured dots, with lavender-to-cyan orbit rings and HEMASHREE in pixel-block letters.">
-</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/hema-shree-373622289"><img src="https://img.shields.io/badge/LinkedIn-hema--shree-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>

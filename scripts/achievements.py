@@ -5,7 +5,7 @@ GitHub has no API for achievements, so this reads the public achievements
 page, downloads each badge image and embeds it (images referenced from an
 SVG shown in a README are not loaded, so they must be inlined).
 
-Runs in the snake workflow, which publishes dist/ to the `output` branch:
+Runs in the profile-cards workflow, which publishes dist/ to the `output` branch:
 
     python3 scripts/achievements.py HemashreeVI dist/achievements.svg
 
