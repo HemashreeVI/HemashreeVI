@@ -1,20 +1,7 @@
 {
   "game": 1,
-  "moves": [
-    {
-      "uci": "e2e4",
-      "san": "e4",
-      "by": "HemashreeVI"
-    },
-    {
-      "uci": "g8f6",
-      "san": "Nf6",
-      "by": "bot"
-    }
-  ],
-  "players": {
-    "HemashreeVI": 1
-  },
+  "moves": [],
+  "players": {},
   "results": {
     "visitors": 0,
     "bot": 0,
