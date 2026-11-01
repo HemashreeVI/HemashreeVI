@@ -80,7 +80,8 @@
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
 <p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F" alt="Play now"></a></p>
 
-<p align="center"><b>♟️ Or play chess right here: you're White, a Stockfish bot plays Black.</b></p>
+<p align="center"><a href="https://hemashreevi.github.io/chess/"><img src="https://img.shields.io/badge/♞_Drag_%26_drop_chess-hemashreevi.github.io%2Fchess-E10600?style=for-the-badge&labelColor=14101F" alt="Play drag-and-drop chess on my portfolio"></a></p>
+<p align="center">Want to drag real pieces? Play the <a href="https://hemashreevi.github.io/chess/"><b>full chess board on my portfolio</b></a>.<br>Or play right here on GitHub: you're White, a Stockfish bot plays Black.</p>
 
 <!-- CHESS:START -->
 
@@ -90,7 +91,7 @@
 
 <a id="chess-moves"></a>
 
-<p align="center"><b>How to play:</b> the board above is a picture, so pieces can't be dragged. Pick your move from this list instead: click it, press <b>Create</b> on the page GitHub opens, and come back in about a minute to see your move and the bot's reply.</p>
+<p align="center"><b>How to play:</b> the board above is a picture, so pieces can't be dragged here (they can on <a href="https://hemashreevi.github.io/chess/">my portfolio</a>). Pick your move from this list instead: click it, press <b>Create</b> on the page GitHub opens, and come back in about a minute to see your move and the bot's reply.</p>
 
 | Piece | From | Moves |
 | :-- | :-: | :-- |

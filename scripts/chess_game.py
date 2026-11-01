@@ -251,7 +251,7 @@ def render_readme(s, b):
         groups = {}
         for mv in sorted(b.legal_moves, key=lambda m: (b.piece_type_at(m.from_square), chess.square_name(m.from_square), m.uci())):
             groups.setdefault(mv.from_square, []).append(mv)
-        out += ['<p align="center"><b>How to play:</b> the board above is a picture, so pieces can\'t be dragged. '
+        out += ['<p align="center"><b>How to play:</b> the board above is a picture, so pieces can\'t be dragged here (they can on <a href="https://hemashreevi.github.io/chess/">my portfolio</a>). '
                 'Pick your move from this list instead: click it, press <b>Create</b> on the page GitHub opens, '
                 'and come back in about a minute to see your move and the bot\'s reply.</p>', "",
                 "| Piece | From | Moves |", "| :-- | :-: | :-- |"]
