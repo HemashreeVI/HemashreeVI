@@ -241,7 +241,9 @@ def issue_link(title, body):
 
 def render_readme(s, b):
     v = len(s["moves"]) + s["game"] * 1000
-    out = [START, "", '<p align="center">', f'  <img src="./chess/board.svg?v={v}" width="100%" alt="Profile chess board, game {s["game"]}. You play White against a Stockfish bot.">', "</p>", ""]
+    out = [START, "", '<p align="center">',
+           f'  <a href="#chess-moves"><img src="./chess/board.svg?v={v}" width="100%" alt="Profile chess board, game {s["game"]}. You play White against a Stockfish bot. Pick your move from the list below the board."></a>',
+           "</p>", "", '<a id="chess-moves"></a>', ""]
     body = "Press **Create** to play this move. The bot replies and the board updates in about a minute."
     if b.is_game_over(claim_draw=True) or b.turn == chess.BLACK:
         out.append(f'<p align="center"><b>This game is over.</b> <a href="{issue_link("chess|new", body)}">♟️ Start a new game</a></p>')
@@ -249,7 +251,9 @@ def render_readme(s, b):
         groups = {}
         for mv in sorted(b.legal_moves, key=lambda m: (b.piece_type_at(m.from_square), chess.square_name(m.from_square), m.uci())):
             groups.setdefault(mv.from_square, []).append(mv)
-        out += ['<p align="center"><b>Click a move to play it.</b> GitHub opens an issue; press <b>Create</b> and the bot replies in about a minute.</p>', "",
+        out += ['<p align="center"><b>How to play:</b> the board above is a picture, so pieces can\'t be dragged. '
+                'Pick your move from this list instead: click it, press <b>Create</b> on the page GitHub opens, '
+                'and come back in about a minute to see your move and the bot\'s reply.</p>', "",
                 "| Piece | From | Moves |", "| :-- | :-: | :-- |"]
         for sq, mvs in groups.items():
             pt = b.piece_type_at(sq)

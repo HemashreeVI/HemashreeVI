@@ -85,10 +85,12 @@
 <!-- CHESS:START -->
 
 <p align="center">
-  <img src="./chess/board.svg?v=1000" width="100%" alt="Profile chess board, game 1. You play White against a Stockfish bot.">
+  <a href="#chess-moves"><img src="./chess/board.svg?v=1000" width="100%" alt="Profile chess board, game 1. You play White against a Stockfish bot. Pick your move from the list below the board."></a>
 </p>
 
-<p align="center"><b>Click a move to play it.</b> GitHub opens an issue; press <b>Create</b> and the bot replies in about a minute.</p>
+<a id="chess-moves"></a>
+
+<p align="center"><b>How to play:</b> the board above is a picture, so pieces can't be dragged. Pick your move from this list instead: click it, press <b>Create</b> on the page GitHub opens, and come back in about a minute to see your move and the bot's reply.</p>
 
 | Piece | From | Moves |
 | :-- | :-: | :-- |
