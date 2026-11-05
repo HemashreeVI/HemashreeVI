@@ -70,46 +70,71 @@
 
 <p align="center">
   <b>💻 Languages</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=py,java,cpp,js,mysql" height="40" alt="Languages icons">
+  <img src="./assets/icons/python.svg" width="48" height="48" alt="Python" title="Python">
+  <img src="./assets/icons/java.svg" width="48" height="48" alt="Java" title="Java">
+  <img src="./assets/icons/cpp.svg" width="48" height="48" alt="C++" title="C++">
+  <img src="./assets/icons/javascript.svg" width="48" height="48" alt="JavaScript" title="JavaScript">
+  <img src="./assets/icons/mysql.svg" width="48" height="48" alt="SQL" title="SQL">
 </p>
 <p align="center">
   <b>🎨 Frontend</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=html,css,js,threejs" height="40" alt="Frontend icons">
-  <img src="https://img.shields.io/badge/Gradio-3E3463?style=for-the-badge&logo=gradio&logoColor=E8E6F0&labelColor=14101F" alt="Gradio">
+  <img src="./assets/icons/html.svg" width="48" height="48" alt="HTML" title="HTML">
+  <img src="./assets/icons/css.svg" width="48" height="48" alt="CSS" title="CSS">
+  <img src="./assets/icons/javascript.svg" width="48" height="48" alt="JavaScript" title="JavaScript">
+  <img src="./assets/icons/threejs.svg" width="48" height="48" alt="Three.js" title="Three.js">
+  <img src="./assets/icons/gradio.svg" width="48" height="48" alt="Gradio" title="Gradio">
 </p>
 <p align="center">
   <b>⚙️ Backend &amp; DevOps</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=fastapi,flask,docker,kafka,prometheus,grafana,githubactions" height="40" alt="Backend and DevOps icons">
+  <img src="./assets/icons/fastapi.svg" width="48" height="48" alt="FastAPI" title="FastAPI">
+  <img src="./assets/icons/flask.svg" width="48" height="48" alt="Flask" title="Flask">
+  <img src="./assets/icons/docker.svg" width="48" height="48" alt="Docker" title="Docker">
+  <img src="./assets/icons/kafka.svg" width="48" height="48" alt="Kafka" title="Kafka">
+  <img src="./assets/icons/prometheus.svg" width="48" height="48" alt="Prometheus" title="Prometheus">
+  <img src="./assets/icons/grafana.svg" width="48" height="48" alt="Grafana" title="Grafana">
+  <img src="./assets/icons/githubactions.svg" width="48" height="48" alt="GitHub Actions" title="GitHub Actions">
 </p>
 <p align="center">
   <b>✨ Motion &amp; Design</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=css,threejs" height="40" alt="Motion and Design icons">
-  <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=E8E6F0&labelColor=14101F" alt="Canva">
-  <img src="https://img.shields.io/badge/SVG_Animation-3E3463?style=for-the-badge&logo=svg&logoColor=E8E6F0&labelColor=14101F" alt="SVG Animation">
+  <img src="./assets/icons/canva.svg" width="48" height="48" alt="Canva" title="Canva">
+  <img src="./assets/icons/css.svg" width="48" height="48" alt="CSS animations" title="CSS animations">
+  <img src="./assets/icons/svg.svg" width="48" height="48" alt="SVG animation" title="SVG animation">
+  <img src="./assets/icons/threejs.svg" width="48" height="48" alt="Three.js 3D" title="Three.js 3D">
 </p>
 <p align="center">
   <b>🧠 AI &amp; Vision</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=pytorch,tensorflow,opencv" height="40" alt="AI and Vision icons">
-  <img src="https://img.shields.io/badge/YOLOv9-3E3463?style=for-the-badge&labelColor=14101F" alt="YOLOv9">
-  <img src="https://img.shields.io/badge/Ollama-3E3463?style=for-the-badge&logo=ollama&logoColor=E8E6F0&labelColor=14101F" alt="Ollama">
-  <img src="https://img.shields.io/badge/IBM_watsonx-3E3463?style=for-the-badge&logo=ibm&logoColor=E8E6F0&labelColor=14101F" alt="IBM watsonx">
+  <img src="./assets/icons/pytorch.svg" width="48" height="48" alt="PyTorch" title="PyTorch">
+  <img src="./assets/icons/tensorflow.svg" width="48" height="48" alt="TensorFlow" title="TensorFlow">
+  <img src="./assets/icons/opencv.svg" width="48" height="48" alt="OpenCV" title="OpenCV">
+  <img src="./assets/icons/yolo.svg" width="48" height="48" alt="YOLO (Ultralytics)" title="YOLO (Ultralytics)">
+  <img src="./assets/icons/ollama.svg" width="48" height="48" alt="Ollama" title="Ollama">
+  <img src="./assets/icons/watsonx.svg" width="48" height="48" alt="IBM watsonx" title="IBM watsonx">
 </p>
 <p align="center">
   <b>🗄️ Data</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=sqlite,mysql,firebase" height="40" alt="Data icons">
-  <img src="https://img.shields.io/badge/Qdrant-3E3463?style=for-the-badge&logo=qdrant&logoColor=E8E6F0&labelColor=14101F" alt="Qdrant">
+  <img src="./assets/icons/sqlite.svg" width="48" height="48" alt="SQLite" title="SQLite">
+  <img src="./assets/icons/mysql.svg" width="48" height="48" alt="MySQL" title="MySQL">
+  <img src="./assets/icons/firebase.svg" width="48" height="48" alt="Firebase" title="Firebase">
+  <img src="./assets/icons/qdrant.svg" width="48" height="48" alt="Qdrant" title="Qdrant">
 </p>
 <p align="center">
   <b>🔌 Embedded &amp; IoT</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=arduino,raspberrypi" height="40" alt="Embedded and IoT icons">
-  <img src="https://img.shields.io/badge/ESP32-3E3463?style=for-the-badge&logo=espressif&logoColor=E8E6F0&labelColor=14101F" alt="ESP32">
+  <img src="./assets/icons/arduino.svg" width="48" height="48" alt="Arduino" title="Arduino">
+  <img src="./assets/icons/raspberrypi.svg" width="48" height="48" alt="Raspberry Pi" title="Raspberry Pi">
+  <img src="./assets/icons/esp32.svg" width="48" height="48" alt="ESP32" title="ESP32">
 </p>
 <p align="center">
   <b>🛠️ Tools</b><br>
-  <img src="https://skillicons.dev/icons?theme=dark&i=git,github,vscode,linux,windows,powershell" height="40" alt="Tools icons">
-  <img src="https://img.shields.io/badge/Jupyter-3E3463?style=for-the-badge&logo=jupyter&logoColor=E8E6F0&labelColor=14101F" alt="Jupyter">
-  <img src="https://img.shields.io/badge/Kaggle-3E3463?style=for-the-badge&logo=kaggle&logoColor=E8E6F0&labelColor=14101F" alt="Kaggle">
-  <img src="https://img.shields.io/badge/Roboflow-3E3463?style=for-the-badge&logo=roboflow&logoColor=E8E6F0&labelColor=14101F" alt="Roboflow">
+  <img src="./assets/icons/git.svg" width="48" height="48" alt="Git" title="Git">
+  <img src="./assets/icons/github.svg" width="48" height="48" alt="GitHub" title="GitHub">
+  <img src="./assets/icons/vscode.svg" width="48" height="48" alt="VS Code" title="VS Code">
+  <img src="./assets/icons/linux.svg" width="48" height="48" alt="Linux" title="Linux">
+  <img src="./assets/icons/windows.svg" width="48" height="48" alt="Windows" title="Windows">
+  <img src="./assets/icons/powershell.svg" width="48" height="48" alt="PowerShell" title="PowerShell">
+  <img src="./assets/icons/jupyter.svg" width="48" height="48" alt="Jupyter" title="Jupyter">
+  <img src="./assets/icons/colab.svg" width="48" height="48" alt="Google Colab" title="Google Colab">
+  <img src="./assets/icons/kaggle.svg" width="48" height="48" alt="Kaggle" title="Kaggle">
+  <img src="./assets/icons/roboflow.svg" width="48" height="48" alt="Roboflow" title="Roboflow">
 </p>
 
 <img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
