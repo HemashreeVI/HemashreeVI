@@ -66,9 +66,50 @@
 </p>
 
 <img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
-<img src="./assets/cards/toolkit.svg" width="100%" alt="Languages: Python, Java, C++, JavaScript, HTML, CSS. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Embedded and IoT: Arduino, Raspberry Pi, ESP32, sensor fusion, LIDAR SLAM. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Data: SQLite, MySQL, Firebase, Qdrant. Security: intrusion detection, threat modeling, risk scoring. Tools: Git, GitHub, VS Code, Linux, Windows, PowerShell, Jupyter, Colab, Kaggle, Roboflow, Gradio. Spoken: Tamil, English, Hindi, Japanese.">
+<img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: SQLite, MySQL, Firebase, Qdrant. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
+
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=py,java,cpp,js,html,css,pytorch,tensorflow,opencv,arduino,raspberrypi,fastapi,flask,docker,kafka,prometheus,grafana,githubactions,sqlite,mysql,firebase,git,github,vscode,linux&theme=dark&perline=13" alt="Tech stack icons">
+  <b>💻 Languages</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=py,java,cpp,js,mysql" height="40" alt="Languages icons">
+</p>
+<p align="center">
+  <b>🎨 Frontend</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=html,css,js,threejs" height="40" alt="Frontend icons">
+  <img src="https://img.shields.io/badge/Gradio-3E3463?style=for-the-badge&logo=gradio&logoColor=E8E6F0&labelColor=14101F" alt="Gradio">
+</p>
+<p align="center">
+  <b>⚙️ Backend &amp; DevOps</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=fastapi,flask,docker,kafka,prometheus,grafana,githubactions" height="40" alt="Backend and DevOps icons">
+</p>
+<p align="center">
+  <b>✨ Motion &amp; Design</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=css,threejs" height="40" alt="Motion and Design icons">
+  <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=E8E6F0&labelColor=14101F" alt="Canva">
+  <img src="https://img.shields.io/badge/SVG_Animation-3E3463?style=for-the-badge&logo=svg&logoColor=E8E6F0&labelColor=14101F" alt="SVG Animation">
+</p>
+<p align="center">
+  <b>🧠 AI &amp; Vision</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=pytorch,tensorflow,opencv" height="40" alt="AI and Vision icons">
+  <img src="https://img.shields.io/badge/YOLOv9-3E3463?style=for-the-badge&labelColor=14101F" alt="YOLOv9">
+  <img src="https://img.shields.io/badge/Ollama-3E3463?style=for-the-badge&logo=ollama&logoColor=E8E6F0&labelColor=14101F" alt="Ollama">
+  <img src="https://img.shields.io/badge/IBM_watsonx-3E3463?style=for-the-badge&logo=ibm&logoColor=E8E6F0&labelColor=14101F" alt="IBM watsonx">
+</p>
+<p align="center">
+  <b>🗄️ Data</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=sqlite,mysql,firebase" height="40" alt="Data icons">
+  <img src="https://img.shields.io/badge/Qdrant-3E3463?style=for-the-badge&logo=qdrant&logoColor=E8E6F0&labelColor=14101F" alt="Qdrant">
+</p>
+<p align="center">
+  <b>🔌 Embedded &amp; IoT</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=arduino,raspberrypi" height="40" alt="Embedded and IoT icons">
+  <img src="https://img.shields.io/badge/ESP32-3E3463?style=for-the-badge&logo=espressif&logoColor=E8E6F0&labelColor=14101F" alt="ESP32">
+</p>
+<p align="center">
+  <b>🛠️ Tools</b><br>
+  <img src="https://skillicons.dev/icons?theme=dark&i=git,github,vscode,linux,windows,powershell" height="40" alt="Tools icons">
+  <img src="https://img.shields.io/badge/Jupyter-3E3463?style=for-the-badge&logo=jupyter&logoColor=E8E6F0&labelColor=14101F" alt="Jupyter">
+  <img src="https://img.shields.io/badge/Kaggle-3E3463?style=for-the-badge&logo=kaggle&logoColor=E8E6F0&labelColor=14101F" alt="Kaggle">
+  <img src="https://img.shields.io/badge/Roboflow-3E3463?style=for-the-badge&logo=roboflow&logoColor=E8E6F0&labelColor=14101F" alt="Roboflow">
 </p>
 
 <img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
