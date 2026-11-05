@@ -47,6 +47,17 @@
 <a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="TriageIQ repository"></a></p>
 
+<a href="https://hemashreevi.github.io/GitLoom/"><img src="./assets/cards/project-gitloom.svg" width="100%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
+<p align="center">
+  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="./assets/demos/gitloom-preview.gif" width="80%" alt="GitLoom demo: the landing page loom weaves a row for every letter typed, then the studio switches between templates. Click to watch the full 1-minute demo with narration."></a>
+  <br><sub>▶ Click the preview to watch the 1-minute demo</sub>
+</p>
+<p align="center">
+  <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Try GitLoom live"></a>
+  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-1_min_demo-F0A8D0?style=for-the-badge&labelColor=14101F&logo=youtube&logoColor=E8E6F0" alt="Watch the GitLoom demo"></a>
+  <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="GitLoom repository"></a>
+</p>
+
 <img src="./assets/cards/project-walker.svg" width="100%" alt="Smart Walker (patent, filing in progress): co-invented IoT walker that predicts fall risk using dual IMUs and load cells with sensor fusion; runs standalone on Arduino for under USD 30.">
 
 <a href="https://github.com/HemashreeVI/Rover"><img src="./assets/cards/project-rover.svg" width="100%" alt="RL Rover for Hazard Detection: a simulated rover that learns to explore a disaster area and discovers hazards through perception, using tabular Q-learning, a lightweight CNN and a 4-way reward ablation."></a>

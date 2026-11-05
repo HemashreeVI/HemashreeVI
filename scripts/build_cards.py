@@ -136,8 +136,18 @@ PROJECTS = [
         "motif": "stream",
     },
     {
+        "slug": "gitloom",
+        "kicker": "04 · WEB APP · LIVE",
+        "name": "GitLoom",
+        "pitch": "Your GitHub, woven into a portfolio website.",
+        "built": "Reads repos, languages and activity in the browser · live studio · one index.html to host free",
+        "stats": [("10", "templates, same data"), ("1", "HTML file to host"), ("0", "servers or sign-ups")],
+        "tags": ["JavaScript", "HTML", "CSS", "GitHub REST API", "GitHub Pages"],
+        "motif": "loom",
+    },
+    {
         "slug": "dental",
-        "kicker": "04 · COMPUTER VISION · HEALTHCARE",
+        "kicker": "05 · COMPUTER VISION · HEALTHCARE",
         "name": "Dental Malocclusion Detection",
         "pitch": "Reads dental X-rays and explains what it sees.",
         "built": "YOLOv9 pipeline · per-finding HiResCAM · FDI tooth chart · Gradio app · PDF reports",
@@ -147,7 +157,7 @@ PROJECTS = [
     },
     {
         "slug": "walker",
-        "kicker": "05 · IoT · PATENT (FILING IN PROGRESS)",
+        "kicker": "06 · IoT · PATENT (FILING IN PROGRESS)",
         "name": "Smart Walker",
         "pitch": "A walker that predicts a fall before it happens.",
         "built": "Dual IMUs + load cells · sensor fusion · fall-risk prediction · standalone on Arduino",
@@ -157,7 +167,7 @@ PROJECTS = [
     },
     {
         "slug": "rover",
-        "kicker": "06 · REINFORCEMENT LEARNING",
+        "kicker": "07 · REINFORCEMENT LEARNING",
         "name": "RL Rover for Hazard Detection",
         "pitch": "A rover that learns to explore a disaster zone.",
         "built": "Simulated rover discovers hazards through perception · tabular Q-learning + lightweight CNN",
@@ -167,7 +177,7 @@ PROJECTS = [
     },
     {
         "slug": "grocer",
-        "kicker": "07 · MULTIMODAL · RETAIL",
+        "kicker": "08 · MULTIMODAL · RETAIL",
         "name": "Smart Grocer",
         "pitch": "Knows which mango will spoil first.",
         "built": "Fresh-produce spoilage detection · item localization · expiry-aware retail inventory",
@@ -716,6 +726,17 @@ def motif(kind, x, y):
             s.append(f'<circle r="5" fill="{S}"><animateMotion dur="2s" begin="{i * 0.15}s" repeatCount="indefinite" path="M{tx + dx} {ty + dy}L{tx} {ty}"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;.8;1" dur="2s" begin="{i * 0.15}s" repeatCount="indefinite"/></circle>')
         s.append(text(x + 18, y + 186, "1 × 201 Created · 199 × 409", 10, C['mint'], 'mono'))
         return "".join(s)
+    if kind == "loom":
+        s = [f'<rect x="{x}" y="{y}" width="310" height="200" rx="16" fill="{C["bg0"]}" stroke="{C["line2"]}"/>',
+             text(x + 18, y + 26, "github.com/you", 10, C['muted'], 'mono')]
+        cols = [L, C['rose'], C['mint'], V, S]
+        for r in range(6):
+            for k in range(9):
+                over = (r + k) % 2 == 0
+                s.append(f'<rect x="{x + 22 + k * 30}" y="{y + 42 + r * 20}" width="{24 if over else 10}" height="12" rx="3" fill="{cols[(r + k) % len(cols)]}" fill-opacity="{.85 if over else .25}"/>')
+        s.append(f'<rect x="{x + 22}" y="{y + 166}" width="0" height="12" rx="3" fill="{C["lav"]}"><animate attributeName="width" values="0;266;266" keyTimes="0;.7;1" dur="2.6s" repeatCount="indefinite"/></rect>')
+        s.append(text(x + 18, y + 192, "→ yourname.github.io", 10, C['mint'], 'mono'))
+        return "".join(s)
     if kind == "wave":
         pts = " ".join(f"{x + 20 + i * 2.7:.1f},{y + 90 + 22 * math.sin(i / 6) * (1 + (i > 70) * 0.9):.1f}" for i in range(100))
         return f"""
@@ -788,7 +809,7 @@ def build_more():
         x = 32 + k * 576
         parts.append(f"""
 <rect x="{x}" y="26" width="560" height="168" rx="18" fill="{C['panel']}" stroke="{C['line2']}"/>
-{text(x + 24, 54, f"0{8 + k} · MORE", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
+{text(x + 24, 54, f"{9 + k:02d} · MORE", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
 {text(x + 24, 88, name, 24, C['silver'], 'serif')}
 {''.join(text(x + 24, 116 + i * 19, ln, 13, C['muted'], 'sans') for i, ln in enumerate(wrap(what, 72)[:2]))}
 {chips(x + 24, 152, tags, size=10.5)}""")
