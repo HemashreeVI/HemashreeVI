@@ -185,14 +185,16 @@ BUILDING = [
 ]
 
 TOOLKIT = [
-    ("01 LANGUAGES", ["Python · Java", "C++ · JavaScript", "HTML · CSS"]),
-    ("02 AI & VISION", ["PyTorch · TensorFlow", "OpenCV · YOLOv8/v9", "Grad-CAM · MMPose", "Q-learning · RAG · Ollama", "IBM watsonx"]),
-    ("03 EMBEDDED & IoT", ["Arduino · Raspberry Pi", "ESP32", "Sensor fusion", "LIDAR SLAM"]),
-    ("04 BACKEND & DEVOPS", ["FastAPI · Flask", "Docker · Kafka", "Prometheus · Grafana", "GitHub Actions"]),
-    ("05 DATA", ["SQLite · MySQL", "Firebase", "Qdrant"]),
-    ("06 SECURITY", ["Intrusion detection", "Threat modeling", "Risk scoring"]),
-    ("07 TOOLS", ["Git · GitHub · VS Code", "Linux · Windows · PowerShell", "Jupyter · Colab · Kaggle", "Roboflow · Gradio"]),
-    ("08 SPOKEN", ["Tamil · English", "Hindi", "日本語"]),
+    ("01 LANGUAGES", ["Python · Java", "C++ · JavaScript", "SQL"]),
+    ("02 FRONTEND", ["HTML · CSS", "JavaScript", "Three.js · Canvas", "Gradio"]),
+    ("03 BACKEND & DEVOPS", ["FastAPI · Flask", "Docker · Kafka", "Prometheus · Grafana", "GitHub Actions"]),
+    ("04 MOTION & DESIGN", ["Canva", "CSS keyframes", "SVG animation", "Three.js 3D", "Poster design"]),
+    ("05 AI & VISION", ["PyTorch", "TensorFlow · OpenCV", "YOLOv8/v9 · Grad-CAM", "MMPose · Q-learning", "RAG · Ollama · watsonx"]),
+    ("06 DATA", ["SQLite · MySQL", "Firebase", "Qdrant"]),
+    ("07 EMBEDDED & IoT", ["Arduino · ESP32", "Raspberry Pi", "Sensor fusion", "LIDAR SLAM"]),
+    ("08 SECURITY", ["Threat modeling", "Intrusion detection", "Risk scoring"]),
+    ("09 TOOLS", ["Git · GitHub", "VS Code · Linux", "Jupyter · Colab", "Kaggle · Roboflow", "Windows · PowerShell"]),
+    ("10 SPOKEN", ["Tamil · English", "Hindi", "日本語"]),
 ]
 
 MILESTONES = [
@@ -799,12 +801,13 @@ def build_building():
 def build_toolkit():
     W, H, u = 1200, 544, "tool"
     parts = [frame(W, H, u, (0.5, 0.5))]
-    cw, ch = 271, 232
+    cols = 5
+    cw, ch = (W - 64 - (cols - 1) * 12) // cols, 232
     for k, (lab, items) in enumerate(TOOLKIT):
-        col, row = k % 4, k // 4
-        x, y = 32 + col * (cw + 13), 32 + row * (ch + 16)
+        col, row = k % cols, k // cols
+        x, y = 32 + col * (cw + 12), 32 + row * (ch + 16)
         parts.append(f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="16" fill="{C["panel"]}" stroke="{C["line2"]}"/>')
-        parts.append(text(x + 20, y + 32, lab, 11, C['lav'], 'mono', 'start', 'letter-spacing="2.5"'))
+        parts.append(text(x + 20, y + 32, lab, 11, C['lav'], 'mono', 'start', 'letter-spacing="1.5"'))
         sizes = [24, 19, 17, 15, 14]
         yy = y + 74
         for i, it in enumerate(items):
