@@ -25,23 +25,26 @@
 
 <img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
 <img src="./assets/cards/about.svg" width="100%" alt="Animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
-<img src="./assets/cards/now.svg" width="100%" alt="Right now: building RootLens, AI-assisted root-cause analysis for microservices; building TriageIQ, real-time LLM ticket triage with Kafka and RAG; learning binary search trees in Java and solving LeetCode daily; starting Pit Wall, an F1 race replay built on real GPS data. Quick facts: co-inventor on a smart walker patent (filing in progress); went to Singapore for NUS Industry 4.0 and SuperAI 2025; 31 dental conditions detected on 13,000+ X-rays; speaks Tamil, English, Hindi and Japanese; Design Lead by night.">
+<img src="./assets/cards/now.svg" width="100%" alt="Right now: shipped 3 deep dives on SeatLock, RootLens and TriageIQ; backend and DevOps, concurrency and incident response; learning binary search trees in Java and solving LeetCode daily; starting Pit Wall, an F1 race replay built on real GPS data. Quick facts: co-inventor on a smart walker patent (filing in progress); went to Singapore for NUS Industry 4.0 and SuperAI 2025; 31 dental conditions detected on 13,000+ X-rays; speaks Tamil, English, Hindi and Japanese; Design Lead by night.">
 
 <img src="./assets/cards/title-think.svg" width="100%" alt="02 Philosophy: How I think about problems.">
 <img src="./assets/cards/pipeline.svg" width="100%" alt="Sense, Decide, Protect: a closed feedback loop. Sense with X-rays, IMUs, load cells, pose estimation and sensors. Decide with YOLOv9, Q-learning, CNNs, risk scoring and fusion. Protect with fall alerts, hazard maps and automated IDS responses.">
 
 <img src="./assets/cards/title-journey.svg" width="100%" alt="03 Journey: The road so far.">
-<img src="./assets/cards/journey.svg" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026; now building 4 more projects.">
+<img src="./assets/cards/journey.svg" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
 
 <img src="./assets/cards/title-work.svg" width="100%" alt="04 Selected work: Things I've built.">
 
 <a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions on 13,000+ X-rays (test mAP@50 38.7%), with per-finding HiResCAM explanations, an FDI tooth chart, a Gradio app and PDF reports."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Dental Malocclusion Detection repository"></a></p>
 
-<a href="https://github.com/HemashreeVI/rootlens"><img src="./assets/cards/project-rootlens.svg" width="100%" alt="RootLens: AI-assisted reliability platform that detects failures across FastAPI microservices, gathers evidence, ranks root causes and records every incident, with chaos testing, CI and versioned deploys."></a>
+<a href="https://github.com/HemashreeVI/SeatLock"><img src="./assets/cards/project-seatlock.svg" width="100%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/SeatLock"><img src="https://img.shields.io/badge/Repository-SeatLock-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="SeatLock repository"></a></p>
+
+<a href="https://github.com/HemashreeVI/rootlens"><img src="./assets/cards/project-rootlens.svg" width="100%" alt="RootLens: an incident-response lab that detects a failing microservice, investigates the cause, decides on a fix within strict limits, rolls back the bad release and verifies recovery, with an audit log of every decision. A real incident went from open to resolved in under 2 minutes; 118 unit tests."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/rootlens"><img src="https://img.shields.io/badge/Repository-RootLens-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="RootLens repository"></a></p>
 
-<a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: tickets stream through Kafka, a local LLM classifies and prioritises them, and RAG over past tickets drafts the reply, all on a live dashboard."></a>
+<a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="TriageIQ repository"></a></p>
 
 <img src="./assets/cards/project-walker.svg" width="100%" alt="Smart Walker (patent, filing in progress): co-invented IoT walker that predicts fall risk using dual IMUs and load cells with sensor fusion; runs standalone on Arduino for under USD 30.">
@@ -66,7 +69,7 @@
 </p>
 
 <img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
-<img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: FastAPI, Flask, Docker, Kafka, Prometheus, Grafana, GitHub Actions. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: SQLite, MySQL, Firebase, Qdrant. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
+<img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: Spring Boot, FastAPI, Flask, Docker, Kafka, Redis, Prometheus, Grafana, GitHub Actions, k6. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: PostgreSQL, SQLite, MySQL, Redis, Qdrant, Firebase. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
 
 <p align="center">
   <b>💻 Languages</b><br>
@@ -86,10 +89,12 @@
 </p>
 <p align="center">
   <b>⚙️ Backend &amp; DevOps</b><br>
+  <img src="./assets/icons/springboot.svg" width="48" height="48" alt="Spring Boot" title="Spring Boot">
   <img src="./assets/icons/fastapi.svg" width="48" height="48" alt="FastAPI" title="FastAPI">
   <img src="./assets/icons/flask.svg" width="48" height="48" alt="Flask" title="Flask">
   <img src="./assets/icons/docker.svg" width="48" height="48" alt="Docker" title="Docker">
   <img src="./assets/icons/kafka.svg" width="48" height="48" alt="Kafka" title="Kafka">
+  <img src="./assets/icons/redis.svg" width="48" height="48" alt="Redis" title="Redis">
   <img src="./assets/icons/prometheus.svg" width="48" height="48" alt="Prometheus" title="Prometheus">
   <img src="./assets/icons/grafana.svg" width="48" height="48" alt="Grafana" title="Grafana">
   <img src="./assets/icons/githubactions.svg" width="48" height="48" alt="GitHub Actions" title="GitHub Actions">
@@ -112,6 +117,7 @@
 </p>
 <p align="center">
   <b>🗄️ Data</b><br>
+  <img src="./assets/icons/postgresql.svg" width="48" height="48" alt="PostgreSQL" title="PostgreSQL">
   <img src="./assets/icons/sqlite.svg" width="48" height="48" alt="SQLite" title="SQLite">
   <img src="./assets/icons/mysql.svg" width="48" height="48" alt="MySQL" title="MySQL">
   <img src="./assets/icons/firebase.svg" width="48" height="48" alt="Firebase" title="Firebase">

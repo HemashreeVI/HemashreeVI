@@ -56,14 +56,14 @@
 <ellipse cx="600" cy="66" rx="420" ry="154" fill="url(#more-glowA)"/>
 <ellipse cx="600" cy="154" rx="300" ry="110" fill="url(#more-glowB)"/>
 <rect x="32" y="26" width="560" height="168" rx="18" fill="#17122A" stroke="#3E3463"/>
-<text x="56" y="54" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">07 · MORE</text>
+<text x="56" y="54" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">08 · MORE</text>
 <text x="56" y="88" class="serif" font-size="24" fill="#E8E6F0" text-anchor="start" >Intrusion Detection &amp; Threat Modeling</text>
 <text x="56" y="116" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >Behavioral IDS for a simulated bank: risk scoring across login, access</text><text x="56" y="135" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >and transactions, automated responses, audit logs.</text>
 <rect x="56" y="152" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="67" y="168" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Python</text>
 <rect x="124.43" y="152" width="41" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="135.43" y="168" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >IDS</text>
 <rect x="173.645" y="152" width="118" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="184.645" y="168" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Threat Modeling</text>
 <rect x="608" y="26" width="560" height="168" rx="18" fill="#17122A" stroke="#3E3463"/>
-<text x="632" y="54" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">08 · MORE</text>
+<text x="632" y="54" class="mono" font-size="11" fill="#B7A4F2" text-anchor="start" letter-spacing="3">09 · MORE</text>
 <text x="632" y="88" class="serif" font-size="24" fill="#E8E6F0" text-anchor="start" >Jarvis</text>
 <text x="632" y="116" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >Offline, privacy-friendly voice assistant: opens apps, system controls,</text><text x="632" y="135" class="sans" font-size="13" fill="#9A93B4" text-anchor="start" >battery/status and stock notifications.</text>
 <rect x="632" y="152" width="60" height="24" rx="12" fill="#17122A" stroke="#3E3463"/><text x="643" y="168" class="mono" font-size="10.5" fill="#C9C5D8" text-anchor="start" >Python</text>

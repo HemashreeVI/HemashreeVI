@@ -74,8 +74,8 @@ ABOUT_SIDE = [
 ]
 
 RIGHT_NOW = [
-    ("RootLens", "AI-assisted root-cause analysis for microservices"),
-    ("TriageIQ", "real-time LLM ticket triage with Kafka and RAG"),
+    ("3 deep dives", "SeatLock · RootLens · TriageIQ"),
+    ("Backend & DevOps", "concurrency and incident response"),
     ("Binary search trees in Java", "and solving LeetCode daily"),
     ("Pit Wall", "an F1 race replay built on real GPS data"),
 ]
@@ -100,14 +100,44 @@ JOURNEY = [
     ("JUN 2025", "Singapore", ["NUS Industry 4.0", "SuperAI · IBM Gen AI"]),
     ("JUL–SEP 2025", "Dental X-ray AI", ["YOLOv9 · 31 classes", "13,000+ images"]),
     ("2025–26", "Patent co-inventor", ["Smart walker", "filing in progress"]),
-    ("2026", "Backend & DevOps", ["RootLens", "TriageIQ"]),
+    ("2026", "Backend & DevOps", ["SeatLock · RootLens", "TriageIQ"]),
     ("NOW", "Building 4 more", ["+ grinding LeetCode", "next stop: your team?"]),
 ]
 
 PROJECTS = [
     {
+        "slug": "seatlock",
+        "kicker": "01 · BACKEND · CONCURRENCY",
+        "name": "SeatLock",
+        "pitch": "Thousands of buyers. One seat. Zero double-bookings.",
+        "built": "3 locking strategies · @Version fencing · partial unique index · Kafka saga + outbox · Redis waiting room",
+        "stats": [("1 / 200", "threads win the same seat"), ("0", "double-bookings under k6"), ("2,171", "req/s with fast reject")],
+        "tags": ["Java 21", "Spring Boot", "PostgreSQL", "Redis", "Kafka", "k6", "Testcontainers"],
+        "motif": "seats",
+    },
+    {
+        "slug": "rootlens",
+        "kicker": "02 · RELIABILITY · INCIDENT RESPONSE",
+        "name": "RootLens",
+        "pitch": "Finds out why a microservice broke, then fixes it within strict limits.",
+        "built": "Detect · investigate · decide · act · verify · rolls back bad releases · audit log of every decision",
+        "stats": [("< 2 min", "real incident, open to resolved"), ("118", "unit tests"), ("5 steps", "detect → verify")],
+        "tags": ["Python", "FastAPI", "Docker", "Prometheus", "Grafana", "OpenTelemetry", "SQLite", "CI"],
+        "motif": "graph",
+    },
+    {
+        "slug": "triageiq",
+        "kicker": "03 · LLM · STREAMING",
+        "name": "TriageIQ",
+        "pitch": "Sorts every support email and drafts a grounded reply, fully on-device.",
+        "built": "Kafka pipeline · local LLM classifies with a safe fallback · RAG over solved tickets · human approves every reply",
+        "stats": [("3B", "local model, data stays local"), ("Top 3", "similar past tickets"), ("0", "emails sent unapproved")],
+        "tags": ["Python", "Kafka", "Ollama", "Qdrant", "FastAPI", "Docker", "SSE"],
+        "motif": "stream",
+    },
+    {
         "slug": "dental",
-        "kicker": "01 · COMPUTER VISION · HEALTHCARE",
+        "kicker": "04 · COMPUTER VISION · HEALTHCARE",
         "name": "Dental Malocclusion Detection",
         "pitch": "Reads dental X-rays and explains what it sees.",
         "built": "YOLOv9 pipeline · per-finding HiResCAM · FDI tooth chart · Gradio app · PDF reports",
@@ -116,28 +146,8 @@ PROJECTS = [
         "motif": "xray",
     },
     {
-        "slug": "rootlens",
-        "kicker": "02 · RELIABILITY · AIOPS",
-        "name": "RootLens",
-        "pitch": "When a microservice breaks, it tells you why.",
-        "built": "Detects failures across FastAPI services · gathers evidence · ranks root causes · records incidents",
-        "stats": [("Detect", "failures across services"), ("Rank", "root causes by evidence"), ("Record", "every incident")],
-        "tags": ["Python", "FastAPI", "Docker", "Prometheus", "Grafana", "SQLite", "Chaos tests", "CI"],
-        "motif": "graph",
-    },
-    {
-        "slug": "triageiq",
-        "kicker": "03 · LLM · STREAMING",
-        "name": "TriageIQ",
-        "pitch": "Support tickets, triaged the moment they arrive.",
-        "built": "Kafka stream · local LLM classifies and prioritises · RAG over past tickets drafts the reply · live dashboard",
-        "stats": [("Kafka", "real-time ticket stream"), ("Local LLM", "classify + prioritise"), ("RAG", "drafts replies")],
-        "tags": ["Python", "Kafka", "FastAPI", "Docker", "Ollama", "Qdrant"],
-        "motif": "stream",
-    },
-    {
         "slug": "walker",
-        "kicker": "04 · IoT · PATENT (FILING IN PROGRESS)",
+        "kicker": "05 · IoT · PATENT (FILING IN PROGRESS)",
         "name": "Smart Walker",
         "pitch": "A walker that predicts a fall before it happens.",
         "built": "Dual IMUs + load cells · sensor fusion · fall-risk prediction · standalone on Arduino",
@@ -147,7 +157,7 @@ PROJECTS = [
     },
     {
         "slug": "rover",
-        "kicker": "05 · REINFORCEMENT LEARNING",
+        "kicker": "06 · REINFORCEMENT LEARNING",
         "name": "RL Rover for Hazard Detection",
         "pitch": "A rover that learns to explore a disaster zone.",
         "built": "Simulated rover discovers hazards through perception · tabular Q-learning + lightweight CNN",
@@ -157,7 +167,7 @@ PROJECTS = [
     },
     {
         "slug": "grocer",
-        "kicker": "06 · MULTIMODAL · RETAIL",
+        "kicker": "07 · MULTIMODAL · RETAIL",
         "name": "Smart Grocer",
         "pitch": "Knows which mango will spoil first.",
         "built": "Fresh-produce spoilage detection · item localization · expiry-aware retail inventory",
@@ -187,10 +197,10 @@ BUILDING = [
 TOOLKIT = [
     ("01 LANGUAGES", ["Python · Java", "C++ · JavaScript", "SQL"]),
     ("02 FRONTEND", ["HTML · CSS", "JavaScript", "Three.js · Canvas", "Gradio"]),
-    ("03 BACKEND & DEVOPS", ["FastAPI · Flask", "Docker · Kafka", "Prometheus · Grafana", "GitHub Actions"]),
+    ("03 BACKEND & DEVOPS", ["Spring Boot", "FastAPI · Flask", "Docker · Kafka · Redis", "Prometheus · Grafana", "GitHub Actions · k6"]),
     ("04 MOTION & DESIGN", ["Canva", "CSS keyframes", "SVG animation", "Three.js 3D", "Poster design"]),
     ("05 AI & VISION", ["PyTorch", "TensorFlow · OpenCV", "YOLOv8/v9 · Grad-CAM", "MMPose · Q-learning", "RAG · Ollama · watsonx"]),
-    ("06 DATA", ["SQLite · MySQL", "Firebase", "Qdrant"]),
+    ("06 DATA", ["PostgreSQL", "SQLite · MySQL", "Redis · Qdrant", "Firebase"]),
     ("07 EMBEDDED & IoT", ["Arduino · ESP32", "Raspberry Pi", "Sensor fusion", "LIDAR SLAM"]),
     ("08 SECURITY", ["Threat modeling", "Intrusion detection", "Risk scoring"]),
     ("09 TOOLS", ["Git · GitHub", "VS Code · Linux", "Jupyter · Colab", "Kaggle · Roboflow", "Windows · PowerShell"]),
@@ -663,19 +673,19 @@ def motif(kind, x, y):
   <animate attributeName="y" values="{y + 8};{y + 190};{y + 8}" dur="4s" repeatCount="indefinite"/>
 </rect>"""
     if kind == "graph":
-        nodes = [(60, 50, "gateway"), (180, 40, "auth"), (110, 120, "orders"), (240, 110, "payments"), (180, 160, "db")]
+        nodes = [(60, 60, "customer"), (180, 50, "user"), (110, 130, "order"), (240, 120, "payment"), (180, 170, "sqlite")]
         edges = [(0, 1), (0, 2), (2, 3), (1, 3), (3, 4), (2, 4)]
         s = [f'<rect x="{x}" y="{y}" width="310" height="200" rx="16" fill="{C["bg0"]}" stroke="{C["line2"]}"/>']
         for a, b in edges:
             s.append(f'<path d="M{x + nodes[a][0]} {y + nodes[a][1]}L{x + nodes[b][0]} {y + nodes[b][1]}" stroke="{L}" stroke-opacity=".35"/>')
         for i, (nx, ny, lb) in enumerate(nodes):
-            bad = lb == "payments"
+            bad = lb == "payment"
             col = C['rose'] if bad else L
             s.append(f'<circle cx="{x + nx}" cy="{y + ny}" r="{12 if bad else 9}" fill="{C["panel"]}" stroke="{col}" stroke-width="1.5"/>')
             if bad:
                 s.append(f'<circle cx="{x + nx}" cy="{y + ny}" r="12" fill="none" stroke="{col}"><animate attributeName="r" values="12;28" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.8s" repeatCount="indefinite"/></circle>')
             s.append(text(x + nx, y + ny + 26, lb, 10, col if bad else C['muted'], 'mono', 'middle'))
-        s.append(text(x + 16, y + 22, "root cause #1 → payments (p=0.82)", 10, C['rose'], 'mono'))
+        s.append(text(x + 16, y + 22, "payment v2 · errors · score 1.00 → rollback", 10, C['rose'], 'mono'))
         return "".join(s)
     if kind == "stream":
         s = [f'<rect x="{x}" y="{y}" width="310" height="200" rx="16" fill="{C["bg0"]}" stroke="{C["line2"]}"/>',
@@ -688,7 +698,23 @@ def motif(kind, x, y):
             s.append(f'<path d="M{x + 190} {y + 100}L{x + 214} {y + 52 + i * 48}" stroke="{col}" stroke-opacity=".5"/>')
             s.append(f'<rect x="{x + 214}" y="{y + 40 + i * 48}" width="84" height="24" rx="12" fill="none" stroke="{col}"/>')
             s.append(text(x + 256, y + 56 + i * 48, lb, 10, col, 'mono', 'middle'))
-        s.append(text(x + 18, y + 186, "draft reply ready · 0.4s", 10, C['mint'], 'mono'))
+        s.append(text(x + 18, y + 186, "draft ready · waiting for approval", 10, C['mint'], 'mono'))
+        return "".join(s)
+    if kind == "seats":
+        s = [f'<rect x="{x}" y="{y}" width="310" height="200" rx="16" fill="{C["bg0"]}" stroke="{C["line2"]}"/>',
+             text(x + 18, y + 26, "200 buyers → seat C5", 10, C['muted'], 'mono')]
+        for r in range(4):
+            for c in range(8):
+                sx, sy = x + 30 + c * 32, y + 44 + r * 28
+                tgt = (r, c) == (2, 4)
+                booked = (r * 8 + c) % 5 == 1
+                col = C['mint'] if tgt else (C['rose'] if booked else L)
+                op = ".9" if tgt else (".35" if booked else ".1")
+                s.append(f'<rect x="{sx}" y="{sy}" width="24" height="20" rx="5" fill="{col}" fill-opacity="{op}" stroke="{col}" stroke-opacity=".6"/>')
+        tx, ty = x + 30 + 4 * 32 + 12, y + 44 + 2 * 28 + 10
+        for i, (dx, dy) in enumerate([(-130, -30), (130, -30), (130, 26)]):
+            s.append(f'<circle r="5" fill="{S}"><animateMotion dur="2s" begin="{i * 0.15}s" repeatCount="indefinite" path="M{tx + dx} {ty + dy}L{tx} {ty}"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;.8;1" dur="2s" begin="{i * 0.15}s" repeatCount="indefinite"/></circle>')
+        s.append(text(x + 18, y + 186, "1 × 201 Created · 199 × 409", 10, C['mint'], 'mono'))
         return "".join(s)
     if kind == "wave":
         pts = " ".join(f"{x + 20 + i * 2.7:.1f},{y + 90 + 22 * math.sin(i / 6) * (1 + (i > 70) * 0.9):.1f}" for i in range(100))
@@ -762,7 +788,7 @@ def build_more():
         x = 32 + k * 576
         parts.append(f"""
 <rect x="{x}" y="26" width="560" height="168" rx="18" fill="{C['panel']}" stroke="{C['line2']}"/>
-{text(x + 24, 54, f"0{7 + k} · MORE", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
+{text(x + 24, 54, f"0{8 + k} · MORE", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
 {text(x + 24, 88, name, 24, C['silver'], 'serif')}
 {''.join(text(x + 24, 116 + i * 19, ln, 13, C['muted'], 'sans') for i, ln in enumerate(wrap(what, 72)[:2]))}
 {chips(x + 24, 152, tags, size=10.5)}""")
