@@ -142,6 +142,7 @@ def portrait(px0, py0, s):
 
 def build():
     rnd = random.Random(7)
+    fy0 = (H - 70 * 4) // 2
     o = []
     o.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-labelledby="ph-t ph-d" shape-rendering="crispEdges">')
     o.append('<title id="ph-t">HEMASHREE: player select</title>')
@@ -152,7 +153,7 @@ def build():
 .row{{opacity:0;animation:row .35s steps(3) forwards}}
 @keyframes row{{0%{{opacity:0;transform:translateX(-12px)}}100%{{opacity:1;transform:none}}}}
 .scan{{animation:scan 1.9s linear .2s forwards;opacity:0}}
-@keyframes scan{{0%{{opacity:.9;transform:translateY(0)}}95%{{opacity:.9}}100%{{opacity:0;transform:translateY(430px)}}}}
+@keyframes scan{{0%{{opacity:.9;transform:translateY(0)}}95%{{opacity:.9}}100%{{opacity:0;transform:translateY(276px)}}}}
 .bob{{animation:bob 2.4s steps(2) 2.2s infinite}}
 @keyframes bob{{0%,100%{{transform:none}}50%{{transform:translateY(-4px)}}}}
 .ltr{{opacity:0;animation:drop .5s cubic-bezier(.3,1.6,.5,1) forwards}}
@@ -171,37 +172,38 @@ def build():
 </style>""")
     # background, pixel grid, stars
     o.append(f'<defs><pattern id="pg" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="{C["grid"]}" stroke-width="1"/></pattern>'
-             f'<radialGradient id="glow" cx=".28" cy=".55" r=".5"><stop offset="0" stop-color="{C["royal"]}" stop-opacity=".28"/><stop offset="1" stop-color="{C["royal"]}" stop-opacity="0"/></radialGradient>'
+             f'<radialGradient id="glow" cx=".15" cy=".5" r=".5"><stop offset="0" stop-color="{C["royal"]}" stop-opacity=".28"/><stop offset="1" stop-color="{C["royal"]}" stop-opacity="0"/></radialGradient>'
              f'<pattern id="scanl" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".18"/></pattern></defs>')
     o.append(f'<rect width="{W}" height="{H}" rx="18" fill="{C["bg0"]}"/>')
     o.append(f'<rect width="{W}" height="{H}" rx="18" fill="url(#pg)" opacity=".55"/>')
     o.append(f'<rect width="{W}" height="{H}" rx="18" fill="url(#glow)"/>')
     for _ in range(120):
         x, y = rnd.randrange(20, W - 20), rnd.randrange(20, H - 20)
-        if (50 < x < 430 and 10 < y < 470) or (436 < x < 1150 and 30 < y < 455):
+        if (44 < x < 340 and fy0 - 20 < y < fy0 + 300) or (346 < x < 1080 and 30 < y < 455):
             continue  # keep stars off the portrait and the text
         sz = rnd.choice((3, 3, 3, 6))
         col = rnd.choice((C["ice"], C["sky"], C["silver"], C["gold"]))
         o.append(f'<rect class="tw" x="{x}" y="{y}" width="{sz}" height="{sz}" fill="{col}" style="animation-delay:{rnd.uniform(0, 2.6):.2f}s"/>')
 
     # portrait inside a chunky pixel frame
-    s = 6
-    fx, fy, fw, fh = 70, 30, 50 * s + 36, 70 * s
+    s = 4  # portrait pixel size
+    fw, fh = 50 * s + 24, 70 * s
+    fx, fy = 64, (H - fh) // 2
     o.append(f'<rect x="{fx - 6}" y="{fy - 6}" width="{fw + 12}" height="{fh + 12}" fill="{C["shadow"]}"/>')
     o.append(f'<rect x="{fx}" y="{fy}" width="{fw}" height="{fh}" fill="{C["bg1"]}" stroke="{C["royal"]}" stroke-width="6"/>')
     for cx, cy in ((fx - 6, fy - 6), (fx + fw, fy - 6), (fx - 6, fy + fh), (fx + fw, fy + fh)):
         o.append(f'<rect x="{cx}" y="{cy}" width="6" height="6" fill="{C["bg0"]}"/>')
-    o.append(f'<rect x="{fx + 6}" y="{fy + fh - 60}" width="{fw - 12}" height="54" fill="{C["royal"]}" opacity=".12"/>')
-    body, pw, ph = portrait(fx + 18, fy + 6, s)
+    o.append(f'<rect x="{fx + 6}" y="{fy + fh - 40}" width="{fw - 12}" height="34" fill="{C["royal"]}" opacity=".12"/>')
+    body, pw, ph = portrait(fx + 12, fy + 4, s)
     o.append(f'<g class="bob">{body}</g>')
     o.append(f'<rect class="scan" x="{fx + 6}" y="{fy + 4}" width="{fw - 12}" height="6" fill="{C["ice"]}"/>')
     o.append(f'<rect x="{fx}" y="{fy}" width="{fw}" height="{fh}" fill="url(#scanl)"/>')
     # P1 tag
-    o.append(f'<rect x="{fx + 14}" y="{fy + 14}" width="58" height="30" fill="{C["royal"]}"/>')
-    o.append(pixel_text("P1", fx + 22, fy + 22, 2, C["silver"], gap=1))
+    o.append(f'<rect x="{fx + 10}" y="{fy + 10}" width="38" height="22" fill="{C["royal"]}"/>')
+    o.append(pixel_text("P1", fx + 17, fy + 16, 2, C["silver"], gap=1))
 
     # right column
-    rx = 470
+    rx = 380
     o.append(pixel_text("▶ PLAYER SELECT", rx, 46, 3, C["sky"], "fade", gap=1).replace('class="fade"', 'class="fade" style="animation-delay:.2s"'))
     o.append(f'<rect class="fade" style="animation-delay:.3s" x="{rx}" y="78" width="{W - rx - 60}" height="3" fill="{C["line"]}"/>')
     ls = 11  # name pixel size
