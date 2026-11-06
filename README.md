@@ -1,5 +1,5 @@
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/hemashree-intro.gif" width="100%" alt="Cinematic intro in royal blue: glowing particles converge to spell HEMASHREE, a light sweeps across the name, then Software Engineer, the tagline Building systems that see, decide and keep people safe, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT.">
+  <img src="./assets/intro/hemashree-intro.gif" width="100%" alt="Cinematic intro in royal blue: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB, a light sweeps across it, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT.">
 </a>
 
 <p align="center">
