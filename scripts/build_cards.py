@@ -14,6 +14,8 @@ import random
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+import cat_layer
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "cards"
 PHOTO = ROOT / "assets" / "photo.jpg"
@@ -510,7 +512,7 @@ def build_hero():
 
 
 # ---------------------------------------------------------------- section titles
-def build_title(num, kicker, plain, italic, right, slug):
+def build_title(num, kicker, plain, italic, right, slug, extra=""):
     W, H, u = 1200, 104, f"t{num}"
     width_plain = len(plain) * 19
     body = f"""
@@ -523,6 +525,7 @@ def build_title(num, kicker, plain, italic, right, slug):
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
+{extra}
 """
     write(f"title-{slug}.svg", svg(W, H, u, f"{num} {kicker.title()}: {plain} {italic}", right, body))
 
@@ -932,6 +935,7 @@ def build_footer():
 <rect x="380" y="196" width="440" height="1.2" fill="url(#{u}-rule)"/>
 {text(600, 236, "Open to roles in cybersecurity · computer vision · cyber-physical systems · backend & devops", 15, C['mist'], 'sans', 'middle')}
 {text(600, 280, "よろしくお願いします", 20, C['lilac'], 'serif', 'middle')}
+{cat_layer.waver_bye("catbye")}
 """
     write("footer.svg", svg(W, H, u, "Let's build something that keeps people safe",
                             "Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします", body))
@@ -952,8 +956,16 @@ def main():
         ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
         ("10", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
+    # the roaming cat turns up in some of the section titles
+    cat = {
+        "about": cat_layer.peek_hello("cat01"),
+        "work": cat_layer.walker("cat04"),
+        "toolkit": cat_layer.sitter("cat06"),
+        "play": cat_layer.player("cat08"),
+        "commits": cat_layer.sleeper("cat09"),
+    }
     for t in titles:
-        build_title(*t)
+        build_title(*t, extra=cat.get(t[-1], ""))
     build_about()
     build_now()
     build_pipeline()

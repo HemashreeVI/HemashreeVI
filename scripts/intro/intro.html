@@ -225,6 +225,66 @@ function vignette(t) {
   if (out > 0) { g.fillStyle = `rgba(5,7,13,${out})`; g.fillRect(0, 0, W, H); }
 }
 
+// ---------- the cat walks in, stops and waves (poses from assets/cat, injected as window.CAT)
+const catImgs = {};
+function loadCat() {
+  const names = ['walk1', 'walk2', 'walk3', 'walk4', 'wave'];
+  return Promise.all(names.map(n => new Promise(res => {
+    const im = new Image(); im.onload = () => { catImgs[n] = im; res(); }; im.src = (window.CAT || {})[n] || '';
+    if (!(window.CAT || {})[n]) res();
+  })));
+}
+const CAT_IN = 8.4, CAT_STOP = 10.2, CAT_FEET = 748, CAT_X1 = 190;
+function catScene(t) {
+  if (t < CAT_IN || !catImgs.wave) return;
+  const walkH = 190, waveH = 205;
+  g.save();
+  if (t < CAT_STOP) {
+    const k = prog(t, CAT_IN, CAT_STOP);
+    const x = -180 + (CAT_X1 + 180) * k;
+    const f = catImgs['walk' + (1 + Math.floor(t / .13) % 4)];
+    const w = f.width * walkH / f.height;
+    shadowAt(x, w);
+    g.drawImage(f, x - w / 2, CAT_FEET - walkH, w, walkH);
+  } else {
+    const im = catImgs.wave, w = im.width * waveH / im.height;
+    const land = prog(t, CAT_STOP, CAT_STOP + .25);
+    const sq = land < 1 ? 1 - .06 * Math.sin(land * Math.PI) : 1;
+    const sway = Math.sin((t - CAT_STOP) * 4) * .06 * prog(t, CAT_STOP + .2, CAT_STOP + .5);
+    shadowAt(CAT_X1, w);
+    g.translate(CAT_X1, CAT_FEET); g.rotate(sway); g.scale(2 - sq, sq);
+    g.drawImage(im, -w / 2, -waveH, w, waveH);
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    // wave lines off the raised paw
+    const px = CAT_X1 - w * .28, py = CAT_FEET - waveH * .48;
+    g.strokeStyle = SKY; g.lineWidth = 4; g.lineCap = 'round';
+    for (let i = 0; i < 3; i++) {
+      const a = ((t * 1.6 + i / 3) % 1);
+      g.globalAlpha = Math.sin(a * Math.PI) * prog(t, CAT_STOP + .3, CAT_STOP + .6);
+      const r = 20 + a * 26;
+      g.beginPath(); g.arc(px, py, r, Math.PI * .75, Math.PI * 1.25); g.stroke();
+    }
+    g.globalAlpha = 1;
+    // speech bubble
+    const bk = backOut(prog(t, CAT_STOP + .3, CAT_STOP + .75));
+    if (bk > 0) {
+      const bx = CAT_X1 + 88, by = CAT_FEET - waveH - 8, bw = 300, bh = 58;
+      g.translate(bx, by + bh); g.scale(bk, bk); g.translate(-bx, -(by + bh));
+      g.fillStyle = 'rgba(16,19,31,.95)'; g.strokeStyle = ROYAL; g.lineWidth = 3;
+      g.beginPath(); g.roundRect(bx, by, bw, bh, 29); g.fill(); g.stroke();
+      g.beginPath(); g.moveTo(bx + 30, by + bh - 2); g.lineTo(bx - 4, by + bh + 22); g.lineTo(bx + 58, by + bh - 2); g.closePath(); g.fill();
+      g.beginPath(); g.moveTo(bx + 30, by + bh); g.lineTo(bx - 4, by + bh + 22); g.lineTo(bx + 58, by + bh); g.stroke();
+      g.font = '700 28px Inter'; g.letterSpacing = '0px'; g.fillStyle = SILVER; g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillText('hi! welcome in 👋', bx + bw / 2, by + bh / 2 + 1);
+    }
+  }
+  g.restore();
+}
+function shadowAt(x, w) {
+  g.fillStyle = 'rgba(65,106,230,.45)';
+  g.beginPath(); g.ellipse(x, CAT_FEET, w * .36, 8, 0, 0, 6.28); g.fill();
+}
+
 window.renderFrame = t => {
   g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.shadowBlur = 0;
   background(t);
@@ -232,9 +292,10 @@ window.renderFrame = t => {
   nameParticles(t);
   nameSolid(t);
   details(t);
+  catScene(t);
   vignette(t);
 };
 window.DURATION = DURATION;
-window.ready = document.fonts.load('700 54px "JetBrains Mono"').then(() => document.fonts.load('italic 500 46px Inter')).then(() => document.fonts.load(NAME_FONT)).then(() => document.fonts.load('600 22px "JetBrains Mono"'));
+window.ready = document.fonts.load('700 54px "JetBrains Mono"').then(() => document.fonts.load('italic 500 46px Inter')).then(() => document.fonts.load(NAME_FONT)).then(() => document.fonts.load('600 22px "JetBrains Mono"')).then(loadCat);
 </script>
 </body></html>
