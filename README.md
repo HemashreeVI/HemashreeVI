@@ -1,5 +1,5 @@
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/hemashree-intro.gif?v=3" width="100%" alt="Cinematic intro in royal blue: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB, a light sweeps across it, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Then a little black cat in a royal blue hoodie walks in, stops and waves: hi! welcome in.">
+  <img src="./assets/intro/hemashree-intro.gif?v=4" width="100%" alt="Cinematic intro in royal blue: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB, a light sweeps across it, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Two little black cats in royal blue hoodies show up: one walks in and waves, hey, welcome in! The other chases a ball, trips over it, and says oops…, then i meant to do that. The first replies: smooth. very smooth.">
 </a>
 
 <p align="center">

@@ -9,7 +9,7 @@
 </head><body>
 <canvas id="c" width="1920" height="800"></canvas>
 <script>
-const W = 1920, H = 800, DURATION = 13;
+const W = 1920, H = 800, DURATION = 15;
 const ROYAL = '#416AE6', SKY = '#839DFB', ICE = '#CEDAFF', SILVER = '#E6E9F0', MUTED = '#8E9BC0';
 const KICKER = 'POV:';
 const NAME = 'YOU’RE ON MY GITHUB';
@@ -32,7 +32,7 @@ const backOut = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + 
 
 // ---------- layout
 const NAME_FONT = '800 124px Inter';
-const NAME_Y = 340;
+const NAME_Y = 290;
 const NAME_X0 = W / 2, NAME_X1 = W / 2;          // name stays centred
 
 // ---------- stars
@@ -115,7 +115,7 @@ function nameSolid(t) {
   g.restore();
   // light sweeps across the name
   sweep(t, 3.4, 4.3, x);
-  sweep(t, 10.9, 11.8, x);
+  sweep(t, 12.6, 13.4, x);
 }
 
 function kicker(t) {
@@ -161,7 +161,7 @@ function details(t) {
     const half = 640 * lk;
     const gr = g.createLinearGradient(cx - half, 0, cx + half, 0);
     gr.addColorStop(0, 'rgba(65,106,230,0)'); gr.addColorStop(.5, 'rgba(131,157,251,.95)'); gr.addColorStop(1, 'rgba(65,106,230,0)');
-    g.fillStyle = gr; g.fillRect(cx - half, 425, half * 2, 2);
+    g.fillStyle = gr; g.fillRect(cx - half, 375, half * 2, 2);
   }
   // role, revealed letter by letter
   const rk = prog(t, 6.8, 7.7);
@@ -171,7 +171,7 @@ function details(t) {
     const n = Math.ceil(ROLE.length * rk);
     const full = g.measureText(ROLE).width;
     g.textAlign = 'left';
-    g.fillText(ROLE.slice(0, n), cx - full / 2 + 5, 548);
+    g.fillText(ROLE.slice(0, n), cx - full / 2 + 5, 498);
     g.shadowBlur = 0;
   }
   // tagline, typed
@@ -181,11 +181,11 @@ function details(t) {
     g.shadowColor = ROYAL; g.shadowBlur = 14;
     const full = g.measureText(TAGLINE).width, n = Math.floor(TAGLINE.length * tk);
     const x0 = cx - full / 2;
-    g.fillText(TAGLINE.slice(0, n), x0, 482);
+    g.fillText(TAGLINE.slice(0, n), x0, 432);
     g.shadowBlur = 0;
     if (t < 9.2 && Math.floor(t * 2.5) % 2 === 0) {
       const w = g.measureText(TAGLINE.slice(0, n)).width;
-      g.fillStyle = SKY; g.fillRect(x0 + w + 6, 459, 4, 46);
+      g.fillStyle = SKY; g.fillRect(x0 + w + 6, 409, 4, 46);
     }
   }
   // tags
@@ -195,7 +195,7 @@ function details(t) {
   TAGS.forEach((s, i) => {
     const k = backOut(prog(t, 7.8 + i * .22, 8.3 + i * .22));
     if (k > 0) {
-      const w = widths[i], y = 630 + (1 - k) * 30;
+      const w = widths[i], y = 580 + (1 - k) * 30;
       g.globalAlpha = clamp(k);
       g.fillStyle = 'rgba(16,19,31,.85)'; g.strokeStyle = i === 0 ? ROYAL : 'rgba(65,106,230,.55)'; g.lineWidth = 2;
       g.beginPath(); g.roundRect(x, y - 24, w, 48, 24); g.fill(); g.stroke();
@@ -221,69 +221,164 @@ function vignette(t) {
   gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,.5)');
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
   // letterbox bars ease in, and the whole thing fades to black for a clean loop
-  const out = prog(t, 12.3, 13);
+  const out = prog(t, 14.3, 15);
   if (out > 0) { g.fillStyle = `rgba(5,7,13,${out})`; g.fillRect(0, 0, W, H); }
 }
 
-// ---------- the cat walks in, stops and waves (poses from assets/cat, injected as window.CAT)
+// ---------- two cats (poses from assets/cat, injected as window.CAT)
+// Left cat walks in and says hello. Right cat plays with a ball, trips over
+// it, and plays it cool. They trade a couple of lines.
 const catImgs = {};
 function loadCat() {
-  const names = ['walk1', 'walk2', 'walk3', 'walk4', 'wave'];
+  const names = ['walk1', 'walk2', 'walk3', 'walk4', 'wave', 'sit'];
   return Promise.all(names.map(n => new Promise(res => {
-    const im = new Image(); im.onload = () => { catImgs[n] = im; res(); }; im.src = (window.CAT || {})[n] || '';
-    if (!(window.CAT || {})[n]) res();
+    const src = (window.CAT || {})[n];
+    if (!src) return res();
+    const im = new Image(); im.onload = () => { catImgs[n] = im; res(); }; im.src = src;
   })));
 }
-const CAT_IN = 8.4, CAT_STOP = 10.2, CAT_FEET = 748, CAT_X1 = 190;
-function catScene(t) {
-  if (t < CAT_IN || !catImgs.wave) return;
-  const walkH = 190, waveH = 205;
+const FEET = 770;
+const pick = (n, h) => { const im = catImgs[n]; return [im, im.width * h / im.height]; };
+const walkFrame = t => 'walk' + (1 + Math.floor(t / .13) % 4);
+
+function shadowAt(x, w, a = .45) {
+  g.fillStyle = `rgba(65,106,230,${a})`;
+  g.beginPath(); g.ellipse(x, FEET, w * .36, 8, 0, 0, 6.28); g.fill();
+}
+
+// speech bubble anchored at (ax, ay), the tip of its tail; side: which way it grows
+function bubble(t, t0, t1, text, ax, ay, side) {
+  if (t < t0 || t > t1 + .25) return;
+  const k = t < t1 ? backOut(prog(t, t0, t0 + .4)) : 1 - prog(t, t1, t1 + .25);
+  if (k <= 0) return;
   g.save();
-  if (t < CAT_STOP) {
-    const k = prog(t, CAT_IN, CAT_STOP);
-    const x = -180 + (CAT_X1 + 180) * k;
-    const f = catImgs['walk' + (1 + Math.floor(t / .13) % 4)];
-    const w = f.width * walkH / f.height;
-    shadowAt(x, w);
-    g.drawImage(f, x - w / 2, CAT_FEET - walkH, w, walkH);
-  } else {
-    const im = catImgs.wave, w = im.width * waveH / im.height;
-    const land = prog(t, CAT_STOP, CAT_STOP + .25);
-    const sq = land < 1 ? 1 - .06 * Math.sin(land * Math.PI) : 1;
-    const sway = Math.sin((t - CAT_STOP) * 4) * .06 * prog(t, CAT_STOP + .2, CAT_STOP + .5);
-    shadowAt(CAT_X1, w);
-    g.translate(CAT_X1, CAT_FEET); g.rotate(sway); g.scale(2 - sq, sq);
-    g.drawImage(im, -w / 2, -waveH, w, waveH);
-    g.setTransform(1, 0, 0, 1, 0, 0);
-    // wave lines off the raised paw
-    const px = CAT_X1 - w * .28, py = CAT_FEET - waveH * .48;
-    g.strokeStyle = SKY; g.lineWidth = 4; g.lineCap = 'round';
-    for (let i = 0; i < 3; i++) {
-      const a = ((t * 1.6 + i / 3) % 1);
-      g.globalAlpha = Math.sin(a * Math.PI) * prog(t, CAT_STOP + .3, CAT_STOP + .6);
-      const r = 20 + a * 26;
-      g.beginPath(); g.arc(px, py, r, Math.PI * .75, Math.PI * 1.25); g.stroke();
-    }
-    g.globalAlpha = 1;
-    // speech bubble
-    const bk = backOut(prog(t, CAT_STOP + .3, CAT_STOP + .75));
-    if (bk > 0) {
-      const bx = CAT_X1 + 88, by = CAT_FEET - waveH - 8, bw = 300, bh = 58;
-      g.translate(bx, by + bh); g.scale(bk, bk); g.translate(-bx, -(by + bh));
-      g.fillStyle = 'rgba(16,19,31,.95)'; g.strokeStyle = ROYAL; g.lineWidth = 3;
-      g.beginPath(); g.roundRect(bx, by, bw, bh, 29); g.fill(); g.stroke();
-      g.beginPath(); g.moveTo(bx + 30, by + bh - 2); g.lineTo(bx - 4, by + bh + 22); g.lineTo(bx + 58, by + bh - 2); g.closePath(); g.fill();
-      g.beginPath(); g.moveTo(bx + 30, by + bh); g.lineTo(bx - 4, by + bh + 22); g.lineTo(bx + 58, by + bh); g.stroke();
-      g.font = '700 28px Inter'; g.letterSpacing = '0px'; g.fillStyle = SILVER; g.textAlign = 'center'; g.textBaseline = 'middle';
-      g.fillText('hi! welcome in 👋', bx + bw / 2, by + bh / 2 + 1);
-    }
-  }
+  g.font = '700 28px Inter'; g.letterSpacing = '0px';
+  const bw = g.measureText(text).width + 56, bh = 58;
+  const bx = side === 'right' ? ax + 26 : ax - 26 - bw, by = ay - bh / 2;
+  g.translate(ax, ay); g.scale(k, k); g.translate(-ax, -ay);
+  g.fillStyle = 'rgba(16,19,31,.95)'; g.strokeStyle = ROYAL; g.lineWidth = 3;
+  g.beginPath(); g.roundRect(bx, by, bw, bh, 29); g.fill(); g.stroke();
+  const ex = side === 'right' ? bx + 2 : bx + bw - 2, ex2 = side === 'right' ? bx : bx + bw;
+  g.beginPath(); g.moveTo(ex, ay - 12); g.lineTo(ax, ay + 10); g.lineTo(ex, ay + 10); g.closePath(); g.fill();
+  g.beginPath(); g.moveTo(ex2, ay - 12); g.lineTo(ax, ay + 10); g.lineTo(ex2, ay + 10); g.stroke();
+  g.fillStyle = SILVER; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(text, bx + bw / 2, by + bh / 2 + 1);
   g.restore();
 }
-function shadowAt(x, w) {
-  g.fillStyle = 'rgba(65,106,230,.45)';
-  g.beginPath(); g.ellipse(x, CAT_FEET, w * .36, 8, 0, 0, 6.28); g.fill();
+
+// ---- left cat: walks in, waves, then reacts to the right cat
+const L_IN = 8.4, L_STOP = 10.2, L_X = 170;
+function leftCat(t) {
+  if (t < L_IN || !catImgs.wave) return;
+  g.save();
+  if (t < L_STOP) {
+    const x = -180 + (L_X + 180) * prog(t, L_IN, L_STOP);
+    const [im, w] = pick(walkFrame(t), 160);
+    shadowAt(x, w);
+    g.drawImage(im, x - w / 2, FEET - 160, w, 160);
+  } else {
+    const [im, w] = pick('wave', 172);
+    const land = prog(t, L_STOP, L_STOP + .25);
+    const sq = land < 1 ? 1 - .06 * Math.sin(land * Math.PI) : 1;
+    const sway = Math.sin((t - L_STOP) * 4) * .06 * prog(t, L_STOP + .2, L_STOP + .5);
+    shadowAt(L_X, w);
+    g.translate(L_X, FEET); g.rotate(sway); g.scale(2 - sq, sq);
+    g.drawImage(im, -w / 2, -172, w, 172);
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    const px = L_X - w * .28, py = FEET - 172 * .48;
+    g.strokeStyle = SKY; g.lineWidth = 4; g.lineCap = 'round';
+    for (let i = 0; i < 3; i++) {
+      const a = (t * 1.6 + i / 3) % 1;
+      g.globalAlpha = Math.sin(a * Math.PI) * prog(t, L_STOP + .3, L_STOP + .6);
+      g.beginPath(); g.arc(px, py, 20 + a * 26, Math.PI * .75, Math.PI * 1.25); g.stroke();
+    }
+    g.globalAlpha = 1;
+  }
+  g.restore();
+  bubble(t, L_STOP + .3, 11.9, 'hey, welcome in! 👋', L_X + 62, FEET - 110, 'right');
+  bubble(t, 13.1, 14.2, 'smooth. very smooth 😹', L_X + 62, FEET - 110, 'right');
 }
+
+// ---- right cat: plays with a ball, chases it, trips, plays it cool
+const R_X = 1800, R_PLAY = 7.4, R_CHASE = 9.1, R_TRIP = 10.0, R_DOWN = 10.35, R_UP = 11.0;
+const R_TRIP_X = 1720;
+function ballPos(t) {
+  // bounces in front of the sitting cat, then rolls left, bumps the fallen cat and stops
+  if (t < R_CHASE) {
+    const ph = ((t - R_PLAY) / .7) % 1;
+    return [R_X - 105, FEET - 12 - Math.abs(Math.sin(ph * Math.PI)) * 60, 0];
+  }
+  if (t < R_DOWN) {
+    const k = prog(t, R_CHASE, R_DOWN);
+    return [R_X - 105 - k * 220, FEET - 12, -k * 14];
+  }
+  const k = easeOut(prog(t, R_DOWN, R_UP + .6));
+  return [R_X - 325 + k * 60, FEET - 12, -14 + k * 3];
+}
+function drawBall(t, x, y, rot) {
+  g.save(); g.translate(x, y); g.rotate(rot);
+  g.fillStyle = ROYAL; g.beginPath(); g.arc(0, 0, 14, 0, 6.28); g.fill();
+  g.strokeStyle = ICE; g.lineWidth = 2.5; g.beginPath(); g.moveTo(-14, 0); g.quadraticCurveTo(0, 10, 14, 0); g.stroke();
+  g.fillStyle = 'rgba(255,255,255,.8)'; g.beginPath(); g.arc(-4, -5, 3.5, 0, 6.28); g.fill();
+  g.restore();
+}
+function rightCat(t) {
+  if (t < R_PLAY - .4 || !catImgs.sit) return;
+  const fadeIn = prog(t, R_PLAY - .4, R_PLAY);
+  g.save(); g.globalAlpha = fadeIn;
+  const [bx, by, br] = ballPos(t);
+  g.fillStyle = 'rgba(65,106,230,.35)'; g.beginPath(); g.ellipse(bx, FEET, 12, 3, 0, 0, 6.28); g.fill();
+  if (t < R_CHASE) {
+    // sitting, hopping in time with the ball
+    const [im, w] = pick('sit', 160);
+    const ph = ((t - R_PLAY) / .7) % 1, hop = Math.max(0, Math.sin(ph * Math.PI * 2)) * 8;
+    shadowAt(R_X, w);
+    g.translate(R_X, FEET - hop); g.rotate(-.05 * Math.sin(ph * Math.PI * 2));
+    g.drawImage(im, -w / 2, -160, w, 160);
+  } else if (t < R_TRIP) {
+    // chasing the ball, facing left
+    const x = R_X + (R_TRIP_X - R_X) * prog(t, R_CHASE, R_TRIP);
+    const [im, w] = pick(walkFrame(t * 1.4), 152);
+    shadowAt(x, w);
+    g.translate(x, FEET); g.scale(-1, 1);
+    g.drawImage(im, -w / 2, -152, w, 152);
+  } else if (t < R_UP) {
+    // trip: tips forward onto its face, lies there for a beat
+    const k = easeOut(prog(t, R_TRIP, R_DOWN));
+    const [im, w] = pick(walkFrame(R_TRIP), 152);
+    shadowAt(R_TRIP_X - 30 * k, w * (1 + .4 * k));
+    g.translate(R_TRIP_X - 50 * k, FEET); g.scale(-1, 1); g.rotate(1.25 * k);
+    g.drawImage(im, -w / 2, -152, w, 152);
+    g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = fadeIn;
+    if (t > R_DOWN) {
+      // dizzy stars circling
+      for (let i = 0; i < 3; i++) {
+        const a = t * 5 + i * 2.1, sx = R_TRIP_X - 130 + Math.cos(a) * 40, sy = FEET - 60 + Math.sin(a) * 12;
+        g.fillStyle = i === 1 ? '#FFD36E' : ICE; g.font = '700 26px Inter'; g.textAlign = 'center';
+        g.fillText('✦', sx, sy);
+      }
+      // dust puffs
+      const dk = prog(t, R_DOWN, R_DOWN + .5);
+      g.globalAlpha = fadeIn * (1 - dk) * .6; g.fillStyle = MUTED;
+      for (let i = 0; i < 4; i++) { g.beginPath(); g.arc(R_TRIP_X - 140 + i * 36 + (i - 1.5) * 30 * dk, FEET - 6 - dk * 20, 8 + dk * 10, 0, 6.28); g.fill(); }
+    }
+  } else {
+    // pops back up, sits, plays it cool
+    const [im, w] = pick('sit', 160);
+    const k = prog(t, R_UP, R_UP + .3), sq = k < 1 ? 1 - .1 * Math.sin(k * Math.PI) : 1;
+    const x = R_TRIP_X - 20;
+    shadowAt(x, w);
+    g.translate(x, FEET); g.scale(2 - sq, sq * (.6 + .4 * easeOut(k)));
+    g.rotate(t > 12.2 ? -.05 * Math.sin((t - 12.2) * 3) : 0);
+    g.drawImage(im, -w / 2, -160, w, 160);
+  }
+  g.restore();
+  g.save(); g.globalAlpha = fadeIn; drawBall(t, bx, by, br * (t < R_CHASE ? 0 : 1)); g.restore();
+  bubble(t, R_UP + .25, 12.15, 'oops… 🙈', R_TRIP_X - 78, FEET - 100, 'left');
+  bubble(t, 12.2, 14.2, 'i meant to do that 😼', R_TRIP_X - 78, FEET - 100, 'left');
+}
+
+function catScene(t) { rightCat(t); leftCat(t); }
 
 window.renderFrame = t => {
   g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.shadowBlur = 0;
