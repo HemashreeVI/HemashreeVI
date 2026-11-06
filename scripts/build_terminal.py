@@ -44,8 +44,8 @@ FACTS = [
 
 def network():
     random.seed(7)
-    cols = [(150, [0, 1, 2], "#7FE0E8"), (285, [0, 1, 2, 3, 4], "#B7A4F2"),
-            (420, [0, 1, 2, 3, 4], "#B7A4F2"), (545, [1, 3], "#F0A8D0")]
+    cols = [(150, [0, 1, 2], "#7FE0E8"), (285, [0, 1, 2, 3, 4], "#839DFB"),
+            (420, [0, 1, 2, 3, 4], "#839DFB"), (545, [1, 3], "#F0A8D0")]
     top, step = 384, 62
     pts = []
     for x, idx, col in cols:
@@ -65,12 +65,12 @@ def network():
     out.append("</g>")
     # travelling pulses
     for i, (x1, y1, x2, y2) in enumerate(random.sample(edges, 9)):
-        col = ["#7FE0E8", "#F0A8D0", "#B7A4F2"][i % 3]
+        col = ["#7FE0E8", "#F0A8D0", "#839DFB"][i % 3]
         dur = 2.4 + (i % 4) * 0.5
         out.append(f'<circle r="3" fill="{col}"><animateMotion dur="{dur}s" begin="{i*0.35:.2f}s" repeatCount="indefinite" path="M{x1} {y1:.0f}L{x2} {y2:.0f}"/></circle>')
     for layer in pts:
         for (x, y, col) in layer:
-            out.append(f'<circle cx="{x}" cy="{y:.0f}" r="11" fill="#14101F" stroke="{col}" stroke-width="2.4"/>'
+            out.append(f'<circle cx="{x}" cy="{y:.0f}" r="11" fill="#10131F" stroke="{col}" stroke-width="2.4"/>'
                        f'<circle cx="{x}" cy="{y:.0f}" r="4.5" fill="{col}" opacity=".85"/>')
     labels = [(150, "sense"), (352, "decide"), (545, "protect")]
     for x, t in labels:
@@ -86,17 +86,17 @@ def build():
 <desc id="term-d">Animated terminal. ./boot --profile prints HEMASHREE in pixel letters: Software Engineer, Computer Vision, Cyber-Physical Systems. neofetch lists: {"; ".join(f"{k}: {v}" for k, v in FACTS)}; status: open to opportunities.</desc>
 <defs>
  <linearGradient id="g" x1="{px}" y1="0" x2="{px+pw}" y2="0" gradientUnits="userSpaceOnUse">
-  <stop offset="0" stop-color="#8FB8FF"/><stop offset=".35" stop-color="#B7A4F2"/><stop offset=".6" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/>
+  <stop offset="0" stop-color="#8FB8FF"/><stop offset=".35" stop-color="#839DFB"/><stop offset=".6" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/>
  </linearGradient>
- <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B7A4F2"/><stop offset=".5" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/></linearGradient>
+ <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#839DFB"/><stop offset=".5" stop-color="#F0A8D0"/><stop offset="1" stop-color="#7FE0E8"/></linearGradient>
  <filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" opacity=".018"/></pattern>
 </defs>
 <style>
-text{{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:19px;fill:#E8E6F0}}
-.u{{fill:#8FE3C8}} .p{{fill:#9A93B4}} .k{{fill:#B7A4F2;font-weight:700}} .ar{{fill:#6E6690}} .dim{{fill:#9A93B4}} .ok{{fill:#8FE3C8}}
-.lab{{font-size:12px;letter-spacing:3px;fill:#6E6690}}
-.net line{{stroke:#B7A4F2;stroke-opacity:.16;stroke-width:1}}
+text{{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:19px;fill:#E6E9F0}}
+.u{{fill:#8FE3C8}} .p{{fill:#939BB4}} .k{{fill:#839DFB;font-weight:700}} .ar{{fill:#667290}} .dim{{fill:#939BB4}} .ok{{fill:#8FE3C8}}
+.lab{{font-size:12px;letter-spacing:3px;fill:#667290}}
+.net line{{stroke:#839DFB;stroke-opacity:.16;stroke-width:1}}
 .in{{opacity:0;animation:in .45s ease-out forwards}}
 @keyframes in{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1;transform:none}}}}
 .type{{animation:type 1s steps(18) forwards}}
@@ -105,17 +105,17 @@ text{{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'L
 .dot{{animation:pulse 2s ease-in-out infinite}} @keyframes pulse{{50%{{opacity:.35}}}}
 .flick{{animation:flick 6s linear infinite}} @keyframes flick{{0%,96%,100%{{opacity:1}}97%{{opacity:.7}}98%{{opacity:1}}99%{{opacity:.8}}}}
 </style>
-<rect x="6" y="6" width="{W-12}" height="{H-12}" rx="22" fill="#0E0B17" stroke="url(#frame)" stroke-width="2"/>
-<rect x="7" y="7" width="{W-14}" height="54" rx="21" fill="#17122A"/>
-<rect x="7" y="40" width="{W-14}" height="21" fill="#17122A"/>
-<line x1="7" y1="61" x2="{W-7}" y2="61" stroke="#2A2340"/>
+<rect x="6" y="6" width="{W-12}" height="{H-12}" rx="22" fill="#0B0E17" stroke="url(#frame)" stroke-width="2"/>
+<rect x="7" y="7" width="{W-14}" height="54" rx="21" fill="#12182A"/>
+<rect x="7" y="40" width="{W-14}" height="21" fill="#12182A"/>
+<line x1="7" y1="61" x2="{W-7}" y2="61" stroke="#232A40"/>
 <circle cx="42" cy="34" r="8" fill="#FF6B6B"/><circle cx="70" cy="34" r="8" fill="#FFC048"/><circle cx="98" cy="34" r="8" fill="#4ED98B"/>
 <text x="{W/2}" y="40" text-anchor="middle" class="dim" style="font-size:16px">hemashree@vit-chennai: ~</text>
 <rect x="7" y="61" width="{W-14}" height="{H-68}" fill="url(#scan)"/>
 
 <g class="in" style="animation-delay:.2s"><text x="44" y="110">{PROMPT}  ./boot --profile</text></g>
 <g class="in flick" style="animation-delay:.8s" transform="translate({px:.0f},134)">
- <path d="{path}" transform="translate(6,6)" fill="none" stroke="#B7A4F2" stroke-opacity=".45" stroke-width="1.2"/>
+ <path d="{path}" transform="translate(6,6)" fill="none" stroke="#839DFB" stroke-opacity=".45" stroke-width="1.2"/>
  <path d="{path}" fill="url(#g)" filter="url(#glow)"/>
 </g>
 <g class="in" style="animation-delay:1.3s"><text x="{W/2}" y="262" text-anchor="middle" class="dim">[ Software Engineer  ·  Computer Vision  ·  CPS ]</text></g>
@@ -134,12 +134,12 @@ text{{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'L
     s.append(f'<g class="in" style="animation-delay:{2.4 + len(FACTS)*0.18:.2f}s"><text x="{x0}" y="{y}"><tspan class="k">status</tspan></text>'
              f'<text x="{x0+110}" y="{y}" class="ar">▸</text><text x="{x0+140}" y="{y}" class="ok">open to opportunities</text>'
              f'<circle class="dot" cx="{x0+404}" cy="{y-6}" r="7" fill="#4ED98B"/></g>')
-    cols = ["#FF6B6B", "#FFC048", "#4ED98B", "#7FE0E8", "#B7A4F2", "#F0A8D0", "#E8E6F0", "#2A2340"]
+    cols = ["#FF6B6B", "#FFC048", "#4ED98B", "#7FE0E8", "#839DFB", "#F0A8D0", "#E6E9F0", "#232A40"]
     sw = "".join(f'<rect x="{x0 + i*50}" y="{y+24}" width="44" height="22" rx="4" fill="{c}"/>' for i, c in enumerate(cols))
     s.append(f'<g class="in" style="animation-delay:{2.6 + len(FACTS)*0.18:.2f}s">{sw}</g>')
     t = 4.4
     s.append(f'''<g class="in" style="animation-delay:{t}s"><text x="44" y="{H-42}">{PROMPT}  echo "let's build something"</text>
-<rect class="cur" x="666" y="{H-60}" width="12" height="24" fill="#B7A4F2"/></g>
+<rect class="cur" x="666" y="{H-60}" width="12" height="24" fill="#839DFB"/></g>
 </svg>''')
     OUT.write_text("\n".join(s), encoding="utf-8")
     print("wrote", OUT)

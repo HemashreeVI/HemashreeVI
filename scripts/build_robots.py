@@ -18,14 +18,14 @@ GROUND = 278
 
 THEMES = {
     "profile": {
-        "frame": True, "bg": "#14101F", "border": "#2D2647", "text": "#9A93B4", "shadow": "#000000",
-        "bubble_bg": "#1C1630", "bubble_fg": "#E8E6F0", "bubble_border": "#3E3463", "spark": "#D9CEFF",
+        "frame": True, "bg": "#10131F", "border": "#262E47", "text": "#939BB4", "shadow": "#000000",
+        "bubble_bg": "#161C30", "bubble_fg": "#E6E9F0", "bubble_border": "#2B3963", "spark": "#CEDAFF",
         "kicker": "HELLO FROM THE LAB",
         "byte": ["hi! I'm Byte ✦", "shipping code…"], "mochi": ["beep boop ♡", "you got this!"],
     },
     "light-dark": {
-        "frame": False, "bg": None, "border": None, "text": "#8B949E", "shadow": "#5B5675",
-        "bubble_bg": "#FFFFFF", "bubble_fg": "#1F1A2E", "bubble_border": "#8B949E", "spark": "#B7A4F2",
+        "frame": False, "bg": None, "border": None, "text": "#8B949E", "shadow": "#565F75",
+        "bubble_bg": "#FFFFFF", "bubble_fg": "#1A1E2E", "bubble_border": "#8B949E", "spark": "#839DFB",
         "kicker": None,
         "byte": ["scanning X-rays…", "found 32 teeth!"], "mochi": ["beep boop ♡", "floss daily!"],
     },
@@ -37,10 +37,10 @@ DEFS = """
     <stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#F1F2F8"/><stop offset="1" stop-color="#C9CCDA"/>
   </radialGradient>
   <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#23222F"/><stop offset="1" stop-color="#07070C"/>
+    <stop offset="0" stop-color="#22272F"/><stop offset="1" stop-color="#07070C"/>
   </linearGradient>
   <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#7FE7FF"/><stop offset="1" stop-color="#A78BFA"/>
+    <stop offset="0" stop-color="#7FE7FF"/><stop offset="1" stop-color="#6F8EFF"/>
   </linearGradient>
   <radialGradient id="pink" cx="35%" cy="30%" r="80%">
     <stop offset="0" stop-color="#FFD9E4"/><stop offset=".7" stop-color="#F3A9BE"/><stop offset="1" stop-color="#E08AA3"/>
@@ -192,7 +192,7 @@ def build(theme):
     body = []
     if t["frame"]:
         body.append(f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="22" fill="{t["bg"]}" stroke="{t["border"]}"/>')
-        body.append(f'<ellipse cx="610" cy="180" rx="360" ry="120" fill="#7B61D9" opacity=".12" filter="url(#soft)"/>')
+        body.append(f'<ellipse cx="610" cy="180" rx="360" ry="120" fill="#416AE6" opacity=".12" filter="url(#soft)"/>')
     if t["kicker"]:
         body.append(f'<text x="40" y="38" class="mono" font-size="12" letter-spacing="2" fill="{t["text"]}">{escape(t["kicker"])}</text>')
     body.append(sparkles(t))
