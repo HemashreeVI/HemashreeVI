@@ -18,8 +18,8 @@ from xml.sax.saxutils import escape
 DAYS = 31
 W, H = 1200, 420
 PAD_L, PAD_R, PAD_T, PAD_B = 70, 36, 92, 64
-C = {"bg": "#10161F", "line": "#A4C5F2", "area": "#6197D9", "grid": "#263547", "text": "#C5CED8",
-     "muted": "#93A2B4", "title": "#CEE4FF", "point": "#FFFFFF"}
+C = {"bg": "#10131F", "line": "#839DFB", "area": "#416AE6", "grid": "#262E47", "text": "#C5CAD8",
+     "muted": "#939BB4", "title": "#CEDAFF", "point": "#FFFFFF"}
 
 QUERY = """query($login:String!){user(login:$login){contributionsCollection{contributionCalendar{
   totalContributions weeks{contributionDays{date contributionCount}}}}}}"""
