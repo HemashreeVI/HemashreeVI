@@ -1,3 +1,7 @@
+<a href="https://hemashreevi.github.io">
+  <img src="./assets/intro/hemashree-intro.gif" width="100%" alt="Cinematic intro: glowing particles converge to spell HEMASHREE, a light sweeps across the name, then Software Engineer. Building systems that see, decide and keep people safe.">
+</a>
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=B7A4F2&style=flat-square" alt="Profile views">
   <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E8E6F0&color=7FE0E8&labelColor=14101F" alt="GitHub followers"></a>
