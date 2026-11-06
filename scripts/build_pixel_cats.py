@@ -50,9 +50,9 @@ CLOSED_EYES = [  # drawn over rows 6-7 to blink or sleep
 THEMES = {
     # Profile cards: framed, dark lavender like the other cards.
     "profile": {
-        "frame": True, "bg": "#14101F", "border": "#2D2647", "ground": "#3E3463",
-        "outline": "#0B0912", "eye": "#1A1426", "text": "#9A93B4", "bubble_bg": "#1C1630",
-        "bubble_fg": "#E8E6F0", "bubble_border": "#3E3463", "star": "#D9CEFF",
+        "frame": True, "bg": "#10161F", "border": "#263547", "ground": "#344963",
+        "outline": "#090D12", "eye": "#141A26", "text": "#93A2B4", "bubble_bg": "#162130",
+        "bubble_fg": "#E6EBF0", "bubble_border": "#344963", "star": "#CEE4FF",
         "kicker": "THE BUILD CREW · they ship while I sleep",
         "lines": {
             "walker1": ["git push!"],
@@ -64,8 +64,8 @@ THEMES = {
     # Project READMEs: transparent, readable on GitHub light and dark.
     "light-dark": {
         "frame": False, "bg": None, "border": None, "ground": "#8B949E",
-        "outline": "#1F1A2E", "eye": "#1A1426", "text": "#8B949E", "bubble_bg": "#FFFFFF",
-        "bubble_fg": "#1F1A2E", "bubble_border": "#8B949E", "star": "#B7A4F2",
+        "outline": "#1A222E", "eye": "#141A26", "text": "#8B949E", "bubble_bg": "#FFFFFF",
+        "bubble_fg": "#1A222E", "bubble_border": "#8B949E", "star": "#A4C5F2",
         "kicker": None,
         "lines": {
             "walker1": ["mAP ↑ pls"],
@@ -77,7 +77,7 @@ THEMES = {
 }
 
 CATS = {   # body, belly, accessory
-    "lav":    ("#B7A4F2", "#E4DCFF", "shades"),
+    "lav":    ("#A4C5F2", "#DCEBFF", "shades"),
     "rose":   ("#F0A8D0", "#FCE1EF", None),
     "mint":   ("#8FE3C8", "#D6F7EC", None),
     "sun":    ("#FFD36E", "#FFF0C7", "glasses"),
@@ -111,10 +111,10 @@ def palette(t, body, belly):
 def accessory(kind, t):
     if kind == "shades":
         rows = [".oooooo..oooooo.", "..oooo....oooo.."]
-        return runs(rows, {"o": "#111018"}, 6) + f'<rect x="{2 * P}" y="{6 * P}" width="{P}" height="{P}" fill="#FFFFFF" opacity=".7"/>'
+        return runs(rows, {"o": "#101418"}, 6) + f'<rect x="{2 * P}" y="{6 * P}" width="{P}" height="{P}" fill="#FFFFFF" opacity=".7"/>'
     if kind == "glasses":
         rows = [".oooo.....oooo..", ".o..oooooo..o...", ".oooo.....oooo.."]
-        return runs(rows, {"o": "#3A2D5C"}, 5)
+        return runs(rows, {"o": "#2D3F5C"}, 5)
     return ""
 
 
@@ -173,13 +173,13 @@ def walker(name, t, lines, base_x, duration, delay, direction=1, hop=False, blin
 def laptop_cat(t, lines, x):
     body, belly, _ = CATS["sun"]
     laptop = (
-        f'<rect x="{1 * P}" y="{12 * P}" width="{14 * P}" height="{4 * P}" rx="2" fill="#C9C5D8" stroke="{t["outline"]}" stroke-width="2"/>'
-        f'<rect x="{0}" y="{16 * P}" width="{16 * P}" height="{P}" fill="#9A93B4" stroke="{t["outline"]}" stroke-width="2"/>'
-        f'<text x="{8 * P}" y="{15 * P}" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#7B61D9">&lt;/&gt;</text>'
+        f'<rect x="{1 * P}" y="{12 * P}" width="{14 * P}" height="{4 * P}" rx="2" fill="#C5CED8" stroke="{t["outline"]}" stroke-width="2"/>'
+        f'<rect x="{0}" y="{16 * P}" width="{16 * P}" height="{P}" fill="#93A2B4" stroke="{t["outline"]}" stroke-width="2"/>'
+        f'<text x="{8 * P}" y="{15 * P}" text-anchor="middle" class="mono" font-size="11" font-weight="700" fill="#6197D9">&lt;/&gt;</text>'
     )
     paws = (f'<g class="tapA"><rect x="{3 * P}" y="{11 * P}" width="{2 * P}" height="{P}" fill="{body}" stroke="{t["outline"]}"/></g>'
             f'<g class="tapB"><rect x="{11 * P}" y="{11 * P}" width="{2 * P}" height="{P}" fill="{body}" stroke="{t["outline"]}"/></g>')
-    glow = f'<ellipse cx="{8 * P}" cy="{9 * P}" rx="{9 * P}" ry="{5 * P}" fill="#B7A4F2" class="glow"/>'
+    glow = f'<ellipse cx="{8 * P}" cy="{9 * P}" rx="{9 * P}" ry="{5 * P}" fill="#A4C5F2" class="glow"/>'
     return (f'<g transform="translate({x},{GROUND - CAT_H})">{glow}'
             f'{cat("sun", t, legs="sit", blink_delay=1.3)}{laptop}{paws}'
             f'{bubble(lines, t, "say-code", CAT_W / 2, -34)}</g>')

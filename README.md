@@ -3,9 +3,9 @@
 </a>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=B7A4F2&style=flat-square" alt="Profile views">
-  <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E8E6F0&color=7FE0E8&labelColor=14101F" alt="GitHub followers"></a>
-  <img src="https://img.shields.io/badge/STATUS-OPEN_TO_WORK-8FE3C8?style=flat-square&labelColor=14101F" alt="Status: open to work">
+  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=A4C5F2&style=flat-square" alt="Profile views">
+  <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E6EBF0&color=7FE0E8&labelColor=10161F" alt="GitHub followers"></a>
+  <img src="https://img.shields.io/badge/STATUS-OPEN_TO_WORK-8FE3C8?style=flat-square&labelColor=10161F" alt="Status: open to work">
 </p>
 
 <a href="https://hemashreevi.github.io">
@@ -13,16 +13,16 @@
 </a>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-Connect-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>
-  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Portfolio"></a>
-  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-Say_hi-7B61D9?style=for-the-badge&labelColor=14101F&logo=gmail&logoColor=E8E6F0" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-Connect-6197D9?style=for-the-badge&labelColor=10161F&logo=linkedin&logoColor=E6EBF0" alt="LinkedIn"></a>
+  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-6197D9?style=for-the-badge&labelColor=10161F&logo=googlechrome&logoColor=E6EBF0" alt="Portfolio"></a>
+  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-Say_hi-6197D9?style=for-the-badge&labelColor=10161F&logo=gmail&logoColor=E6EBF0" alt="Email"></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-3E3463?style=flat-square" alt="B.Tech CSE at VIT Chennai">
-  <img src="https://img.shields.io/badge/📍-Chennai,_India-3E3463?style=flat-square" alt="Location">
-  <img src="https://img.shields.io/badge/🟢-Open_to_opportunities-3E3463?style=flat-square" alt="Open to opportunities">
-  <img src="https://img.shields.io/badge/📜-Patent_co--inventor-3E3463?style=flat-square" alt="Patent co-inventor">
+  <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-344963?style=flat-square" alt="B.Tech CSE at VIT Chennai">
+  <img src="https://img.shields.io/badge/📍-Chennai,_India-344963?style=flat-square" alt="Location">
+  <img src="https://img.shields.io/badge/🟢-Open_to_opportunities-344963?style=flat-square" alt="Open to opportunities">
+  <img src="https://img.shields.io/badge/📜-Patent_co--inventor-344963?style=flat-square" alt="Patent co-inventor">
 </p>
 
 
@@ -40,16 +40,16 @@
 <img src="./assets/cards/title-work.svg" width="100%" alt="04 Selected work: Things I've built.">
 
 <a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions on 13,000+ X-rays (test mAP@50 38.7%), with per-finding HiResCAM explanations, an FDI tooth chart, a Gradio app and PDF reports."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Dental Malocclusion Detection repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="Dental Malocclusion Detection repository"></a></p>
 
 <a href="https://github.com/HemashreeVI/SeatLock"><img src="./assets/cards/project-seatlock.svg" width="100%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/SeatLock"><img src="https://img.shields.io/badge/Repository-SeatLock-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="SeatLock repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/SeatLock"><img src="https://img.shields.io/badge/Repository-SeatLock-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="SeatLock repository"></a></p>
 
 <a href="https://github.com/HemashreeVI/rootlens"><img src="./assets/cards/project-rootlens.svg" width="100%" alt="RootLens: an incident-response lab that detects a failing microservice, investigates the cause, decides on a fix within strict limits, rolls back the bad release and verifies recovery, with an audit log of every decision. A real incident went from open to resolved in under 2 minutes; 118 unit tests."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/rootlens"><img src="https://img.shields.io/badge/Repository-RootLens-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="RootLens repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/rootlens"><img src="https://img.shields.io/badge/Repository-RootLens-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="RootLens repository"></a></p>
 
 <a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="TriageIQ repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="TriageIQ repository"></a></p>
 
 <a href="https://hemashreevi.github.io/GitLoom/"><img src="./assets/cards/project-gitloom.svg" width="100%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
 <p align="center">
@@ -57,30 +57,30 @@
   <br><sub>▶ Click the preview to watch the 1-minute demo</sub>
 </p>
 <p align="center">
-  <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Try GitLoom live"></a>
-  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-1_min_demo-F0A8D0?style=for-the-badge&labelColor=14101F&logo=youtube&logoColor=E8E6F0" alt="Watch the GitLoom demo"></a>
-  <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="GitLoom repository"></a>
+  <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=for-the-badge&labelColor=10161F&logo=googlechrome&logoColor=E6EBF0" alt="Try GitLoom live"></a>
+  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-1_min_demo-F0A8D0?style=for-the-badge&labelColor=10161F&logo=youtube&logoColor=E6EBF0" alt="Watch the GitLoom demo"></a>
+  <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="GitLoom repository"></a>
 </p>
 
 <img src="./assets/cards/project-walker.svg" width="100%" alt="Smart Walker (patent, filing in progress): co-invented IoT walker that predicts fall risk using dual IMUs and load cells with sensor fusion; runs standalone on Arduino for under USD 30.">
 
 <a href="https://github.com/HemashreeVI/Rover"><img src="./assets/cards/project-rover.svg" width="100%" alt="RL Rover for Hazard Detection: a simulated rover that learns to explore a disaster area and discovers hazards through perception, using tabular Q-learning, a lightweight CNN and a 4-way reward ablation."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/Rover"><img src="https://img.shields.io/badge/Repository-RL_Rover-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="RL Rover repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/Rover"><img src="https://img.shields.io/badge/Repository-RL_Rover-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="RL Rover repository"></a></p>
 
 <a href="https://github.com/HemashreeVI/smart-grocer"><img src="./assets/cards/project-grocer.svg" width="100%" alt="Smart Grocer: multimodal fresh-produce spoilage detection, item localization and expiry-aware retail inventory management."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/smart-grocer"><img src="https://img.shields.io/badge/Repository-Smart_Grocer-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Smart Grocer repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/smart-grocer"><img src="https://img.shields.io/badge/Repository-Smart_Grocer-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="Smart Grocer repository"></a></p>
 
 <img src="./assets/cards/project-more.svg" width="100%" alt="More projects: Intrusion Detection and Threat Modeling, a behavioral IDS for a simulated bank; Jarvis, an offline privacy-friendly voice assistant.">
-<p align="center"><a href="https://github.com/HemashreeVI/JarvisAI"><img src="https://img.shields.io/badge/Repository-Jarvis-3E3463?style=for-the-badge&labelColor=14101F&logo=github&logoColor=E8E6F0" alt="Jarvis repository"></a></p>
+<p align="center"><a href="https://github.com/HemashreeVI/JarvisAI"><img src="https://img.shields.io/badge/Repository-Jarvis-344963?style=for-the-badge&labelColor=10161F&logo=github&logoColor=E6EBF0" alt="Jarvis repository"></a></p>
 
 <img src="./assets/cards/title-building.svg" width="100%" alt="05 In progress: Currently building.">
 <img src="./assets/cards/building.svg" width="100%" alt="Currently building: Pulse, a free status page on GitHub Actions and Pages (step 1 of 5); PortPilot, find and free busy ports (planned); BST Playground, animated binary search trees (planned); Pit Wall, F1 race replays (planned); LeetCode Solutions in Java (daily).">
 <p align="center">
-  <img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=14101F" alt="Pulse">
-  <a href="https://github.com/HemashreeVI/portpilot"><img src="https://img.shields.io/badge/PortPilot-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="PortPilot"></a>
-  <a href="https://github.com/HemashreeVI/bst-playground"><img src="https://img.shields.io/badge/BST_Playground-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="BST Playground"></a>
-  <img src="https://img.shields.io/badge/Pit_Wall-planned-B7A4F2?style=flat-square&labelColor=14101F" alt="Pit Wall">
-  <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=14101F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
+  <img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=10161F" alt="Pulse">
+  <a href="https://github.com/HemashreeVI/portpilot"><img src="https://img.shields.io/badge/PortPilot-planned-A4C5F2?style=flat-square&labelColor=10161F" alt="PortPilot"></a>
+  <a href="https://github.com/HemashreeVI/bst-playground"><img src="https://img.shields.io/badge/BST_Playground-planned-A4C5F2?style=flat-square&labelColor=10161F" alt="BST Playground"></a>
+  <img src="https://img.shields.io/badge/Pit_Wall-planned-A4C5F2?style=flat-square&labelColor=10161F" alt="Pit Wall">
+  <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=10161F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
 </p>
 
 <img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
@@ -165,9 +165,9 @@
 
 <img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
-<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F" alt="Play now"></a></p>
+<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-6197D9?style=for-the-badge&labelColor=10161F" alt="Play now"></a></p>
 
-<p align="center"><a href="https://hemashreevi.github.io/chess/"><img src="https://img.shields.io/badge/♞_Drag_%26_drop_chess-hemashreevi.github.io%2Fchess-E10600?style=for-the-badge&labelColor=14101F" alt="Play drag-and-drop chess on my portfolio"></a></p>
+<p align="center"><a href="https://hemashreevi.github.io/chess/"><img src="https://img.shields.io/badge/♞_Drag_%26_drop_chess-hemashreevi.github.io%2Fchess-E10600?style=for-the-badge&labelColor=10161F" alt="Play drag-and-drop chess on my portfolio"></a></p>
 <p align="center">Want to drag real pieces? Play the <a href="https://hemashreevi.github.io/chess/"><b>full chess board on my portfolio</b></a>.<br>Or play right here on GitHub: you're White, a Stockfish bot plays Black.</p>
 
 <!-- CHESS:START -->
@@ -233,9 +233,9 @@
 <img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-hema--shree272005-7B61D9?style=for-the-badge&labelColor=14101F&logo=linkedin&logoColor=E8E6F0" alt="LinkedIn"></a>
-  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-7B61D9?style=for-the-badge&labelColor=14101F&logo=googlechrome&logoColor=E8E6F0" alt="Portfolio"></a>
-  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-7B61D9?style=for-the-badge&labelColor=14101F&logo=gmail&logoColor=E8E6F0" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-hema--shree272005-6197D9?style=for-the-badge&labelColor=10161F&logo=linkedin&logoColor=E6EBF0" alt="LinkedIn"></a>
+  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-6197D9?style=for-the-badge&labelColor=10161F&logo=googlechrome&logoColor=E6EBF0" alt="Portfolio"></a>
+  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-6197D9?style=for-the-badge&labelColor=10161F&logo=gmail&logoColor=E6EBF0" alt="Email"></a>
 </p>
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>
