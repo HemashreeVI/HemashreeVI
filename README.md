@@ -2,6 +2,8 @@
   <img src="./assets/intro/hemashree-intro.gif?v=2" width="100%" alt="Cinematic intro in royal blue: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB, a light sweeps across it, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT.">
 </a>
 
+<img src="./assets/cards/cat-hello.svg" width="100%" alt="A small black cat in a royal blue hoodie jumps up into view, lands and waves. Speech bubble: hi! welcome to my GitHub world. Grab a snack, explore the repos, stay a while.">
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=839DFB&style=flat-square" alt="Profile views">
   <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E6E9F0&color=7FE0E8&labelColor=10131F" alt="GitHub followers"></a>
@@ -237,5 +239,7 @@
   <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Portfolio"></a>
   <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-416AE6?style=for-the-badge&labelColor=10131F&logo=gmail&logoColor=E6E9F0" alt="Email"></a>
 </p>
+
+<img src="./assets/cards/cat-bye.svg" width="100%" alt="The black cat in a royal blue hoodie waves goodbye. Speech bubble: thanks for stopping by! see you soon. Star a repo if something made you smile.">
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>
