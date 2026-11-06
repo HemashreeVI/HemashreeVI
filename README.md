@@ -1,9 +1,5 @@
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/hemashree-intro.gif" width="100%" alt="Cinematic intro: glowing particles converge to spell HEMASHREE, a light sweeps across the name, then Software Engineer. Building systems that see, decide and keep people safe.">
-</a>
-
-<a href="https://hemashreevi.github.io">
-  <img src="./assets/cards/pixel-header.svg" width="100%" alt="Player select screen: a pixel-art portrait of Hemashree in a navy suit beside her name in a pixel font. Class: Software Engineer. Skill bars for vision, security, backend and embedded fill up. Perks: patent co-inventor, 4 languages, 13K X-rays. Press start.">
+  <img src="./assets/intro/hemashree-intro.gif" width="100%" alt="Cinematic intro in royal blue: glowing particles converge to spell HEMASHREE, a light sweeps across the name, then Software Engineer, the tagline Building systems that see, decide and keep people safe, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT.">
 </a>
 
 <p align="center">
