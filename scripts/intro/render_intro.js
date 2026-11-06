@@ -17,6 +17,10 @@ const FPS = 30;
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'intro-'));
   const browser = await chromium.launch({ args: ['--allow-file-access-from-files'] });
   const page = await browser.newPage({ viewport: { width: 1920, height: 800 } });
+  const cat = {};
+  for (const n of ['walk1', 'walk2', 'walk3', 'walk4', 'wave'])
+    cat[n] = 'data:image/png;base64,' + fs.readFileSync(path.join(ROOT, 'assets', 'cat', n + '.png')).toString('base64');
+  await page.addInitScript(c => { window.CAT = c; }, cat);
   await page.goto('file://' + path.join(__dirname, 'intro.html'));
   await page.evaluate(() => window.ready);
   const dur = await page.evaluate(() => window.DURATION);
