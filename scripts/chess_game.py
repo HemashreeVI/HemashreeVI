@@ -35,8 +35,8 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "HemashreeVI/HemashreeVI")
 START, END = "<!-- CHESS:START -->", "<!-- CHESS:END -->"
 
 # Profile palette
-P = {"bg0": "#090D12", "bg1": "#10161F", "line": "#263547", "line2": "#344963", "lav": "#A4C5F2",
-     "lilac": "#CEE4FF", "silver": "#E6EBF0", "mist": "#C5CED8", "muted": "#93A2B4", "mint": "#8FE3C8"}
+P = {"bg0": "#090B12", "bg1": "#10131F", "line": "#262E47", "line2": "#2B3963", "lav": "#839DFB",
+     "lilac": "#CEDAFF", "silver": "#E6E9F0", "mist": "#C5CAD8", "muted": "#939BB4", "mint": "#8FE3C8"}
 # Polished wood board
 SQ = {"square light": "#EBD3AE", "square dark": "#A8744C",
       "square light lastmove": "#E6CF7A", "square dark lastmove": "#B99A45",
@@ -154,7 +154,7 @@ PIECE_GRADIENTS = """
 <linearGradient id="ivory" x1="0" y1="0" x2="1" y2="1">
   <stop offset="0" stop-color="#FFFDF6"/><stop offset=".45" stop-color="#F1E6CF"/><stop offset="1" stop-color="#C9B48E"/></linearGradient>
 <linearGradient id="ebony" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="#5A5560"/><stop offset=".35" stop-color="#23252B"/><stop offset="1" stop-color="#0B0A0D"/></linearGradient>"""
+  <stop offset="0" stop-color="#5A5560"/><stop offset=".35" stop-color="#23242B"/><stop offset="1" stop-color="#0B0A0D"/></linearGradient>"""
 
 
 def carve(svg):
@@ -218,8 +218,8 @@ def render_board(s, b):
 <desc id="d">{status}. Position (FEN): {b.fen()}. Recent moves: {', '.join(recent) or 'none'}. Visitors {r['visitors']}, bot {r['bot']}, draws {r['draws']}.</desc>
 <style>.s{{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif}}.m{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}}</style>
 <defs>
-<radialGradient id="bg" cx="30%" cy="30%" r="90%"><stop offset="0" stop-color="#162130"/><stop offset=".55" stop-color="{P['bg1']}"/><stop offset="1" stop-color="{P['bg0']}"/></radialGradient>
-<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6197D9" stop-opacity=".45"/><stop offset="1" stop-color="#6197D9" stop-opacity="0"/></radialGradient>
+<radialGradient id="bg" cx="30%" cy="30%" r="90%"><stop offset="0" stop-color="#161C30"/><stop offset=".55" stop-color="{P['bg1']}"/><stop offset="1" stop-color="{P['bg0']}"/></radialGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#416AE6" stop-opacity=".45"/><stop offset="1" stop-color="#416AE6" stop-opacity="0"/></radialGradient>
 <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
 <filter id="lift" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".6"/></filter>
 </defs>
