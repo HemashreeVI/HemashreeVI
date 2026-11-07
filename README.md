@@ -62,26 +62,7 @@
   <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="GitLoom repository"></a>
 </p>
 
-<img src="./assets/cards/project-walker.svg" width="100%" alt="Smart Walker (patent, filing in progress): co-invented IoT walker that predicts fall risk using dual IMUs and load cells with sensor fusion; runs standalone on Arduino for under USD 30.">
 
-<a href="https://github.com/HemashreeVI/Rover"><img src="./assets/cards/project-rover.svg" width="100%" alt="RL Rover for Hazard Detection: a simulated rover that learns to explore a disaster area and discovers hazards through perception, using tabular Q-learning, a lightweight CNN and a 4-way reward ablation."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/Rover"><img src="https://img.shields.io/badge/Repository-RL_Rover-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="RL Rover repository"></a></p>
-
-<a href="https://github.com/HemashreeVI/smart-grocer"><img src="./assets/cards/project-grocer.svg" width="100%" alt="Smart Grocer: multimodal fresh-produce spoilage detection, item localization and expiry-aware retail inventory management."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/smart-grocer"><img src="https://img.shields.io/badge/Repository-Smart_Grocer-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Smart Grocer repository"></a></p>
-
-<img src="./assets/cards/project-more.svg" width="100%" alt="More projects: Intrusion Detection and Threat Modeling, a behavioral IDS for a simulated bank; Jarvis, an offline privacy-friendly voice assistant.">
-<p align="center"><a href="https://github.com/HemashreeVI/JarvisAI"><img src="https://img.shields.io/badge/Repository-Jarvis-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Jarvis repository"></a></p>
-
-<img src="./assets/cards/title-building.svg" width="100%" alt="05 In progress: Currently building.">
-<img src="./assets/cards/building.svg" width="100%" alt="Currently building: Pulse, a free status page on GitHub Actions and Pages (step 1 of 5); PortPilot, find and free busy ports (planned); BST Playground, animated binary search trees (planned); Pit Wall, F1 race replays (planned); LeetCode Solutions in Java (daily).">
-<p align="center">
-  <img src="https://img.shields.io/badge/Pulse-step_1_of_5-8FE3C8?style=flat-square&labelColor=10131F" alt="Pulse">
-  <a href="https://github.com/HemashreeVI/portpilot"><img src="https://img.shields.io/badge/PortPilot-planned-839DFB?style=flat-square&labelColor=10131F" alt="PortPilot"></a>
-  <a href="https://github.com/HemashreeVI/bst-playground"><img src="https://img.shields.io/badge/BST_Playground-planned-839DFB?style=flat-square&labelColor=10131F" alt="BST Playground"></a>
-  <img src="https://img.shields.io/badge/Pit_Wall-planned-839DFB?style=flat-square&labelColor=10131F" alt="Pit Wall">
-  <a href="https://github.com/HemashreeVI/leetcode-solutions"><img src="https://img.shields.io/badge/LeetCode_Solutions-daily-F0A8D0?style=flat-square&labelColor=10131F&logo=leetcode&logoColor=F0A8D0" alt="LeetCode Solutions"></a>
-</p>
 
 <img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
 <img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: Spring Boot, FastAPI, Flask, Docker, Kafka, Redis, Prometheus, Grafana, GitHub Actions, k6. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: PostgreSQL, SQLite, MySQL, Redis, Qdrant, Firebase. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
