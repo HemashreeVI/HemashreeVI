@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 300" width="600" height="300" role="img" aria-labelledby="lng-t lng-d">
+<title id="lng-t">Most used languages of HemashreeVI</title>
+<desc id="lng-d">HTML: 26.3%; Python: 25.4%; JavaScript: 17.0%; Jupyter Notebook: 16.5%; Java: 5.4%; CSS: 4.6%</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#839DFB}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="lng-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#161C30"/>
+    <stop offset=".55" stop-color="#10131F"/>
+    <stop offset="1" stop-color="#090B12"/>
+  </radialGradient>
+  <radialGradient id="lng-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#416AE6" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#416AE6" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="lng-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#E6E9F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E6E9F0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="lng-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C5CAD8"/>
+    <stop offset="1" stop-color="#839DFB"/>
+  </linearGradient>
+  <linearGradient id="lng-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#839DFB" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#839DFB" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#839DFB" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="lng-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#839DFB" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="lng-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#lng-bg)" stroke="#262E47"/>
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#lng-grid)"/>
+<ellipse cx="120" cy="60" rx="210" ry="210" fill="url(#lng-glowA)"/>
+<ellipse cx="480" cy="240" rx="150" ry="150" fill="url(#lng-glowB)"/><circle class="twinkle" cx="402" cy="44" r="0.8" fill="#E6E9F0" style="animation-delay:2.5s"/>
+<circle class="twinkle" cx="227" cy="157" r="0.8" fill="#E6E9F0" style="animation-delay:3.9s"/>
+<circle class="twinkle" cx="276" cy="227" r="1.6" fill="#E6E9F0" style="animation-delay:3.9s"/>
+<circle class="twinkle" cx="257" cy="58" r="0.8" fill="#E6E9F0" style="animation-delay:0.4s"/>
+<circle class="twinkle" cx="62" cy="95" r="1.2" fill="#E6E9F0" style="animation-delay:2.6s"/>
+<circle class="twinkle" cx="262" cy="173" r="1.2" fill="#E6E9F0" style="animation-delay:2.6s"/>
+<circle class="twinkle" cx="341" cy="29" r="1" fill="#E6E9F0" style="animation-delay:2.0s"/>
+<circle class="twinkle" cx="55" cy="22" r="1.2" fill="#E6E9F0" style="animation-delay:0.3s"/>
+<circle class="twinkle" cx="345" cy="26" r="1.2" fill="#E6E9F0" style="animation-delay:2.1s"/>
+<circle class="twinkle" cx="480" cy="26" r="0.8" fill="#E6E9F0" style="animation-delay:3.6s"/><text x="36" y="50" class="kick">MOST USED LANGUAGES</text><clipPath id="lng-bar"><rect x="40" y="76" width="520" height="12" rx="6"/></clipPath><g clip-path="url(#lng-bar)"><rect x="40" y="76" width="520" height="12" fill="#262E47"/><rect x="40.0" y="76" width="137.4" height="12" fill="#e34c26"/><rect x="176.9" y="76" width="132.4" height="12" fill="#3572A5"/><rect x="308.8" y="76" width="88.9" height="12" fill="#f1e05a"/><rect x="397.2" y="76" width="86.1" height="12" fill="#DA5B0B"/><rect x="482.8" y="76" width="28.8" height="12" fill="#b07219"/><rect x="511.1" y="76" width="24.3" height="12" fill="#663399"/></g><circle cx="48" cy="125" r="6" fill="#e34c26"/><text x="64" y="130" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >HTML</text><text x="268" y="130" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >26.3%</text><circle cx="318" cy="125" r="6" fill="#3572A5"/><text x="334" y="130" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >Python</text><text x="538" y="130" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >25.4%</text><circle cx="48" cy="177" r="6" fill="#f1e05a"/><text x="64" y="182" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >JavaScript</text><text x="268" y="182" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >17.0%</text><circle cx="318" cy="177" r="6" fill="#DA5B0B"/><text x="334" y="182" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >Jupyter Notebook</text><text x="538" y="182" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >16.5%</text><circle cx="48" cy="229" r="6" fill="#b07219"/><text x="64" y="234" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >Java</text><text x="268" y="234" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >5.4%</text><circle cx="318" cy="229" r="6" fill="#663399"/><text x="334" y="234" class="sans" font-size="15" fill="#E6E9F0" text-anchor="start" >CSS</text><text x="538" y="234" class="mono" font-size="14" fill="#939BB4" text-anchor="end" >4.6%</text>
+</svg>

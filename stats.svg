@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 300" width="600" height="300" role="img" aria-labelledby="sta-t sta-d">
+<title id="sta-t">GitHub stats of HemashreeVI</title>
+<desc id="sta-d">Total stars earned: 74; Commits (2026): 245; Commits (all time): 245; Pull requests: 32; Issues: 3; Contributed to: 1</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#839DFB}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="sta-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#161C30"/>
+    <stop offset=".55" stop-color="#10131F"/>
+    <stop offset="1" stop-color="#090B12"/>
+  </radialGradient>
+  <radialGradient id="sta-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#416AE6" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#416AE6" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="sta-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#E6E9F0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E6E9F0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="sta-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C5CAD8"/>
+    <stop offset="1" stop-color="#839DFB"/>
+  </linearGradient>
+  <linearGradient id="sta-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#839DFB" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#839DFB" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#839DFB" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="sta-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#839DFB" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="sta-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#sta-bg)" stroke="#262E47"/>
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#sta-grid)"/>
+<ellipse cx="480" cy="60" rx="210" ry="210" fill="url(#sta-glowA)"/>
+<ellipse cx="120" cy="240" rx="150" ry="150" fill="url(#sta-glowB)"/><circle class="twinkle" cx="27" cy="49" r="1.6" fill="#E6E9F0" style="animation-delay:0.6s"/>
+<circle class="twinkle" cx="44" cy="267" r="1" fill="#E6E9F0" style="animation-delay:2.8s"/>
+<circle class="twinkle" cx="98" cy="275" r="0.8" fill="#E6E9F0" style="animation-delay:2.6s"/>
+<circle class="twinkle" cx="96" cy="159" r="1.6" fill="#E6E9F0" style="animation-delay:2.1s"/>
+<circle class="twinkle" cx="135" cy="174" r="0.8" fill="#E6E9F0" style="animation-delay:0.1s"/>
+<circle class="twinkle" cx="546" cy="125" r="1" fill="#E6E9F0" style="animation-delay:0.8s"/>
+<circle class="twinkle" cx="239" cy="175" r="1" fill="#E6E9F0" style="animation-delay:0.8s"/>
+<circle class="twinkle" cx="141" cy="172" r="0.8" fill="#E6E9F0" style="animation-delay:3.8s"/>
+<circle class="twinkle" cx="490" cy="112" r="1" fill="#E6E9F0" style="animation-delay:0.6s"/>
+<circle class="twinkle" cx="466" cy="118" r="0.8" fill="#E6E9F0" style="animation-delay:2.9s"/><text x="36" y="50" class="kick">GITHUB STATS</text><g class="float" style="animation-delay:-0.0s"><text x="40" y="92" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >★</text><text x="62" y="92" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Total stars earned</text><text x="560" y="92" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">74</text></g><line x1="62" y1="104" x2="560" y2="104" stroke="#262E47"/><g class="float" style="animation-delay:-0.4s"><text x="40" y="125" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >◆</text><text x="62" y="125" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Commits (2026)</text><text x="560" y="125" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">245</text></g><line x1="62" y1="137" x2="560" y2="137" stroke="#262E47"/><g class="float" style="animation-delay:-0.8s"><text x="40" y="158" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >◇</text><text x="62" y="158" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Commits (all time)</text><text x="560" y="158" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">245</text></g><line x1="62" y1="170" x2="560" y2="170" stroke="#262E47"/><g class="float" style="animation-delay:-1.2s"><text x="40" y="191" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >⇄</text><text x="62" y="191" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Pull requests</text><text x="560" y="191" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">32</text></g><line x1="62" y1="203" x2="560" y2="203" stroke="#262E47"/><g class="float" style="animation-delay:-1.6s"><text x="40" y="224" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >!</text><text x="62" y="224" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Issues</text><text x="560" y="224" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">3</text></g><line x1="62" y1="236" x2="560" y2="236" stroke="#262E47"/><g class="float" style="animation-delay:-2.0s"><text x="40" y="257" class="mono" font-size="16" fill="#839DFB" text-anchor="middle" >⌂</text><text x="62" y="257" class="sans" font-size="15" fill="#C5CAD8" text-anchor="start" >Contributed to</text><text x="560" y="257" class="mono" font-size="16" fill="#E6E9F0" text-anchor="end" font-weight="700">1</text></g><line x1="62" y1="269" x2="560" y2="269" stroke="#262E47"/>
+</svg>
