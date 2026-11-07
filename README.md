@@ -3,7 +3,7 @@
 </a>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=839DFB&style=flat-square" alt="Profile views">
+  <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=839DFB&style=flat-square&base=1000" alt="Profile views">
   <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E6E9F0&color=7FE0E8&labelColor=10131F" alt="GitHub followers"></a>
   <img src="https://img.shields.io/badge/STATUS-OPEN_TO_WORK-8FE3C8?style=flat-square&labelColor=10131F" alt="Status: open to work">
 </p>
