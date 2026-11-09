@@ -21,7 +21,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-2B3963?style=flat-square" alt="B.Tech CSE at VIT Chennai">
   <img src="https://img.shields.io/badge/📍-Chennai,_India-2B3963?style=flat-square" alt="Location">
-  <img src="https://img.shields.io/badge/🟢-Open_to_opportunities-2B3963?style=flat-square" alt="Open to opportunities">
+  
   <img src="https://img.shields.io/badge/📜-Patent_co--inventor-2B3963?style=flat-square" alt="Patent co-inventor">
 </p>
 
