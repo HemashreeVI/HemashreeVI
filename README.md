@@ -140,7 +140,7 @@
 </p>
 
 <img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
-<img src="./assets/cards/milestones.svg" width="100%" alt="Patent (filing in progress): IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
+<img src="./assets/cards/milestones.svg" width="100%" alt="Patent: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
 <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
 
