@@ -5,12 +5,12 @@
   for every frame and turns the frames into assets/intro/hemashree-intro.{mp4,gif}.
 -->
 <html><head><meta charset="utf-8">
-<style>html,body{margin:0;background:#05070D}canvas{display:block}</style>
+<style>html,body{margin:0;background:#07030F}canvas{display:block}</style>
 </head><body>
 <canvas id="c" width="1920" height="800"></canvas>
 <script>
 const W = 1920, H = 800, DURATION = 15;
-const ROYAL = '#416AE6', SKY = '#839DFB', ICE = '#CEDAFF', SILVER = '#E6E9F0', MUTED = '#8E9BC0';
+const ROYAL = '#8B5CF6', SKY = '#22D3EE', ICE = '#E0E7FF', SILVER = '#F1F5FF', MUTED = '#A5A3C9', PINK = '#F472B6';
 const KICKER = 'POV:';
 const NAME = 'YOU’RE ON MY GITHUB';
 const ROLE = 'HEMASHREE · SOFTWARE ENGINEER';
@@ -59,27 +59,134 @@ const namePts = sampleText(NAME, NAME_FONT, 4).map(([x, y]) => {
 });
 
 // ---------- scene pieces
+// aurora is painted on a small canvas and scaled up, which keeps it soft and cheap
+const AW = 240, AH = 100, aur = document.createElement('canvas'); aur.width = AW; aur.height = AH;
+const ag = aur.getContext('2d');
+const HORIZON = 640;
+const orbs = Array.from({ length: 14 }, () => ({
+  x: rnd() * W, y: 80 + rnd() * 520, r: 30 + rnd() * 90, sp: .2 + rnd() * .5, p: rnd() * 6.28,
+  c: ['139,92,246', '34,211,238', '244,114,182'][Math.floor(rnd() * 3)],
+}));
+
+function aurora(t, fadeIn) {
+  ag.globalCompositeOperation = 'source-over';
+  ag.clearRect(0, 0, AW, AH);
+  ag.globalCompositeOperation = 'lighter';
+  const bands = [
+    { y: .30, amp: .10, f: 1.6, sp: .45, w: .16, cols: ['34,211,238', '139,92,246'], a: .55 },
+    { y: .46, amp: .12, f: 1.1, sp: -.32, w: .20, cols: ['139,92,246', '244,114,182'], a: .50 },
+    { y: .22, amp: .08, f: 2.3, sp: .25, w: .10, cols: ['244,114,182', '34,211,238'], a: .35 },
+  ];
+  for (const b of bands) {
+    const gr = ag.createLinearGradient(0, 0, AW, 0);
+    const shift = (Math.sin(t * .4 + b.f) + 1) / 2;
+    gr.addColorStop(0, `rgba(${b.cols[0]},0)`);
+    gr.addColorStop(.15 + .25 * shift, `rgba(${b.cols[0]},${b.a})`);
+    gr.addColorStop(.55 + .25 * shift, `rgba(${b.cols[1]},${b.a})`);
+    gr.addColorStop(1, `rgba(${b.cols[1]},0)`);
+    ag.strokeStyle = gr; ag.lineWidth = b.w * AH; ag.lineCap = 'round';
+    ag.beginPath();
+    for (let x = -4; x <= AW + 4; x += 4) {
+      const u = x / AW;
+      const y = AH * (b.y + b.amp * Math.sin(u * 6.28 * b.f + t * b.sp * 2) + .04 * Math.sin(u * 17 + t * 1.3));
+      x < 0 ? ag.moveTo(x, y) : ag.lineTo(x, y);
+    }
+    ag.stroke();
+  }
+  g.save();
+  g.globalAlpha = fadeIn; g.globalCompositeOperation = 'lighter';
+  g.filter = 'blur(28px)';
+  g.drawImage(aur, 0, 0, W, H * .95);
+  g.filter = 'none';
+  g.restore();
+}
+
+function sun(t, fadeIn) {
+  // a striped synthwave sun sitting on the horizon, behind everything
+  const cx = W / 2, cy = HORIZON + 10, r = 250;
+  g.save();
+  g.globalAlpha = .55 * fadeIn;
+  const halo = g.createRadialGradient(cx, cy, r * .6, cx, cy, r * 2.1);
+  halo.addColorStop(0, 'rgba(244,114,182,.35)'); halo.addColorStop(1, 'rgba(139,92,246,0)');
+  g.fillStyle = halo; g.fillRect(0, 0, W, HORIZON + 2);
+  g.beginPath(); g.rect(0, 0, W, HORIZON); g.clip();
+  const sg = g.createLinearGradient(0, cy - r, 0, cy);
+  sg.addColorStop(0, 'rgba(252,211,77,.55)'); sg.addColorStop(.45, 'rgba(244,114,182,.55)'); sg.addColorStop(1, 'rgba(139,92,246,.5)');
+  g.fillStyle = sg;
+  g.beginPath(); g.arc(cx, cy, r, Math.PI, 0); g.fill();
+  // stripes scroll downward through the sun
+  g.globalCompositeOperation = 'destination-out';
+  for (let i = 0; i < 9; i++) {
+    const k = ((i + (t * .35) % 1) / 9);
+    const y = cy - r * .55 + k * r * .55, h = 2 + k * 14;
+    g.fillRect(cx - r, y, r * 2, h);
+  }
+  g.restore();
+}
+
+function floor(t, fadeIn) {
+  g.save();
+  g.globalAlpha = fadeIn;
+  // floor fill
+  const fg = g.createLinearGradient(0, HORIZON, 0, H);
+  fg.addColorStop(0, 'rgba(46,16,101,.85)'); fg.addColorStop(1, 'rgba(7,3,15,1)');
+  g.fillStyle = fg; g.fillRect(0, HORIZON, W, H - HORIZON);
+  g.beginPath(); g.rect(0, HORIZON, W, H - HORIZON); g.clip();
+  g.lineWidth = 2;
+  // receding horizontal lines, moving toward the viewer
+  for (let i = 0; i < 14; i++) {
+    const z = ((i + (t * .8) % 1) / 14);
+    const y = HORIZON + Math.pow(z, 2.2) * (H - HORIZON + 40);
+    g.strokeStyle = `rgba(244,114,182,${.15 + .6 * z})`;
+    g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke();
+  }
+  // vertical lines converging on the vanishing point
+  for (let i = -24; i <= 24; i++) {
+    const xb = W / 2 + i * 150;
+    const gr = g.createLinearGradient(0, HORIZON, 0, H);
+    gr.addColorStop(0, 'rgba(139,92,246,.05)'); gr.addColorStop(1, 'rgba(34,211,238,.55)');
+    g.strokeStyle = gr;
+    g.beginPath(); g.moveTo(W / 2 + i * 6, HORIZON); g.lineTo(xb * 1 + (xb - W / 2) * 1.5, H); g.stroke();
+  }
+  g.restore();
+  // glowing horizon line
+  g.save();
+  g.globalAlpha = fadeIn;
+  const hl = g.createLinearGradient(0, 0, W, 0);
+  hl.addColorStop(0, 'rgba(34,211,238,0)'); hl.addColorStop(.3, 'rgba(34,211,238,.9)');
+  hl.addColorStop(.5, 'rgba(255,255,255,1)'); hl.addColorStop(.7, 'rgba(244,114,182,.9)'); hl.addColorStop(1, 'rgba(244,114,182,0)');
+  g.shadowColor = PINK; g.shadowBlur = 24;
+  g.fillStyle = hl; g.fillRect(0, HORIZON - 1, W, 3);
+  g.restore();
+}
+
 function background(t) {
-  g.fillStyle = '#05070D'; g.fillRect(0, 0, W, H);
   const fadeIn = prog(t, 0, 1.4);
-  // nebula
-  const neb = (x, y, r, col, a) => {
-    const gr = g.createRadialGradient(x, y, 0, x, y, r);
-    gr.addColorStop(0, col.replace('A', a)); gr.addColorStop(1, col.replace('A', 0));
-    g.fillStyle = gr; g.fillRect(0, 0, W, H);
-  };
-  const drift = Math.sin(t * .35) * 40;
-  neb(W * .62 + drift, H * .45, 820, 'rgba(65,106,230,A)', .20 * fadeIn);
-  neb(W * .2 - drift, H * .6, 600, 'rgba(131,157,251,A)', .10 * fadeIn);
-  neb(W * .85, H * .2, 500, 'rgba(143,227,200,A)', .04 * fadeIn);
+  const sky = g.createLinearGradient(0, 0, 0, HORIZON);
+  sky.addColorStop(0, '#07030F'); sky.addColorStop(.55, '#140A33'); sky.addColorStop(1, '#2A0F4F');
+  g.fillStyle = '#07030F'; g.fillRect(0, 0, W, H);
+  g.globalAlpha = fadeIn; g.fillStyle = sky; g.fillRect(0, 0, W, HORIZON); g.globalAlpha = 1;
   // stars with parallax drift
   for (const s of stars) {
+    if (s.y > HORIZON - 10) continue;
     const x = (s.x - t * 14 * s.z + W) % W, tw = .45 + .55 * Math.sin(t * 2.2 + s.p);
     g.globalAlpha = fadeIn * s.z * tw;
-    g.fillStyle = s.z > .8 ? ICE : SILVER;
+    g.fillStyle = s.z > .8 ? '#CFFAFE' : SILVER;
     g.fillRect(x, s.y, s.s, s.s);
   }
   g.globalAlpha = 1;
+  aurora(t, fadeIn);
+  sun(t, fadeIn);
+  // drifting bokeh orbs
+  g.save(); g.globalCompositeOperation = 'lighter';
+  for (const o of orbs) {
+    const y = o.y + Math.sin(t * o.sp + o.p) * 24, x = (o.x + t * 10 * o.sp) % (W + 200) - 100;
+    const gr = g.createRadialGradient(x, y, 0, x, y, o.r);
+    gr.addColorStop(0, `rgba(${o.c},${.16 * fadeIn})`); gr.addColorStop(1, `rgba(${o.c},0)`);
+    g.fillStyle = gr; g.fillRect(x - o.r, y - o.r, o.r * 2, o.r * 2);
+  }
+  g.restore();
+  floor(t, fadeIn);
 }
 
 function nameOffset(t) { return (NAME_X1 - NAME_X0) * easeInOut(prog(t, 4.2, 5.6)); }
@@ -106,11 +213,12 @@ function nameSolid(t) {
   g.save();
   g.font = NAME_FONT; g.textAlign = 'center'; g.textBaseline = 'middle'; g.letterSpacing = '6px';
   g.globalAlpha = a;
-  g.shadowColor = ROYAL; g.shadowBlur = 70 * pulse; g.fillStyle = ROYAL;
+  g.shadowColor = PINK; g.shadowBlur = 70 * pulse; g.fillStyle = '#6D28D9';
   g.fillText(NAME, x, NAME_Y);
-  const fill = g.createLinearGradient(0, NAME_Y - 55, 0, NAME_Y + 55);
-  fill.addColorStop(0, '#A9BEFF'); fill.addColorStop(.45, '#5A80F0'); fill.addColorStop(1, ROYAL);
-  g.shadowBlur = 22; g.shadowColor = '#2F55D4'; g.fillStyle = fill;
+  const nw = g.measureText(NAME).width, sh = Math.sin(t * .8) * 120;
+  const fill = g.createLinearGradient(x - nw / 2 + sh, 0, x + nw / 2 + sh, 0);
+  fill.addColorStop(0, '#67E8F9'); fill.addColorStop(.35, '#A78BFA'); fill.addColorStop(.7, '#F472B6'); fill.addColorStop(1, '#FCD34D');
+  g.shadowBlur = 22; g.shadowColor = '#7C3AED'; g.fillStyle = fill;
   g.fillText(NAME, x, NAME_Y);
   g.restore();
   // light sweeps across the name
@@ -137,14 +245,14 @@ function sweep(t, a, b, cx) {
   g.save();
   // streak
   const gr = g.createLinearGradient(0, NAME_Y, W, NAME_Y);
-  gr.addColorStop(0, 'rgba(131,157,251,0)');
+  gr.addColorStop(0, 'rgba(34,211,238,0)');
   gr.addColorStop(clamp(sx / W), 'rgba(230,236,255,.9)');
-  gr.addColorStop(1, 'rgba(131,157,251,0)');
+  gr.addColorStop(1, 'rgba(34,211,238,0)');
   g.globalAlpha = Math.sin(k * Math.PI);
   g.fillStyle = gr; g.fillRect(0, NAME_Y - 1, W, 2);
   // flare
   const fl = g.createRadialGradient(sx, NAME_Y, 0, sx, NAME_Y, 120);
-  fl.addColorStop(0, 'rgba(255,255,255,.95)'); fl.addColorStop(.15, 'rgba(131,157,251,.6)'); fl.addColorStop(1, 'rgba(65,106,230,0)');
+  fl.addColorStop(0, 'rgba(255,255,255,.95)'); fl.addColorStop(.15, 'rgba(34,211,238,.6)'); fl.addColorStop(1, 'rgba(139,92,246,0)');
   g.globalCompositeOperation = 'lighter';
   g.fillStyle = fl; g.fillRect(sx - 120, NAME_Y - 120, 240, 240);
   // sheen over the letters
@@ -160,7 +268,7 @@ function details(t) {
   if (lk > 0) {
     const half = 640 * lk;
     const gr = g.createLinearGradient(cx - half, 0, cx + half, 0);
-    gr.addColorStop(0, 'rgba(65,106,230,0)'); gr.addColorStop(.5, 'rgba(131,157,251,.95)'); gr.addColorStop(1, 'rgba(65,106,230,0)');
+    gr.addColorStop(0, 'rgba(139,92,246,0)'); gr.addColorStop(.5, 'rgba(34,211,238,.95)'); gr.addColorStop(1, 'rgba(139,92,246,0)');
     g.fillStyle = gr; g.fillRect(cx - half, 375, half * 2, 2);
   }
   // role, revealed letter by letter
@@ -197,7 +305,7 @@ function details(t) {
     if (k > 0) {
       const w = widths[i], y = 580 + (1 - k) * 30;
       g.globalAlpha = clamp(k);
-      g.fillStyle = 'rgba(16,19,31,.85)'; g.strokeStyle = i === 0 ? ROYAL : 'rgba(65,106,230,.55)'; g.lineWidth = 2;
+      g.fillStyle = 'rgba(20,10,45,.8)'; g.strokeStyle = [SKY, ROYAL, PINK, '#FCD34D'][i]; g.lineWidth = 2;
       g.beginPath(); g.roundRect(x, y - 24, w, 48, 24); g.fill(); g.stroke();
       g.fillStyle = i === 0 ? ICE : SILVER; g.fillText(s, x + w / 2, y + 1);
     }
@@ -209,7 +317,7 @@ function details(t) {
   if (hk > 0) {
     g.globalAlpha = hk; g.font = '500 20px JetBrains Mono'; g.letterSpacing = '4px';
     g.textAlign = 'left'; g.fillStyle = MUTED; g.fillText(HUD_L, 60, 52);
-    g.textAlign = 'right'; g.fillStyle = '#8FE3C8'; g.fillText(HUD_R, W - 60, 52);
+    g.textAlign = 'right'; g.fillStyle = '#5EEAD4'; g.fillText(HUD_R, W - 60, 52);
     g.beginPath(); g.arc(W - 60 - g.measureText(HUD_R).width - 22, 52, 7, 0, 6.28);
     g.globalAlpha = hk * (.5 + .5 * Math.sin(t * 5)); g.fill();
   }
@@ -222,7 +330,7 @@ function vignette(t) {
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
   // letterbox bars ease in, and the whole thing fades to black for a clean loop
   const out = prog(t, 14.3, 15);
-  if (out > 0) { g.fillStyle = `rgba(5,7,13,${out})`; g.fillRect(0, 0, W, H); }
+  if (out > 0) { g.fillStyle = `rgba(7,3,15,${out})`; g.fillRect(0, 0, W, H); }
 }
 
 // ---------- two cats (poses from assets/cat, injected as window.CAT)
@@ -242,7 +350,7 @@ const pick = (n, h) => { const im = catImgs[n]; return [im, im.width * h / im.he
 const walkFrame = t => 'walk' + (1 + Math.floor(t / .13) % 4);
 
 function shadowAt(x, w, a = .45) {
-  g.fillStyle = `rgba(65,106,230,${a})`;
+  g.fillStyle = `rgba(139,92,246,${a})`;
   g.beginPath(); g.ellipse(x, FEET, w * .36, 8, 0, 0, 6.28); g.fill();
 }
 
@@ -256,7 +364,7 @@ function bubble(t, t0, t1, text, ax, ay, side) {
   const bw = g.measureText(text).width + 56, bh = 58;
   const bx = side === 'right' ? ax + 26 : ax - 26 - bw, by = ay - bh / 2;
   g.translate(ax, ay); g.scale(k, k); g.translate(-ax, -ay);
-  g.fillStyle = 'rgba(16,19,31,.95)'; g.strokeStyle = ROYAL; g.lineWidth = 3;
+  g.fillStyle = 'rgba(20,10,45,.95)'; g.strokeStyle = PINK; g.lineWidth = 3;
   g.beginPath(); g.roundRect(bx, by, bw, bh, 29); g.fill(); g.stroke();
   const ex = side === 'right' ? bx + 2 : bx + bw - 2, ex2 = side === 'right' ? bx : bx + bw;
   g.beginPath(); g.moveTo(ex, ay - 12); g.lineTo(ax, ay + 10); g.lineTo(ex, ay + 10); g.closePath(); g.fill();
@@ -317,7 +425,7 @@ function ballPos(t) {
 }
 function drawBall(t, x, y, rot) {
   g.save(); g.translate(x, y); g.rotate(rot);
-  g.fillStyle = ROYAL; g.beginPath(); g.arc(0, 0, 14, 0, 6.28); g.fill();
+  g.fillStyle = PINK; g.beginPath(); g.arc(0, 0, 14, 0, 6.28); g.fill();
   g.strokeStyle = ICE; g.lineWidth = 2.5; g.beginPath(); g.moveTo(-14, 0); g.quadraticCurveTo(0, 10, 14, 0); g.stroke();
   g.fillStyle = 'rgba(255,255,255,.8)'; g.beginPath(); g.arc(-4, -5, 3.5, 0, 6.28); g.fill();
   g.restore();
@@ -327,7 +435,7 @@ function rightCat(t) {
   const fadeIn = prog(t, R_PLAY - .4, R_PLAY);
   g.save(); g.globalAlpha = fadeIn;
   const [bx, by, br] = ballPos(t);
-  g.fillStyle = 'rgba(65,106,230,.35)'; g.beginPath(); g.ellipse(bx, FEET, 12, 3, 0, 0, 6.28); g.fill();
+  g.fillStyle = 'rgba(139,92,246,.35)'; g.beginPath(); g.ellipse(bx, FEET, 12, 3, 0, 0, 6.28); g.fill();
   if (t < R_CHASE) {
     // sitting, hopping in time with the ball
     const [im, w] = pick('sit', 160);

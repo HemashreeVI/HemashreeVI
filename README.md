@@ -1,5 +1,5 @@
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/hemashree-intro.gif?v=4" width="100%" alt="Cinematic intro in royal blue: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB, a light sweeps across it, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Two little black cats in royal blue hoodies show up: one walks in and waves, hey, welcome in! The other chases a ball, trips over it, and says oops…, then i meant to do that. The first replies: smooth. very smooth.">
+  <img src="./assets/intro/hemashree-intro.gif?v=5" width="100%" alt="Cinematic intro under an aurora sky with a synthwave sun and a neon grid floor: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB in a cyan to violet to pink gradient, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Two little black cats show up: one waves hey, welcome in! The other chases a ball, trips, says oops…, then i meant to do that. The first replies: smooth. very smooth.">
 </a>
 
 <p align="center">
@@ -13,16 +13,18 @@
 </a>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-Connect-416AE6?style=for-the-badge&labelColor=10131F&logo=linkedin&logoColor=E6E9F0" alt="LinkedIn"></a>
-  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Portfolio"></a>
-  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-Say_hi-416AE6?style=for-the-badge&labelColor=10131F&logo=gmail&logoColor=E6E9F0" alt="Email"></a>
+  <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-mail.svg" width="52" height="52" alt="Email"></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/hema-shree272005" title="LinkedIn"><img src="./assets/icons/social-linkedin.svg" width="52" height="52" alt="LinkedIn"></a>&nbsp;&nbsp;
+  <a href="https://www.youtube.com/@shreejith-l7o" title="YouTube"><img src="./assets/icons/social-youtube.svg" width="52" height="52" alt="YouTube"></a>&nbsp;&nbsp;
+  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-2B3963?style=flat-square" alt="B.Tech CSE at VIT Chennai">
   <img src="https://img.shields.io/badge/📍-Chennai,_India-2B3963?style=flat-square" alt="Location">
   
-  <img src="https://img.shields.io/badge/📜-Patent_co--inventor-2B3963?style=flat-square" alt="Patent co-inventor">
+  <img src="https://img.shields.io/badge/📜-2_patents_(co--inventor)-2B3963?style=flat-square" alt="Co-inventor on 2 patents">
+  <img src="https://img.shields.io/badge/🌱-Open_source-2B3963?style=flat-square" alt="Open source contributor">
 </p>
 
 
@@ -37,10 +39,7 @@
 <img src="./assets/cards/title-journey.svg" width="100%" alt="03 Journey: The road so far.">
 <img src="./assets/cards/journey.svg" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
 
-<img src="./assets/cards/title-work.svg" width="100%" alt="04 Selected work: Things I've built.">
-
-<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions on 13,000+ X-rays (test mAP@50 38.7%), with per-finding HiResCAM explanations, an FDI tooth chart, a Gradio app and PDF reports."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Dental Malocclusion Detection repository"></a></p>
+<img src="./assets/cards/title-work.svg" width="100%" alt="04 Main projects: Things I've built. SeatLock, RootLens and TriageIQ.">
 
 <a href="https://github.com/HemashreeVI/SeatLock"><img src="./assets/cards/project-seatlock.svg" width="100%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/SeatLock"><img src="https://img.shields.io/badge/Repository-SeatLock-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="SeatLock repository"></a></p>
@@ -50,6 +49,9 @@
 
 <a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
 <p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="TriageIQ repository"></a></p>
+
+<p align="center"><sub>✨ <b>Also built</b> ✨</sub></p>
+
 
 <a href="https://hemashreevi.github.io/GitLoom/"><img src="./assets/cards/project-gitloom.svg" width="100%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
 <p align="center">
@@ -62,9 +64,34 @@
   <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="GitLoom repository"></a>
 </p>
 
+<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions on 13,000+ X-rays (test mAP@50 38.7%), with per-finding HiResCAM explanations, an FDI tooth chart, a Gradio app and PDF reports."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Dental Malocclusion Detection repository"></a></p>
 
 
-<img src="./assets/cards/title-toolkit.svg" width="100%" alt="06 Toolkit: The tools I reach for.">
+
+<img src="./assets/cards/title-patents.svg" width="100%" alt="05 Patents: Ideas, on file. 2 filings in progress.">
+
+<a href="https://github.com/HemashreeVI/smart_walker"><img src="./assets/cards/project-walker.svg" width="100%" alt="Patent 01, Smart Walker: a walker that predicts a fall before it happens. Dual IMUs and load cells, sensor fusion, fall-risk prediction, standalone on Arduino for under $30. Co-inventor, filing in progress."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/smart_walker"><img src="https://img.shields.io/badge/📜_Patent_01-Smart_Walker-F0A8D0?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Smart Walker repository"></a></p>
+
+<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered"><img src="./assets/cards/project-rover.svg" width="100%" alt="Patent 02, Hazard-Detection Rover: a rover that explores a disaster zone and flags hazards for rescuers. Q-learning navigation, CNN hazard perception, multi-hazard detection, emergency stop and a live rescue dashboard. Co-inventor, filing in progress."></a>
+<p align="center"><a href="https://github.com/HemashreeVI/disaster-response-rover-nodered"><img src="https://img.shields.io/badge/📜_Patent_02-Hazard_Rover-F0A8D0?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Hazard-Detection Rover repository"></a></p>
+
+<img src="./assets/cards/title-opensource.svg" width="100%" alt="06 Open source: Built in the open.">
+<a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
+<p align="center">
+  <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="https://img.shields.io/badge/PR_%23126858-merged-8957E5?style=flat-square&labelColor=10131F&logo=git&logoColor=E6E9F0" alt="Merged PR to first-contributions"></a>
+  <a href="https://github.com/HemashreeVI/ReadMeow"><img src="https://img.shields.io/badge/ReadMeow-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="ReadMeow"></a>
+  <a href="https://github.com/HemashreeVI/gitpulse"><img src="https://img.shields.io/badge/gitpulse-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="gitpulse"></a>
+  <a href="https://github.com/HemashreeVI/PortPilot"><img src="https://img.shields.io/badge/PortPilot-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="PortPilot"></a>
+  <a href="https://github.com/HemashreeVI/typewave"><img src="https://img.shields.io/badge/typewave-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="typewave"></a>
+  <a href="https://github.com/HemashreeVI/typo-arcade"><img src="https://img.shields.io/badge/typo--arcade-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="typo-arcade"></a>
+  <a href="https://github.com/HemashreeVI/token-meter"><img src="https://img.shields.io/badge/token--meter-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="token-meter"></a>
+  <a href="https://github.com/HemashreeVI/Pit-Wall-an-animated-race-replay"><img src="https://img.shields.io/badge/Pit_Wall-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="Pit Wall"></a>
+  <a href="https://github.com/HemashreeVI/ferrodo"><img src="https://img.shields.io/badge/ferrodo-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="ferrodo"></a>
+</p>
+
+<img src="./assets/cards/title-toolkit.svg" width="100%" alt="07 Toolkit: The tools I reach for.">
 <img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: Spring Boot, FastAPI, Flask, Docker, Kafka, Redis, Prometheus, Grafana, GitHub Actions, k6. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: PostgreSQL, SQLite, MySQL, Redis, Qdrant, Firebase. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
 
 <p align="center">
@@ -139,12 +166,16 @@
   <img src="./assets/icons/roboflow.svg" width="48" height="48" alt="Roboflow" title="Roboflow">
 </p>
 
-<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
-<img src="./assets/cards/milestones.svg" width="100%" alt="Patent: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
+<img src="./assets/cards/title-milestones.svg" width="100%" alt="08 Milestones: Proof, on the record.">
+<img src="./assets/cards/milestones.svg" width="100%" alt="Patents: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD; Hazard-Detection Rover, co-inventor, filing in progress. Open source: merged PR to first-contributions and 14 MIT-licensed repos. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
 <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
 
-<img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
+<img src="./assets/cards/title-youtube.svg" width="100%" alt="09 YouTube: Watch me build.">
+<a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel @shreejith-l7o: come watch me build. Project demos, behind-the-scenes builds and everything in between. Click to open the channel and subscribe."></a>
+<p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-@shreejith--l7o-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
+
+<img src="./assets/cards/title-play.svg" width="100%" alt="10 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
 <p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F" alt="Play now"></a></p>
 
@@ -157,7 +188,7 @@
 
 
 
-<img src="./assets/cards/title-commits.svg" width="100%" alt="09 Commit log: A year of building.">
+<img src="./assets/cards/title-commits.svg" width="100%" alt="11 Commit log: A year of building.">
 
 <p align="center">
   <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
@@ -192,12 +223,21 @@
 
 </details>
 
-<img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
+<img src="./assets/cards/title-connect.svg" width="100%" alt="12 Connect: Let's talk.">
+
+<p align="center">
+  <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-mail.svg" width="52" height="52" alt="Email"></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/hema-shree272005" title="LinkedIn"><img src="./assets/icons/social-linkedin.svg" width="52" height="52" alt="LinkedIn"></a>&nbsp;&nbsp;
+  <a href="https://www.youtube.com/@shreejith-l7o" title="YouTube"><img src="./assets/icons/social-youtube.svg" width="52" height="52" alt="YouTube"></a>&nbsp;&nbsp;
+  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>
+</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-hema--shree272005-416AE6?style=for-the-badge&labelColor=10131F&logo=linkedin&logoColor=E6E9F0" alt="LinkedIn"></a>
   <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Portfolio"></a>
   <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-416AE6?style=for-the-badge&labelColor=10131F&logo=gmail&logoColor=E6E9F0" alt="Email"></a>
+  <a href="https://www.youtube.com/@shreejith-l7o"><img src="https://img.shields.io/badge/YouTube-@shreejith--l7o-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="YouTube"></a>
+  <a href="https://www.instagram.com/hemashree_2_7/"><img src="https://img.shields.io/badge/Instagram-@hemashree__2__7-E1306C?style=for-the-badge&labelColor=10131F&logo=instagram&logoColor=E6E9F0" alt="Instagram"></a>
 </p>
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>

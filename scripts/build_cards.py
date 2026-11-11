@@ -53,7 +53,7 @@ PROFILE = {
     "typing": [
         "Computer Vision · Reinforcement Learning",
         "Embedded Sensing · Intrusion Detection",
-        "Co-inventor: smart walker patent (filing in progress)",
+        "Co-inventor: 2 patents, smart walker + hazard rover",
         "Backend & DevOps · Kafka · Docker · FastAPI",
         "こんにちは! I speak 4 languages",
         "Let's build something that keeps people safe",
@@ -64,7 +64,7 @@ TERMINAL = [
     ("whoami", [("out", "hemashree · software engineer")]),
     ("cat education.txt", [("out", "B.Tech Computer Science Engineering @ VIT Chennai")]),
     ("cat focus.txt", [("out", "vision · reinforcement-learning · embedded · security")]),
-    ("ls patents/", [("out", "smart-walker/"), ("note", "  # sensor-fusion fall-risk prediction (filing in progress)")]),
+    ("ls patents/", [("out", "smart-walker/  hazard-rover/"), ("note", "  # fall-risk prediction · disaster-zone hazard detection (filing in progress)")]),
     ("./status --open-to", [("out", "cybersecurity | computer-vision | cyber-physical-systems | backend & devops")]),
     ("echo $LANGUAGES", [("out", "Tamil · English · Hindi · 日本語")]),
 ]
@@ -83,7 +83,7 @@ RIGHT_NOW = [
 ]
 
 QUICK_FACTS = [
-    ("Co-inventor", "on a smart walker patent (filing in progress)"),
+    ("Co-inventor", "on 2 patents: smart walker + hazard rover"),
     ("Singapore", "NUS Industry 4.0 and SuperAI 2025"),
     ("31 dental conditions", "detected on 13,000+ X-rays"),
     ("4 languages", "Tamil · English · Hindi · 日本語"),
@@ -101,7 +101,7 @@ JOURNEY = [
     ("MAY–JUL 2025", "Research intern", ["Pose estimation", "MMPose"]),
     ("JUN 2025", "Singapore", ["NUS Industry 4.0", "SuperAI · IBM Gen AI"]),
     ("JUL–SEP 2025", "Dental X-ray AI", ["YOLOv9 · 31 classes", "13,000+ images"]),
-    ("2025–26", "Patent co-inventor", ["Smart walker", "filing in progress"]),
+    ("2025–26", "2 patents", ["Smart walker · rover", "filing in progress"]),
     ("2026", "Backend & DevOps", ["SeatLock · RootLens", "TriageIQ"]),
     ("NOW", "Building 4 more", ["+ grinding LeetCode", "next stop: your team?"]),
 ]
@@ -159,7 +159,7 @@ PROJECTS = [
     },
     {
         "slug": "walker",
-        "kicker": "06 · IoT · PATENT (FILING IN PROGRESS)",
+        "kicker": "PATENT 01 · IoT · FILING IN PROGRESS",
         "name": "Smart Walker",
         "pitch": "A walker that predicts a fall before it happens.",
         "built": "Dual IMUs + load cells · sensor fusion · fall-risk prediction · standalone on Arduino",
@@ -169,12 +169,12 @@ PROJECTS = [
     },
     {
         "slug": "rover",
-        "kicker": "07 · REINFORCEMENT LEARNING",
-        "name": "RL Rover for Hazard Detection",
-        "pitch": "A rover that learns to explore a disaster zone.",
-        "built": "Simulated rover discovers hazards through perception · tabular Q-learning + lightweight CNN",
-        "stats": [("Q-learning", "tabular agent"), ("CNN", "hazard perception"), ("4-way", "reward ablation")],
-        "tags": ["Python", "PyTorch", "Q-Learning", "CNN"],
+        "kicker": "PATENT 02 · ROBOTICS · FILING IN PROGRESS",
+        "name": "Hazard-Detection Rover",
+        "pitch": "A rover that explores a disaster zone and flags hazards for rescuers.",
+        "built": "Q-learning navigation + CNN hazard perception · multi-hazard detection · emergency stop · live rescue dashboard",
+        "stats": [("Q-learning", "learns to explore"), ("CNN", "hazard perception"), ("Patent", "co-inventor")],
+        "tags": ["Python", "PyTorch", "Q-Learning", "CNN", "Node-RED", "MQTT"],
         "motif": "grid",
     },
     {
@@ -222,6 +222,10 @@ TOOLKIT = [
 MILESTONES = [
     ("PATENT", "Co-inventor · filing in progress",
      "IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance. Inventive disclosure filed with IIPRD."),
+    ("PATENT", "Co-inventor · filing in progress",
+     "Hazard-Detection Rover: autonomous disaster-zone exploration with learned navigation and multi-hazard detection."),
+    ("OSS", "Open source contributor",
+     "Merged PR to firstcontributions/first-contributions (Oct 2026) · 14 MIT-licensed repos of my own."),
     ("RESEARCH", "Research Intern, VIT Chennai",
      "Human pose estimation with MMPose, validated against Kinovea ground truth (May–Jul 2025)."),
     ("NUS", "National University of Singapore",
@@ -242,6 +246,33 @@ GAMES = [
     ("Incident hunt", "Find the broken microservice", "hunt"),
     ("Hiragana sprint", "Test your Japanese", "kana"),
 ]
+
+
+OPEN_SOURCE_PR = ("firstcontributions/first-contributions", "#126858", "Add Hemashree to Contributors list", "MERGED · OCT 2026")
+OPEN_SOURCE_REPOS = [
+    ("ReadMeow", "profile READMEs, designed for you"),
+    ("gitpulse", "4 free tools for your GitHub"),
+    ("PortPilot", "who's using my port? free it"),
+    ("typewave", "mechanical keyboard sounds"),
+    ("typo-arcade", "a typing test that plays like a game"),
+    ("token-meter", "tokens & context, per message"),
+    ("Pit Wall", "replay real F1 races"),
+    ("ferrodo", "terminal todo manager in Rust"),
+]
+
+YOUTUBE = {
+    "handle": "@shreejith-l7o",
+    "url": "https://www.youtube.com/@shreejith-l7o",
+    "pitch": "Come watch me build.",
+    "line": "Project demos, behind-the-scenes builds and everything in between.",
+}
+
+SOCIAL = {
+    "mail": "mailto:shreejith2005@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/hema-shree272005",
+    "youtube": "https://www.youtube.com/@shreejith-l7o",
+    "instagram": "https://www.instagram.com/hemashree_2_7/",
+}
 
 
 # ---------------------------------------------------------------- helpers
@@ -923,6 +954,111 @@ def build_games():
     write("games.svg", svg(W, H, u, "Play on my portfolio", desc, "".join(parts)))
 
 
+# ---------------------------------------------------------------- open source
+def build_opensource():
+    W, H, u = 1200, 330, "oss"
+    repo, num, title, status = OPEN_SOURCE_PR
+    parts = [frame(W, H, u, (0.25, 0.35))]
+    # left: the merged pull request, drawn as a branch merging back into main
+    parts.append(f'<rect x="32" y="28" width="440" height="274" rx="18" fill="{C["panel"]}" stroke="{C["line2"]}"/>')
+    parts.append(text(56, 60, "CONTRIBUTION", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"'))
+    parts.append(f'<rect x="324" y="44" width="124" height="24" rx="12" fill="#8957E5" fill-opacity=".22" stroke="#A371F7"/>')
+    parts.append(text(386, 60, status.split(" ·")[0], 10.5, "#D2A8FF", 'mono', 'middle', 'letter-spacing="2"'))
+    parts.append(text(56, 102, "first-contributions", 26, C['silver'], 'serif'))
+    parts.append(text(56, 126, f"{repo} {num}", 12, C['muted'], 'mono'))
+    parts.append(text(56, 152, f"“{title}”", 15, C['mist'], 'serif', 'start', 'font-style="italic"'))
+    y0, y1 = 236, 204
+    parts.append(f'<path d="M56 {y0}H424" stroke="{C["muted"]}" stroke-width="3" stroke-linecap="round"/>')
+    parts.append(f'<path d="M110 {y0}C140 {y0} 140 {y1} 170 {y1}H300C330 {y1} 330 {y0} 360 {y0}" fill="none" stroke="#A371F7" stroke-width="3"/>')
+    for cx in (80, 110, 360, 400):
+        parts.append(f'<circle cx="{cx}" cy="{y0}" r="7" fill="{C["bg0"]}" stroke="{C["muted"]}" stroke-width="3"/>')
+    for cx in (200, 250):
+        parts.append(f'<circle cx="{cx}" cy="{y1}" r="7" fill="{C["bg0"]}" stroke="#A371F7" stroke-width="3"/>')
+    parts.append(f'<circle r="5" fill="#fff"><animateMotion dur="3.2s" repeatCount="indefinite" path="M110 {y0}C140 {y0} 140 {y1} 170 {y1}H300C330 {y1} 330 {y0} 360 {y0}"/></circle>')
+    parts.append(f'<circle class="pulse" cx="360" cy="{y0}" r="10" fill="none" stroke="#A371F7" stroke-width="2"/>')
+    parts.append(text(56, 278, "main", 11, C['muted'], 'mono') + text(200, 186, "my branch", 11, "#D2A8FF", 'mono'))
+    parts.append(text(424, 278, status.split("· ")[1], 11, C['muted'], 'mono', 'end', 'letter-spacing="2"'))
+    # right: my own open-source tools
+    parts.append(text(504, 60, "MY OPEN-SOURCE TOOLS · MIT LICENSED", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"'))
+    parts.append(text(1168, 60, "14 MIT REPOS · FREE TO USE &amp; FORK".replace("&amp;", "&"), 11, C['mint'], 'mono', 'end', 'letter-spacing="2"'))
+    for k, (name, what) in enumerate(OPEN_SOURCE_REPOS):
+        col, row = k % 2, k // 2
+        x, y = 504 + col * 336, 80 + row * 56
+        parts.append(f'<rect x="{x}" y="{y}" width="324" height="46" rx="12" fill="{C["panel"]}" stroke="{C["line2"]}"/>')
+        parts.append(f'<circle class="pulse" cx="{x + 20}" cy="{y + 23}" r="4" fill="{[C["mint"], C["lav"], C["rose"]][k % 3]}" style="animation-delay:{k * .3:.1f}s"/>')
+        parts.append(text(x + 36, y + 21, name, 15, C['silver'], 'serif'))
+        parts.append(text(x + 36, y + 37, what, 11.5, C['muted'], 'sans'))
+    desc = (f"Open source. Merged pull request {num} to {repo}: {title}. "
+            "My own MIT-licensed tools: " + "; ".join(f"{n}: {w}" for n, w in OPEN_SOURCE_REPOS) + ".")
+    write("opensource.svg", svg(W, H, u, "Open source", desc, "".join(parts)))
+
+
+# ---------------------------------------------------------------- youtube
+def build_youtube():
+    W, H, u = 1200, 330, "yt"
+    y = YOUTUBE
+    RED = "#FF0033"
+    parts = [frame(W, H, u, (0.75, 0.4))]
+    parts.append(f'<radialGradient id="yt-red" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="{RED}" stop-opacity=".35"/><stop offset="1" stop-color="{RED}" stop-opacity="0"/></radialGradient>')
+    parts.append(f'<ellipse cx="860" cy="165" rx="360" ry="200" fill="url(#yt-red)"/>')
+    # left: channel identity
+    parts.append(f'<g transform="translate(40 40)"><rect width="68" height="48" rx="14" fill="{RED}"/><path d="M27 14L45 24L27 34Z" fill="#fff"/></g>')
+    parts.append(text(124, 60, "YOUTUBE CHANNEL", 11, "#FF8FA3", 'mono', 'start', 'letter-spacing="3"'))
+    parts.append(text(124, 84, y["handle"], 16, C['mist'], 'mono'))
+    parts.append(text(38, 152, y["pitch"], 44, f"url(#{u}-silver)", 'serif'))
+    parts.append(text(40, 186, y["line"], 15, C['muted'], 'sans'))
+    # subscribe button with a ringing bell
+    parts.append(f'<g transform="translate(40 216)"><rect width="190" height="50" rx="25" fill="{RED}"><animate attributeName="opacity" values="1;.82;1" dur="2s" repeatCount="indefinite"/></rect>'
+                 f'<text x="78" y="31" class="sans" font-size="16" font-weight="700" fill="#fff" letter-spacing="1.5">SUBSCRIBE</text>'
+                 f'<g transform="translate(40 25)"><g><path d="M-9 6V-1a9 9 0 0 1 18 0V6l3 3H-12Z M-3 11a3 3 0 0 0 6 0" fill="#fff"/>'
+                 f'<animateTransform attributeName="transform" type="rotate" values="0;18;-18;12;-12;0;0" keyTimes="0;.06;.12;.18;.24;.3;1" dur="3s" repeatCount="indefinite"/></g></g></g>')
+    parts.append(text(250, 248, "▸ click anywhere on this card", 12, C['dim'], 'mono'))
+    # right: a video player mock with a pulsing play button and a progress bar
+    vx, vy, vw, vh = 640, 34, 520, 262
+    parts.append(f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" rx="16" fill="{C["bg0"]}" stroke="{C["line2"]}"/>')
+    parts.append(f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" rx="16" fill="url(#{u}-grid)"/>')
+    for k in range(5):
+        bx = vx + 40 + k * 92
+        hgt = 40 + (k * 37) % 70
+        parts.append(f'<rect x="{bx}" y="{vy + 190 - hgt}" width="56" height="{hgt}" rx="6" fill="{[C["lav"], C["rose"], C["mint"]][k % 3]}" fill-opacity=".18">'
+                     f'<animate attributeName="height" values="{hgt};{hgt + 30};{hgt}" dur="{2 + k * .4:.1f}s" repeatCount="indefinite"/>'
+                     f'<animate attributeName="y" values="{vy + 190 - hgt};{vy + 160 - hgt};{vy + 190 - hgt}" dur="{2 + k * .4:.1f}s" repeatCount="indefinite"/></rect>')
+    cx, cy = vx + vw / 2, vy + 112
+    parts.append(f'<circle cx="{cx}" cy="{cy}" r="44" fill="{RED}" fill-opacity=".25"><animate attributeName="r" values="40;58;40" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values=".35;0;.35" dur="2.4s" repeatCount="indefinite"/></circle>')
+    parts.append(f'<rect x="{cx - 42}" y="{cy - 30}" width="84" height="60" rx="18" fill="{RED}"/><path d="M{cx - 11} {cy - 15}L{cx + 15} {cy}L{cx - 11} {cy + 15}Z" fill="#fff"/>')
+    py = vy + vh - 34
+    parts.append(f'<rect x="{vx + 24}" y="{py}" width="{vw - 48}" height="5" rx="2.5" fill="{C["line2"]}"/>')
+    parts.append(f'<rect x="{vx + 24}" y="{py}" width="0" height="5" rx="2.5" fill="{RED}"><animate attributeName="width" values="0;{vw - 48}" dur="8s" repeatCount="indefinite"/></rect>')
+    parts.append(f'<circle cy="{py + 2.5}" r="7" fill="{RED}"><animate attributeName="cx" values="{vx + 24};{vx + vw - 24}" dur="8s" repeatCount="indefinite"/></circle>')
+    parts.append(text(vx + 24, py - 12, "▶ NEW VIDEOS", 11, C['mist'], 'mono', 'start', 'letter-spacing="2"'))
+    parts.append(text(vx + vw - 24, py - 12, y["handle"], 11, C['muted'], 'mono', 'end'))
+    desc = f"My YouTube channel {y['handle']}: {y['pitch']} {y['line']} Click to subscribe."
+    write("youtube.svg", svg(W, H, u, f"YouTube channel {y['handle']}", desc, "".join(parts)))
+
+
+# ---------------------------------------------------------------- social icons
+SOCIAL_ICONS = {
+    "mail": ("Email", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6B5B"/><stop offset="1" stop-color="#D93025"/></linearGradient>',
+             '<rect x="14" y="19" width="36" height="26" rx="4" fill="none" stroke="#fff" stroke-width="3.5"/><path d="M16 22L32 34L48 22" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/>'),
+    "linkedin": ("LinkedIn", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D8CFF"/><stop offset="1" stop-color="#0A66C2"/></linearGradient>',
+                 '<circle cx="21" cy="19.5" r="4.6" fill="#fff"/><rect x="16.6" y="27" width="8.8" height="22" rx="1.5" fill="#fff"/>'
+                 '<path d="M30 27h8.4v3.2c1.4-2.3 3.9-3.8 7-3.8 5.2 0 7.6 3.3 7.6 9V49h-8.8V37.2c0-2.8-1-4.4-3.4-4.4-2.6 0-4 1.8-4 4.6V49H30Z" fill="#fff"/>'),
+    "youtube": ("YouTube", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4D5E"/><stop offset="1" stop-color="#E00022"/></linearGradient>',
+                '<rect x="12" y="18" width="40" height="28" rx="9" fill="#fff"/><path d="M28 24.5L39 32L28 39.5Z" fill="#E00022"/>'),
+    "instagram": ("Instagram", '<radialGradient id="g" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/><stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient>',
+                  '<rect x="15" y="15" width="34" height="34" rx="10" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="32" cy="32" r="8" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="41.6" cy="22.4" r="2.5" fill="#fff"/>'),
+}
+
+
+def build_social_icons():
+    out = ROOT / "assets" / "icons"
+    for slug, (name, grad, glyph) in SOCIAL_ICONS.items():
+        content = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="{name}">'
+                   f'<title>{name}</title><defs>{grad}</defs><rect width="64" height="64" rx="16" fill="url(#g)"/>{glyph}</svg>\n')
+        (out / f"social-{slug}.svg").write_text(content, encoding="utf-8")
+        print(f"  icons/social-{slug}.svg")
+
+
 # ---------------------------------------------------------------- footer
 def build_footer():
     W, H, u = 1200, 330, "foot"
@@ -948,13 +1084,16 @@ def main():
         ("01", "ABOUT", "Hello, I'm", "Hemashree.", "WHO I AM", "about"),
         ("02", "PHILOSOPHY", "How I think about", "problems.", "SENSE · DECIDE · PROTECT", "think"),
         ("03", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
-        ("04", "SELECTED WORK", "Things I've", "built.", "FEATURED PROJECTS", "work"),
-        ("05", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
-        ("06", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
-        ("07", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("08", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("10", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("04", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ", "work"),
+        ("05", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
+        ("06", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
+        ("13", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
+        ("07", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
+        ("08", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
+        ("09", "YOUTUBE", "Watch me", "build.", "@SHREEJITH-L7O", "youtube"),
+        ("10", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("11", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("12", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
     # the roaming cat turns up in some of the section titles
     cat = {
@@ -977,6 +1116,9 @@ def main():
     build_toolkit()
     build_milestones()
     build_games()
+    build_opensource()
+    build_youtube()
+    build_social_icons()
     build_footer()
 
 

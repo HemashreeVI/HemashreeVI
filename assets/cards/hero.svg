@@ -148,11 +148,11 @@
 </g>
 
 <clipPath id="hero-type2"><rect x="204" y="58" height="24" width="0">
-  <animate attributeName="width" dur="27.0s" repeatCount="indefinite" keyTimes="0;0.3333;0.4000;1" values="0;0;424;424"/>
+  <animate attributeName="width" dur="27.0s" repeatCount="indefinite" keyTimes="0;0.3333;0.4000;1" values="0;0;408;408"/>
 </rect></clipPath>
 <g clip-path="url(#hero-type2)" opacity="0">
   <animate attributeName="opacity" dur="27.0s" repeatCount="indefinite" calcMode="discrete" keyTimes="0;0.3333;0.5000" values="0;1;0"/>
-  <text x="206" y="75" class="mono" font-size="13" fill="#E6E9F0" text-anchor="start" >Co-inventor: smart walker patent (filing in progress)</text>
+  <text x="206" y="75" class="mono" font-size="13" fill="#E6E9F0" text-anchor="start" >Co-inventor: 2 patents, smart walker + hazard rover</text>
 </g>
 
 <clipPath id="hero-type3"><rect x="204" y="58" height="24" width="0">
