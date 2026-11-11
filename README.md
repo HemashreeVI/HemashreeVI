@@ -171,9 +171,9 @@
 <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
 
-<img src="./assets/cards/title-youtube.svg" width="100%" alt="09 YouTube: Watch me build.">
-<a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel @shreejith-l7o: come watch me build. Project demos, behind-the-scenes builds and everything in between. Click to open the channel and subscribe."></a>
-<p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-@shreejith--l7o-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
+<img src="./assets/cards/title-youtube.svg" width="100%" alt="09 YouTube: Byte Decoded.">
+<a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
+<p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
 
 <img src="./assets/cards/title-play.svg" width="100%" alt="10 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
@@ -236,7 +236,7 @@
   <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-hema--shree272005-416AE6?style=for-the-badge&labelColor=10131F&logo=linkedin&logoColor=E6E9F0" alt="LinkedIn"></a>
   <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Portfolio"></a>
   <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-416AE6?style=for-the-badge&labelColor=10131F&logo=gmail&logoColor=E6E9F0" alt="Email"></a>
-  <a href="https://www.youtube.com/@shreejith-l7o"><img src="https://img.shields.io/badge/YouTube-@shreejith--l7o-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="YouTube"></a>
+  <a href="https://www.youtube.com/@shreejith-l7o"><img src="https://img.shields.io/badge/YouTube-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="YouTube"></a>
   <a href="https://www.instagram.com/hemashree_2_7/"><img src="https://img.shields.io/badge/Instagram-@hemashree__2__7-E1306C?style=for-the-badge&labelColor=10131F&logo=instagram&logoColor=E6E9F0" alt="Instagram"></a>
 </p>
 

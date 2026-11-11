@@ -263,8 +263,9 @@ OPEN_SOURCE_REPOS = [
 YOUTUBE = {
     "handle": "@shreejith-l7o",
     "url": "https://www.youtube.com/@shreejith-l7o",
-    "pitch": "Come watch me build.",
-    "line": "Project demos, behind-the-scenes builds and everything in between.",
+    "name": "Byte Decoded",
+    "pitch": "Byte Decoded",
+    "line": "Dev builds, AI/ML, project walkthroughs and tech vlogs.",
 }
 
 SOCIAL = {
@@ -1004,7 +1005,7 @@ def build_youtube():
     # left: channel identity
     parts.append(f'<g transform="translate(40 40)"><rect width="68" height="48" rx="14" fill="{RED}"/><path d="M27 14L45 24L27 34Z" fill="#fff"/></g>')
     parts.append(text(124, 60, "YOUTUBE CHANNEL", 11, "#FF8FA3", 'mono', 'start', 'letter-spacing="3"'))
-    parts.append(text(124, 84, y["handle"], 16, C['mist'], 'mono'))
+    parts.append(text(124, 84, y["handle"] + " · 60+ videos", 16, C['mist'], 'mono'))
     parts.append(text(38, 152, y["pitch"], 44, f"url(#{u}-silver)", 'serif'))
     parts.append(text(40, 186, y["line"], 15, C['muted'], 'sans'))
     # subscribe button with a ringing bell
@@ -1032,8 +1033,8 @@ def build_youtube():
     parts.append(f'<circle cy="{py + 2.5}" r="7" fill="{RED}"><animate attributeName="cx" values="{vx + 24};{vx + vw - 24}" dur="8s" repeatCount="indefinite"/></circle>')
     parts.append(text(vx + 24, py - 12, "▶ NEW VIDEOS", 11, C['mist'], 'mono', 'start', 'letter-spacing="2"'))
     parts.append(text(vx + vw - 24, py - 12, y["handle"], 11, C['muted'], 'mono', 'end'))
-    desc = f"My YouTube channel {y['handle']}: {y['pitch']} {y['line']} Click to subscribe."
-    write("youtube.svg", svg(W, H, u, f"YouTube channel {y['handle']}", desc, "".join(parts)))
+    desc = f"My YouTube channel Byte Decoded ({y['handle']}): {y['line']} Click to subscribe."
+    write("youtube.svg", svg(W, H, u, f"Byte Decoded on YouTube", desc, "".join(parts)))
 
 
 # ---------------------------------------------------------------- social icons
@@ -1090,7 +1091,7 @@ def main():
         ("13", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
         ("07", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
         ("08", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("09", "YOUTUBE", "Watch me", "build.", "@SHREEJITH-L7O", "youtube"),
+        ("09", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
         ("10", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
         ("11", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
         ("12", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
