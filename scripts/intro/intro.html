@@ -3,14 +3,18 @@
   Cinematic intro for the profile README, drawn on a canvas one frame at a time.
   scripts/intro/render_intro.js loads this page, calls window.renderFrame(t)
   for every frame and turns the frames into assets/intro/hemashree-intro.{mp4,gif}.
+
+  0.0–2.9s  terminal boot screen
+  2.9–3.3s  glitch cut
+  3.3s on   neon city at night: title glitches in, cats show up on the street
 -->
 <html><head><meta charset="utf-8">
-<style>html,body{margin:0;background:#07030F}canvas{display:block}</style>
+<style>html,body{margin:0;background:#05030B}canvas{display:block}</style>
 </head><body>
 <canvas id="c" width="1920" height="800"></canvas>
 <script>
 const W = 1920, H = 800, DURATION = 15;
-const ROYAL = '#8B5CF6', SKY = '#22D3EE', ICE = '#E0E7FF', SILVER = '#F1F5FF', MUTED = '#A5A3C9', PINK = '#F472B6';
+const ROYAL = '#8B5CF6', SKY = '#22D3EE', ICE = '#E0E7FF', SILVER = '#F1F5FF', MUTED = '#A5A3C9', PINK = '#F472B6', GOLD = '#FCD34D';
 const KICKER = 'POV:';
 const NAME = 'YOU’RE ON MY GITHUB';
 const ROLE = 'HEMASHREE · SOFTWARE ENGINEER';
@@ -18,277 +22,363 @@ const TAGLINE = 'stay a while, it’s a vibe ✨';
 const TAGS = ['COMPUTER VISION', 'SECURITY', 'BACKEND & DEVOPS', 'EMBEDDED & IoT'];
 const HUD_L = 'VIT CHENNAI · B.TECH CSE';
 const HUD_R = 'OPEN TO WORK';
+const BOOT = [
+  ['> booting hemashree.exe', '', 'OK'],
+  ['> loading projects', 'SeatLock · RootLens · TriageIQ', 'OK'],
+  ['> mounting patents', 'smart-walker · hazard-rover', 'OK'],
+  ['> linking channel', 'Byte Decoded ▶', 'OK'],
+  ['> status', 'OPEN TO WORK', ''],
+];
+const BOOT_END = 2.9, CITY = 3.0;
 
 const cv = document.getElementById('c'), g = cv.getContext('2d');
+const tmp = document.createElement('canvas'); tmp.width = W; tmp.height = H;
+const tg = tmp.getContext('2d');
 
 // ---------- helpers
-let seed = 20261106;
+let seed = 20261113;
 const rnd = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
+const hash = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const prog = (t, a, b) => clamp((t - a) / (b - a));
 const easeOut = x => 1 - Math.pow(1 - x, 3);
 const easeInOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 const backOut = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
 
-// ---------- layout
 const NAME_FONT = '800 124px Inter';
 const NAME_Y = 290;
-const NAME_X0 = W / 2, NAME_X1 = W / 2;          // name stays centred
-
-// ---------- stars
-const stars = Array.from({ length: 260 }, () => ({
-  x: rnd() * W, y: rnd() * H, z: .2 + rnd() * .8, s: rnd() < .12 ? 2.2 : 1.2, p: rnd() * 6.28,
-}));
-
-// ---------- name particles: sample the rendered name
-function sampleText(text, font, step) {
-  const o = document.createElement('canvas'); o.width = W; o.height = H;
-  const c = o.getContext('2d');
-  c.font = font; c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.letterSpacing = '6px';
-  c.fillStyle = '#fff'; c.fillText(text, W / 2, NAME_Y);
-  const d = c.getImageData(0, 0, W, H).data, pts = [];
-  for (let y = 0; y < H; y += step) for (let x = 0; x < W; x += step)
-    if (d[(y * W + x) * 4 + 3] > 128) pts.push([x, y]);
-  return pts;
-}
-const namePts = sampleText(NAME, NAME_FONT, 4).map(([x, y]) => {
-  const a = rnd() * 6.28, r = 300 + rnd() * 900;
-  return { tx: x, ty: y, sx: W / 2 + Math.cos(a) * r * 1.4, sy: H / 2 + Math.sin(a) * r * .6,
-           d: rnd() * .9, sz: 1 + rnd() * 1.6 };
-});
-
-// ---------- scene pieces
-// aurora is painted on a small canvas and scaled up, which keeps it soft and cheap
-const AW = 240, AH = 100, aur = document.createElement('canvas'); aur.width = AW; aur.height = AH;
-const ag = aur.getContext('2d');
 const HORIZON = 640;
-const orbs = Array.from({ length: 14 }, () => ({
-  x: rnd() * W, y: 80 + rnd() * 520, r: 30 + rnd() * 90, sp: .2 + rnd() * .5, p: rnd() * 6.28,
-  c: ['139,92,246', '34,211,238', '244,114,182'][Math.floor(rnd() * 3)],
-}));
 
-function aurora(t, fadeIn) {
-  ag.globalCompositeOperation = 'source-over';
-  ag.clearRect(0, 0, AW, AH);
-  ag.globalCompositeOperation = 'lighter';
-  const bands = [
-    { y: .30, amp: .10, f: 1.6, sp: .45, w: .16, cols: ['34,211,238', '139,92,246'], a: .55 },
-    { y: .46, amp: .12, f: 1.1, sp: -.32, w: .20, cols: ['139,92,246', '244,114,182'], a: .50 },
-    { y: .22, amp: .08, f: 2.3, sp: .25, w: .10, cols: ['244,114,182', '34,211,238'], a: .35 },
-  ];
-  for (const b of bands) {
-    const gr = ag.createLinearGradient(0, 0, AW, 0);
-    const shift = (Math.sin(t * .4 + b.f) + 1) / 2;
-    gr.addColorStop(0, `rgba(${b.cols[0]},0)`);
-    gr.addColorStop(.15 + .25 * shift, `rgba(${b.cols[0]},${b.a})`);
-    gr.addColorStop(.55 + .25 * shift, `rgba(${b.cols[1]},${b.a})`);
-    gr.addColorStop(1, `rgba(${b.cols[1]},0)`);
-    ag.strokeStyle = gr; ag.lineWidth = b.w * AH; ag.lineCap = 'round';
-    ag.beginPath();
-    for (let x = -4; x <= AW + 4; x += 4) {
-      const u = x / AW;
-      const y = AH * (b.y + b.amp * Math.sin(u * 6.28 * b.f + t * b.sp * 2) + .04 * Math.sin(u * 17 + t * 1.3));
-      x < 0 ? ag.moveTo(x, y) : ag.lineTo(x, y);
+// ---------- city, generated once
+const sky = document.createElement('canvas'); sky.width = W; sky.height = H;
+const NEON = ['#22D3EE', '#F472B6', '#FCD34D', '#A78BFA'];
+const winColors = ['#FDE68A', '#67E8F9', '#F9A8D4', '#C4B5FD'];
+const flicker = [];   // windows that switch on and off
+const beacons = [];   // red blinking lights on rooftops
+const signs = [];     // neon signs
+
+function building(c, x, w, top, fill, edge, winA) {
+  c.fillStyle = fill; c.fillRect(x, top, w, HORIZON - top);
+  c.fillStyle = edge; c.fillRect(x, top, w, 2);
+  // windows
+  for (let y = top + 14; y < HORIZON - 12; y += 18)
+    for (let wx = x + 8; wx < x + w - 10; wx += 14) {
+      const r = rnd();
+      if (r < .26) {
+        const col = winColors[Math.floor(rnd() * winColors.length)];
+        if (r < .03) flicker.push({ x: wx, y, col, p: rnd() * 100, a: winA });
+        else { c.globalAlpha = winA * (.45 + rnd() * .55); c.fillStyle = col; c.fillRect(wx, y, 6, 8); c.globalAlpha = 1; }
+      }
     }
-    ag.stroke();
-  }
-  g.save();
-  g.globalAlpha = fadeIn; g.globalCompositeOperation = 'lighter';
-  g.filter = 'blur(28px)';
-  g.drawImage(aur, 0, 0, W, H * .95);
-  g.filter = 'none';
-  g.restore();
 }
 
-function sun(t, fadeIn) {
-  // a striped synthwave sun sitting on the horizon, behind everything
-  const cx = W / 2, cy = HORIZON + 10, r = 250;
-  g.save();
-  g.globalAlpha = .55 * fadeIn;
-  const halo = g.createRadialGradient(cx, cy, r * .6, cx, cy, r * 2.1);
-  halo.addColorStop(0, 'rgba(244,114,182,.35)'); halo.addColorStop(1, 'rgba(139,92,246,0)');
-  g.fillStyle = halo; g.fillRect(0, 0, W, HORIZON + 2);
-  g.beginPath(); g.rect(0, 0, W, HORIZON); g.clip();
-  const sg = g.createLinearGradient(0, cy - r, 0, cy);
-  sg.addColorStop(0, 'rgba(252,211,77,.55)'); sg.addColorStop(.45, 'rgba(244,114,182,.55)'); sg.addColorStop(1, 'rgba(139,92,246,.5)');
-  g.fillStyle = sg;
-  g.beginPath(); g.arc(cx, cy, r, Math.PI, 0); g.fill();
-  // stripes scroll downward through the sun
-  g.globalCompositeOperation = 'destination-out';
-  for (let i = 0; i < 9; i++) {
-    const k = ((i + (t * .35) % 1) / 9);
-    const y = cy - r * .55 + k * r * .55, h = 2 + k * 14;
-    g.fillRect(cx - r, y, r * 2, h);
+function buildCity() {
+  const c = sky.getContext('2d');
+  // sky: deep night fading to magenta at the horizon
+  const sg = c.createLinearGradient(0, 0, 0, HORIZON);
+  sg.addColorStop(0, '#05030B'); sg.addColorStop(.5, '#170A35'); sg.addColorStop(.85, '#4A1259'); sg.addColorStop(1, '#7A1D5E');
+  c.fillStyle = sg; c.fillRect(0, 0, W, HORIZON);
+  // stars
+  for (let i = 0; i < 160; i++) {
+    c.globalAlpha = .2 + rnd() * .7; c.fillStyle = '#fff';
+    c.fillRect(rnd() * W, rnd() * 380, rnd() < .1 ? 2 : 1, rnd() < .1 ? 2 : 1);
   }
-  g.restore();
+  c.globalAlpha = 1;
+  // crisp striped moon
+  const mx = W / 2, my = 470, mr = 150;
+  c.save(); c.beginPath(); c.arc(mx, my, mr, 0, 6.28); c.clip();
+  const mg = c.createLinearGradient(0, my - mr, 0, my + mr);
+  mg.addColorStop(0, '#FCD34D'); mg.addColorStop(.5, '#F472B6'); mg.addColorStop(1, '#8B5CF6');
+  c.fillStyle = mg; c.fillRect(mx - mr, my - mr, mr * 2, mr * 2);
+  c.fillStyle = '#2A0F45';
+  for (let i = 0; i < 8; i++) { const y = my - 10 + i * 18; c.fillRect(mx - mr, y, mr * 2, 3 + i * 1.6); }
+  c.restore();
+  // back skyline: lower in the middle so the title has room
+  for (let x = -20; x < W + 20;) {
+    const w = 46 + rnd() * 70, e = Math.abs(x + w / 2 - W / 2) / (W / 2);
+    const top = HORIZON - (110 + 230 * Math.pow(e, 1.2) + rnd() * 70);
+    building(c, x, w, top, '#1C1038', '#3B2470', .55);
+    if (rnd() < .25) { c.fillStyle = '#1C1038'; c.fillRect(x + w / 2 - 1, top - 30, 2, 30); beacons.push({ x: x + w / 2, y: top - 32, p: rnd() * 6 }); }
+    x += w + 2;
+  }
+  // front skyline, darker, with hero towers at the edges for the neon signs
+  const front = [
+    [-10, 120, 230], [110, 70, 470], [180, 140, 330], [320, 90, 520], [410, 120, 410], [530, 80, 545],
+    [610, 110, 575], [720, 90, 560], [1110, 90, 560], [1200, 110, 575], [1310, 80, 545], [1390, 120, 420],
+    [1510, 90, 510], [1600, 150, 300], [1750, 70, 460], [1820, 110, 250],
+  ];
+  for (const [x, w, top] of front) building(c, x, w, top, '#0C0719', '#2A1850', .9);
+  signs.push({ x: 40, y: 270, text: 'SEATLOCK', col: NEON[1], v: true, p: 1 });
+  signs.push({ x: 228, y: 350, text: 'ROOTLENS', col: NEON[0], v: true, p: 2.3 });
+  signs.push({ x: 1648, y: 320, text: 'TRIAGEIQ', col: NEON[2], v: true, p: 3.1 });
+  signs.push({ x: 1850, y: 275, text: 'バイト', col: NEON[3], v: true, p: .4 });
+  signs.push({ x: 1395, y: 445, text: 'BYTE DECODED', col: NEON[1], v: false, p: 5.2 });
+  signs.push({ x: 415, y: 432, text: 'OPEN 24/7', col: NEON[0], v: false, p: 6.7 });
 }
 
-function floor(t, fadeIn) {
-  g.save();
-  g.globalAlpha = fadeIn;
-  // floor fill
+const cars = Array.from({ length: 6 }, (_, i) => ({
+  y: 150 + i * 52 + rnd() * 20, sp: 260 + rnd() * 260, dir: i % 2 ? -1 : 1, off: rnd() * 3000, s: .7 + (i / 6) * .5,
+}));
+const rain = Array.from({ length: 110 }, () => ({ x: rnd() * W, y: rnd() * H, sp: 1100 + rnd() * 500, l: 14 + rnd() * 16 }));
+
+function signOn(s, t) {
+  // mostly on, with the odd buzz-flicker
+  const k = Math.floor(t * 12 + s.p * 7);
+  return !(hash(k + s.p) > .975 || (hash(Math.floor(t * .7 + s.p)) > .86 && hash(k * 3.1) > .5));
+}
+
+function drawSign(s, t, a) {
+  const on = signOn(s, t);
+  g.save(); g.globalAlpha = a;
+  g.font = s.v ? '800 30px "JetBrains Mono"' : '800 26px "JetBrains Mono"';
+  g.textAlign = 'center'; g.textBaseline = 'middle'; g.letterSpacing = '0px';
+  const chars = [...s.text];
+  let bw, bh;
+  if (s.v) { bw = 52; bh = chars.length * 34 + 22; } else { bw = g.measureText(s.text).width + 40; bh = 50; }
+  g.fillStyle = 'rgba(8,4,18,.9)'; g.strokeStyle = on ? s.col : '#3A2A55'; g.lineWidth = 3;
+  if (on) { g.shadowColor = s.col; g.shadowBlur = 22; }
+  g.beginPath(); g.roundRect(s.x - bw / 2, s.y, bw, bh, 8); g.fill(); g.stroke();
+  g.fillStyle = on ? '#fff' : '#4B3B66';
+  if (on) { g.shadowColor = s.col; g.shadowBlur = 16; }
+  if (s.v) chars.forEach((ch, i) => g.fillText(ch, s.x, s.y + 28 + i * 34));
+  else g.fillText(s.text, s.x, s.y + bh / 2 + 1);
+  g.restore();
+  return on;
+}
+
+function street(t, a) {
+  g.save(); g.globalAlpha = a;
   const fg = g.createLinearGradient(0, HORIZON, 0, H);
-  fg.addColorStop(0, 'rgba(46,16,101,.85)'); fg.addColorStop(1, 'rgba(7,3,15,1)');
+  fg.addColorStop(0, '#1A0A2E'); fg.addColorStop(1, '#05030B');
   g.fillStyle = fg; g.fillRect(0, HORIZON, W, H - HORIZON);
+  // wet reflections of the signs: wobbling dashes
+  for (const s of signs) {
+    if (!signOn(s, t)) continue;
+    g.fillStyle = s.col;
+    for (let i = 0; i < 9; i++) {
+      const y = HORIZON + 8 + i * 16, wob = Math.sin(t * 4 + i * 1.7 + s.p) * 6;
+      g.globalAlpha = a * (.5 - i * .05);
+      g.fillRect(s.x - 18 + wob - i * 2, y, 36 + i * 4, 3);
+    }
+  }
+  g.globalAlpha = a;
+  // moon reflection
+  g.fillStyle = PINK;
+  for (let i = 0; i < 7; i++) { const w = 220 - i * 26 + Math.sin(t * 3 + i) * 10; g.globalAlpha = a * (.35 - i * .04); g.fillRect(W / 2 - w / 2, HORIZON + 10 + i * 18, w, 3); }
+  // perspective grid, crisp and dim
   g.beginPath(); g.rect(0, HORIZON, W, H - HORIZON); g.clip();
   g.lineWidth = 2;
-  // receding horizontal lines, moving toward the viewer
-  for (let i = 0; i < 14; i++) {
-    const z = ((i + (t * .8) % 1) / 14);
-    const y = HORIZON + Math.pow(z, 2.2) * (H - HORIZON + 40);
-    g.strokeStyle = `rgba(244,114,182,${.15 + .6 * z})`;
+  for (let i = 0; i < 12; i++) {
+    const z = (i + (t * .8) % 1) / 12, y = HORIZON + Math.pow(z, 2.2) * (H - HORIZON + 40);
+    g.globalAlpha = a * (.08 + .35 * z); g.strokeStyle = '#A78BFA';
     g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke();
   }
-  // vertical lines converging on the vanishing point
-  for (let i = -24; i <= 24; i++) {
-    const xb = W / 2 + i * 150;
-    const gr = g.createLinearGradient(0, HORIZON, 0, H);
-    gr.addColorStop(0, 'rgba(139,92,246,.05)'); gr.addColorStop(1, 'rgba(34,211,238,.55)');
-    g.strokeStyle = gr;
-    g.beginPath(); g.moveTo(W / 2 + i * 6, HORIZON); g.lineTo(xb * 1 + (xb - W / 2) * 1.5, H); g.stroke();
+  g.strokeStyle = '#22D3EE';
+  for (let i = -20; i <= 20; i++) {
+    g.globalAlpha = a * .22;
+    g.beginPath(); g.moveTo(W / 2 + i * 8, HORIZON); g.lineTo(W / 2 + i * 260, H); g.stroke();
   }
   g.restore();
-  // glowing horizon line
-  g.save();
-  g.globalAlpha = fadeIn;
+  // neon horizon line
+  g.save(); g.globalAlpha = a;
   const hl = g.createLinearGradient(0, 0, W, 0);
-  hl.addColorStop(0, 'rgba(34,211,238,0)'); hl.addColorStop(.3, 'rgba(34,211,238,.9)');
-  hl.addColorStop(.5, 'rgba(255,255,255,1)'); hl.addColorStop(.7, 'rgba(244,114,182,.9)'); hl.addColorStop(1, 'rgba(244,114,182,0)');
-  g.shadowColor = PINK; g.shadowBlur = 24;
-  g.fillStyle = hl; g.fillRect(0, HORIZON - 1, W, 3);
+  hl.addColorStop(0, '#22D3EE'); hl.addColorStop(.5, '#FFFFFF'); hl.addColorStop(1, '#F472B6');
+  g.fillStyle = hl; g.fillRect(0, HORIZON - 1, W, 2);
   g.restore();
 }
 
-function background(t) {
-  const fadeIn = prog(t, 0, 1.4);
-  const sky = g.createLinearGradient(0, 0, 0, HORIZON);
-  sky.addColorStop(0, '#07030F'); sky.addColorStop(.55, '#140A33'); sky.addColorStop(1, '#2A0F4F');
-  g.fillStyle = '#07030F'; g.fillRect(0, 0, W, H);
-  g.globalAlpha = fadeIn; g.fillStyle = sky; g.fillRect(0, 0, W, HORIZON); g.globalAlpha = 1;
-  // stars with parallax drift
-  for (const s of stars) {
-    if (s.y > HORIZON - 10) continue;
-    const x = (s.x - t * 14 * s.z + W) % W, tw = .45 + .55 * Math.sin(t * 2.2 + s.p);
-    g.globalAlpha = fadeIn * s.z * tw;
-    g.fillStyle = s.z > .8 ? '#CFFAFE' : SILVER;
-    g.fillRect(x, s.y, s.s, s.s);
+function city(t) {
+  const a = prog(t, CITY, CITY + .25);
+  if (a <= 0) return;
+  g.globalAlpha = a; g.drawImage(sky, 0, 0); g.globalAlpha = 1;
+  // flickering windows and rooftop beacons
+  for (const f of flicker) {
+    if (hash(Math.floor(t * 2 + f.p)) > .45) { g.globalAlpha = a * f.a; g.fillStyle = f.col; g.fillRect(f.x, f.y, 6, 8); }
+  }
+  for (const b of beacons) {
+    const on = Math.sin(t * 3 + b.p) > .3;
+    g.globalAlpha = a * (on ? 1 : .25); g.fillStyle = '#FF3355'; g.fillRect(b.x - 2, b.y - 2, 4, 4);
   }
   g.globalAlpha = 1;
-  aurora(t, fadeIn);
-  sun(t, fadeIn);
-  // drifting bokeh orbs
-  g.save(); g.globalCompositeOperation = 'lighter';
-  for (const o of orbs) {
-    const y = o.y + Math.sin(t * o.sp + o.p) * 24, x = (o.x + t * 10 * o.sp) % (W + 200) - 100;
-    const gr = g.createRadialGradient(x, y, 0, x, y, o.r);
-    gr.addColorStop(0, `rgba(${o.c},${.16 * fadeIn})`); gr.addColorStop(1, `rgba(${o.c},0)`);
-    g.fillStyle = gr; g.fillRect(x - o.r, y - o.r, o.r * 2, o.r * 2);
+  // flying cars with light trails
+  for (const c of cars) {
+    const span = W + 400, x0 = ((c.off + t * c.sp) % span) - 200, x = c.dir > 0 ? x0 : W - x0;
+    const len = 90 * c.s, dir = c.dir;
+    const tr = g.createLinearGradient(x, 0, x - dir * len * 2.2, 0);
+    tr.addColorStop(0, 'rgba(255,60,90,.9)'); tr.addColorStop(1, 'rgba(255,60,90,0)');
+    g.globalAlpha = a; g.fillStyle = tr; g.fillRect(Math.min(x, x - dir * len * 2.2), c.y + 2, len * 2.2, 3 * c.s);
+    g.fillStyle = '#0B0717'; g.strokeStyle = '#6D5BA8'; g.lineWidth = 1.5;
+    g.beginPath(); g.roundRect(x - 16 * c.s, c.y - 6 * c.s, 32 * c.s, 12 * c.s, 5 * c.s); g.fill(); g.stroke();
+    g.fillStyle = '#E0F2FE'; g.fillRect(x + dir * 15 * c.s - 2, c.y - 2, 4, 4);
+    g.fillStyle = '#FF3355'; g.fillRect(x - dir * 15 * c.s - 2, c.y - 2, 4, 4);
   }
-  g.restore();
-  floor(t, fadeIn);
+  g.globalAlpha = 1;
+  for (const s of signs) drawSign(s, t, a);
+  street(t, a);
 }
 
-function nameOffset(t) { return (NAME_X1 - NAME_X0) * easeInOut(prog(t, 4.2, 5.6)); }
-
-function nameParticles(t) {
-  const fade = 1 - prog(t, 3.1, 3.7);
-  if (fade <= 0) return;
-  g.fillStyle = SKY;
-  const dx = nameOffset(t);
-  for (const p of namePts) {
-    const k = easeOut(prog(t, .8 + p.d, 2.6 + p.d * .5));
-    const x = p.sx + (p.tx - p.sx) * k + dx, y = p.sy + (p.ty - p.sy) * k;
-    g.globalAlpha = fade * (.25 + .75 * k);
-    g.fillRect(x, y, p.sz, p.sz);
+function rainFx(t) {
+  const a = prog(t, CITY, CITY + .4) * (1 - prog(t, 14.3, 15));
+  if (a <= 0) return;
+  g.save(); g.strokeStyle = 'rgba(190,210,255,.28)'; g.lineWidth = 1.5; g.globalAlpha = a;
+  g.beginPath();
+  for (const r of rain) {
+    const y = (r.y + t * r.sp) % (H + 40) - 40, x = (r.x - (t * r.sp) * .18) % W;
+    const xx = x < 0 ? x + W : x;
+    g.moveTo(xx, y); g.lineTo(xx - r.l * .18, y + r.l);
   }
-  g.globalAlpha = 1;
+  g.stroke(); g.restore();
+}
+
+// ---------- boot screen
+function boot(t) {
+  if (t > BOOT_END + .45) return;
+  g.fillStyle = '#05030B'; g.fillRect(0, 0, W, H);
+  g.save();
+  g.font = '500 34px "JetBrains Mono"'; g.letterSpacing = '0px'; g.textBaseline = 'middle'; g.textAlign = 'left';
+  const x = 220, y0 = 210, lh = 66, per = .44;
+  BOOT.forEach(([cmd, arg, ok], i) => {
+    const k = prog(t, .2 + i * per, .2 + i * per + per * .7);
+    if (k <= 0) return;
+    const full = cmd + (arg ? '  ' + arg : ''), n = Math.ceil(full.length * k), shown = full.slice(0, n);
+    const y = y0 + i * lh;
+    g.fillStyle = '#5EEAD4'; g.shadowColor = '#22D3EE'; g.shadowBlur = 10;
+    g.fillText(shown.slice(0, cmd.length), x, y);
+    if (shown.length > cmd.length) {
+      g.fillStyle = i === BOOT.length - 1 ? PINK : ICE;
+      g.fillText(shown.slice(cmd.length), x + g.measureText(cmd).width, y);
+    }
+    if (k >= 1 && ok) { g.fillStyle = '#86EFAC'; g.shadowColor = '#22C55E'; g.fillText('[ ' + ok + ' ]', 1500, y); }
+    if (k < 1 || (i === BOOT.length - 1 && Math.floor(t * 4) % 2 === 0)) {
+      g.shadowBlur = 0; g.fillStyle = '#5EEAD4'; g.fillRect(x + g.measureText(shown).width + 6, y - 18, 16, 36);
+    }
+  });
+  // progress bar
+  const pk = prog(t, .2, BOOT_END - .15);
+  g.shadowBlur = 0;
+  g.strokeStyle = '#2A1850'; g.lineWidth = 2; g.strokeRect(x, 600, 1480, 22);
+  const bar = g.createLinearGradient(x, 0, x + 1480, 0);
+  bar.addColorStop(0, SKY); bar.addColorStop(.5, ROYAL); bar.addColorStop(1, PINK);
+  g.fillStyle = bar; g.fillRect(x + 4, 604, 1472 * pk, 14);
+  g.font = '500 22px "JetBrains Mono"'; g.fillStyle = MUTED;
+  g.fillText(`loading profile ${Math.round(pk * 100)}%`, x, 660);
+  // scanlines
+  g.fillStyle = 'rgba(0,0,0,.25)';
+  for (let y = 0; y < H; y += 6) g.fillRect(0, y, W, 2);
+  g.restore();
+}
+
+// ---------- glitch: displace horizontal slices of whatever is on screen, add RGB bars
+function glitch(t, strength, s0) {
+  if (strength <= 0) return;
+  tg.clearRect(0, 0, W, H); tg.drawImage(cv, 0, 0);
+  const step = Math.floor(t * 30);
+  let y = 0, i = 0;
+  while (y < H) {
+    const h = 8 + hash(step * 13 + i + s0) * 70;
+    const r = hash(step * 7 + i * 3 + s0);
+    if (r < .55 * strength) {
+      const dx = (hash(step + i * 11 + s0) - .5) * 260 * strength;
+      g.drawImage(tmp, 0, y, W, h, dx, y, W, h);
+      if (r < .18 * strength) {
+        g.globalCompositeOperation = 'lighter'; g.globalAlpha = .35;
+        g.fillStyle = r < .09 * strength ? '#FF0055' : '#00E5FF';
+        g.fillRect(0, y, W, Math.max(2, h * .3));
+        g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
+      }
+    }
+    y += h; i++;
+  }
+}
+
+// ---------- title
+function titleGlitchAmt(t) {
+  // strong while it appears, then short bursts now and then
+  let k = 1 - prog(t, 3.5, 4.3);
+  if (t < 3.5) k = 0;
+  for (const b of [6.3, 9.6, 12.9]) if (t > b && t < b + .2) k = Math.max(k, .7);
+  return k;
+}
+
+function drawName(x, y, fill, alpha) {
+  g.globalAlpha = alpha; g.fillStyle = fill; g.fillText(NAME, x, y);
 }
 
 function nameSolid(t) {
-  const a = prog(t, 2.9, 3.6);
+  const a = t < 3.5 ? 0 : (t < 4.3 ? (hash(Math.floor(t * 30)) > .3 ? 1 : .2) : 1);
   if (a <= 0) return;
-  const x = NAME_X0 + nameOffset(t);
-  const pulse = 1 + .15 * Math.sin(t * 1.6);
+  const x = W / 2, gk = titleGlitchAmt(t);
   g.save();
   g.font = NAME_FONT; g.textAlign = 'center'; g.textBaseline = 'middle'; g.letterSpacing = '6px';
-  g.globalAlpha = a;
-  g.shadowColor = PINK; g.shadowBlur = 70 * pulse; g.fillStyle = '#6D28D9';
-  g.fillText(NAME, x, NAME_Y);
+  // dark backing so the title reads over the city
+  const bk = g.createRadialGradient(x, NAME_Y, 80, x, NAME_Y, 900);
+  bk.addColorStop(0, 'rgba(5,3,11,.55)'); bk.addColorStop(1, 'rgba(5,3,11,0)');
+  g.globalAlpha = a; g.fillStyle = bk; g.fillRect(0, NAME_Y - 200, W, 420);
+  if (gk > 0) {
+    // RGB split
+    const off = 10 + 22 * gk * hash(Math.floor(t * 30));
+    g.globalCompositeOperation = 'lighter';
+    drawName(x - off, NAME_Y, '#FF0055', .8 * a);
+    drawName(x + off, NAME_Y + 3, '#00E5FF', .8 * a);
+    g.globalCompositeOperation = 'source-over';
+  }
   const nw = g.measureText(NAME).width, sh = Math.sin(t * .8) * 120;
   const fill = g.createLinearGradient(x - nw / 2 + sh, 0, x + nw / 2 + sh, 0);
-  fill.addColorStop(0, '#67E8F9'); fill.addColorStop(.35, '#A78BFA'); fill.addColorStop(.7, '#F472B6'); fill.addColorStop(1, '#FCD34D');
-  g.shadowBlur = 22; g.shadowColor = '#7C3AED'; g.fillStyle = fill;
-  g.fillText(NAME, x, NAME_Y);
+  fill.addColorStop(0, '#67E8F9'); fill.addColorStop(.35, '#A78BFA'); fill.addColorStop(.7, '#F472B6'); fill.addColorStop(1, GOLD);
+  g.shadowBlur = 30; g.shadowColor = '#7C3AED';
+  drawName(x, NAME_Y, fill, a);
+  g.shadowBlur = 0;
+  drawName(x, NAME_Y, fill, a);
   g.restore();
-  // light sweeps across the name
-  sweep(t, 3.4, 4.3, x);
-  sweep(t, 12.6, 13.4, x);
+  // chrome shine sweeping across, clipped to the letters
+  shine(t, 4.6, 5.4, x);
+  shine(t, 11.8, 12.6, x);
+}
+
+function shine(t, a, b, cx) {
+  const k = prog(t, a, b);
+  if (k <= 0 || k >= 1) return;
+  tg.clearRect(0, 0, W, H);
+  tg.save();
+  tg.font = NAME_FONT; tg.textAlign = 'center'; tg.textBaseline = 'middle'; tg.letterSpacing = '6px';
+  tg.fillStyle = '#fff'; tg.fillText(NAME, cx, NAME_Y);
+  tg.globalCompositeOperation = 'source-in';
+  const sx = cx - 900 + 1800 * easeInOut(k);
+  const gr = tg.createLinearGradient(sx - 90, 0, sx + 90, 0);
+  gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(.5, 'rgba(255,255,255,.95)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+  tg.fillStyle = gr; tg.fillRect(0, 0, W, H);
+  tg.restore();
+  g.drawImage(tmp, 0, 0);
 }
 
 function kicker(t) {
-  const k = prog(t, .5, 1.1);
+  const k = prog(t, 3.3, 3.7);
   if (k <= 0) return;
   g.save();
   g.font = '700 54px "JetBrains Mono"'; g.letterSpacing = '6px'; g.textAlign = 'left'; g.textBaseline = 'middle';
   const full = g.measureText(KICKER).width, x0 = W / 2 - full / 2;
   const n = Math.ceil(KICKER.length * k);
-  g.fillStyle = SKY; g.shadowColor = ROYAL; g.shadowBlur = 18;
+  g.fillStyle = SKY; g.shadowColor = SKY; g.shadowBlur = 16;
   g.fillText(KICKER.slice(0, n), x0, NAME_Y - 118);
   g.restore();
 }
 
-function sweep(t, a, b, cx) {
-  const k = prog(t, a, b);
-  if (k <= 0 || k >= 1) return;
-  const half = 760, sx = cx - half + 2 * half * easeInOut(k);
-  g.save();
-  // streak
-  const gr = g.createLinearGradient(0, NAME_Y, W, NAME_Y);
-  gr.addColorStop(0, 'rgba(34,211,238,0)');
-  gr.addColorStop(clamp(sx / W), 'rgba(230,236,255,.9)');
-  gr.addColorStop(1, 'rgba(34,211,238,0)');
-  g.globalAlpha = Math.sin(k * Math.PI);
-  g.fillStyle = gr; g.fillRect(0, NAME_Y - 1, W, 2);
-  // flare
-  const fl = g.createRadialGradient(sx, NAME_Y, 0, sx, NAME_Y, 120);
-  fl.addColorStop(0, 'rgba(255,255,255,.95)'); fl.addColorStop(.15, 'rgba(34,211,238,.6)'); fl.addColorStop(1, 'rgba(139,92,246,0)');
-  g.globalCompositeOperation = 'lighter';
-  g.fillStyle = fl; g.fillRect(sx - 120, NAME_Y - 120, 240, 240);
-  // sheen over the letters
-  g.globalCompositeOperation = 'source-atop';
-  g.restore();
-}
-
 function details(t) {
-  const cx = NAME_X1;
+  const cx = W / 2;
   g.save(); g.textAlign = 'center'; g.textBaseline = 'middle';
-  // underline
   const lk = easeInOut(prog(t, 4.6, 5.5));
   if (lk > 0) {
     const half = 640 * lk;
     const gr = g.createLinearGradient(cx - half, 0, cx + half, 0);
-    gr.addColorStop(0, 'rgba(139,92,246,0)'); gr.addColorStop(.5, 'rgba(34,211,238,.95)'); gr.addColorStop(1, 'rgba(139,92,246,0)');
+    gr.addColorStop(0, 'rgba(34,211,238,0)'); gr.addColorStop(.5, 'rgba(244,114,182,1)'); gr.addColorStop(1, 'rgba(34,211,238,0)');
     g.fillStyle = gr; g.fillRect(cx - half, 375, half * 2, 2);
   }
-  // role, revealed letter by letter
-  const rk = prog(t, 6.8, 7.7);
-  if (rk > 0) {
-    g.font = '600 26px Inter'; g.letterSpacing = '10px';
-    g.fillStyle = ICE; g.shadowColor = ROYAL; g.shadowBlur = 16;
-    const n = Math.ceil(ROLE.length * rk);
-    const full = g.measureText(ROLE).width;
-    g.textAlign = 'left';
-    g.fillText(ROLE.slice(0, n), cx - full / 2 + 5, 498);
-    g.shadowBlur = 0;
-  }
-  // tagline, typed
   const tk = prog(t, 5.0, 6.6);
   if (tk > 0) {
-    g.font = 'italic 500 46px Inter'; g.letterSpacing = '0px'; g.fillStyle = ICE; g.textAlign = 'left';
-    g.shadowColor = ROYAL; g.shadowBlur = 14;
-    const full = g.measureText(TAGLINE).width, n = Math.floor(TAGLINE.length * tk);
-    const x0 = cx - full / 2;
+    g.font = 'italic 500 46px Inter'; g.letterSpacing = '0px'; g.textAlign = 'left';
+    const full = g.measureText(TAGLINE).width, n = Math.floor(TAGLINE.length * tk), x0 = cx - full / 2;
+    g.fillStyle = 'rgba(5,3,11,.55)'; g.beginPath(); g.roundRect(x0 - 26, 400, full + 52, 64, 32); g.fill();
+    g.fillStyle = ICE; g.shadowColor = PINK; g.shadowBlur = 12;
     g.fillText(TAGLINE.slice(0, n), x0, 432);
     g.shadowBlur = 0;
     if (t < 9.2 && Math.floor(t * 2.5) % 2 === 0) {
@@ -296,8 +386,16 @@ function details(t) {
       g.fillStyle = SKY; g.fillRect(x0 + w + 6, 409, 4, 46);
     }
   }
-  // tags
-  g.font = '600 22px JetBrains Mono'; g.letterSpacing = '2px'; g.textAlign = 'center';
+  const rk = prog(t, 6.8, 7.7);
+  if (rk > 0) {
+    g.font = '700 26px Inter'; g.letterSpacing = '10px'; g.textAlign = 'left';
+    const n = Math.ceil(ROLE.length * rk), full = g.measureText(ROLE).width;
+    g.fillStyle = 'rgba(5,3,11,.6)'; g.beginPath(); g.roundRect(cx - full / 2 - 20, 476, full + 40, 44, 22); g.fill();
+    g.fillStyle = '#fff'; g.shadowColor = SKY; g.shadowBlur = 10;
+    g.fillText(ROLE.slice(0, n), cx - full / 2 + 5, 498);
+    g.shadowBlur = 0;
+  }
+  g.font = '600 22px "JetBrains Mono"'; g.letterSpacing = '2px'; g.textAlign = 'center';
   const widths = TAGS.map(s => g.measureText(s).width + 44), gap = 18;
   let x = cx - (widths.reduce((a, b) => a + b) + gap * (TAGS.length - 1)) / 2;
   TAGS.forEach((s, i) => {
@@ -305,18 +403,17 @@ function details(t) {
     if (k > 0) {
       const w = widths[i], y = 580 + (1 - k) * 30;
       g.globalAlpha = clamp(k);
-      g.fillStyle = 'rgba(20,10,45,.8)'; g.strokeStyle = [SKY, ROYAL, PINK, '#FCD34D'][i]; g.lineWidth = 2;
+      g.fillStyle = 'rgba(8,4,18,.92)'; g.strokeStyle = [SKY, ROYAL, PINK, GOLD][i]; g.lineWidth = 2.5;
       g.beginPath(); g.roundRect(x, y - 24, w, 48, 24); g.fill(); g.stroke();
-      g.fillStyle = i === 0 ? ICE : SILVER; g.fillText(s, x + w / 2, y + 1);
+      g.fillStyle = SILVER; g.fillText(s, x + w / 2, y + 1);
     }
     x += widths[i] + gap;
   });
   g.globalAlpha = 1;
-  // HUD corners
-  const hk = prog(t, 8.7, 9.5);
+  const hk = prog(t, 3.4, 4.0);
   if (hk > 0) {
-    g.globalAlpha = hk; g.font = '500 20px JetBrains Mono'; g.letterSpacing = '4px';
-    g.textAlign = 'left'; g.fillStyle = MUTED; g.fillText(HUD_L, 60, 52);
+    g.globalAlpha = hk; g.font = '600 20px "JetBrains Mono"'; g.letterSpacing = '4px';
+    g.textAlign = 'left'; g.fillStyle = ICE; g.fillText(HUD_L, 60, 52);
     g.textAlign = 'right'; g.fillStyle = '#5EEAD4'; g.fillText(HUD_R, W - 60, 52);
     g.beginPath(); g.arc(W - 60 - g.measureText(HUD_R).width - 22, 52, 7, 0, 6.28);
     g.globalAlpha = hk * (.5 + .5 * Math.sin(t * 5)); g.fill();
@@ -325,12 +422,11 @@ function details(t) {
 }
 
 function vignette(t) {
-  const gr = g.createRadialGradient(W / 2, H / 2, H * .55, W / 2, H / 2, W * .75);
-  gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,.5)');
+  const gr = g.createRadialGradient(W / 2, H / 2, H * .6, W / 2, H / 2, W * .75);
+  gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,.45)');
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
-  // letterbox bars ease in, and the whole thing fades to black for a clean loop
   const out = prog(t, 14.3, 15);
-  if (out > 0) { g.fillStyle = `rgba(7,3,15,${out})`; g.fillRect(0, 0, W, H); }
+  if (out > 0) { g.fillStyle = `rgba(5,3,11,${out})`; g.fillRect(0, 0, W, H); }
 }
 
 // ---------- two cats (poses from assets/cat, injected as window.CAT)
@@ -489,16 +585,16 @@ function rightCat(t) {
 function catScene(t) { rightCat(t); leftCat(t); }
 
 window.renderFrame = t => {
-  g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.shadowBlur = 0;
-  background(t);
-  kicker(t);
-  nameParticles(t);
-  nameSolid(t);
-  details(t);
-  catScene(t);
-  vignette(t);
+  g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.shadowBlur = 0; g.filter = 'none';
+  if (t < CITY) { boot(t); }
+  else { city(t); nameSolid(t); kicker(t); details(t); catScene(t); rainFx(t); vignette(t); }
+  // glitch cut from the boot screen into the city, and small hits on the title bursts
+  if (t > BOOT_END - .15 && t < CITY + .35) glitch(t, 1 - Math.abs(t - CITY) / .5, 1);
+  const tb = titleGlitchAmt(t);
+  if (t > 4.3 && tb > 0) glitch(t, tb * .35, 7);
 };
 window.DURATION = DURATION;
-window.ready = document.fonts.load('700 54px "JetBrains Mono"').then(() => document.fonts.load('italic 500 46px Inter')).then(() => document.fonts.load(NAME_FONT)).then(() => document.fonts.load('600 22px "JetBrains Mono"')).then(loadCat);
+buildCity();
+window.ready = document.fonts.load('700 54px "JetBrains Mono"').then(() => document.fonts.load('800 30px "JetBrains Mono"')).then(() => document.fonts.load('500 34px "JetBrains Mono"')).then(() => document.fonts.load('italic 500 46px Inter')).then(() => document.fonts.load(NAME_FONT)).then(() => document.fonts.load('700 26px Inter')).then(() => document.fonts.load('600 22px "JetBrains Mono"')).then(loadCat);
 </script>
 </body></html>

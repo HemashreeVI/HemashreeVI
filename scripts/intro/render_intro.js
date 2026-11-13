@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Renders scripts/intro/intro.html frame by frame and encodes
-// assets/intro/hemashree-intro.mp4 (1920x800) and hemashree-intro.gif (900x375).
+// assets/intro/hemashree-intro.mp4 (1920x800) and hemashree-intro.gif (1100x458).
 //
 //   node scripts/intro/render_intro.js
 //
@@ -35,7 +35,7 @@ const FPS = 30;
   ff('-framerate', String(FPS), '-i', path.join(tmp, 'f%04d.png'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p',
      '-crf', '20', '-preset', 'slow', '-movflags', '+faststart', path.join(OUT, 'hemashree-intro.mp4'));
   ff('-framerate', String(FPS), '-i', path.join(tmp, 'f%04d.png'), '-vf',
-     'fps=10,scale=900:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=64:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle',
+     'fps=10,scale=1100:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle',
      '-loop', '0', path.join(OUT, 'hemashree-intro.gif'));
   fs.rmSync(tmp, { recursive: true });
   for (const f of ['hemashree-intro.mp4', 'hemashree-intro.gif'])
