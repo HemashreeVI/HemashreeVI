@@ -1,5 +1,5 @@
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/hemashree-intro.gif?v=5" width="100%" alt="Cinematic intro under an aurora sky with a synthwave sun and a neon grid floor: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB in a cyan to violet to pink gradient, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Two little black cats show up: one waves hey, welcome in! The other chases a ball, trips, says oops…, then i meant to do that. The first replies: smooth. very smooth.">
+  <img src="./assets/intro/hemashree-intro.gif?v=6" width="100%" alt="Cinematic intro under an aurora sky with a synthwave sun and a neon grid floor: POV: types in, glowing particles converge to spell YOU’RE ON MY GITHUB in a cyan to violet to pink gradient, then stay a while, it’s a vibe, Hemashree · Software Engineer, and the focus areas computer vision, security, backend and DevOps, and embedded and IoT. Two little black cats show up: one waves hey, welcome in! The other chases a ball, trips, says oops…, then i meant to do that. The first replies: smooth. very smooth.">
 </a>
 
 <p align="center">
