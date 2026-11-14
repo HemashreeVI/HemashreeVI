@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // Renders scripts/phone/phone.html at 2x and cuts it into README slices:
-//   assets/phone/top.png, row-N-col-M.png (one per app), dots.png, dock-N.png, bottom.png
+//   assets/phone/top-<hash>.png, app-<id>-<hash>.png (one per app), dots, dock-<id>, bottom
 // plus assets/phone/manifest.json describing the layout.
 //
 //   node scripts/phone/render_phone.js
 const { chromium } = require('playwright');
-const fs = require('fs'), path = require('path');
+const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..', '..'), OUT = path.join(ROOT, 'assets', 'phone');
 (async () => {
   fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(OUT, { recursive: true });
@@ -27,9 +27,12 @@ const ROOT = path.resolve(__dirname, '..', '..'), OUT = path.join(ROOT, 'assets'
   const cuts = [X0, ...cols.slice(1).map((c, i) => (cols[i] + L.apps[0].w + c) / 2), X1];
   const rows = [...new Set(L.apps.map(a => Math.round(a.y)))].sort((a, b) => a - b);
   const man = { width: Math.round(L.ph.w), slices: [] };
+  // file names carry a short content hash, so a changed slice gets a new URL and no cache shows an old one
   const shot = async (name, x, y, w, h) => {
-    await p.screenshot({ path: path.join(OUT, name), clip: { x, y, width: w, height: h }, omitBackground: true });
-    return { file: name, w: Math.round(w), h: Math.round(h) };
+    const buf = await p.screenshot({ clip: { x, y, width: w, height: h }, omitBackground: true });
+    const file = name.replace('.png', '-' + crypto.createHash('sha1').update(buf).digest('hex').slice(0, 8) + '.png');
+    fs.writeFileSync(path.join(OUT, file), buf);
+    return { file, w: Math.round(w), h: Math.round(h) };
   };
   man.top = await shot('top.png', X0, L.ph.y, L.ph.w, L.grid.y - L.ph.y);
   man.rows = [];
