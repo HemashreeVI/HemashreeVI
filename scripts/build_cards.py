@@ -1040,8 +1040,14 @@ def build_youtube():
 
 # ---------------------------------------------------------------- social icons
 SOCIAL_ICONS = {
-    "mail": ("Email", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6B5B"/><stop offset="1" stop-color="#D93025"/></linearGradient>',
-             '<rect x="14" y="19" width="36" height="26" rx="4" fill="none" stroke="#fff" stroke-width="3.5"/><path d="M16 22L32 34L48 22" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/>'),
+    "mail": ("Gmail", '<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF1F6"/></linearGradient>',
+             '<g fill="none" stroke-width="7.5">'
+             '<path d="M14.5 47V25" stroke="#4285F4" stroke-linecap="butt"/>'
+             '<path d="M49.5 47V25" stroke="#34A853" stroke-linecap="butt"/>'
+             '<path d="M14.5 24L32 37.5L49.5 24" stroke="#EA4335" stroke-linecap="round" stroke-linejoin="round"/>'
+             '<path d="M14.5 31V24L19.5 27.8" stroke="#C5221F" stroke-linecap="round" stroke-linejoin="round"/>'
+             '<path d="M49.5 31V24L44.5 27.8" stroke="#FBBC04" stroke-linecap="round" stroke-linejoin="round"/>'
+             '</g>'),
     "linkedin": ("LinkedIn", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D8CFF"/><stop offset="1" stop-color="#0A66C2"/></linearGradient>',
                  '<circle cx="21" cy="19.5" r="4.6" fill="#fff"/><rect x="16.6" y="27" width="8.8" height="22" rx="1.5" fill="#fff"/>'
                  '<path d="M30 27h8.4v3.2c1.4-2.3 3.9-3.8 7-3.8 5.2 0 7.6 3.3 7.6 9V49h-8.8V37.2c0-2.8-1-4.4-3.4-4.4-2.6 0-4 1.8-4 4.6V49H30Z" fill="#fff"/>'),
@@ -1053,6 +1059,17 @@ SOCIAL_ICONS = {
                   '<circle cx="17.5" cy="20.6" r="1.6" fill="#fff"/><circle cx="22.5" cy="20.6" r="1.6" fill="#fff"/><circle cx="27.5" cy="20.6" r="1.6" fill="#fff"/>'
                   '<path d="M27 31.5L22 36.5L27 41.5M37 31.5L42 36.5L37 41.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
                   '<path d="M48 6.5l1.6 3.9 3.9 1.6-3.9 1.6L48 17.5l-1.6-3.9-3.9-1.6 3.9-1.6Z" fill="#FDE68A" stroke="#fff" stroke-width=".8"/>'),
+    "leetcode": ("LeetCode", '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B2B2B"/><stop offset="1" stop-color="#121212"/></linearGradient>',
+                 '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">'
+                 '<path d="M37 13L21.5 29.5a4 4 0 0 0 0 5.5L33 47a4 4 0 0 0 5.6 0.2L42 44" stroke="#FFFFFF"/>'
+                 '<path d="M23 27L35 14" stroke="#FFA116"/>'
+                 '<path d="M29 32.5H46" stroke="#B3B3B3"/>'
+                 '</g>'),
+    "chess": ("Chess.com", '<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#95C95B"/><stop offset="1" stop-color="#6E9E3A"/></linearGradient>',
+              '<g fill="#fff"><circle cx="32" cy="18.5" r="7"/>'
+              '<path d="M24 27.5h16l-2.5 4.5h-11Z"/>'
+              '<path d="M27.5 33.5h9l3.5 11h-16Z"/>'
+              '<rect x="19" y="45" width="26" height="6.5" rx="3"/></g>'),
     "instagram": ("Instagram", '<radialGradient id="g" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/><stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient>',
                   '<rect x="15" y="15" width="34" height="34" rx="10" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="32" cy="32" r="8" fill="none" stroke="#fff" stroke-width="3.6"/><circle cx="41.6" cy="22.4" r="2.5" fill="#fff"/>'),
 }
