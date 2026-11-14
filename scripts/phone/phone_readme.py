@@ -3,6 +3,10 @@
 
 Every slice is an <img align="top"> (no gap under it) inside its own link,
 written with no whitespace in between so the slices join seamlessly.
+
+The two side panels (build_panels.py) float left and right of the phone.
+A <picture> only shows them on wide screens; anywhere narrower it shows a
+1x1 transparent PNG instead, so phones see just the phone.
 """
 import json, sys
 from pathlib import Path
@@ -58,7 +62,22 @@ def row(items):
     return "".join(out)
 
 
+P = json.loads((ROOT / "assets/phone/panels.json").read_text())
+import os
+# side panels use absolute URLs (srcset); PHONE_BRANCH=phone-demo previews them from a branch
+RAW = f"https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/{os.environ.get('PHONE_BRANCH', 'main')}/assets/phone/"
+WIDE = "(min-width: 1200px)"
+
+
+def panel(side, alt):
+    return (f'<picture><source media="{WIDE}" srcset="{RAW}{P[side]}">'
+            f'<img src="./assets/phone/blank.png" align="{side}" alt="{alt}"></picture>')
+
+
+SIDES = (panel("left", "About phone: Java, Python, Spring; Kafka, Redis, Postgres; 67 LeetCode solved; 2 patents pending; open to work")
+         + panel("right", "Notifications and widgets: SeatLock, RootLens, Byte Decoded and Chess.com updates; LeetCode 67 solved; now building Pulse"))
+
 lines = [full(M["top"], "Hemashree's phone: lock-screen clock, profile widget (Software Engineer, VIT '27, open to work) and a notification: hey, welcome in! tap any app to open it", "https://hemashreevi.github.io")]
 lines += [row(r) for r in M["rows"]]
 lines += [full(M["dots"], ""), row(M["dock"]), full(M["bottom"], "")]
-print('<p align="center">\n' + "<br>\n".join(lines) + "\n</p>")
+print('<p align="center">\n' + SIDES + "<br>\n".join(lines) + "\n</p>")
