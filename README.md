@@ -19,7 +19,7 @@
   <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>&nbsp;&nbsp;
   <a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/icons/social-portfolio.svg" width="52" height="52" alt="Portfolio"></a>&nbsp;&nbsp;
   <a href="https://leetcode.com/u/hemashree_272005/" title="LeetCode"><img src="./assets/icons/social-leetcode.svg" width="52" height="52" alt="LeetCode"></a>&nbsp;&nbsp;
-  <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chess.svg" width="52" height="52" alt="Chess.com"></a>
+  <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chess.svg?v=2" width="52" height="52" alt="Chess.com"></a>
 </p>
 
 <p align="center">
@@ -235,7 +235,7 @@
   <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>&nbsp;&nbsp;
   <a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/icons/social-portfolio.svg" width="52" height="52" alt="Portfolio"></a>&nbsp;&nbsp;
   <a href="https://leetcode.com/u/hemashree_272005/" title="LeetCode"><img src="./assets/icons/social-leetcode.svg" width="52" height="52" alt="LeetCode"></a>&nbsp;&nbsp;
-  <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chess.svg" width="52" height="52" alt="Chess.com"></a>
+  <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chess.svg?v=2" width="52" height="52" alt="Chess.com"></a>
 </p>
 
 <p align="center">
