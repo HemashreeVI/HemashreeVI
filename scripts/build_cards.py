@@ -274,6 +274,8 @@ SOCIAL = {
     "youtube": "https://www.youtube.com/@shreejith-l7o",
     "instagram": "https://www.instagram.com/hemashree_2_7/",
     "portfolio": "https://hemashreevi.github.io",
+    "leetcode": "https://leetcode.com/u/hemashree_272005/",
+    "chess": "https://www.chess.com/member/hemashreevi",
 }
 
 
