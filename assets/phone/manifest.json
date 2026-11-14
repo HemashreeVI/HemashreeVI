@@ -1,0 +1,125 @@
+{
+ "width": 380,
+ "slices": [],
+ "top": {
+  "file": "top.png",
+  "w": 380,
+  "h": 365
+ },
+ "rows": [
+  [
+   {
+    "id": "seatlock",
+    "file": "app-seatlock.png",
+    "w": 102,
+    "h": 108
+   },
+   {
+    "id": "rootlens",
+    "file": "app-rootlens.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "triageiq",
+    "file": "app-triageiq.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "gitloom",
+    "file": "app-gitloom.png",
+    "w": 102,
+    "h": 108
+   }
+  ],
+  [
+   {
+    "id": "walker",
+    "file": "app-walker.png",
+    "w": 102,
+    "h": 108
+   },
+   {
+    "id": "rover",
+    "file": "app-rover.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "dental",
+    "file": "app-dental.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "bytedecoded",
+    "file": "app-bytedecoded.png",
+    "w": 102,
+    "h": 108
+   }
+  ],
+  [
+   {
+    "id": "leetcode",
+    "file": "app-leetcode.png",
+    "w": 102,
+    "h": 108
+   },
+   {
+    "id": "chesscom",
+    "file": "app-chesscom.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "portfolio",
+    "file": "app-portfolio.png",
+    "w": 88,
+    "h": 108
+   },
+   {
+    "id": "games",
+    "file": "app-games.png",
+    "w": 102,
+    "h": 108
+   }
+  ]
+ ],
+ "dots": {
+  "file": "dots.png",
+  "w": 380,
+  "h": 29
+ },
+ "dock": [
+  {
+   "id": "gmail",
+   "file": "dock-gmail.png",
+   "w": 108,
+   "h": 96
+  },
+  {
+   "id": "linkedin",
+   "file": "dock-linkedin.png",
+   "w": 82,
+   "h": 96
+  },
+  {
+   "id": "instagram",
+   "file": "dock-instagram.png",
+   "w": 82,
+   "h": 96
+  },
+  {
+   "id": "github",
+   "file": "dock-github.png",
+   "w": 108,
+   "h": 96
+  }
+ ],
+ "bottom": {
+  "file": "bottom.png",
+  "w": 380,
+  "h": 47
+ }
+}
