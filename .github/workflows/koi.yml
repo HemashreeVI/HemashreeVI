@@ -8,7 +8,7 @@ on:
     - cron: "20 0 * * *"
   workflow_dispatch:
   push:
-    paths: [.github/workflows/koi.yml]
+    paths: [.github/workflows/koi.yml, scripts/koi_pond/**]
 
 permissions:
   contents: write
@@ -24,16 +24,27 @@ jobs:
         with:
           body: asagi
           output-dir: koi
+      # Put the day's koi into the animated pond (koi/pond.webp), the one the README shows.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Draw the pond
+        shell: bash
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          npm install --no-save --silent playwright@1.49.1
+          npx playwright install --with-deps chromium > /dev/null
+          node scripts/koi_pond/render_pond.js
       - name: Commit the koi if it changed
         shell: bash
         run: |
-          git add koi/koi.gif
+          git add koi/koi.gif koi/pond.webp
           if git diff --cached --quiet; then
             echo "The koi is unchanged; nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --quiet --message "koi: draw the day's koi"
+          git commit --quiet --message "koi: draw the day's koi and its pond"
           git pull --rebase --quiet
           git push --quiet

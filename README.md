@@ -208,7 +208,7 @@
   <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
 </p>
 <p align="center">
-  <img src="koi/koi.gif" width="256" alt="My git koi: a pixel-art koi drawn every night from my public GitHub activity. Languages colour it, contributions grow it, streaks mark it.">
+  <img src="koi/pond.webp" width="100%" alt="My koi pond: the pixel-art git koi, drawn every night from my public GitHub activity (languages colour it, contributions grow it, streaks mark it), swims in a pond with lily pads, pink lotus flowers, reeds and six more colourful fish.">
   <br>
   
 </p>

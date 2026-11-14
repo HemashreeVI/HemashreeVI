@@ -1,0 +1,292 @@
+<!doctype html>
+<!--
+  A pond for the git-koi: the day's koi (koi/koi.gif, from the git-koi action)
+  swims in the middle of an animated pond with caustic light, lily pads and
+  lotus flowers, reeds and leafy edges, and six more colourful fish.
+  render_pond.js calls renderFrame(i) for i = 0..FRAMES-1; every motion is a
+  whole number of cycles over the loop, so the animation loops seamlessly.
+-->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head><body>
+<canvas id="c" width="1000" height="520"></canvas>
+<script>
+const W = 1000, H = 520, TAU = Math.PI * 2;
+const cv = document.getElementById('c'), g = cv.getContext('2d');
+let FRAMES = 120, KOI = [];             // filled in by load()
+let seed = 2711;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const off = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return [c, c.getContext('2d')]; };
+
+// ---------------------------------------------------------------- static pond floor
+const [floorC, fg] = off(W, H);
+function buildFloor() {
+  const gr = fg.createRadialGradient(W / 2, H / 2, 60, W / 2, H / 2, W * .62);
+  gr.addColorStop(0, '#1F6E6A'); gr.addColorStop(.55, '#15524F'); gr.addColorStop(1, '#0A2B2C');
+  fg.fillStyle = gr; fg.fillRect(0, 0, W, H);
+  // pebbles and sand, softly out of focus under the water
+  fg.filter = 'blur(2.2px)';
+  for (let i = 0; i < 520; i++) {
+    const x = rnd() * W, y = rnd() * H, r = 3 + rnd() * 11;
+    const c = ['#6F8F72', '#8FA382', '#4D6E5F', '#A7A07A', '#3E5F55', '#7C8C6A'][Math.floor(rnd() * 6)];
+    fg.globalAlpha = .18 + rnd() * .22; fg.fillStyle = c;
+    fg.beginPath(); fg.ellipse(x, y, r, r * (.6 + rnd() * .4), rnd() * TAU, 0, TAU); fg.fill();
+  }
+  // a few dark rocks and sunken leaves
+  for (let i = 0; i < 26; i++) {
+    const x = rnd() * W, y = rnd() * H, r = 14 + rnd() * 26;
+    fg.globalAlpha = .22; fg.fillStyle = '#0E2A28';
+    fg.beginPath(); fg.ellipse(x, y, r, r * .65, rnd() * TAU, 0, TAU); fg.fill();
+  }
+  fg.filter = 'none'; fg.globalAlpha = 1;
+}
+
+// ---------------------------------------------------------------- caustics (seamless in time)
+const CW = 500, CH = 260;
+const [caC, cg] = off(CW, CH);
+const cimg = cg.createImageData(CW, CH);
+function caustics(p) {   // p in [0,1)
+  const a = p * TAU, d = cimg.data;
+  for (let y = 0; y < CH; y++) for (let x = 0; x < CW; x++) {
+    const u = x / CW * 34, v = y / CH * 17.7;
+    let s = Math.sin(u + Math.sin(v * 1.3 + a) * 1.2 + a)
+          + Math.sin(v * 1.7 - Math.sin(u * .9 - a) * 1.1 + 2 * a)
+          + Math.sin((u + v) * .8 + Math.cos(u * .5 + a) - a);
+    s = Math.abs(s);
+    const k = Math.max(0, 1 - s * 1.9);
+    const i = (y * CW + x) * 4;
+    d[i] = 200; d[i + 1] = 255; d[i + 2] = 230; d[i + 3] = Math.pow(k, 2.2) * 255;
+  }
+  cg.putImageData(cimg, 0, 0);
+  g.save(); g.globalCompositeOperation = 'screen'; g.globalAlpha = .3; g.filter = 'blur(.8px)';
+  g.drawImage(caC, 0, 0, W, H); g.restore();
+}
+
+// ---------------------------------------------------------------- fish
+const FISH = [
+  // body colour, pattern colour, length, path centre, radii, cycles per loop, phase, depth
+  { body: '#FF8A1F', mark: '#FFFFFF', len: 70, cx: 170, cy: 150, rx: 120, ry: 70, n: 1, ph: 0, kind: 'goldfish' },
+  { body: '#F7F4EE', mark: '#E0301E', len: 92, cx: 850, cy: 330, rx: 110, ry: 120, n: -1, ph: .3, kind: 'kohaku' },
+  { body: '#FFD23F', mark: '#FFF3B0', len: 64, cx: 820, cy: 120, rx: 140, ry: 60, n: 1, ph: .55, kind: 'ogon' },
+  { body: '#1E2A44', mark: '#E9EEF8', len: 78, cx: 190, cy: 380, rx: 150, ry: 80, n: -1, ph: .15, kind: 'utsuri' },
+  { body: '#F5EFE6', mark: '#F07F2E', len: 60, cx: 500, cy: 470, rx: 330, ry: 26, n: 1, ph: .7, kind: 'calico' },
+  { body: '#E2263B', mark: '#FF9AA2', len: 48, cx: 520, cy: 60, rx: 300, ry: 30, n: -2, ph: .4, kind: 'redcap' },
+];
+
+function fishPos(f, p) {
+  const a = (p * f.n + f.ph) * TAU;
+  const x = f.cx + Math.cos(a) * f.rx, y = f.cy + Math.sin(a) * f.ry;
+  // heading along the path
+  const dx = -Math.sin(a) * f.rx * Math.sign(f.n), dy = Math.cos(a) * f.ry * Math.sign(f.n);
+  return [x, y, Math.atan2(dy, dx)];
+}
+
+function drawFish(f, p, shadow) {
+  const [x, y, ang] = fishPos(f, p);
+  const L = f.len, wig = Math.sin(p * TAU * 12 + f.ph * 20);
+  g.save(); g.translate(x + (shadow ? 10 : 0), y + (shadow ? 14 : 0)); g.rotate(ang);
+  if (shadow) { g.globalAlpha = .28; g.filter = 'blur(5px)'; }
+  const body = shadow ? '#04191A' : f.body;
+  // tail
+  g.save(); g.translate(-L * .42, 0); g.rotate(wig * .35);
+  g.fillStyle = shadow ? body : f.body; g.globalAlpha = shadow ? .28 : .9;
+  g.beginPath(); g.moveTo(0, 0); g.quadraticCurveTo(-L * .25, -L * .22, -L * .38, -L * .2);
+  g.quadraticCurveTo(-L * .28, 0, -L * .38, L * .2); g.quadraticCurveTo(-L * .25, L * .22, 0, 0); g.fill();
+  g.restore();
+  g.globalAlpha = shadow ? .28 : 1;
+  // pectoral fins
+  if (!shadow) {
+    g.fillStyle = f.body; g.globalAlpha = .7;
+    for (const s of [-1, 1]) { g.beginPath(); g.ellipse(L * .12, s * L * .15, L * .12, L * .05, s * (.7 + wig * .15), 0, TAU); g.fill(); }
+    g.globalAlpha = 1;
+  }
+  // body with a slight bend
+  g.fillStyle = body;
+  g.beginPath(); g.moveTo(L * .5, 0);
+  g.bezierCurveTo(L * .45, -L * .17, -L * .1, -L * .17 + wig * 2, -L * .45, wig * 3);
+  g.bezierCurveTo(-L * .1, L * .17 + wig * 2, L * .45, L * .17, L * .5, 0); g.fill();
+  if (!shadow) {
+    g.save(); g.clip();
+    // markings
+    g.fillStyle = f.mark;
+    if (f.kind === 'kohaku') { g.beginPath(); g.ellipse(L * .2, -2, L * .14, L * .1, .3, 0, TAU); g.ellipse(-L * .15, 3, L * .13, L * .09, -.2, 0, TAU); g.fill(); }
+    else if (f.kind === 'utsuri') { g.beginPath(); g.ellipse(L * .05, -6, L * .12, L * .08, .5, 0, TAU); g.ellipse(-L * .25, 5, L * .09, L * .06, 0, 0, TAU); g.fill(); }
+    else if (f.kind === 'calico') { g.fillStyle = f.mark; g.beginPath(); g.ellipse(L * .15, 3, L * .12, L * .09, 0, 0, TAU); g.fill(); g.fillStyle = '#222'; g.beginPath(); g.ellipse(-L * .12, -4, L * .07, L * .05, .4, 0, TAU); g.fill(); }
+    else { g.globalAlpha = .45; g.beginPath(); g.ellipse(L * .1, -L * .06, L * .3, L * .05, 0, 0, TAU); g.fill(); g.globalAlpha = 1; }
+    // soft top-light sheen
+    const sh = g.createLinearGradient(0, -L * .17, 0, L * .17);
+    sh.addColorStop(0, 'rgba(255,255,255,.35)'); sh.addColorStop(.5, 'rgba(255,255,255,0)'); sh.addColorStop(1, 'rgba(0,0,0,.25)');
+    g.fillStyle = sh; g.fillRect(-L, -L, 2 * L, 2 * L);
+    g.restore();
+    // eyes
+    g.fillStyle = '#0B0B0B';
+    for (const s of [-1, 1]) { g.beginPath(); g.arc(L * .38, s * L * .07, 2.2, 0, TAU); g.fill(); }
+  }
+  g.restore();
+}
+
+// ---------------------------------------------------------------- the day's koi
+function drawKoi(i) {
+  const im = KOI[i % KOI.length]; if (!im) return;
+  const x = W / 2 - 256, y = H / 2 - 256;
+  g.save(); g.imageSmoothingEnabled = false;
+  // shadow on the floor
+  g.globalAlpha = .3; g.filter = 'blur(6px) brightness(0)';
+  g.drawImage(im, x + 12, y + 16);
+  g.filter = 'none'; g.globalAlpha = 1;
+  g.drawImage(im, x, y);
+  g.restore();
+}
+
+// ---------------------------------------------------------------- lily pads and lotus
+const PADS = [
+  { x: 70, y: 70, r: 46, a: .4, flower: '#F7A8C8' }, { x: 140, y: 40, r: 30, a: 2.1 },
+  { x: 930, y: 460, r: 52, a: 4.1, flower: '#FFC2D9' }, { x: 860, y: 495, r: 32, a: 1.2 },
+  { x: 940, y: 210, r: 36, a: 5.5 }, { x: 330, y: 495, r: 40, a: 3.2, flower: '#F48FB1' },
+  { x: 40, y: 300, r: 34, a: 2.7 }, { x: 620, y: 28, r: 34, a: .9, flower: '#FADADD' },
+  { x: 700, y: 500, r: 26, a: 5.0 },
+];
+function drawPad(pd, p) {
+  const bob = Math.sin(p * TAU + pd.a) * .05;
+  g.save(); g.translate(pd.x, pd.y);
+  // shadow on the water
+  g.save(); g.translate(8, 10); g.globalAlpha = .35; g.fillStyle = '#021213'; g.filter = 'blur(4px)';
+  g.beginPath(); g.arc(0, 0, pd.r, 0, TAU); g.fill(); g.restore();
+  g.rotate(pd.a + bob);
+  const gr = g.createRadialGradient(-pd.r * .3, -pd.r * .3, 2, 0, 0, pd.r);
+  gr.addColorStop(0, '#7BC96F'); gr.addColorStop(.7, '#3E9B4A'); gr.addColorStop(1, '#2C7A3A');
+  g.fillStyle = gr;
+  g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, pd.r, .18, TAU - .18); g.closePath(); g.fill();
+  g.strokeStyle = 'rgba(20,70,30,.55)'; g.lineWidth = 1.2;
+  for (let k = 1; k < 9; k++) { const t = .18 + k * (TAU - .36) / 9; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(t) * pd.r * .92, Math.sin(t) * pd.r * .92); g.stroke(); }
+  g.strokeStyle = 'rgba(190,240,170,.5)'; g.lineWidth = 1.5;
+  g.beginPath(); g.arc(0, 0, pd.r - 1, .18, TAU - .18); g.stroke();
+  g.restore();
+  if (pd.flower) drawLotus(pd.x + pd.r * .15, pd.y - pd.r * .1, pd.r * .55, pd.flower, p, pd.a);
+}
+function drawLotus(x, y, s, col, p, a) {
+  g.save(); g.translate(x, y); g.rotate(Math.sin(p * TAU + a) * .06);
+  g.shadowColor = 'rgba(0,0,0,.35)'; g.shadowBlur = 8; g.shadowOffsetY = 4;
+  for (const [n, rad, sc] of [[8, 0, 1], [6, .4, .72], [5, .1, .45]]) {
+    for (let k = 0; k < n; k++) {
+      const t = rad + k * TAU / n;
+      g.save(); g.rotate(t);
+      const pg = g.createLinearGradient(0, 0, 0, -s * sc);
+      pg.addColorStop(0, '#FFFFFF'); pg.addColorStop(1, col);
+      g.fillStyle = pg;
+      g.beginPath(); g.moveTo(0, 0); g.quadraticCurveTo(s * .32 * sc, -s * .5 * sc, 0, -s * sc); g.quadraticCurveTo(-s * .32 * sc, -s * .5 * sc, 0, 0); g.fill();
+      g.restore();
+    }
+    g.shadowBlur = 0; g.shadowOffsetY = 0;
+  }
+  g.fillStyle = '#FFD54F'; g.beginPath(); g.arc(0, 0, s * .14, 0, TAU); g.fill();
+  g.restore();
+}
+
+// ---------------------------------------------------------------- reeds and leafy edges
+const BLADES = [];
+const CLUMPS = [];
+function buildGreens() {
+  // reeds along the top and bottom edges, denser at the corners
+  for (let i = 0; i < 150; i++) {
+    const top = rnd() < .5, edge = rnd();
+    const x = Math.pow(rnd(), 1.6) * (rnd() < .5 ? 1 : -1) * W * .5 + (rnd() < .5 ? 0 : W);
+    BLADES.push({ x: ((x % W) + W) % W, top, h: 30 + rnd() * 70 * (1 - edge * .5), w: 3 + rnd() * 4,
+      lean: (rnd() - .5) * .6, ph: rnd() * TAU, col: ['#2E7D32', '#3E8E41', '#558B2F', '#1B5E20', '#689F38'][Math.floor(rnd() * 5)] });
+  }
+  for (const [x, y, r] of [[0, 0, 120], [W, 0, 110], [0, H, 130], [W, H, 120], [W * .5, -10, 70], [W * .28, H + 10, 70], [W * .74, -6, 60]])
+    CLUMPS.push({ x, y, r, leaves: Array.from({ length: 16 }, () => ({ a: rnd() * TAU, l: r * (.5 + rnd() * .6), w: 14 + rnd() * 16, ph: rnd() * TAU,
+      col: ['#2E7D32', '#43A047', '#1B5E20', '#66BB6A', '#388E3C'][Math.floor(rnd() * 5)] })) });
+}
+function drawBlade(b, p) {
+  const sway = Math.sin(p * TAU + b.ph) * .08;
+  const y0 = b.top ? 0 : H, dir = b.top ? 1 : -1;
+  g.save(); g.translate(b.x, y0); g.rotate(b.lean + sway);
+  g.fillStyle = b.col; g.globalAlpha = .95;
+  g.beginPath(); g.moveTo(-b.w / 2, 0); g.quadraticCurveTo(-b.w * .2, dir * b.h * .6, b.w * .6, dir * b.h);
+  g.quadraticCurveTo(b.w * .3, dir * b.h * .5, b.w / 2, 0); g.fill();
+  g.restore();
+}
+function drawClump(c, p) {
+  for (const lf of c.leaves) {
+    const a = lf.a + Math.sin(p * TAU + lf.ph) * .05;
+    g.save(); g.translate(c.x, c.y); g.rotate(a);
+    const lg = g.createLinearGradient(0, 0, lf.l, 0);
+    lg.addColorStop(0, '#0F3D14'); lg.addColorStop(1, lf.col);
+    g.fillStyle = lg; g.shadowColor = 'rgba(0,0,0,.45)'; g.shadowBlur = 10; g.shadowOffsetY = 5;
+    g.beginPath(); g.moveTo(0, 0); g.quadraticCurveTo(lf.l * .5, -lf.w, lf.l, 0); g.quadraticCurveTo(lf.l * .5, lf.w, 0, 0); g.fill();
+    g.shadowBlur = 0; g.shadowOffsetY = 0;
+    g.strokeStyle = 'rgba(200,255,190,.25)'; g.lineWidth = 1.2;
+    g.beginPath(); g.moveTo(4, 0); g.lineTo(lf.l * .92, 0); g.stroke();
+    g.restore();
+  }
+}
+
+// ---------------------------------------------------------------- ripples, petals, surface light
+const RIPPLES = [{ x: 300, y: 180, ph: 0 }, { x: 720, y: 360, ph: .33 }, { x: 560, y: 120, ph: .66 }, { x: 260, y: 420, ph: .5 }];
+function ripples(p) {
+  for (const r of RIPPLES) {
+    const k = (p * 2 + r.ph) % 1;
+    for (let j = 0; j < 3; j++) {
+      const kk = k - j * .09; if (kk <= 0) continue;
+      g.strokeStyle = `rgba(220,255,245,${(1 - kk) * .35})`; g.lineWidth = 1.6;
+      g.beginPath(); g.ellipse(r.x, r.y, 6 + kk * 70, (6 + kk * 70) * .55, 0, 0, TAU); g.stroke();
+    }
+  }
+}
+const PETALS = Array.from({ length: 7 }, (_, i) => ({ x: rnd() * W, y: 60 + rnd() * (H - 120), ph: rnd(), col: ['#F8BBD0', '#FFFFFF', '#F48FB1'][i % 3] }));
+function petals(p) {
+  for (const pt of PETALS) {
+    const k = (p + pt.ph) % 1, x = (pt.x + k * W) % W, y = pt.y + Math.sin(k * TAU * 2) * 10;
+    g.save(); g.translate(x, y); g.rotate(k * TAU);
+    g.fillStyle = pt.col; g.globalAlpha = .9; g.shadowColor = 'rgba(0,0,0,.3)'; g.shadowBlur = 4; g.shadowOffsetY = 3;
+    g.beginPath(); g.ellipse(0, 0, 6, 3.5, 0, 0, TAU); g.fill(); g.restore();
+  }
+}
+function surface(p) {
+  // sky reflection streaks drifting slowly
+  g.save(); g.globalCompositeOperation = 'screen';
+  for (let i = 0; i < 4; i++) {
+    const x = ((p + i / 4) % 1) * (W + 400) - 200;
+    const gr = g.createLinearGradient(x - 120, 0, x + 120, H);
+    gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(.5, 'rgba(210,245,255,.06)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  }
+  g.restore();
+  // depth vignette
+  const v = g.createRadialGradient(W / 2, H / 2, H * .35, W / 2, H / 2, W * .62);
+  v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,12,10,.55)');
+  g.fillStyle = v; g.fillRect(0, 0, W, H);
+}
+
+// ---------------------------------------------------------------- frame
+window.renderFrame = i => {
+  const p = i / FRAMES;
+  g.globalAlpha = 1; g.filter = 'none'; g.globalCompositeOperation = 'source-over';
+  g.drawImage(floorC, 0, 0);
+  caustics(p);
+  for (const f of FISH) drawFish(f, p, true);
+  for (const f of FISH) drawFish(f, p, false);
+  drawKoi(i);
+  ripples(p);
+  surface(p);
+  for (const pd of PADS) drawPad(pd, p);
+  petals(p);
+  for (const b of BLADES) drawBlade(b, p);
+  for (const c of CLUMPS) drawClump(c, p);
+};
+
+// koi.gif frames, decoded with WebCodecs
+window.load = async (b64) => {
+  buildFloor(); buildGreens();
+  if (!b64) { FRAMES = 120; return FRAMES; }
+  const data = Uint8Array.from(atob(b64), ch => ch.charCodeAt(0));
+  const dec = new ImageDecoder({ data, type: 'image/gif' });
+  await dec.tracks.ready;
+  const n = dec.tracks.selectedTrack.frameCount;
+  for (let k = 0; k < n; k++) {
+    const { image } = await dec.decode({ frameIndex: k });
+    const bmp = await createImageBitmap(image); image.close(); KOI.push(bmp);
+  }
+  FRAMES = n;
+  return n;
+};
+</script></body></html>
