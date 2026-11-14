@@ -16,7 +16,8 @@
   <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-mail.svg" width="52" height="52" alt="Email"></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/hema-shree272005" title="LinkedIn"><img src="./assets/icons/social-linkedin.svg" width="52" height="52" alt="LinkedIn"></a>&nbsp;&nbsp;
   <a href="https://www.youtube.com/@shreejith-l7o" title="YouTube"><img src="./assets/icons/social-youtube.svg" width="52" height="52" alt="YouTube"></a>&nbsp;&nbsp;
-  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>
+  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>&nbsp;&nbsp;
+  <a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/icons/social-portfolio.svg" width="52" height="52" alt="Portfolio"></a>
 </p>
 
 <p align="center">
@@ -229,7 +230,8 @@
   <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-mail.svg" width="52" height="52" alt="Email"></a>&nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/hema-shree272005" title="LinkedIn"><img src="./assets/icons/social-linkedin.svg" width="52" height="52" alt="LinkedIn"></a>&nbsp;&nbsp;
   <a href="https://www.youtube.com/@shreejith-l7o" title="YouTube"><img src="./assets/icons/social-youtube.svg" width="52" height="52" alt="YouTube"></a>&nbsp;&nbsp;
-  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>
+  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>&nbsp;&nbsp;
+  <a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/icons/social-portfolio.svg" width="52" height="52" alt="Portfolio"></a>
 </p>
 
 <p align="center">
