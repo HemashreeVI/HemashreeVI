@@ -1042,7 +1042,7 @@ def build_youtube():
 
 # ---------------------------------------------------------------- social icons
 SOCIAL_ICONS = {
-    "mail": ("Gmail", '<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF1F6"/></linearGradient>',
+    "gmail": ("Gmail", '<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF1F6"/></linearGradient>',
              '<g fill="none" stroke-width="7.5">'
              '<path d="M14.5 47V25" stroke="#4285F4" stroke-linecap="butt"/>'
              '<path d="M49.5 47V25" stroke="#34A853" stroke-linecap="butt"/>'
@@ -1067,7 +1067,7 @@ SOCIAL_ICONS = {
                  '<path d="M23 27L35 14" stroke="#FFA116"/>'
                  '<path d="M29 32.5H46" stroke="#B3B3B3"/>'
                  '</g>'),
-    "chess": ("Chess.com",
+    "chesscom": ("Chess.com",
               '<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D3A36"/><stop offset="1" stop-color="#211F1C"/></linearGradient>'
               '<linearGradient id="pw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B5E26E"/><stop offset=".55" stop-color="#81B64C"/><stop offset="1" stop-color="#5A8A2A"/></linearGradient>'
               '<radialGradient id="glow" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#81B64C" stop-opacity=".45"/><stop offset="1" stop-color="#81B64C" stop-opacity="0"/></radialGradient>'
