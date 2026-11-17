@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import build_cards as bc
+import scenery
 from data import load
 
 W = 1200
@@ -125,7 +126,9 @@ def build(user, out):
     # fit the picture to the tallest thing: buildings, the best-day sign (+80) and the crane (+60)
     reach = min((w + d) * b - height(c) - (80 if (w, d) == best[:2] else 60 if (w, d) == today[:2] else 0) for w, d, _, c in grid)
     oy = 132 - min(reach, 0)
-    H = int(oy + (nweeks + 7) * b + 70)
+    H = int(oy + (nweeks + 7) * b + 110)
+    ZW = -12                                                  # water level, below the quay
+    yH = oy + 1.0 * b                                         # horizon line
 
     def P(i, j, h=0.0):
         return ox + (i - j) * a, oy + (i + j) * b - h
@@ -133,6 +136,8 @@ def build(user, out):
     def poly(pts, fill, extra=""):
         return f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" fill="{fill}" {extra}/>'
 
+    brng = random.Random(23)
+    bases = {(w, d): brng.choice(["#6B5B4E", "#7A6A5C", "#5E6878", "#6E7A8C", "#8A6F5A"]) for w, d, _, _ in grid}
     defs = ["""<linearGradient id="c3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070B1A"/><stop offset=".6" stop-color="#121A3A"/><stop offset="1" stop-color="#2B1B4A"/></linearGradient>
 <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E5C8A"/><stop offset="1" stop-color="#14304F"/></linearGradient>
 <linearGradient id="glassR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B8DBE"/><stop offset="1" stop-color="#244A72"/></linearGradient>
@@ -150,7 +155,7 @@ def build(user, out):
 <radialGradient id="leafA" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#9BD77A"/><stop offset=".45" stop-color="#4E9A42"/><stop offset="1" stop-color="#1F4F25"/></radialGradient>
 <radialGradient id="leafB" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#C5E07A"/><stop offset=".45" stop-color="#6E9F3A"/><stop offset="1" stop-color="#2F5220"/></radialGradient>
 <radialGradient id="leafC" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#7CCB8E"/><stop offset=".5" stop-color="#2F7D4A"/><stop offset="1" stop-color="#123A22"/></radialGradient>
-<radialGradient id="sakura" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#FFE4EF"/><stop offset=".45" stop-color="#F7A8C8"/><stop offset="1" stop-color="#B85C86"/></radialGradient>"""]
+""" + scenery.defs() + """<radialGradient id="sakura" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#FFE4EF"/><stop offset=".45" stop-color="#F7A8C8"/><stop offset="1" stop-color="#B85C86"/></radialGradient>"""]
     # window patterns in face coordinates (u along the wall, v down), so they skew with each face
     lit_cols = ["#FFE7A3", "#FFD27A", "#FFF3C4", "#9BE7FF"]
     for tier, density in (("lo", .3), ("md", .55), ("hi", .8)):
@@ -170,14 +175,117 @@ def build(user, out):
                     g.append(f'<rect x="{x0 + 1}" y="{fy * 10 + 2}" width="{rnd.choice([5, 12, 19])}" height="6" fill="{rnd.choice(lit_cols)}" opacity=".7"/>')
             defs.append(f'<pattern id="gls{tier}{v}" width="28" height="60" patternUnits="userSpaceOnUse">{"".join(g)}</pattern>')
 
-    p = [f'<rect width="{W}" height="{H}" rx="22" fill="url(#c3sky)"/>']
-    for _ in range(80):
-        p.append(f'<circle class="twinkle" cx="{rnd.uniform(20, W - 20):.0f}" cy="{rnd.uniform(112, max(160, oy * .7)):.0f}" r="{rnd.choice([.6, .9, 1.2])}" fill="#fff" style="animation-delay:{rnd.uniform(0, 4):.1f}s"/>')
+    p = [f'<clipPath id="card"><rect width="{W}" height="{H}" rx="22"/></clipPath><g clip-path="url(#card)">',
+         f'<rect width="{W}" height="{H}" fill="url(#c3sky)"/>']
+    for _ in range(110):
+        p.append(f'<circle class="twinkle" cx="{rnd.uniform(20, W - 20):.0f}" cy="{rnd.uniform(112, max(130, yH - 150)):.0f}" r="{rnd.choice([.5, .7, .9, 1.1])}" fill="#fff" style="animation-delay:{rnd.uniform(0, 4):.1f}s"/>')
+    moon = (W - 140, 168, 24)
+    p.append(scenery.backdrop(W, H, yH, 110, random.Random(41), moon))
+
+    def ground(x, y, z=0.0):
+        """Screen point -> lot coordinates (i, j) on the plane at height z."""
+        u, v = (x - ox) / a, (y + z - oy) / b
+        return (u + v) / 2, (v - u) / 2
+    FAR = nweeks + 3.3                                          # the far bank across the river
+    def is_water(x, y):
+        i, j = ground(x, y, ZW)
+        return y >= yH and (j >= 7.55 or i >= nweeks + .55) and i < FAR
+    def is_land(x, y):
+        i, j = ground(x, y)
+        on_slab = -.2 <= i <= nweeks + .2 and -.2 <= j <= 7.2
+        return y >= yH and not on_slab and not is_water(x, y)
+    p.append(scenery.far_lights(W, yH, is_land, random.Random(8)))
+
+    # water: the bay in front and the river on the right, clipped below the horizon
+    L0, C0, R0 = P(-40, 7.55, ZW), P(nweeks + .55, 7.55, ZW), P(nweeks + .55, -40, ZW)
+    wpoly = [L0, C0, R0, (R0[0], H + 50), (L0[0], H + 50)]
+    bank = [P(FAR, -40, ZW), P(FAR, 40, ZW), (P(FAR, 40, ZW)[0] + 4000, P(FAR, 40, ZW)[1]), (P(FAR, -40, ZW)[0] + 4000, P(FAR, -40, ZW)[1])]
+    p.append(f'<clipPath id="wclip"><polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in wpoly)}"/></clipPath>'
+             f'<clipPath id="below"><rect x="0" y="{yH:.0f}" width="{W}" height="{H}"/></clipPath>')
+    p.append(f'<g clip-path="url(#below)"><g clip-path="url(#wclip)"><rect x="0" y="{yH:.0f}" width="{W}" height="{H - yH:.0f}" fill="url(#water)"/>')
+    # reflections of the waterfront buildings, warped by ripples
+    refl = []
+    for w, d, date, c in grid:
+        if c == 0 or not (d >= 4 or w >= nweeks - 4):
+            continue
+        h = height(c)
+        f0, f1 = (.12, .88) if h > HMAX * .45 or (w, d) == best[:2] else (.16, .84)
+        kind = "landmark" if (w, d) == best[:2] else "glass" if c / peak > .45 else "office" if c / peak > .12 else "house"
+        col = {"landmark": "#4C1D95", "glass": "#1D3F66"}.get(kind, shade(bases[(w, d)], .55))
+        tier = "hi" if c / peak > .55 else "md" if c / peak > .2 else "lo"
+        pat = f"gls{tier}{(w * 7 + d) % 3}" if kind in ("glass", "landmark") else f"win{tier}{(w * 7 + d) % 3}"
+        wl = (f1 - f0) * s
+        A, B = P(w + f0, d + f1, 2 * ZW), P(w + f1, d + f1, 2 * ZW)
+        for (X, Y), k in ((A, SIN), (B, -SIN)):
+            refl.append(f'<g transform="matrix({COS:.4f},{k:.4f},0,1,{X:.1f},{Y:.1f})"><rect width="{wl:.1f}" height="{h:.1f}" fill="{col}"/><rect width="{wl:.1f}" height="{h:.1f}" fill="url(#{pat})" opacity=".8"/></g>')
+    # lamp reflections along the quays
+    lamps = [(i0 + .25, 7.1) for i0 in [x * .5 for x in range(2 * nweeks)]] + [(nweeks + .1, j0 + .25) for j0 in [x * .5 for x in range(14)]]
+    for li, lj in lamps:
+        x, y = P(li, lj, ZW)
+        refl.append(f'<rect x="{x - 1.6:.1f}" y="{y + 6:.1f}" width="3.2" height="{s * .55:.1f}" fill="url(#streak)"/>')
+    p.append(f'<g filter="url(#warp)" opacity=".42">{"".join(refl)}</g>')
+    # moonlight glitter on the river
+    gx = moon[0]
+    gy = next((y for y in range(int(yH), H) if is_water(gx, y)), H)
+    p.append(f'<ellipse cx="{gx}" cy="{(gy + H) / 2:.0f}" rx="34" ry="{(H - gy) / 2:.0f}" fill="#FFF3D6" opacity=".05" filter="url(#soft)"/>')
+    for k in range(150):
+        t = rnd.random() ** .8
+        y = gy + t * (H - gy)
+        spread = 6 + t * 46
+        x = gx + rnd.gauss(0, spread / 2)
+        wdt = rnd.uniform(1.5, 6) * (1 + t * 1.5)
+        p.append(f'<rect class="twinkle" x="{x - wdt / 2:.1f}" y="{y:.1f}" width="{wdt:.1f}" height="{.7 + t * .6:.1f}" fill="#FFF7E0" opacity="{.75 - .45 * t:.2f}" style="animation-delay:{rnd.uniform(0, 4):.1f}s"/>')
+    # surface ripples drifting
+    p.append(f'<g opacity=".5"><rect x="-100" y="{yH:.0f}" width="{W + 200}" height="{H - yH:.0f}" filter="url(#ripple)">'
+             f'<animateTransform attributeName="transform" type="translate" values="0 0;-60 6;0 0" dur="24s" repeatCount="indefinite"/></rect></g>')
+    # boats: a ferry on the river, a launch and a sailboat in the bay
+    ju_, iu_ = (-COS, SIN), (COS, SIN)
+    f0p, f1p = P(nweeks + 1.15, -4, ZW), P(nweeks + 1.15, 10, ZW)
+    ferry = scenery.boat_box(ju_, iu_, s * .9, s * .3, s * .1, "#B91C1C", "#3F3F46", (s * .55, s * .24, s * .13, "#F3F4F6", "#FFE7A3"))
+    p.append(f'<g>{ferry}<animateMotion dur="34s" repeatCount="indefinite" path="M{f0p[0]:.1f} {f0p[1]:.1f}L{f1p[0]:.1f} {f1p[1]:.1f}"/></g>')
+    l0, l1 = P(-6, 9.3, ZW), P(nweeks + 2, 9.3, ZW)
+    launch = scenery.boat_box(iu_, ju_, s * .5, s * .18, s * .07, "#F8FAFC", "#94A3B8", (s * .2, s * .13, s * .08, "#E2E8F0", "#BFE3FF"))
+    p.append(f'<g>{launch}<animateMotion dur="28s" begin="-9s" repeatCount="indefinite" path="M{l0[0]:.1f} {l0[1]:.1f}L{l1[0]:.1f} {l1[1]:.1f}"/></g>')
+    sx, sy = P(2.2, 9.9, ZW)
+    p.append(f'<g><g transform="translate({sx:.1f} {sy:.1f})">{scenery.boat_box(iu_, ju_, s * .32, s * .12, s * .05, "#E5E7EB", "#9CA3AF")}'
+             f'<path d="M0 {-s * .05:.1f}V{-s * .62:.1f}" stroke="#D1D5DB" stroke-width="1.2"/><path d="M1 {-s * .6:.1f}L{s * .2:.1f} {-s * .1:.1f}L1 {-s * .1:.1f}Z" fill="#F1F5F9" opacity=".9"/></g>'
+             f'<animateTransform attributeName="transform" type="translate" values="0 0;0 1.5;0 0" dur="3.2s" repeatCount="indefinite"/></g>')
+    p.append('</g></g>')
+    # the far bank across the river: embankment, a dense tree line, houses' lights behind it
+    tr = random.Random(17)
+    p.append(f'<g clip-path="url(#below)"><polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in bank)}" fill="url(#land)"/>')
+    e0, e1 = P(FAR, -40, ZW), P(FAR, 40, ZW)
+    p.append(f'<path d="M{e0[0]:.1f} {e0[1]:.1f}L{e1[0]:.1f} {e1[1]:.1f}" stroke="#8FA3C8" stroke-opacity=".35" stroke-width="1.4"/>')
+    for k in range(260):
+        jj = tr.uniform(-12, 14)
+        x, y = P(FAR + tr.uniform(1.2, 4), jj, ZW)
+        if 0 < x < W and yH < y < H:
+            p.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{tr.choice([.7, .9, 1.2])}" fill="{tr.choice(["#FFE3A1", "#FFD27A", "#FFF3D6"])}" opacity="{tr.uniform(.4, .9):.2f}"/>')
+    for row in (2, 1, 0):
+        for k in range(130):
+            jj = tr.uniform(-14, 14)
+            x, y = P(FAR + .25 + row * .28 + tr.uniform(0, .2), jj, ZW)
+            if -20 < x < W + 20 and yH < y < H + 20:
+                r = s * tr.uniform(.09, .15) * (1 - row * .1)
+                p.append(f'<ellipse cx="{x:.1f}" cy="{y - r * .85:.1f}" rx="{r * .85:.1f}" ry="{r:.1f}" fill="url(#nightTree)" opacity="{.8 if row else 1}"/>')
+    p.append('</g>')
+    # the waterfront continues beyond the island: stone edges and lamps on the far shores
+    for (sa, sb) in ((P(-40, 7.55, ZW), P(-.15, 7.55, ZW)), (P(nweeks + .55, -40, ZW), P(nweeks + .55, -.15, ZW))):
+        p.append(f'<g clip-path="url(#below)"><path d="M{sa[0]:.1f} {sa[1]:.1f}L{sb[0]:.1f} {sb[1]:.1f}" stroke="#8FA3C8" stroke-opacity=".4" stroke-width="1.6"/>'
+                 f'<path d="M{sa[0]:.1f} {sa[1] + 3:.1f}L{sb[0]:.1f} {sb[1] + 3:.1f}" stroke="#0B0F1C" stroke-width="3"/></g>')
+    for k in range(1, 40):
+        for (x, y) in (P(-.15 - k * .5, 7.5, 0), P(nweeks + .5, -.15 - k * .5, 0)):
+            if 0 < x < W and y > yH + 4:
+                p.append(f'<circle cx="{x:.1f}" cy="{y - 6:.1f}" r="5" fill="url(#lampG)" opacity=".7"/><circle cx="{x:.1f}" cy="{y - 6:.1f}" r="1.2" fill="#FFF3C4"/>'
+                         f'<rect x="{x - 1:.1f}" y="{y + 12:.1f}" width="2" height="16" fill="url(#streak)" opacity=".5"/>')
 
     # ground: asphalt slab, then sidewalks per lot, lane markings
     g0, g1, g2, g3 = P(-.15, -.15), P(nweeks + .15, -.15), P(nweeks + .15, 7.15), P(-.15, 7.15)
-    p.append(poly([P(-.15, 7.15), P(nweeks + .15, 7.15), (P(nweeks + .15, 7.15)[0], P(nweeks + .15, 7.15)[1] + 14), (g3[0], g3[1] + 14)], "#0A0D18"))
-    p.append(poly([P(nweeks + .15, -.15), P(nweeks + .15, 7.15), (g2[0], g2[1] + 14), (g1[0], g1[1] + 14)], "#141A2C"))
+    qd = -ZW + 2                                     # quay wall height, down to the water
+    p.append(poly([P(-.15, 7.15), P(nweeks + .15, 7.15), (g2[0], g2[1] + qd), (g3[0], g3[1] + qd)], "url(#stone)"))
+    p.append(poly([P(-.15, 7.15), P(nweeks + .15, 7.15), (g2[0], g2[1] + qd), (g3[0], g3[1] + qd)], "#000", 'opacity=".35"'))
+    p.append(poly([P(nweeks + .15, -.15), P(nweeks + .15, 7.15), (g2[0], g2[1] + qd), (g1[0], g1[1] + qd)], "url(#stone)"))
+    p.append(f'<path d="M{g3[0]:.1f} {g3[1] + qd:.1f}L{g2[0]:.1f} {g2[1] + qd:.1f}L{g1[0]:.1f} {g1[1] + qd:.1f}" stroke="#AFC3E8" stroke-opacity=".25" stroke-width="1.2" fill="none"/>')
     p.append(poly([g0, g1, g2, g3], "#1E2436"))
     for w in range(nweeks + 1):
         p.append(f'<path d="M{P(w - .04, 0)[0]:.1f} {P(w - .04, 0)[1]:.1f}L{P(w - .04, 7)[0]:.1f} {P(w - .04, 7)[1]:.1f}" stroke="#FDE68A" stroke-opacity=".18" stroke-dasharray="4 6"/>')
@@ -228,7 +336,7 @@ def build(user, out):
         tier = "hi" if c / peak > .55 else "md" if c / peak > .2 else "lo"
         v = (w * 7 + d) % 3
         kind = "landmark" if is_best else "glass" if c / peak > .45 else "office" if c / peak > .12 else "house"
-        base = rnd.choice(["#6B5B4E", "#7A6A5C", "#5E6878", "#6E7A8C", "#8A6F5A"])     # brick / concrete
+        base = bases[(w, d)]                       # brick / concrete
         # shadow on the ground (light from the upper right)
         sh = [P(w + f0, d + f1), P(w + f1, d + f1), (P(w + f1, d + f1)[0] - h * .55, P(w + f1, d + f1)[1] + h * .08), (P(w + f0, d + f1)[0] - h * .55, P(w + f0, d + f1)[1] + h * .08)]
         p.append(poly(sh, "#000", 'opacity=".28" filter="url(#c3blur)"'))
@@ -278,6 +386,51 @@ def build(user, out):
                      f'<path d="M{bx - 34:.1f} {by - tt + 1:.1f}V{by - tt + 30:.1f}" stroke-width="1"><animate attributeName="d" values="M{bx - 34:.1f} {by - tt + 1:.1f}V{by - tt + 30:.1f};M{bx - 34:.1f} {by - tt + 1:.1f}V{by - tt + 58:.1f};M{bx - 34:.1f} {by - tt + 1:.1f}V{by - tt + 30:.1f}" dur="4s" repeatCount="indefinite"/></path></g>'
                      f'<circle cx="{bx:.1f}" cy="{by - tt - 4:.1f}" r="3" fill="#FF3355"><animate attributeName="opacity" values="1;.15;1" dur="1.2s" repeatCount="indefinite"/></circle>')
 
+    # street lamps along the quays, with pools of light on the promenade
+    for li, lj in lamps:
+        x, y = P(li, lj)
+        ph = s * .34
+        p.append(f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="{s * .2:.1f}" ry="{s * .09:.1f}" fill="url(#lampG)" opacity=".5"/>'
+                 f'<path d="M{x:.1f} {y:.1f}V{y - ph:.1f}" stroke="#4B5563" stroke-width="1.3"/>'
+                 f'<circle cx="{x:.1f}" cy="{y - ph:.1f}" r="7" fill="url(#lampG)"/><circle cx="{x:.1f}" cy="{y - ph:.1f}" r="1.7" fill="#FFF3C4"/>')
+    p.append(f'<path d="M{P(-.15, 7.13, 2.5)[0]:.1f} {P(-.15, 7.13, 2.5)[1]:.1f}L{P(nweeks + .13, 7.13, 2.5)[0]:.1f} {P(nweeks + .13, 7.13, 2.5)[1]:.1f}L{P(nweeks + .13, -.15, 2.5)[0]:.1f} {P(nweeks + .13, -.15, 2.5)[1]:.1f}" stroke="#9CA3AF" stroke-opacity=".5" fill="none"/>')
+
+    # cable-stayed bridge across the river to the far bank
+    jb, i0b, i1b, ip = 3.5, nweeks + .15, FAR + .6, nweeks + 1.85
+    deck_t = [P(i0b, jb - .22), P(i1b, jb - .22), P(i1b, jb + .22), P(i0b, jb + .22)]
+    p.append(poly([P(i0b, jb + .22), P(i1b, jb + .22), P(i1b, jb + .22, -5), P(i0b, jb + .22, -5)], "#3A4058"))
+    for pi in (nweeks + 1.0, nweeks + 2.7):           # piers into the water
+        p.append(poly([P(pi - .06, jb + .12, -5), P(pi + .06, jb + .12, -5), P(pi + .06, jb + .12, ZW), P(pi - .06, jb + .12, ZW)], "#2B3044"))
+    p.append(poly(deck_t, "#272C3D"))
+    for e in (-.2, .2):
+        q0, q1 = P(i0b, jb + e, 3), P(i1b, jb + e, 3)
+        p.append(f'<path d="M{q0[0]:.1f} {q0[1]:.1f}L{q1[0]:.1f} {q1[1]:.1f}" stroke="#CBD5E1" stroke-opacity=".55" stroke-width="1"/>')
+    m0, m1 = P(i0b, jb), P(i1b, jb)
+    p.append(f'<path d="M{m0[0]:.1f} {m0[1]:.1f}L{m1[0]:.1f} {m1[1]:.1f}" stroke="#FDE68A" stroke-opacity=".35" stroke-dasharray="5 6"/>')
+    # cars crossing
+    for k, (fw, dur) in enumerate(((True, 9), (False, 11))):
+        e = -.1 if fw else .1
+        q0, q1 = (P(i0b - .3, jb + e), P(i1b + .5, jb + e)) if fw else (P(i1b + .5, jb + e), P(i0b - .3, jb + e))
+        p.append(f'<g>{car((COS, SIN), (-COS, SIN), s * .85, ["#F8FAFC", "#DC2626"][k], forward=fw)}<animateMotion dur="{dur}s" begin="-{k * 4}s" repeatCount="indefinite" path="M{q0[0]:.1f} {q0[1]:.1f}L{q1[0]:.1f} {q1[1]:.1f}"/></g>')
+    # pylon (A-frame) and stay cables
+    Hp = s * 2.5
+    top = P(ip, jb, Hp)
+    for e in (-.3, .3):
+        b0 = P(ip, jb + e, ZW)
+        p.append(f'<path d="M{b0[0]:.1f} {b0[1]:.1f}L{top[0]:.1f} {top[1]:.1f}" stroke="{"#C7CEDB" if e > 0 else "#8B95A8"}" stroke-width="{s * .07:.1f}" stroke-linecap="round"/>')
+    for k in range(1, 7):
+        for side in (-1, 1):
+            dq = P(ip + side * k * .27, jb + .2 if side > 0 else jb - .2, 2)
+            p.append(f'<path d="M{top[0]:.1f} {top[1] + 4:.1f}L{dq[0]:.1f} {dq[1]:.1f}" stroke="#E2E8F0" stroke-opacity=".45" stroke-width=".7"/>')
+    p.append(f'<circle cx="{top[0]:.1f}" cy="{top[1] - 2:.1f}" r="2.6" fill="#FF3355"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle>')
+
+    # light pollution over the city, a helicopter on the landmark and a plane on approach
+    cxm, cym = P(nweeks / 2, 3.5, HMAX * .6)
+    p.append(f'<ellipse cx="{cxm:.0f}" cy="{cym:.0f}" rx="{(nweeks + 7) * a * .55:.0f}" ry="{HMAX * .9:.0f}" fill="url(#cityglow)"/>')
+    bx_, by_ = P(best[0] + .5, best[1] + .5, height(best[3]) + 95)
+    p.append(scenery.helicopter(bx_, by_))
+    p.append(scenery.plane(W, max(150, yH - 120)))
+
     # edge labels: months along the front, weekdays along the side
     seen = set()
     for w, d, date, c in grid:
@@ -285,11 +438,9 @@ def build(user, out):
             seen.add(date[:7])
             x, y = P(w + .5, 7.6)
             p.append(bc.text(x, y + 6, MONTHS[int(date[5:7]) - 1], 11, bc.C['muted'], 'mono', 'middle', 'letter-spacing="2"'))
-    for d in (1, 3, 5):
-        x, y = P(nweeks + .5, d + .5)
-        p.append(bc.text(x + 8, y + 8, DAYS[d], 10, bc.C['muted'], 'mono', 'start', 'letter-spacing="1.5"'))
     tx, ty = P(today[0] + .5, today[1] + .5)
 
+    p.append('</g>')
     # header
     C = bc.C
     total, active = data["total"], sum(1 for _, c in days if c)
@@ -316,7 +467,8 @@ def build(user, out):
 
     desc = (f"Contribution City in 3D: {total} contributions, one city lot per day. Busier days are taller buildings, from low-rises to glass skyscrapers; "
             f"days off are parks. The best day, {best[3]} contributions on {best[2]}, is a landmark tower; today has a crane. "
-            f"Streak {streak()} days, {active} active days.")
+            f"Streak {streak()} days, {active} active days. The city is an island in a harbour at night: mountains and moon behind, "
+            f"a river with a ferry, a cable-stayed bridge with traffic, reflections in the water, a helicopter and a plane.")
     svg = bc.svg(W, H, "city3d", "Contribution City", desc, f'<defs>{"".join(defs)}</defs>' + "".join(p))
     Path(out).write_text(svg, encoding="utf-8")
     print(f"{out}: {nweeks} weeks, lot {s:.0f}px, {H}px tall, {len(svg) // 1024} KB")

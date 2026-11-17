@@ -107,7 +107,7 @@
 <img src="./assets/cards/title-commits.svg" width="100%" alt="10 Commit log: A year of building.">
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/city.svg" width="100%" alt="Contribution City: my GitHub contributions as a 3D isometric city, one lot per day. Busier days are taller buildings, from low-rises and office blocks to glass skyscrapers; days off are parks with trees; cars drive the avenues; the best day is a landmark tower and today has a crane. Redrawn twice a day.">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/city.svg" width="100%" alt="Contribution City: my GitHub contributions as a 3D isometric city, one lot per day. Busier days are taller buildings, from low-rises and office blocks to glass skyscrapers; days off are parks with trees; cars drive the avenues; the best day is a landmark tower and today has a crane. The island city sits in a harbour at night under mountains and a full moon, with a river, a ferry, a cable-stayed bridge and reflections in the water. Redrawn twice a day.">
 </p>
 <p align="center">
   <img src="koi/pond.webp" width="100%" alt="My koi pond: the pixel-art git koi, drawn every night from my public GitHub activity (languages colour it, contributions grow it, streaks mark it), swims in a pond with lily pads, pink lotus flowers, reeds and six more colourful fish.">
