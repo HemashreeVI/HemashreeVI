@@ -1160,19 +1160,17 @@ def main():
     build_hero()
     titles = [
         ("01", "ABOUT", "Hello, I'm", "Hemashree.", "WHO I AM", "about"),
-        ("02", "PHILOSOPHY", "How I think about", "problems.", "SENSE · DECIDE · PROTECT", "think"),
-        ("03", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
-        ("04", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ", "work"),
-        ("05", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
-        ("06", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
-        ("07", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "4 EXTENSIONS · FREE", "extensions"),
-        ("14", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
-        ("08", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
-        ("09", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("10", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
-        ("11", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("12", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("13", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("02", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
+        ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ", "work"),
+        ("04", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
+        ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
+        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "4 EXTENSIONS · FREE", "extensions"),
+        ("07", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
+        ("08", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
+        ("09", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
+        ("10", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("11", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("12", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
     # the roaming cat turns up in some of the section titles
     cat = {
