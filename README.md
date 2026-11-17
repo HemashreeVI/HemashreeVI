@@ -105,7 +105,17 @@
   <a href="https://github.com/HemashreeVI/ferrodo"><img src="https://img.shields.io/badge/ferrodo-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="ferrodo"></a>
 </p>
 
-<img src="./assets/cards/title-toolkit.svg" width="100%" alt="07 Toolkit: The tools I reach for.">
+<img src="./assets/cards/title-extensions.svg" width="100%" alt="07 Chrome extensions: Tools I built for the browser.">
+<p align="center">
+<a href="https://github.com/HemashreeVI/job-radar" title="Job Radar on GitHub"><img src="./assets/cards/ext-job-radar.svg" width="49%" alt="Job Radar: save any job from LinkedIn, Naukri or a careers page in one click, see which of my projects match it, and get a follow-up reminder after 5 days."></a>
+<a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap on GitHub"><img src="./assets/cards/ext-repo-recap.svg" width="49%" alt="Repo Recap: a sidebar on every GitHub repo with what it does, its tech stack, how to run it and how active it is."></a>
+</p>
+<p align="center">
+<a href="https://github.com/HemashreeVI/byte-decoded-clipper" title="Byte Decoded Clipper on GitHub"><img src="./assets/cards/ext-byte-decoded-clipper.svg" width="49%" alt="Byte Decoded Clipper: turns any tech article into a timed 60-second YouTube Short script with on-screen text and hashtags."></a>
+<a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded on GitHub"><img src="./assets/cards/ext-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, from commits and pull requests to the plus and minus lines and the contribution calendar."></a>
+</p>
+
+<img src="./assets/cards/title-toolkit.svg" width="100%" alt="08 Toolkit: The tools I reach for.">
 <img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: Spring Boot, FastAPI, Flask, Docker, Kafka, Redis, Prometheus, Grafana, GitHub Actions, k6. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: PostgreSQL, SQLite, MySQL, Redis, Qdrant, Firebase. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
 
 <p align="center">
@@ -180,16 +190,16 @@
   <img src="./assets/icons/roboflow.svg" width="48" height="48" alt="Roboflow" title="Roboflow">
 </p>
 
-<img src="./assets/cards/title-milestones.svg" width="100%" alt="08 Milestones: Proof, on the record.">
+<img src="./assets/cards/title-milestones.svg" width="100%" alt="09 Milestones: Proof, on the record.">
 <img src="./assets/cards/milestones.svg" width="100%" alt="Patents: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD; Hazard-Detection Rover, co-inventor, filing in progress. Open source: merged PR to first-contributions and 14 MIT-licensed repos. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
 <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/trophies.svg" width="100%" alt="GitHub trophies: commits, stars, followers, repositories, pull requests, issues and experience, each ranked from C to SSS. Updated automatically twice a day.">
 
-<img src="./assets/cards/title-youtube.svg" width="100%" alt="09 YouTube: Byte Decoded.">
+<img src="./assets/cards/title-youtube.svg" width="100%" alt="10 YouTube: Byte Decoded.">
 <a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
 <p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
 
-<img src="./assets/cards/title-play.svg" width="100%" alt="10 Play: Play on my portfolio.">
+<img src="./assets/cards/title-play.svg" width="100%" alt="11 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
 <p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F" alt="Play now"></a></p>
 
@@ -202,7 +212,7 @@
 
 
 
-<img src="./assets/cards/title-commits.svg" width="100%" alt="11 Commit log: A year of building.">
+<img src="./assets/cards/title-commits.svg" width="100%" alt="12 Commit log: A year of building.">
 
 <p align="center">
   <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
@@ -237,7 +247,7 @@
 
 </details>
 
-<img src="./assets/cards/title-connect.svg" width="100%" alt="12 Connect: Let's talk.">
+<img src="./assets/cards/title-connect.svg" width="100%" alt="13 Connect: Let's talk.">
 
 <p align="center">
   <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-gmail.svg" width="52" height="52" alt="Gmail"></a>&nbsp;&nbsp;

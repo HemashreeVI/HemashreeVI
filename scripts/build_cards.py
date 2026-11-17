@@ -279,6 +279,21 @@ SOCIAL = {
 }
 
 
+EXTENSIONS = [
+    {"slug": "job-radar", "name": "Job Radar", "pitch": "Save any job in one click.",
+     "points": ["LinkedIn · Naukri · careers pages", "matches jobs to my projects", "5-day follow-up reminders"],
+     "tags": ["Manifest V3", "JavaScript", "schema.org"]},
+    {"slug": "repo-recap", "name": "Repo Recap", "pitch": "Any GitHub repo, explained in 10 seconds.",
+     "points": ["what it does · tech stack", "how to run it, copy-ready", "activity + good first issues"],
+     "tags": ["GitHub REST API", "Shadow DOM", "caching"]},
+    {"slug": "byte-decoded-clipper", "name": "Byte Decoded Clipper", "pitch": "Articles into 60-second Shorts.",
+     "points": ["hook · 3 points · CTA, timed", "on-screen text + hashtags", "Chrome on-device AI or local"],
+     "tags": ["Prompt API", "NLP", "YouTube"]},
+    {"slug": "contributions-decoded", "name": "Contributions Decoded", "pitch": "GitHub profiles in plain English.",
+     "points": ["explains commits, PRs, +/- lines", "streaks, busiest day, monthly chart", "works on any profile"],
+     "tags": ["DOM parsing", "no API", "beginner-friendly"]},
+]
+
 # ---------------------------------------------------------------- helpers
 def e(s):
     return escape(str(s), {'"': "&quot;"})
@@ -1098,6 +1113,30 @@ def build_social_icons():
         print(f"  icons/social-{slug}.svg")
 
 
+# ---------------------------------------------------------------- chrome extensions
+def build_extensions():
+    import re as _re
+    W, H = 580, 236
+    for k, x in enumerate(EXTENSIONS):
+        u = f"ext{k}"
+        icon = (ROOT / "assets" / "icons" / f"ext-{x['slug']}.svg").read_text()
+        icon = _re.sub(r'id="(\w+)"', lambda m: f'id="{u}{m.group(1)}"', icon)
+        icon = _re.sub(r'url\(#(\w+)\)', lambda m: f'url(#{u}{m.group(1)})', icon)
+        icon = icon.replace('<svg ', '<svg x="28" y="30" width="72" height="72" ', 1)
+        parts = [frame(W, H, u, (0.85, 0.25)),
+                 f'<g class="float">{icon}</g>',
+                 text(120, 54, f"0{k + 1} · CHROME EXTENSION", 10.5, C['lav'], 'mono', 'start', 'letter-spacing="2.5"'),
+                 text(119, 86, x['name'], 27, f"url(#{u}-silver)", 'serif'),
+                 text(120, 110, x['pitch'], 14.5, C['mist'], 'serif', 'start', 'font-style="italic"')]
+        for i, pt in enumerate(x['points']):
+            y = 140 + i * 21
+            parts.append(f'<circle cx="34" cy="{y - 4}" r="3" fill="{[C["mint"], C["lav"], C["rose"]][i]}"/>')
+            parts.append(text(46, y, pt, 12.5, C['silver'], 'sans'))
+        parts.append(chips(28, 196, x['tags'], size=10))
+        parts.append(text(W - 24, H - 22, "open repo ↗", 11, C['muted'], 'mono', 'end'))
+        desc = f"{x['name']}: {x['pitch']} " + "; ".join(x['points']) + ". Built with " + ", ".join(x['tags']) + "."
+        write(f"ext-{x['slug']}.svg", svg(W, H, u, x['name'], desc, "".join(parts)))
+
 # ---------------------------------------------------------------- footer
 def build_footer():
     W, H, u = 1200, 330, "foot"
@@ -1126,13 +1165,14 @@ def main():
         ("04", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ", "work"),
         ("05", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
         ("06", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
-        ("13", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
-        ("07", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
-        ("08", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("09", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
-        ("10", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("11", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("12", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("07", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "4 EXTENSIONS · FREE", "extensions"),
+        ("14", "IN PROGRESS", "Currently", "building.", "ON THE BENCH", "building"),
+        ("08", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
+        ("09", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
+        ("10", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
+        ("11", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("12", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("13", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
     # the roaming cat turns up in some of the section titles
     cat = {
@@ -1156,6 +1196,7 @@ def main():
     build_milestones()
     build_games()
     build_opensource()
+    build_extensions()
     build_youtube()
     build_social_icons()
     build_footer()
