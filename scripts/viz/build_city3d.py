@@ -30,6 +30,37 @@ def shade(hex_, k):
     return f"#{f(r):02x}{f(g):02x}{f(b):02x}"
 
 
+def tree(x, y, r, kind, rnd):
+    """An isometric tree at ground point (x, y), radius r. Light comes from the upper right."""
+    out = [f'<ellipse cx="{x - r * .5:.1f}" cy="{y + 1:.1f}" rx="{r * 1.3:.1f}" ry="{r * .5:.1f}" fill="#000" opacity=".3"/>']
+    if kind == "pine":
+        out.append(f'<rect x="{x - 1.2:.1f}" y="{y - r * .8:.1f}" width="2.4" height="{r * .8:.1f}" fill="#4A3020"/>')
+        for k, (wid, top) in enumerate(((1.15, 1.1), (.9, 1.9), (.62, 2.6))):
+            yb, yt = y - r * (.5 + k * .75), y - r * (top + .9)
+            out.append(f'<path d="M{x:.1f} {yt:.1f}L{x - r * wid:.1f} {yb:.1f}L{x:.1f} {yb + r * .18:.1f}Z" fill="#1E4D2B"/>'
+                       f'<path d="M{x:.1f} {yt:.1f}L{x + r * wid:.1f} {yb:.1f}L{x:.1f} {yb + r * .18:.1f}Z" fill="#3E8A4A"/>')
+        return "".join(out)
+    if kind == "bush":
+        for k in range(3):
+            out.append(f'<circle cx="{x + (k - 1) * r * .55:.1f}" cy="{y - r * .4 - (k % 2) * r * .15:.1f}" r="{r * .55:.1f}" fill="url(#leafC)"/>')
+        return "".join(out)
+    grad = "sakura" if kind == "sakura" else rnd.choice(["leafA", "leafB", "leafC"])
+    trunk = "#5A3A26" if kind != "sakura" else "#4A2E2A"
+    h = r * 1.15
+    out.append(f'<path d="M{x - 1.6:.1f} {y:.1f}L{x - 1:.1f} {y - h:.1f}L{x + 1:.1f} {y - h:.1f}L{x + 1.6:.1f} {y:.1f}Z" fill="{trunk}"/>'
+               f'<path d="M{x:.1f} {y - h * .6:.1f}L{x + r * .45:.1f} {y - h * 1.05:.1f}M{x:.1f} {y - h * .7:.1f}L{x - r * .4:.1f} {y - h * 1.1:.1f}" stroke="{trunk}" stroke-width="1.2"/>')
+    # canopy: overlapping leaf clusters, back ones darker
+    cy = y - h - r * .55
+    blobs = [(rnd.uniform(-.55, .55) * r, rnd.uniform(-.45, .35) * r, rnd.uniform(.42, .62) * r) for _ in range(7)]
+    blobs.sort(key=lambda b: b[1])
+    for bx, by, br in blobs:
+        out.append(f'<circle cx="{x + bx:.1f}" cy="{cy + by:.1f}" r="{br:.1f}" fill="url(#{grad})"/>')
+    if kind == "sakura":
+        for _ in range(6):
+            out.append(f'<circle cx="{x + rnd.uniform(-.6, .6) * r:.1f}" cy="{cy + rnd.uniform(-.5, .4) * r:.1f}" r="{r * .07:.1f}" fill="#fff" opacity=".8"/>')
+    return "".join(out)
+
+
 def calendar_grid(days):
     """Weeks (Sunday first, like GitHub) from shortly before the first active day, at least 8 weeks."""
     first = next((i for i, (_, c) in enumerate(days) if c), len(days) - 1)
@@ -81,7 +112,19 @@ def build(user, out):
 <linearGradient id="glassR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B8DBE"/><stop offset="1" stop-color="#244A72"/></linearGradient>
 <linearGradient id="landL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3FA0"/><stop offset="1" stop-color="#2A1A55"/></linearGradient>
 <linearGradient id="landR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B6FD8"/><stop offset="1" stop-color="#43308A"/></linearGradient>
-<filter id="c3blur"><feGaussianBlur stdDeviation="2.2"/></filter>"""]
+<filter id="c3blur"><feGaussianBlur stdDeviation="2.2"/></filter>
+<linearGradient id="gL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B5A86"/><stop offset=".35" stop-color="#173A5E"/><stop offset="1" stop-color="#0B1E35"/></linearGradient>
+<linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EC5F0"/><stop offset=".3" stop-color="#4E86BC"/><stop offset="1" stop-color="#1B3D66"/></linearGradient>
+<linearGradient id="pL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6D4FC2"/><stop offset=".4" stop-color="#3F2A86"/><stop offset="1" stop-color="#1E1048"/></linearGradient>
+<linearGradient id="pR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4B5FD"/><stop offset=".35" stop-color="#8B6FD8"/><stop offset="1" stop-color="#3B2A86"/></linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset=".38" stop-color="#fff" stop-opacity="0"/><stop offset=".47" stop-color="#fff" stop-opacity=".32"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset=".55" stop-color="#fff" stop-opacity=".22"/><stop offset=".62" stop-color="#fff" stop-opacity="0"/>
+<animateTransform attributeName="gradientTransform" type="translate" values="-1.2 -1.2;1.2 1.2;1.2 1.2" keyTimes="0;.55;1" dur="7s" repeatCount="indefinite"/></linearGradient>
+<linearGradient id="skyref" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".18" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#F472B6" stop-opacity="0"/><stop offset="1" stop-color="#F59E0B" stop-opacity=".22"/></linearGradient>
+<pattern id="grass" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="14" height="14" fill="#2E6B34"/><rect width="7" height="14" fill="#357A3B"/></pattern>
+<radialGradient id="leafA" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#9BD77A"/><stop offset=".45" stop-color="#4E9A42"/><stop offset="1" stop-color="#1F4F25"/></radialGradient>
+<radialGradient id="leafB" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#C5E07A"/><stop offset=".45" stop-color="#6E9F3A"/><stop offset="1" stop-color="#2F5220"/></radialGradient>
+<radialGradient id="leafC" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#7CCB8E"/><stop offset=".5" stop-color="#2F7D4A"/><stop offset="1" stop-color="#123A22"/></radialGradient>
+<radialGradient id="sakura" cx="68%" cy="28%" r="75%"><stop offset="0" stop-color="#FFE4EF"/><stop offset=".45" stop-color="#F7A8C8"/><stop offset="1" stop-color="#B85C86"/></radialGradient>"""]
     # window patterns in face coordinates (u along the wall, v down), so they skew with each face
     lit_cols = ["#FFE7A3", "#FFD27A", "#FFF3C4", "#9BE7FF"]
     for tier, density in (("lo", .3), ("md", .55), ("hi", .8)):
@@ -115,19 +158,22 @@ def build(user, out):
     lots = {}
     for w, d, date, c in grid:
         f0, f1 = .08, .92
-        p.append(poly([P(w + f0, d + f0), P(w + f1, d + f0), P(w + f1, d + f1), P(w + f0, d + f1)], "#2C3448" if c else "#1F4D2E"))
+        p.append(poly([P(w + f0, d + f0), P(w + f1, d + f0), P(w + f1, d + f1), P(w + f0, d + f1)], "#2C3448" if c else "url(#grass)"))
         lots[(w, d)] = (date, c)
 
     # buildings, back to front
     for w, d, date, c in sorted(grid, key=lambda g: (g[0] + g[1], g[0])):
         h = height(c)
-        if c == 0:                                   # park: a couple of trees
-            for tx, ty in ((.3, .35), (.68, .62), (.62, .25))[: 1 + (w * 7 + d) % 3]:
+        if c == 0:                                   # park: footpath, bushes and a few real-looking trees
+            trng = random.Random(w * 31 + d)
+            if trng.random() < .5:                     # a curved path across the lawn
+                p0, p1, p2 = P(w + .1, d + .55), P(w + .5, d + .35), P(w + .9, d + .6)
+                p.append(f'<path d="M{p0[0]:.1f} {p0[1]:.1f}Q{p1[0]:.1f} {p1[1]:.1f} {p2[0]:.1f} {p2[1]:.1f}" stroke="#C9B48A" stroke-opacity=".55" stroke-width="{s * .05:.1f}" fill="none" stroke-linecap="round"/>')
+            spots = [(.28, .3), (.7, .68), (.66, .26), (.3, .72)]
+            trng.shuffle(spots)
+            for tx, ty in sorted(spots[: 2 + trng.randrange(2)], key=lambda t: t[0] + t[1]):
                 x, y = P(w + tx, d + ty)
-                r = s * .13
-                p.append(f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="{r * 1.1:.1f}" ry="{r * .5:.1f}" fill="#000" opacity=".25"/>'
-                         f'<rect x="{x - 1:.1f}" y="{y - r * 1.4:.1f}" width="2" height="{r * 1.4:.1f}" fill="#4A3424"/>'
-                         f'<circle cx="{x:.1f}" cy="{y - r * 1.7:.1f}" r="{r:.1f}" fill="#2F7D3A"/><circle cx="{x - r * .3:.1f}" cy="{y - r * 1.95:.1f}" r="{r * .55:.1f}" fill="#4CAF50" opacity=".8"/>')
+                p.append(tree(x, y, s * trng.uniform(.13, .17), trng.choices(["oak", "oak", "pine", "sakura", "bush"], [4, 3, 2, 1.4, 1])[0], trng))
             continue
         is_best, is_today = (w, d) == (best[0], best[1]), (w, d) == (today[0], today[1])
         f0, f1 = (.12, .88) if h > HMAX * .45 or is_best else (.16, .84)
@@ -141,15 +187,19 @@ def build(user, out):
         # left face (facing +weekday) and right face (facing +week), drawn as skewed rects so windows follow
         L, R = P(w + f0, d + f1, h), P(w + f1, d + f1, h)
         wl = (f1 - f0) * s
-        if kind in ("glass", "landmark"):
-            lf, rf, pat = ("url(#landL)", "url(#landR)", f"gls{tier}{v}") if kind == "landmark" else ("url(#glassL)", "url(#glassR)", f"gls{tier}{v}")
+        glass = kind in ("glass", "landmark")
+        if glass:
+            lf, rf, pat = ("url(#pL)", "url(#pR)", f"gls{tier}{v}") if kind == "landmark" else ("url(#gL)", "url(#gR)", f"gls{tier}{v}")
         else:
             lf, rf, pat = shade(base, .62), shade(base, 1.0), f"win{tier}{v}"
-        p.append(f'<g transform="matrix({COS:.4f},{SIN:.4f},0,1,{L[0]:.1f},{L[1]:.1f})"><rect width="{wl:.1f}" height="{h:.1f}" fill="{lf}"/><rect y="4" width="{wl:.1f}" height="{max(0, h - 8):.1f}" fill="url(#{pat})"/></g>')
-        p.append(f'<g transform="matrix({COS:.4f},{-SIN:.4f},0,1,{R[0]:.1f},{R[1]:.1f})"><rect width="{wl:.1f}" height="{h:.1f}" fill="{rf}"/><rect y="4" width="{wl:.1f}" height="{max(0, h - 8):.1f}" fill="url(#{pat})" opacity=".9"/></g>')
+        over = (f'<rect width="{wl:.1f}" height="{h:.1f}" fill="url(#skyref)"/><rect width="{wl:.1f}" height="{h:.1f}" fill="url(#sheen)"/>') if glass else ""
+        p.append(f'<g transform="matrix({COS:.4f},{SIN:.4f},0,1,{L[0]:.1f},{L[1]:.1f})"><rect width="{wl:.1f}" height="{h:.1f}" fill="{lf}"/><rect y="4" width="{wl:.1f}" height="{max(0, h - 8):.1f}" fill="url(#{pat})"/>{over}</g>')
+        p.append(f'<g transform="matrix({COS:.4f},{-SIN:.4f},0,1,{R[0]:.1f},{R[1]:.1f})"><rect width="{wl:.1f}" height="{h:.1f}" fill="{rf}"/><rect y="4" width="{wl:.1f}" height="{max(0, h - 8):.1f}" fill="url(#{pat})" opacity=".9"/>{over}</g>')
+        if glass:                                      # bright vertical corner where the two glass walls meet
+            p.append(f'<path d="M{R[0]:.1f} {R[1]:.1f}V{R[1] + h:.1f}" stroke="#E0F2FF" stroke-opacity=".55" stroke-width="1.2"/>')
         top = [P(w + f0, d + f0, h), P(w + f1, d + f0, h), P(w + f1, d + f1, h), P(w + f0, d + f1, h)]
-        p.append(poly(top, shade(base, 1.25) if kind in ("house", "office") else "#3E5F86" if kind == "glass" else "#7C5CFF"))
-        p.append(f'<path d="M{top[3][0]:.1f} {top[3][1]:.1f}L{top[2][0]:.1f} {top[2][1]:.1f}L{top[1][0]:.1f} {top[1][1]:.1f}" stroke="#fff" stroke-opacity=".18" fill="none"/>')
+        p.append(poly(top, shade(base, 1.25) if kind in ("house", "office") else "#22476E" if kind == "glass" else "#5B3FA0"))
+        p.append(f'<path d="M{top[3][0]:.1f} {top[3][1]:.1f}L{top[2][0]:.1f} {top[2][1]:.1f}L{top[1][0]:.1f} {top[1][1]:.1f}" stroke="#fff" stroke-opacity="{.6 if kind in ("glass", "landmark") else .18}" fill="none"/>')
         cx, cy = P(w + .5, d + .5, h)
         if kind == "house" and h < s * .9:            # pitched-roof hint: a little roof cap
             p.append(poly([P(w + f0, d + f1, h), P(w + f1, d + f1, h), (cx + 0, cy - s * .18), ], shade(base, .45), 'opacity=".9"'))
@@ -157,7 +207,11 @@ def build(user, out):
             p.append(f'<rect x="{cx - 4:.1f}" y="{cy - 11:.1f}" width="8" height="9" fill="#5B4636"/><ellipse cx="{cx:.1f}" cy="{cy - 11:.1f}" rx="4" ry="1.8" fill="#7A5E48"/>'
                      f'<path d="M{cx - 3:.1f} {cy - 2:.1f}l-1.5 3M{cx + 3:.1f} {cy - 2:.1f}l1.5 3" stroke="#3A2C22"/>'
                      f'<rect x="{cx + 6:.1f}" y="{cy - 3:.1f}" width="6" height="4" fill="#9AA3B2"/>')
-        elif kind == "glass":                          # antenna with a red light
+        elif kind == "glass":                          # rooftop penthouse + antenna with a red light
+            p.append(poly([P(w + .38, d + .38, h + 7), P(w + .62, d + .38, h + 7), P(w + .62, d + .62, h + 7), P(w + .38, d + .62, h + 7)], "#2F4F73")
+                     + poly([P(w + .38, d + .62, h), P(w + .62, d + .62, h), P(w + .62, d + .62, h + 7), P(w + .38, d + .62, h + 7)], "#173350")
+                     + poly([P(w + .62, d + .62, h), P(w + .62, d + .38, h), P(w + .62, d + .38, h + 7), P(w + .62, d + .62, h + 7)], "#27476B"))
+            cy -= 7
             p.append(f'<path d="M{cx:.1f} {cy:.1f}V{cy - 16:.1f}" stroke="#C9D2E3" stroke-width="1.2"/><circle cx="{cx:.1f}" cy="{cy - 17:.1f}" r="2" fill="#FF3355"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>')
         else:                                          # landmark: crown, spire, beacon, sign
             p.append(poly([P(w + .3, d + .3, h), P(w + .7, d + .3, h), P(w + .7, d + .7, h), P(w + .3, d + .7, h)], "#A78BFA"))
