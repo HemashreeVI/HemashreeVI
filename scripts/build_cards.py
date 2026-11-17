@@ -855,6 +855,30 @@ def build_project(p, idx):
     write(f"project-{p['slug']}.svg", svg(W, H, u, p["name"], desc, body))
 
 
+# ---------------------------------------------------------------- compact project tiles (two per row)
+def build_project_tile(p, idx):
+    W, H, u = 580, 312, f"pt{idx}"
+    x = 28
+    pitch = wrap(p["pitch"], 40)
+    parts = [frame(W, H, u, (0.85, 0.2)),
+             f'<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="{C["mint"]}"/><stop offset="1" stop-color="{C["rose"]}"/></linearGradient></defs>',
+             f'<g class="float"><g transform="translate(384 22) scale(.58)">{motif(p["motif"], 0, 0)}</g></g>',
+             text(x, 44, p["kicker"].split(" · ", 1)[-1] if p["kicker"][:2].isdigit() else p["kicker"], 10, C['lav'], 'mono', 'start', 'letter-spacing="2"'),
+             text(x - 1, 80, p["name"], 28 if len(p["name"]) < 16 else 23, f"url(#{u}-silver)", 'serif')]
+    for i, ln in enumerate(pitch[:3]):
+        parts.append(text(x, 108 + i * 20, ln, 14.5, C['mist'], 'serif', 'start', 'font-style="italic"'))
+    parts.append(f'<rect x="{x}" y="170" width="{W - 2 * x}" height="1" fill="{C["line2"]}"/>')
+    for k, (big, small) in enumerate(p["stats"]):
+        sx = x + k * 178
+        parts.append(text(sx, 202, big, 22, C['silver'], 'serif'))
+        for j, ln in enumerate(wrap(small, 24)[:2]):
+            parts.append(text(sx, 222 + j * 14, ln, 11, C['muted'], 'sans'))
+    parts.append(chips(x, 254, p["tags"][:5], size=10, maxw=W - 2 * x - 70))
+    parts.append(text(W - 22, H - 20, "open ↗", 11, C['muted'], 'mono', 'end'))
+    desc = f"{p['name']}: {p['pitch']} " + "; ".join(f"{a} {b}" for a, b in p["stats"]) + ". Tech: " + ", ".join(p["tags"])
+    write(f"tile-{p['slug']}.svg", svg(W, H, u, p["name"], desc, "".join(parts)))
+
+
 def build_more():
     W, H, u = 1200, 220, "more"
     parts = [frame(W, H, u, (0.5, 0.3))]
@@ -1161,16 +1185,15 @@ def main():
     titles = [
         ("01", "ABOUT", "Hello, I'm", "Hemashree.", "WHO I AM", "about"),
         ("02", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
-        ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ", "work"),
+        ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ · GITLOOM", "work"),
         ("04", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
         ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
         ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "4 EXTENSIONS · FREE", "extensions"),
-        ("07", "TOOLKIT", "The tools I", "reach for.", "TECH & TOOLS", "toolkit"),
-        ("08", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("09", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
-        ("10", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("11", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("12", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("07", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
+        ("08", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
+        ("09", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("10", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("11", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
     # the roaming cat turns up in some of the section titles
     cat = {
@@ -1188,6 +1211,8 @@ def main():
     build_journey()
     for i, p in enumerate(PROJECTS):
         build_project(p, i)
+        if p['slug'] in ('seatlock', 'rootlens', 'triageiq', 'gitloom', 'walker', 'rover'):
+            build_project_tile(p, i)
     build_more()
     build_building()
     build_toolkit()

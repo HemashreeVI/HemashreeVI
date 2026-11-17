@@ -48,42 +48,25 @@
 <img src="./assets/cards/title-journey.svg" width="100%" alt="02 Journey: The road so far.">
 <img src="./assets/cards/journey.svg" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
 
-<img src="./assets/cards/title-work.svg" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens and TriageIQ.">
-
-<a href="https://github.com/HemashreeVI/SeatLock"><img src="./assets/cards/project-seatlock.svg" width="100%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/SeatLock"><img src="https://img.shields.io/badge/Repository-SeatLock-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="SeatLock repository"></a></p>
-
-<a href="https://github.com/HemashreeVI/rootlens"><img src="./assets/cards/project-rootlens.svg" width="100%" alt="RootLens: an incident-response lab that detects a failing microservice, investigates the cause, decides on a fix within strict limits, rolls back the bad release and verifies recovery, with an audit log of every decision. A real incident went from open to resolved in under 2 minutes; 118 unit tests."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/rootlens"><img src="https://img.shields.io/badge/Repository-RootLens-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="RootLens repository"></a></p>
-
-<a href="https://github.com/HemashreeVI/TriageIQ"><img src="./assets/cards/project-triageiq.svg" width="100%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/TriageIQ"><img src="https://img.shields.io/badge/Repository-TriageIQ-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="TriageIQ repository"></a></p>
-
-<p align="center"><sub>✨ <b>Also built</b> ✨</sub></p>
-
-
-<a href="https://hemashreevi.github.io/GitLoom/"><img src="./assets/cards/project-gitloom.svg" width="100%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
+<img src="./assets/cards/title-work.svg" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
-  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="./assets/demos/gitloom-preview.gif" width="80%" alt="GitLoom demo: the landing page loom weaves a row for every letter typed, then the studio switches between templates. Click to watch the full 1-minute demo with narration."></a>
-  <br><sub>▶ Click the preview to watch the 1-minute demo</sub>
+<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock on GitHub"><img src="./assets/cards/tile-seatlock.svg" width="49%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
+<a href="https://github.com/HemashreeVI/rootlens" title="RootLens on GitHub"><img src="./assets/cards/tile-rootlens.svg" width="49%" alt="RootLens: an incident-response lab that detects a failing microservice, investigates the cause, decides on a fix within strict limits, rolls back the bad release and verifies recovery, with an audit log of every decision. A real incident went from open to resolved in under 2 minutes; 118 unit tests."></a>
 </p>
 <p align="center">
-  <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Try GitLoom live"></a>
-  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-1_min_demo-F0A8D0?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
-  <a href="https://github.com/HemashreeVI/GitLoom"><img src="https://img.shields.io/badge/Repository-GitLoom-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="GitLoom repository"></a>
+<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ on GitHub"><img src="./assets/cards/tile-triageiq.svg" width="49%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
+<a href="https://hemashreevi.github.io/GitLoom/" title="Try GitLoom live"><img src="./assets/cards/tile-gitloom.svg" width="49%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
 </p>
-
-<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="./assets/cards/project-dental.svg" width="100%" alt="Dental Malocclusion Detection: YOLOv9 pipeline detecting 31 dental conditions on 13,000+ X-rays (test mAP@50 38.7%), with per-finding HiResCAM explanations, an FDI tooth chart, a Gradio app and PDF reports."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection"><img src="https://img.shields.io/badge/Repository-Dental_Malocclusion-2B3963?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Dental Malocclusion Detection repository"></a></p>
-
+<p align="center">
+  <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=flat-square&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Try GitLoom live"></a>
+  <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-GitLoom_1_min_demo-F0A8D0?style=flat-square&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
+</p>
 
 <img src="./assets/cards/title-patents.svg" width="100%" alt="04 Patents: Ideas, on file. 2 filings in progress.">
-
-<a href="https://github.com/HemashreeVI/smart_walker"><img src="./assets/cards/project-walker.svg" width="100%" alt="Patent 01, Smart Walker: a walker that predicts a fall before it happens. Dual IMUs and load cells, sensor fusion, fall-risk prediction, standalone on Arduino for under $30. Co-inventor, filing in progress."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/smart_walker"><img src="https://img.shields.io/badge/📜_Patent_01-Smart_Walker-F0A8D0?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Smart Walker repository"></a></p>
-
-<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered"><img src="./assets/cards/project-rover.svg" width="100%" alt="Patent 02, Hazard-Detection Rover: a rover that explores a disaster zone and flags hazards for rescuers. Q-learning navigation, CNN hazard perception, multi-hazard detection, emergency stop and a live rescue dashboard. Co-inventor, filing in progress."></a>
-<p align="center"><a href="https://github.com/HemashreeVI/disaster-response-rover-nodered"><img src="https://img.shields.io/badge/📜_Patent_02-Hazard_Rover-F0A8D0?style=for-the-badge&labelColor=10131F&logo=github&logoColor=E6E9F0" alt="Hazard-Detection Rover repository"></a></p>
+<p align="center">
+<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent) on GitHub"><img src="./assets/cards/tile-walker.svg" width="49%" alt="Patent 01, Smart Walker: a walker that predicts a fall before it happens. Dual IMUs and load cells, sensor fusion, fall-risk prediction, standalone on Arduino for under $30. Co-inventor, filing in progress."></a>
+<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent) on GitHub"><img src="./assets/cards/tile-rover.svg" width="49%" alt="Patent 02, Hazard-Detection Rover: a rover that explores a disaster zone and flags hazards for rescuers. Q-learning navigation, CNN hazard perception, multi-hazard detection, emergency stop and a live rescue dashboard. Co-inventor, filing in progress."></a>
+</p>
 
 <img src="./assets/cards/title-opensource.svg" width="100%" alt="05 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
@@ -109,22 +92,19 @@
 <a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded on GitHub"><img src="./assets/cards/ext-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, from commits and pull requests to the plus and minus lines and the contribution calendar."></a>
 </p>
 
-<img src="./assets/cards/title-toolkit.svg" width="100%" alt="07 Toolkit: The tools I reach for.">
-<img src="./assets/cards/toolkit.svg" width="100%" alt="Toolkit, by area. Languages: Python, Java, C++, JavaScript, SQL. Frontend: HTML, CSS, JavaScript, Three.js, Canvas, Gradio. Backend and DevOps: Spring Boot, FastAPI, Flask, Docker, Kafka, Redis, Prometheus, Grafana, GitHub Actions, k6. Motion and design: Canva, CSS keyframes, SVG animation, Three.js 3D, poster design. AI and vision: PyTorch, TensorFlow, OpenCV, YOLOv8/v9, Grad-CAM, MMPose, Q-learning, RAG, Ollama, IBM watsonx. Data: PostgreSQL, SQLite, MySQL, Redis, Qdrant, Firebase. Embedded and IoT: Arduino, ESP32, Raspberry Pi, sensor fusion, LIDAR SLAM. Security: threat modeling, intrusion detection, risk scoring. Tools: Git, GitHub, VS Code, Linux, Jupyter, Colab, Kaggle, Roboflow, Windows, PowerShell. Spoken: Tamil, English, Hindi, Japanese.">
-
-<img src="./assets/cards/title-milestones.svg" width="100%" alt="08 Milestones: Proof, on the record.">
+<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
 <img src="./assets/cards/milestones.svg" width="100%" alt="Patents: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD; Hazard-Detection Rover, co-inventor, filing in progress. Open source: merged PR to first-contributions and 14 MIT-licensed repos. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
 <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 
-<img src="./assets/cards/title-youtube.svg" width="100%" alt="09 YouTube: Byte Decoded.">
+<img src="./assets/cards/title-youtube.svg" width="100%" alt="08 YouTube: Byte Decoded.">
 <a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
 <p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
 
-<img src="./assets/cards/title-play.svg" width="100%" alt="10 Play: Play on my portfolio.">
+<img src="./assets/cards/title-play.svg" width="100%" alt="09 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
 <p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F" alt="Play now"></a></p>
 
-<img src="./assets/cards/title-commits.svg" width="100%" alt="11 Commit log: A year of building.">
+<img src="./assets/cards/title-commits.svg" width="100%" alt="10 Commit log: A year of building.">
 
 <p align="center">
   <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution graph">
@@ -149,7 +129,7 @@
 
 </details>
 
-<img src="./assets/cards/title-connect.svg" width="100%" alt="12 Connect: Let's talk.">
+<img src="./assets/cards/title-connect.svg" width="100%" alt="11 Connect: Let's talk.">
 
 
 <p align="center">
