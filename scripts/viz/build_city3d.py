@@ -61,6 +61,32 @@ def tree(x, y, r, kind, rnd):
     return "".join(out)
 
 
+def car(u, v, s, body, forward=True):
+    """A little isometric car at the origin. u = unit screen vector along the road, v = across it."""
+    L, Wd, Hc = s * .38, s * .19, s * .09
+    def pt(a, b, z=0):
+        return (u[0] * a + v[0] * b, u[1] * a + v[1] * b - z)
+    def pg(pts, fill, op=1):
+        return f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" fill="{fill}" opacity="{op}"/>'
+    hl, hw = L / 2, Wd / 2
+    out = [pg([pt(-hl, -hw), pt(hl, -hw), pt(hl, hw), pt(-hl, hw)], "#000", .35)]                       # shadow
+    out.append(pg([pt(-hl, hw), pt(hl, hw), pt(hl, hw, Hc), pt(-hl, hw, Hc)], body))                     # side
+    out.append(pg([pt(hl, -hw), pt(hl, hw), pt(hl, hw, Hc), pt(hl, -hw, Hc)], body, .8))                 # end
+    out.append(pg([pt(-hl, -hw, Hc), pt(hl, -hw, Hc), pt(hl, hw, Hc), pt(-hl, hw, Hc)], body))           # bonnet/boot
+    r0, r1 = (-hl * .45, hl * .25) if forward else (-hl * .25, hl * .45)
+    out.append(pg([pt(r0, -hw * .8, Hc * 1.8), pt(r1, -hw * .8, Hc * 1.8), pt(r1, hw * .8, Hc * 1.8), pt(r0, hw * .8, Hc * 1.8)], "#C9D6EA"))   # roof
+    out.append(pg([pt(r0, hw * .8, Hc), pt(r1, hw * .8, Hc), pt(r1, hw * .8, Hc * 1.8), pt(r0, hw * .8, Hc * 1.8)], "#1B2B44"))              # window
+    front, back = (hl, -hl) if forward else (-hl, hl)
+    for side in (-hw * .6, hw * .6):
+        fx, fy = pt(front, side, Hc * .6)
+        bx, by = pt(back, side, Hc * .6)
+        out.append(f'<circle cx="{fx:.1f}" cy="{fy:.1f}" r="1.6" fill="#FFF7D6"/><circle cx="{bx:.1f}" cy="{by:.1f}" r="1.3" fill="#FF3355"/>')
+    gx, gy = pt(front + (s * .35 if forward else -s * .35), 0)
+    fx, fy = pt(front, 0)
+    out.insert(0, f'<polygon points="{fx:.1f},{fy:.1f} {gx + v[0] * s * .12:.1f},{gy + v[1] * s * .12:.1f} {gx - v[0] * s * .12:.1f},{gy - v[1] * s * .12:.1f}" fill="#FFF3C4" opacity=".16"/>')   # headlight beam
+    return "".join(out)
+
+
 def calendar_grid(days):
     """Weeks (Sunday first, like GitHub) from shortly before the first active day, at least 8 weeks."""
     first = next((i for i, (_, c) in enumerate(days) if c), len(days) - 1)
@@ -160,6 +186,28 @@ def build(user, out):
         f0, f1 = .08, .92
         p.append(poly([P(w + f0, d + f0), P(w + f1, d + f0), P(w + f1, d + f1), P(w + f0, d + f1)], "#2C3448" if c else "url(#grass)"))
         lots[(w, d)] = (date, c)
+
+    # traffic: cars drive along the avenues between weeks and on the front boulevard
+    crng = random.Random(5)
+    ju, iu = (-COS, SIN), (COS, SIN)                # screen directions of +weekday and +week
+    bodies = ["#E4002B", "#F7F7F2", "#2563EB", "#FBBF24", "#10B981", "#9CA3AF", "#F97316", "#7C3AED"]
+    avenues = sorted(crng.sample(range(1, nweeks), min(nweeks - 1, max(3, nweeks // 2))))
+    for k, wv in enumerate(avenues):
+        down = k % 2 == 0
+        a0, a1 = (P(wv - .04, -.6), P(wv - .04, 7.6)) if down else (P(wv - .04, 7.6), P(wv - .04, -.6))
+        dur = crng.uniform(7, 12)
+        body = car(ju, iu, s, crng.choice(bodies), forward=down)
+        for n in range(1 + (k % 2)):
+            t0 = ((n * .5 + crng.random()) % 1) * dur      # same start for the move and the fade
+            p.append(f'<g opacity="0">{body}<animateMotion dur="{dur:.1f}s" begin="-{t0:.1f}s" repeatCount="indefinite" path="M{a0[0]:.1f} {a0[1]:.1f}L{a1[0]:.1f} {a1[1]:.1f}"/>'
+                     f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.94;1" dur="{dur:.1f}s" begin="-{t0:.1f}s" repeatCount="indefinite"/></g>')
+    for k in range(3):                               # the boulevard along the front edge
+        right = k % 2 == 0
+        a0, a1 = (P(-.6, 7.08), P(nweeks + .6, 7.08)) if right else (P(nweeks + .6, 7.08), P(-.6, 7.08))
+        dur = crng.uniform(10, 15)
+        t0 = crng.random() * dur
+        p.append(f'<g opacity="0">{car(iu, ju, s, crng.choice(bodies), forward=right)}<animateMotion dur="{dur:.1f}s" begin="-{t0:.1f}s" repeatCount="indefinite" path="M{a0[0]:.1f} {a0[1]:.1f}L{a1[0]:.1f} {a1[1]:.1f}"/>'
+                 f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.05;.95;1" dur="{dur:.1f}s" begin="-{t0:.1f}s" repeatCount="indefinite"/></g>')
 
     # buildings, back to front
     for w, d, date, c in sorted(grid, key=lambda g: (g[0] + g[1], g[0])):
