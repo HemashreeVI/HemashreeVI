@@ -261,7 +261,7 @@ def build(user, out):
                      + poly([P(w + .62, d + .62, h), P(w + .62, d + .38, h), P(w + .62, d + .38, h + 7), P(w + .62, d + .62, h + 7)], "#27476B"))
             cy -= 7
             p.append(f'<path d="M{cx:.1f} {cy:.1f}V{cy - 16:.1f}" stroke="#C9D2E3" stroke-width="1.2"/><circle cx="{cx:.1f}" cy="{cy - 17:.1f}" r="2" fill="#FF3355"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>')
-        else:                                          # landmark: crown, spire, beacon, sign
+        elif kind == "landmark":                     # landmark: crown, spire, beacon, sign
             p.append(poly([P(w + .3, d + .3, h), P(w + .7, d + .3, h), P(w + .7, d + .7, h), P(w + .3, d + .7, h)], "#A78BFA"))
             p.append(f'<path d="M{cx:.1f} {cy:.1f}V{cy - 40:.1f}" stroke="#E9D5FF" stroke-width="2"/>'
                      f'<circle cx="{cx:.1f}" cy="{cy - 42:.1f}" r="3.5" fill="#F472B6"><animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/></circle>'
