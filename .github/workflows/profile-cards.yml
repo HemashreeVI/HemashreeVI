@@ -1,4 +1,4 @@
-name: Generate achievements and streak cards
+name: Generate achievements, streak and Contribution City
 
 on:
   schedule:
@@ -27,7 +27,13 @@ jobs:
           rm -f dist/stats.svg dist/top-langs.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Publishes dist/ as the whole output branch (achievements.svg, streak.svg)
+      # Contribution City: the contribution calendar as an isometric 3D city
+      - run: |
+          python3 repo/scripts/viz/build_city3d.py ${{ github.repository_owner }} dist/city.svg \
+            || curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/output/city.svg" -o dist/city.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Publishes dist/ as the whole output branch (achievements.svg, streak.svg, city.svg)
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
