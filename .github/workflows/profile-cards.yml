@@ -1,4 +1,4 @@
-name: Generate Pac-Man, activity graph and stat cards
+name: Generate achievements and streak cards
 
 on:
   schedule:
@@ -13,33 +13,21 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
-      # Pac-Man eating the contribution grid. The deploy step below replaces
-      # the whole output branch with dist/.
-      - uses: abozanona/pacman-contribution-graph@v5.3.2
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          games: pacman
-      # Activity line graph, drawn here instead of relying on an external service
       - uses: actions/checkout@v4
         with:
           path: repo
-      - run: python3 repo/scripts/activity_graph.py ${{ github.repository_owner }} dist/activity-graph.svg
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # GitHub achievements card (scraped from the public profile; keeps the last card on failure)
       - run: python3 repo/scripts/achievements.py ${{ github.repository_owner }} dist/achievements.svg
-      # Trophy card: ranked stats from the GraphQL API (keeps the last card on failure)
-      - run: python3 repo/scripts/trophies.py ${{ github.repository_owner }} dist/trophies.svg
+      # Contribution streak card. The script draws stats and top-languages cards from the same
+      # request; the README only shows the streak, so those two are dropped before publishing.
+      - run: |
+          python3 repo/scripts/stats_cards.py ${{ github.repository_owner }} dist
+          rm -f dist/stats.svg dist/top-langs.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Stats, top languages and streak cards (replaces the often-down public
-      # github-readme-stats and streak-stats services; keeps the last cards on failure)
-      - run: python3 repo/scripts/stats_cards.py ${{ github.repository_owner }} dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Publishes dist/ as the whole output branch (achievements.svg, streak.svg)
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
