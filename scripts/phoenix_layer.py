@@ -1,7 +1,6 @@
 """The fire phoenix (photos generated with ChatGPT on a green screen, cut out by
 scripts/phoenix/cut_phoenix.py into assets/phoenix/*.webp) and the warm ember
-atmosphere that goes with it, so the bird sits naturally in the black & silver
-cards: a soft red-orange glow, a little warm smoke and a few rising sparks.
+sparks that go with it: a few small golden sparks rising near the bird.
 Used by the footer (build_cards.py) and the streak card (stats_cards.py).
 """
 import base64
@@ -41,36 +40,16 @@ def size(name, s):
 
 
 def warmth(uid, cx, cy, rx, ry, strength=1.0, sparks=10, seed=7, rise=60):
-    """Ember glow + warm smoke + rising sparks around (cx, cy), to sit under or behind the phoenix."""
+    """A few small golden sparks rising around (cx, cy), near the phoenix."""
     rnd = random.Random(seed)
-    out = [f"""<defs>
-  <radialGradient id="{uid}-heat" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="{FLAME}" stop-opacity="{.30 * strength:.2f}"/>
-    <stop offset=".45" stop-color="{DEEP}" stop-opacity="{.12 * strength:.2f}"/>
-    <stop offset="1" stop-color="{DEEP}" stop-opacity="0"/>
-  </radialGradient>
-  <filter id="{uid}-wsmoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="3" seed="{seed}"/>
-    <feColorMatrix values="0 0 0 0 1  0 0 0 0 .42  0 0 0 0 .2  2.4 0 0 0 -1.1"/>
-    <feGaussianBlur stdDeviation="5"/>
-  </filter>
-  <radialGradient id="{uid}-smask" cx="50%" cy="60%" r="50%">
-    <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
-  </radialGradient>
-  <mask id="{uid}-m"><rect x="{cx - rx}" y="{cy - ry}" width="{2 * rx}" height="{2 * ry}" fill="url(#{uid}-smask)"/></mask>
-</defs>""",
-           f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="url(#{uid}-heat)">'
-           f'<animate attributeName="opacity" values="1;.75;1" dur="3.2s" repeatCount="indefinite"/></ellipse>',
-           # warm smoke drifting slowly upward, only around the bird
-           f'<g mask="url(#{uid}-m)" opacity="{.22 * strength:.2f}"><rect x="{cx - rx}" y="{cy - ry}" width="{2 * rx}" height="{4 * ry}" filter="url(#{uid}-wsmoke)">'
-           f'<animateTransform attributeName="transform" type="translate" values="0 0;0 {-2 * ry}" dur="24s" repeatCount="indefinite"/></rect></g>']
+    out = []
     for i in range(sparks):
         x = cx + rnd.uniform(-rx * .55, rx * .55)
         y = cy + rnd.uniform(-ry * .1, ry * .5)
         d, b, r = rnd.uniform(2.2, 4.2), rnd.uniform(0, 4), rnd.choice([1, 1.2, 1.5, 1.8])
         drift = rnd.uniform(-14, 14)
-        out.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{r}" fill="{rnd.choice([EMBER, FLAME, EMBER])}" opacity="0">'
-                   f'<animate attributeName="opacity" values="0;.95;.6;0" dur="{d:.1f}s" begin="{b:.1f}s" repeatCount="indefinite"/>'
+        out.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{r * .8:.1f}" fill="{EMBER}" opacity="0">'
+                   f'<animate attributeName="opacity" values="0;.7;.4;0" dur="{d:.1f}s" begin="{b:.1f}s" repeatCount="indefinite"/>'
                    f'<animateTransform attributeName="transform" type="translate" values="0 0;{drift:.0f} {-rise}" dur="{d:.1f}s" begin="{b:.1f}s" repeatCount="indefinite"/>'
                    f'</circle>')
     return "\n".join(out)
@@ -93,8 +72,6 @@ def rises(uid, start, end, s0, s1, dur, appear, leave):
     kt = f"0;{appear:.3f};{leave:.3f};1"
     burst = f"0;{appear - .01:.3f};{appear + .01:.3f};{appear + .14:.3f};1"
     return f"""
-<ellipse cx="{x0}" cy="{y0 + 10}" rx="90" ry="34" fill="url(#{uid}-heat)" opacity="0">
-  <animate attributeName="opacity" dur="{dur}s" repeatCount="indefinite" keyTimes="{burst}" values="0;0;1;0;0"/></ellipse>
 <g opacity="0">
   <animate attributeName="opacity" dur="{dur}s" repeatCount="indefinite" keyTimes="0;{appear:.3f};{appear + .03:.3f};{leave - .05:.3f};{leave:.3f};1" values="0;0;1;1;0;0"/>
   <animateMotion dur="{dur}s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="{kt}" calcMode="linear"

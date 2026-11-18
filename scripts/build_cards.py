@@ -1206,7 +1206,7 @@ def build_footer():
 <rect x="380" y="196" width="440" height="1.2" fill="url(#{u}-rule)"/>
 {text(600, 236, "Open to roles in cybersecurity · computer vision · cyber-physical systems · backend & devops", 15, C['mist'], 'sans', 'middle')}
 {text(600, 280, "よろしくお願いします", 20, C['lilac'], 'serif', 'middle')}
-{phoenix_layer.warmth("phx", 1090, 262, 190, 95, strength=.9, sparks=12, seed=5)}
+{phoenix_layer.warmth("phx", 1128, 270, 90, 30, sparks=7, seed=5)}
 {chess_layer.checkmate("pcK")}
 {phoenix_layer.rises("phx", (1128, 268), (980, -150), .2, .62, 10, .44, .78)}
 """
