@@ -1,0 +1,200 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root { --gold:#D4AF6A; --gold2:#F1DDAF; --ink:#EDE3D0; --dim:#8C7F69; }
+  html,body { margin:0; background:#000; }
+  #stage { position:relative; width:1100px; height:458px; overflow:hidden; background:#000; font-family:Inter, sans-serif; }
+  canvas, svg.ov { position:absolute; inset:0; }
+  .t { position:absolute; opacity:0; white-space:nowrap; }
+  .caps { font:500 10.5px Inter; letter-spacing:.42em; text-transform:uppercase; color:var(--gold); }
+  .mono { font:400 11px 'JetBrains Mono'; letter-spacing:.08em; color:var(--dim); }
+  .serif { font-family:'Cormorant Garamond', serif; }
+  .bar { position:absolute; left:0; right:0; height:20px; background:#000; z-index:5; }
+  .lbl .glyph { font-size:30px; color:var(--gold); line-height:1; }
+  .lbl .name { font:600 46px 'Cormorant Garamond'; color:var(--ink); letter-spacing:.06em; margin-top:6px; }
+  .lbl .tag { font:italic 500 20px 'Cormorant Garamond'; color:var(--gold); margin-top:2px; letter-spacing:.02em; }
+  .lbl .rule { width:46px; height:1px; background:var(--gold); margin:14px 0 12px; opacity:.8; }
+  #name { left:64px; top:150px; }
+  #name .n { font:600 74px 'Cormorant Garamond'; letter-spacing:.22em; background:linear-gradient(180deg,#FBF0D6,#C9A15E); -webkit-background-clip:text; color:transparent; }
+  #name .r { font:italic 500 22px 'Cormorant Garamond'; color:var(--ink); opacity:.85; margin-top:4px; letter-spacing:.04em; }
+  #log { left:58px; top:150px; font:400 12.5px/1.95 'JetBrains Mono'; color:#B9AC93; }
+  #log b { color:var(--gold2); font-weight:500; }
+  #log .ok { color:var(--gold); }
+  #end { left:0; right:0; top:178px; text-align:center; }
+  #end .y { font:500 60px 'Cormorant Garamond'; color:var(--ink); letter-spacing:.06em; }
+  #end .y i { color:var(--gold); font-style:normal; }
+  #end .u { margin-top:10px; }
+</style></head>
+<body><div id="stage">
+  <canvas id="cv" width="1100" height="458"></canvas>
+  <svg class="ov" id="ov" width="1100" height="458" viewBox="0 0 1100 458"></svg>
+  <div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div>
+
+  <div class="t caps" id="tl" style="left:40px; top:36px">♛&nbsp; HemashreeVI</div>
+  <div class="t mono" id="clock" style="right:40px; top:34px"></div>
+  <div class="t mono" id="slate" style="left:40px; bottom:36px"></div>
+  <div class="t mono" id="coords" style="right:40px; bottom:36px">a&nbsp; b&nbsp; c&nbsp; d&nbsp; e&nbsp; f&nbsp; g&nbsp; h</div>
+
+  <div class="t lbl" id="L0" style="left:72px; top:146px"><div class="glyph">♜</div><div class="rule"></div><div class="caps">Project 01 · Rook</div><div class="name">SeatLock</div><div class="tag">holds the line. no double bookings.</div></div>
+  <div class="t lbl" id="L1" style="left:72px; top:146px"><div class="glyph">♞</div><div class="rule"></div><div class="caps">Project 02 · Knight</div><div class="name">RootLens</div><div class="tag">jumps straight to the root cause.</div></div>
+  <div class="t lbl" id="L2" style="left:72px; top:146px"><div class="glyph">♝</div><div class="rule"></div><div class="caps">Project 03 · Bishop</div><div class="name">TriageIQ</div><div class="tag">cuts across the noise.</div></div>
+  <div class="t lbl" id="L3" style="left:72px; top:146px"><div class="glyph">♟</div><div class="rule"></div><div class="caps">Project 04 · Pawn</div><div class="name">WorkSync</div><div class="tag">one step, every single day.</div></div>
+
+  <div class="t" id="name"><div class="caps" style="margin-bottom:14px">The Queen</div><div class="n">HEMASHREE</div><div class="r">Software Engineer · moves in every direction</div></div>
+  <div class="t" id="log"></div>
+  <div class="t" id="end"><div class="y">your move <i>→</i></div><div class="caps u">hemashreevi.github.io</div></div>
+</div>
+<script>
+const W = 1100, H = 458, AR = W / H, DUR = 16;
+const load = src => { const i = new Image(); i.src = src; return i; };
+const img = load('photos/board.webp'), grid = load('photos/grid.webp'), queen = load('photos/queen.webp'), mate = load('photos/mate.webp'), overhead = load('photos/top.webp');
+const cv = document.getElementById('cv'), cx = cv.getContext('2d');
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
+const lerp = (a, b, k) => a + (b - a) * k;
+const fade = (t, a, b, f = .35) => clamp(Math.min((t - a) / f, (b - t) / f), 0, 1);   // 0→1 in, 1→0 out
+
+// piece centres in the photo (1536×1024)
+const P = { rook:[745,530], knight:[915,515], queen:[1122,520], bishop:[1268,480], pawn:[1432,545] };
+// a camera = crop width + the photo point that sits at screen fraction (fx, fy)
+function qcam(w, y) { return { x: 1672 - w, y, w, h: w / AR }; }   // queen photo: keep her at the right edge
+function cam(w, px, py, fx = .5, fy = .5) {
+  const h = w / AR; let x = px - fx * w, y = py - fy * h;
+  return { x: clamp(x, 0, 1536 - w), y: clamp(y, 0, 1024 - h), w, h };
+}
+const mix = (a, b, k) => ({ x: lerp(a.x,b.x,k), y: lerp(a.y,b.y,k), w: lerp(a.w,b.w,k), h: lerp(a.h,b.h,k) });
+
+// shots: [start, end, camFrom, camTo]
+const pieces = ['rook','knight','bishop','pawn'];
+const S = [
+  [0,   2.4, cam(900, 520, 260, .5, .5), cam(800, 560, 280, .5, .5)],                       // the light, the empty dark
+  ...pieces.map((p, i) => [2.4 + i*1.15, 2.4 + (i+1)*1.15, cam(660, ...P[p], .72, .55), cam(580, ...P[p], .72, .55)]),
+  [7.0, 9.9, qcam(1672, 0), qcam(1480, 0)],                                                  // the queen (close-up photo)
+  [9.9, 12.9, qcam(1672, 30), qcam(1580, 38)],                                                // checkmate (fallen king photo)
+  [12.9, 16, { x: 0, y: 0, w: 1536, h: 1536 / AR }, { x: 0, y: 330, w: 1536, h: 1536 / AR }, 1.9],  // top-down board, tilt down
+];
+function shotAt(t) { for (let i = 0; i < S.length; i++) if (t < S[i][1] || i === S.length - 1) return i; }
+function camAt(t) { const s = S[shotAt(t)]; return mix(s[2], s[3], ease(clamp((t - s[0]) / (s[4] || s[1] - s[0]), 0, 1))); }
+const toScreen = (c, px, py) => [(px - c.x) * W / c.w, (py - c.y) * H / c.h];
+
+// the four close-ups: one cell of the 2×2 photo, full height on the right, fading into black on the left
+const CELLS = [[6,6,646,588],[662,6,644,588],[6,606,646,588],[662,606,644,588]];   // x, y, w, h (inside the grid lines)
+const panelX = 610;                                    // where each piece's centre lands on screen
+function drawPanel(i, k) {
+  const [x, y, w, h] = CELLS[i], z = lerp(1.0, 1.07, ease(k));           // slow push-in
+  const cw = w / z, ch = h / z, sx = x + (w - cw) / 2, sy = y + (h - ch) * .45;
+  const dh = H, dw = dh * cw / ch, dx = panelX - dw / 2 + 60;
+  cx.drawImage(grid, sx, sy, cw, ch, dx, 0, dw, dh);
+  const g = cx.createLinearGradient(dx, 0, dx + dw * .28, 0); g.addColorStop(0, '#000'); g.addColorStop(1, 'rgba(0,0,0,0)');
+  cx.fillStyle = g; cx.fillRect(dx - 2, 0, dw * .28 + 2, H);
+  const g2 = cx.createLinearGradient(dx + dw * .78, 0, dx + dw, 0); g2.addColorStop(0, 'rgba(0,0,0,0)'); g2.addColorStop(1, '#000');
+  cx.fillStyle = g2; cx.fillRect(dx + dw * .78, 0, dw * .22 + 2, H);
+}
+function show(id, o, dy = 0) { const e = $(id); e.style.opacity = o; e.style.transform = `translateY(${(1 - o) * dy}px)`; }
+function typed(s, k) { return s.slice(0, Math.round(s.length * clamp(k, 0, 1))); }
+
+function render(t) {
+  const si = shotAt(t), c = camAt(t);
+  // ---- photo
+  cx.fillStyle = '#000'; cx.fillRect(0, 0, W, H);
+  let bright = 1;
+  if (t < 1.3) bright = ease(clamp(t / 1.3, 0, 1));                 // light comes up
+  if (t > 15.35) bright = 1 - ease(clamp((t - 15.35) / .65, 0, 1));     // fade to black, loop
+  const s = S[si], cut = Math.min(t - s[0], s[1] - t);
+  if (si >= 1 && si <= 4) bright *= clamp(cut / .12, 0, 1) * .4 + .6;       // quick dip on the fast cuts
+  if (si >= 5) bright *= clamp((t - s[0]) / .35, 0, 1) * .8 + .2;
+  let dim = 1;
+  if (si === 0) dim = .75;
+  if (si >= 1 && si <= 4) dim = .9;
+  if (si === 7) dim = lerp(1, .4, ease(clamp((t - 14.9) / .6, 0, 1)));
+  cx.globalAlpha = bright * dim;
+  cx.filter = si === 6 ? 'saturate(1.05) contrast(1.05)' : 'contrast(1.04)';
+  if (si >= 1 && si <= 4) drawPanel(si - 1, clamp((t - s[0]) / (s[1] - s[0]), 0, 1));
+  else cx.drawImage([img, 0, 0, 0, 0, queen, mate, overhead][si], c.x, c.y, c.w, c.h, 0, 0, W, H);
+  cx.filter = 'none'; cx.globalAlpha = 1;
+  // left-side darkening so text reads
+  const g = cx.createLinearGradient(0, 0, W * .62, 0);
+  const lAlpha = si === 5 ? .35 : si === 6 ? .5 : 0;
+  g.addColorStop(0, `rgba(0,0,0,${lAlpha})`); g.addColorStop(1, 'rgba(0,0,0,0)');
+  cx.fillStyle = g; cx.fillRect(0, 0, W, H);
+  // vignette
+  const v = cx.createRadialGradient(W/2, H/2, H*.35, W/2, H/2, W*.62);
+  v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(0,0,0,.6)');
+  cx.fillStyle = v; cx.fillRect(0, 0, W, H);
+
+  // ---- overlays
+  const ov = $('ov'); let svg = '';
+  // shot 0: slate
+  show('tl', fade(t, .6, 15.5, .5)); show('clock', fade(t, .6, 15.5, .5)); show('coords', fade(t, 9.9, 12.8, .4));
+  const left = Math.max(0, DUR - t); $('clock').textContent = `◷ 0:${String(Math.ceil(left)).padStart(2,'0')}`;
+  show('slate', fade(t, .9, 12.8, .3)); $('slate').textContent = typed('CHENNAI · 2026 · GAME 01 · WHITE TO PLAY', (t - 1) / 1.1);
+  // shots 1-4: piece labels + a thin pointer line to the piece
+  pieces.forEach((p, i) => {
+    const a = S[1 + i][0], b = S[1 + i][1], o = fade(t, a + .08, b - .02, .22);
+    show('L' + i, o, 10);
+    if (o > 0) {
+      const sx = panelX + 70 - 60;
+      const k = ease(clamp((t - a - .15) / .5, 0, 1));
+      const x1 = 330, y1 = 214, x2 = lerp(x1, sx - 70, k);
+      svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y1}" stroke="#D4AF6A" stroke-width="1" opacity="${o*.7}"/>`;
+      if (k > .95) svg += `<circle cx="${sx - 70}" cy="${y1}" r="3" fill="#D4AF6A" opacity="${o}"/>`;
+    }
+  });
+  // shot 5: the queen + name, with a slow light ring
+  const qo = fade(t, 7.35, 9.85, .45); show('name', qo, 14);
+  if (t > 7 && t < 9.9) {
+    const [qx, qy] = toScreen(c, 1288, 175);
+    const k = clamp((t - 7.6) / 1.6, 0, 1), r = lerp(40, 130, k);
+    svg += `<ellipse cx="${qx}" cy="${qy}" rx="${r}" ry="${r*.38}" fill="none" stroke="#F1DDAF" stroke-width="1" opacity="${(1-k)*.55}"/>`;
+  }
+  // shot 6: checkmate (the real fallen king) + move log
+  if (t > 9.9 && t < 13.1) {
+    const o = fade(t, 10.1, 12.95, .3);
+    const r = clamp((t - 10.45) / .9, 0, 1), [kx, ky] = toScreen(c, 800, 700);     // light ring where the king fell
+    svg += `<ellipse cx="${kx}" cy="${ky}" rx="${30 + r*230}" ry="${(30 + r*230)*.16}" fill="none" stroke="#F1DDAF" stroke-width="1.2" opacity="${(1-r)*.8*o}"/>`;
+    const lo = clamp((t - 11.3) / .35, 0, 1) * o, [tx, ty] = toScreen(c, 545, 600);
+    svg += `<line x1="${tx}" y1="${ty - 70}" x2="${tx}" y2="${ty - 18}" stroke="#D4AF6A" stroke-width="1" opacity="${lo*.8}"/>`;
+    svg += `<circle cx="${tx}" cy="${ty - 14}" r="2.6" fill="#D4AF6A" opacity="${lo}"/>`;
+    svg += `<text x="${tx}" y="${ty - 80}" text-anchor="middle" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="#F1DDAF" opacity="${lo}">impossible</text>`;
+    const lines = [['1.','SeatLock'],['2.','RootLens'],['3.','TriageIQ'],['4.','WorkSync']];
+    let html = '';
+    lines.forEach(([n, p], i) => { if (t > 10.1 + i*.2) html += `${n} <b>${p.padEnd(10,' ').replace(/ /g,'&nbsp;')}</b> <span class="ok">✓</span><br>`; });
+    if (t > 11.0) html += `5. <b>Q×K&nbsp;#</b>&nbsp;&nbsp;<span class="ok">checkmate</span>`;
+    $('log').innerHTML = `<div class="caps" style="margin-bottom:8px">Move log</div>` + html;
+    show('log', fade(t, 10.0, 12.9, .3));
+  } else show('log', 0);
+  // shot 7: top-down board, camera tilts down, each piece gets its tag, then "your move"
+  if (si === 7) {
+    const tags = [[985,150,'HEMASHREE','♛'],[390,205,'SeatLock','♜'],[1195,400,'RootLens','♞'],[340,520,'TriageIQ','♝'],[708,770,'WorkSync','♟'],[1205,790,'impossible','♚']];
+    const endK = clamp((t - 14.9) / .5, 0, 1);
+    tags.forEach(([px, py, name, g], i) => {
+      const [x, y] = toScreen(c, px, py);
+      const seen = clamp(Math.min((y - 40) / 30, (420 - y) / 30), 0, 1);
+      const o = seen * clamp((t - 13.1) / .3, 0, 1) * (1 - endK * .75);
+      if (o <= 0) return;
+      const lx = x + 62, big = i === 0;
+      svg += `<line x1="${x + 34}" y1="${y}" x2="${lx - 6}" y2="${y}" stroke="#D4AF6A" stroke-width="1" opacity="${o*.8}"/>`;
+      svg += `<text x="${lx}" y="${y + 4}" font-family="${big ? 'Cormorant Garamond' : 'JetBrains Mono'}" font-size="${big ? 19 : 11.5}" font-weight="${big ? 600 : 400}" letter-spacing="${big ? 4 : 2}" fill="${i === 5 ? '#B9AC93' : '#F1DDAF'}" opacity="${o}">${g} ${name}</text>`;
+    });
+  }
+  show('end', fade(t, 15.0, 15.85, .4), 10);
+  ov.innerHTML = svg;
+  // film grain (fixed seed per 2 frames)
+  grain(t);
+}
+const noise = document.createElement('canvas'); noise.width = 256; noise.height = 256;
+const nctx = noise.getContext('2d'); const nd = nctx.createImageData(256, 256);
+let seed = 1; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+for (let i = 0; i < nd.data.length; i += 4) { const v = rnd() * 255; nd.data[i] = nd.data[i+1] = nd.data[i+2] = v; nd.data[i+3] = 255; }
+nctx.putImageData(nd, 0, 0);
+function grain(t) {
+  cx.globalAlpha = .035; cx.globalCompositeOperation = 'overlay';
+  const o = Math.floor(t * 6) % 4 * 61;
+  for (let x = -o; x < W; x += 256) for (let y = -o % 256; y < H; y += 256) cx.drawImage(noise, x, y);
+  cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
+}
+window.ready = Promise.all([img, grid, queen, mate, overhead].map(i => i.decode()).concat([ document.fonts.ready, document.fonts.load('600 40px "Cormorant Garamond"'), document.fonts.load('italic 500 20px "Cormorant Garamond"')]));
+window.render = render; window.DUR = DUR;
+</script></body></html>
