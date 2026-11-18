@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_cards import C, e, frame, stars, svg, text  # noqa: E402
+import phoenix_layer  # noqa: E402
 
 CARDS = ("stats.svg", "top-langs.svg", "streak.svg")
 PUBLISHED = "https://raw.githubusercontent.com/{user}/{user}/output/{name}"
@@ -199,9 +200,13 @@ def render_streak(s, user):
         if i:
             parts.append(f'<line x1="{48 + slot * i:.0f}" y1="84" x2="{48 + slot * i:.0f}" y2="206" stroke="{C["line2"]}"/>')
         if i == 1:
-            parts.append(f'<circle cx="{cx}" cy="128" r="46" fill="none" stroke="{C["lav"]}" stroke-width="5"/>'
-                         f'<path d="M{cx} 70c8 8 10 14 6 20 6-2 8-6 8-10 4 6 2 14-6 18-4 2-12 2-16-2-4-6 0-14 8-26z" '
-                         f'fill="{C["rose"]}" class="float"/>')
+            # the ring glows like embers, and the fire phoenix perches on top of it
+            parts.append(phoenix_layer.warmth("stkphx", cx, 112, 150, 92, strength=1.0, sparks=9, seed=11, rise=50))
+            parts.append(f'<defs><linearGradient id="{u}-ring" x1="0" y1="0" x2="0" y2="1">'
+                         f'<stop offset="0" stop-color="{phoenix_layer.EMBER}"/><stop offset=".45" stop-color="{C["lav"]}"/>'
+                         f'<stop offset="1" stop-color="{C["lav"]}"/></linearGradient></defs>'
+                         f'<circle cx="{cx}" cy="128" r="46" fill="none" stroke="url(#{u}-ring)" stroke-width="5"/>')
+            parts.append(phoenix_layer.perched("stkphx", cx + 2, 88, .3))
             parts.append(text(cx, 140, num, 34, colour, "serif", "middle", 'font-weight="700"'))
             parts.append(text(cx, 198, label, 15, C["lilac"], "sans", "middle", 'font-weight="700"'))
             parts.append(text(cx, 220, sub, 12, C["muted"], "mono", "middle"))

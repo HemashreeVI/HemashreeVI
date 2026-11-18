@@ -15,6 +15,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 import chess_layer
+import phoenix_layer
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1205,7 +1206,9 @@ def build_footer():
 <rect x="380" y="196" width="440" height="1.2" fill="url(#{u}-rule)"/>
 {text(600, 236, "Open to roles in cybersecurity · computer vision · cyber-physical systems · backend & devops", 15, C['mist'], 'sans', 'middle')}
 {text(600, 280, "よろしくお願いします", 20, C['lilac'], 'serif', 'middle')}
+{phoenix_layer.warmth("phx", 1090, 262, 190, 95, strength=.9, sparks=12, seed=5)}
 {chess_layer.checkmate("pcK")}
+{phoenix_layer.rises("phx", (1128, 268), (980, -150), .2, .62, 10, .44, .78)}
 """
     write("footer.svg", svg(W, H, u, "Let's build something that keeps people safe",
                             "Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします", body))
