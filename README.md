@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-<a href="https://hemashreevi.github.io" title="Open my portfolio"><picture><source media="(min-width: 1200px)" srcset="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/main/assets/phone/playing-wide-2e2298bb.webp"><img src="./assets/phone/playing-c4a80f74.webp" height="803" align="right" alt="A second phone playing a screen recording: my portfolio opens with F1 start lights, picks the Recruiter profile and scrolls through projects, skills, certifications and Singapore, then slides over to GitLoom"></picture></a><a href="https://hemashreevi.github.io"><img src="./assets/phone/top-c0ab474b.png" width="320" height="385" align="top" alt="Hemashree's phone: lock-screen clock, profile widget (Software Engineer, VIT '27, open to work) and a notification: hey, welcome in! tap any app to open it"></a><br>
+<a href="https://hemashreevi.github.io" title="Open my portfolio"><picture><source media="(min-width: 1200px)" srcset="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/main/assets/phone/playing-wide-b3c8a75e.webp"><img src="./assets/phone/playing-08fd71af.webp" height="803" align="right" alt="A second phone playing a screen recording: my portfolio opens with F1 start lights, picks the Recruiter profile and scrolls through projects, skills, certifications and Singapore, then slides over to GitLoom"></picture></a><a href="https://hemashreevi.github.io"><img src="./assets/phone/top-c0ab474b.png" width="320" height="385" align="top" alt="Hemashree's phone: lock-screen clock, profile widget (Software Engineer, VIT '27, open to work) and a notification: hey, welcome in! tap any app to open it"></a><br>
 <a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock: zero double-bookings"><img src="./assets/phone/app-seatlock-aa4004d4.png" width="86" height="91" align="top" alt="SeatLock: zero double-bookings"></a><a href="https://github.com/HemashreeVI/rootlens" title="RootLens: incident response"><img src="./assets/phone/app-rootlens-d9585945.png" width="74" height="91" align="top" alt="RootLens: incident response"></a><a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ: on-device AI inbox"><img src="./assets/phone/app-triageiq-7209e234.png" width="74" height="91" align="top" alt="TriageIQ: on-device AI inbox"></a><a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom: GitHub to portfolio"><img src="./assets/phone/app-gitloom-23c89f32.png" width="86" height="91" align="top" alt="GitLoom: GitHub to portfolio"></a><br>
 <a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent)"><img src="./assets/phone/app-walker-338a6387.png" width="86" height="91" align="top" alt="Smart Walker (patent)"></a><a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/phone/app-rover-4292eeab.png" width="74" height="91" align="top" alt="Hazard-Detection Rover (patent)"></a><a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI"><img src="./assets/phone/app-dental-961aefd1.png" width="74" height="91" align="top" alt="Dental X-ray AI"></a><a href="https://www.youtube.com/@shreejith-l7o" title="Byte Decoded on YouTube"><img src="./assets/phone/app-bytedecoded-a5701479.png" width="86" height="91" align="top" alt="Byte Decoded on YouTube"></a><br>
 <a href="https://leetcode.com/u/hemashree_272005/" title="LeetCode"><img src="./assets/phone/app-leetcode-8a59b261.png" width="86" height="91" align="top" alt="LeetCode"></a><a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/phone/app-chesscom-5a6ab6be.png" width="74" height="91" align="top" alt="Play me on Chess.com"></a><a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/phone/app-portfolio-8b79cbe3.png" width="74" height="91" align="top" alt="My portfolio"></a><a href="https://hemashreevi.github.io" title="Mini-games on my portfolio"><img src="./assets/phone/app-games-0f144a7f.png" width="86" height="91" align="top" alt="Mini-games on my portfolio"></a><br>
@@ -32,15 +32,6 @@
 <img src="./assets/phone/bottom-2b4c231c.png" width="320" height="40" align="top" alt="">
 </p>
 <p align="center"><sub>📱 tap any app on my phone</sub></p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/🎓-B.Tech_CSE_@_VIT_Chennai-2B3963?style=flat-square" alt="B.Tech CSE at VIT Chennai">
-  <img src="https://img.shields.io/badge/📍-Chennai,_India-2B3963?style=flat-square" alt="Location">
-  
-  <img src="https://img.shields.io/badge/📜-2_patents_(co--inventor)-2B3963?style=flat-square" alt="Co-inventor on 2 patents">
-  <img src="https://img.shields.io/badge/🌱-Open_source-2B3963?style=flat-square" alt="Open source contributor">
-</p>
-
 
 <img src="./assets/cards/title-about.svg" width="100%" alt="01 About: Hello, I'm Hemashree.">
 <img src="./assets/cards/about.svg" width="100%" alt="Animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
@@ -70,17 +61,6 @@
 
 <img src="./assets/cards/title-opensource.svg" width="100%" alt="05 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
-<p align="center">
-  <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="https://img.shields.io/badge/PR_%23126858-merged-8957E5?style=flat-square&labelColor=10131F&logo=git&logoColor=E6E9F0" alt="Merged PR to first-contributions"></a>
-  <a href="https://github.com/HemashreeVI/ReadMeow"><img src="https://img.shields.io/badge/ReadMeow-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="ReadMeow"></a>
-  <a href="https://github.com/HemashreeVI/gitpulse"><img src="https://img.shields.io/badge/gitpulse-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="gitpulse"></a>
-  <a href="https://github.com/HemashreeVI/PortPilot"><img src="https://img.shields.io/badge/PortPilot-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="PortPilot"></a>
-  <a href="https://github.com/HemashreeVI/typewave"><img src="https://img.shields.io/badge/typewave-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="typewave"></a>
-  <a href="https://github.com/HemashreeVI/typo-arcade"><img src="https://img.shields.io/badge/typo--arcade-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="typo-arcade"></a>
-  <a href="https://github.com/HemashreeVI/token-meter"><img src="https://img.shields.io/badge/token--meter-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="token-meter"></a>
-  <a href="https://github.com/HemashreeVI/Pit-Wall-an-animated-race-replay"><img src="https://img.shields.io/badge/Pit_Wall-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="Pit Wall"></a>
-  <a href="https://github.com/HemashreeVI/ferrodo"><img src="https://img.shields.io/badge/ferrodo-MIT-2B3963?style=flat-square&labelColor=10131F&logo=github" alt="ferrodo"></a>
-</p>
 
 <img src="./assets/cards/title-extensions.svg" width="100%" alt="06 Chrome extensions: Tools I built for the browser.">
 <p align="center">
@@ -92,19 +72,17 @@
 <a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded on GitHub"><img src="./assets/cards/ext-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, from commits and pull requests to the plus and minus lines and the contribution calendar."></a>
 </p>
 
-<img src="./assets/cards/title-milestones.svg" width="100%" alt="07 Milestones: Proof, on the record.">
-<img src="./assets/cards/milestones.svg" width="100%" alt="Patents: IoT-Enabled Smart Walker with Sensor-Fusion Fall Risk Prediction and Adaptive Mobility Assistance, co-inventor, disclosure filed with IIPRD; Hazard-Detection Rover, co-inventor, filing in progress. Open source: merged PR to first-contributions and 14 MIT-licensed repos. Research Intern at VIT Chennai: pose estimation with MMPose (May to Jul 2025). NUS Introduction to Industry 4.0 Programme (Jun 2025). SuperAI 2025, Marina Bay Sands, Singapore. IBM Generative AI certification, Gen AI Using IBM watsonx. Studied Japanese as a subject at VIT Chennai. Team Leader, CodeYGen Club and Design Lead, Fitness Club.">
-<a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
+<p align="center">
+<a href="https://github.com/HemashreeVI/worksync" title="WorkSync on GitHub"><img src="./assets/cards/ext-worksync.svg" width="49%" alt="WorkSync: my Chrome work, backed up to GitHub. Saves Google Docs, Sheets, Slides, Colab notebooks and code; one commit per thing I do; a daily journal in a private repo. Built with the Git Data API, Manifest V3, auto-sync."></a>
+</p>
 
-<img src="./assets/cards/title-youtube.svg" width="100%" alt="08 YouTube: Byte Decoded.">
+<img src="./assets/cards/title-youtube.svg" width="100%" alt="07 YouTube: Byte Decoded.">
 <a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
-<p align="center"><a href="https://www.youtube.com/@shreejith-l7o?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=FF0033" alt="Subscribe on YouTube"></a></p>
 
-<img src="./assets/cards/title-play.svg" width="100%" alt="09 Play: Play on my portfolio.">
+<img src="./assets/cards/title-play.svg" width="100%" alt="08 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
-<p align="center"><a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/🎮_Play_now-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F" alt="Play now"></a></p>
 
-<img src="./assets/cards/title-commits.svg" width="100%" alt="10 Commit log: A year of building.">
+<img src="./assets/cards/title-commits.svg" width="100%" alt="09 Commit log: A year of building.">
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/city.svg" width="100%" alt="Contribution City: my GitHub contributions as a 3D isometric city, one lot per day. Busier days are taller buildings, from low-rises and office blocks to glass skyscrapers; days off are parks with trees; cars drive the avenues; the best day is a landmark tower and today has a crane. The island city sits in a harbour at night under mountains and a full moon, with a river, a ferry, a cable-stayed bridge and reflections in the water. Redrawn twice a day.">
@@ -116,6 +94,9 @@
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/streak.svg" width="100%" alt="Contribution streak: total contributions, current streak and longest streak. Updated automatically twice a day.">
+</p>
+<p align="center">
+  <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>
 </p>
 
 <details>
@@ -129,15 +110,16 @@
 
 </details>
 
-<img src="./assets/cards/title-connect.svg" width="100%" alt="11 Connect: Let's talk.">
-
+<img src="./assets/cards/title-connect.svg" width="100%" alt="10 Connect: Let's talk.">
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/hema-shree272005"><img src="https://img.shields.io/badge/LinkedIn-hema--shree272005-416AE6?style=for-the-badge&labelColor=10131F&logo=linkedin&logoColor=E6E9F0" alt="LinkedIn"></a>
-  <a href="https://hemashreevi.github.io"><img src="https://img.shields.io/badge/Portfolio-hemashreevi.github.io-416AE6?style=for-the-badge&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Portfolio"></a>
-  <a href="mailto:shreejith2005@gmail.com"><img src="https://img.shields.io/badge/Email-shreejith2005@gmail.com-416AE6?style=for-the-badge&labelColor=10131F&logo=gmail&logoColor=E6E9F0" alt="Email"></a>
-  <a href="https://www.youtube.com/@shreejith-l7o"><img src="https://img.shields.io/badge/YouTube-Byte_Decoded-FF0033?style=for-the-badge&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="YouTube"></a>
-  <a href="https://www.instagram.com/hemashree_2_7/"><img src="https://img.shields.io/badge/Instagram-@hemashree__2__7-E1306C?style=for-the-badge&labelColor=10131F&logo=instagram&logoColor=E6E9F0" alt="Instagram"></a>
+  <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-gmail.svg" width="52" height="52" alt="Gmail"></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/hema-shree272005" title="LinkedIn"><img src="./assets/icons/social-linkedin.svg" width="52" height="52" alt="LinkedIn"></a>&nbsp;&nbsp;
+  <a href="https://www.youtube.com/@shreejith-l7o" title="YouTube"><img src="./assets/icons/social-youtube.svg" width="52" height="52" alt="YouTube"></a>&nbsp;&nbsp;
+  <a href="https://www.instagram.com/hemashree_2_7/" title="Instagram"><img src="./assets/icons/social-instagram.svg" width="52" height="52" alt="Instagram"></a>&nbsp;&nbsp;
+  <a href="https://hemashreevi.github.io" title="My portfolio"><img src="./assets/icons/social-portfolio.svg" width="52" height="52" alt="Portfolio"></a>&nbsp;&nbsp;
+  <a href="https://leetcode.com/u/hemashree_272005/" title="LeetCode"><img src="./assets/icons/social-leetcode.svg" width="52" height="52" alt="LeetCode"></a>&nbsp;&nbsp;
+  <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chesscom.svg" width="52" height="52" alt="Chess.com"></a>
 </p>
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>

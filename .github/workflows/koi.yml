@@ -31,7 +31,7 @@ jobs:
       - name: Draw the pond
         shell: bash
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          python3 -m pip install --quiet pillow
           npm install --no-save --silent playwright@1.49.1
           npx playwright install --with-deps chromium > /dev/null
           node scripts/koi_pond/render_pond.js

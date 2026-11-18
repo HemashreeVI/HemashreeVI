@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Puts the day's koi (koi/koi.gif from the git-koi action) into an animated pond
-// and writes koi/pond.webp. Needs Playwright (Chromium) and ffmpeg.
+// and writes koi/pond.webp. Needs Playwright (Chromium) and Python 3 with Pillow.
 //
 //   node scripts/koi_pond/render_pond.js
 const { chromium } = require('playwright');
@@ -22,8 +22,13 @@ const KOI = path.join(ROOT, 'koi', 'koi.gif'), OUT = path.join(ROOT, 'koi', 'pon
     fs.writeFileSync(path.join(tmp, `f${String(i).padStart(4, '0')}.png`), Buffer.from(data.split(',')[1], 'base64'));
   }
   await b.close();
-  execFileSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(1000 / delay), '-i', path.join(tmp, 'f%04d.png'),
-    '-c:v', 'libwebp_anim', '-lossless', '0', '-quality', '85', '-compression_level', '6', '-loop', '0', OUT], { stdio: 'inherit' });
+  // Pillow stores every frame whole: ffmpeg's animated WebP blends frames and leaves blocks in the dark night water
+  execFileSync('python3', ['-c', `
+import glob, sys
+from PIL import Image
+fr = [Image.open(f).convert('RGB') for f in sorted(glob.glob(sys.argv[1] + '/*.png'))]
+fr[0].save(sys.argv[2], save_all=True, append_images=fr[1:], duration=${delay}, loop=0, quality=85, method=6, allow_mixed=False, minimize_size=False)`,
+    tmp, OUT], { stdio: 'inherit' });
   fs.rmSync(tmp, { recursive: true });
   console.log(`koi/pond.webp  ${n} frames  ${(fs.statSync(OUT).size / 1e6).toFixed(1)} MB`);
 })();

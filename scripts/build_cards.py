@@ -14,29 +14,28 @@ import random
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-import cat_layer
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "cards"
 PHOTO = ROOT / "assets" / "photo.jpg"
 
 # ---------------------------------------------------------------- palette
-C = {
-    "bg0": "#090B12",
-    "bg1": "#10131F",
-    "bg2": "#161C30",
-    "panel": "#12182A",
-    "line": "#262E47",
-    "line2": "#2B3963",
-    "violet": "#416AE6",
-    "lav": "#839DFB",
-    "lilac": "#CEDAFF",
-    "silver": "#E6E9F0",
-    "mist": "#C5CAD8",
-    "muted": "#939BB4",
-    "dim": "#646E89",
-    "rose": "#F0A8D0",
-    "mint": "#8FE3C8",
+C = {   # black & silver, with slow smoke in every card
+    "bg0": "#070809",
+    "bg1": "#0E0F11",
+    "bg2": "#1A1C20",
+    "panel": "#121316",
+    "line": "#25272C",
+    "line2": "#3B3E45",
+    "violet": "#9AA0AA",   # deep silver (glows, strong strokes)
+    "lav": "#C9CED6",      # silver (accents, italic title words)
+    "lilac": "#EEF0F3",    # bright silver
+    "silver": "#F3F4F6",
+    "mist": "#C6C9CF",
+    "muted": "#8D9199",
+    "dim": "#5E626A",
+    "rose": "#E3A6B4",
+    "mint": "#A6DCC5",
 }
 
 SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
@@ -97,12 +96,13 @@ PIPELINE = [
 ]
 
 JOURNEY = [
-    ("AUG 2023", "VIT Chennai", ["B.Tech CSE", "Cyber Physical"]),
+    ("AUG 2023", "VIT Chennai", ["B.Tech CSE", "Team lead · CodeYGen"]),
     ("MAY–JUL 2025", "Research intern", ["Pose estimation", "MMPose"]),
     ("JUN 2025", "Singapore", ["NUS Industry 4.0", "SuperAI · IBM Gen AI"]),
     ("JUL–SEP 2025", "Dental X-ray AI", ["YOLOv9 · 31 classes", "13,000+ images"]),
     ("2025–26", "2 patents", ["Smart walker · rover", "filing in progress"]),
     ("2026", "Backend & DevOps", ["SeatLock · RootLens", "TriageIQ"]),
+    ("OCT 2026", "Open source", ["first PR merged", "14 MIT repos"]),
     ("NOW", "Building 4 more", ["+ grinding LeetCode", "next stop: your team?"]),
 ]
 
@@ -292,6 +292,9 @@ EXTENSIONS = [
     {"slug": "contributions-decoded", "name": "Contributions Decoded", "pitch": "GitHub profiles in plain English.",
      "points": ["explains commits, PRs, +/- lines", "streaks, busiest day, monthly chart", "works on any profile"],
      "tags": ["DOM parsing", "no API", "beginner-friendly"]},
+    {"slug": "worksync", "name": "WorkSync", "pitch": "My Chrome work, backed up to GitHub.",
+     "points": ["Docs, Sheets, Slides, Colab + code", "one commit per thing I do", "a daily journal, private repo"],
+     "tags": ["Git Data API", "Manifest V3", "auto-sync"]},
 ]
 
 # ---------------------------------------------------------------- helpers
@@ -327,7 +330,7 @@ def base_defs(uid):
     <stop offset="1" stop-color="{C['bg0']}"/>
   </radialGradient>
   <radialGradient id="{uid}-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="{C['violet']}" stop-opacity=".45"/>
+    <stop offset="0" stop-color="{C['violet']}" stop-opacity=".22"/>
     <stop offset="1" stop-color="{C['violet']}" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="{uid}-glowB" cx="50%" cy="50%" r="50%">
@@ -347,6 +350,20 @@ def base_defs(uid):
   <pattern id="{uid}-grid" width="28" height="28" patternUnits="userSpaceOnUse">
     <path d="M28 0H0V28" fill="none" stroke="{C['lav']}" stroke-opacity=".05"/>
   </pattern>
+  <filter id="{uid}-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="{sum(map(ord, uid)) % 97}"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="{uid}-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="{C['muted']}"/>
+    <stop offset=".45" stop-color="{C['lav']}"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="{C['lav']}"/>
+    <stop offset="1" stop-color="{C['muted']}"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
   <filter id="{uid}-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
   </filter>
@@ -359,7 +376,17 @@ def frame(w, h, uid, glow=(0.75, 0.3)):
 <rect x="1" y="1" width="{w-2}" height="{h-2}" rx="22" fill="url(#{uid}-bg)" stroke="{C['line']}"/>
 <rect x="1" y="1" width="{w-2}" height="{h-2}" rx="22" fill="url(#{uid}-grid)"/>
 <ellipse cx="{w*gx:.0f}" cy="{h*gy:.0f}" rx="{w*0.35:.0f}" ry="{h*0.7:.0f}" fill="url(#{uid}-glowA)"/>
-<ellipse cx="{w*(1-gx):.0f}" cy="{h*(1-gy):.0f}" rx="{w*0.25:.0f}" ry="{h*0.5:.0f}" fill="url(#{uid}-glowB)"/>"""
+<ellipse cx="{w*(1-gx):.0f}" cy="{h*(1-gy):.0f}" rx="{w*0.25:.0f}" ry="{h*0.5:.0f}" fill="url(#{uid}-glowB)"/>
+{atmosphere(w, h, uid)}"""
+
+
+def atmosphere(w, h, uid):
+    """Slow smoke drifting across the card."""
+    return f"""<clipPath id="{uid}-clip"><rect x="1" y="1" width="{w-2}" height="{h-2}" rx="22"/></clipPath>
+<g clip-path="url(#{uid}-clip)" style="pointer-events:none">
+  <g opacity=".11"><rect x="0" y="0" width="{w * 2:.0f}" height="{h}" filter="url(#{uid}-smoke)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;{-w:.0f} 0" dur="60s" repeatCount="indefinite"/></rect></g>
+</g>"""
 
 
 def stars(w, h, n, seed, pad=20):
@@ -569,7 +596,7 @@ def build_title(num, kicker, plain, italic, right, slug, extra=""):
 {text(30, 32, num, 12, C['silver'], 'mono', 'start', 'letter-spacing="3"')}
 {text(58, 32, kicker, 12, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
 {text(1170, 32, right, 11, C['muted'], 'mono', 'end', 'letter-spacing="3"')}
-<text x="30" y="80" class="serif" font-size="40" fill="{C['silver']}">{e(plain)} <tspan fill="{C['lav']}" font-style="italic">{e(italic)}</tspan></text>
+<text x="30" y="80" class="serif" font-size="40" fill="{C['silver']}">{e(plain)} <tspan fill="url(#{u}-sweep)" font-style="italic">{e(italic)}</tspan></text>
 <rect x="30" y="96" width="1140" height="1.2" fill="url(#{u}-rule)"/>
 <circle cy="96.6" r="2.6" fill="#fff">
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
@@ -596,8 +623,11 @@ def build_about():
             group.append(text(tx + 46, y, s, 13, col, 'mono'))
             y += step
         y += 6
-        t = (0.4 + i * 0.9) / cycle
-        rows.append(f"""<g opacity="0"><animate attributeName="opacity" dur="{cycle}s" repeatCount="indefinite" keyTimes="0;{t:.3f};{t + 0.02:.3f};.94;.97;1" values="0;0;1;1;0;0"/>{''.join(group)}</g>""")
+        if i < 2:   # the first two commands are always there, so the terminal never looks empty
+            rows.append(f"<g>{''.join(group)}</g>")
+        else:
+            t = (0.2 + (i - 2) * 0.6) / cycle
+            rows.append(f"""<g opacity="0"><animate attributeName="opacity" dur="{cycle}s" repeatCount="indefinite" keyTimes="0;{t:.3f};{t + 0.02:.3f};.95;.98;1" values="0;0;1;1;0;0"/>{''.join(group)}</g>""")
         i += 1
     cursor_y = y - step + 4
 
@@ -606,7 +636,7 @@ def build_about():
     for k, (lab, big, small) in enumerate(ABOUT_SIDE):
         yy = sy + k * 140
         side.append(f"""
-<g class="fadein" style="animation-delay:{0.3 + k * 0.25}s">
+<g class="fadein" style="animation-delay:{0.05 + k * 0.12}s">
   <rect x="{sx}" y="{yy}" width="346" height="124" rx="16" fill="{C['panel']}" stroke="{C['line2']}"/>
   <rect x="{sx}" y="{yy + 16}" width="3" height="92" rx="1.5" fill="{C['lav']}"/>
   {text(sx + 24, yy + 36, lab, 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
@@ -1173,7 +1203,6 @@ def build_footer():
 <rect x="380" y="196" width="440" height="1.2" fill="url(#{u}-rule)"/>
 {text(600, 236, "Open to roles in cybersecurity · computer vision · cyber-physical systems · backend & devops", 15, C['mist'], 'sans', 'middle')}
 {text(600, 280, "よろしくお願いします", 20, C['lilac'], 'serif', 'middle')}
-{cat_layer.waver_bye("catbye")}
 """
     write("footer.svg", svg(W, H, u, "Let's build something that keeps people safe",
                             "Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします", body))
@@ -1188,23 +1217,14 @@ def main():
         ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ · GITLOOM", "work"),
         ("04", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
         ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
-        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "4 EXTENSIONS · FREE", "extensions"),
-        ("07", "MILESTONES", "Proof,", "on the record.", "RECOGNITION", "milestones"),
-        ("08", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
-        ("09", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("10", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("11", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "5 EXTENSIONS · FREE", "extensions"),
+        ("07", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
+        ("08", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("10", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
-    # the roaming cat turns up in some of the section titles
-    cat = {
-        "about": cat_layer.peek_hello("cat01"),
-        "work": cat_layer.walker("cat04"),
-        "toolkit": cat_layer.sitter("cat06"),
-        "play": cat_layer.player("cat08"),
-        "commits": cat_layer.sleeper("cat09"),
-    }
     for t in titles:
-        build_title(*t, extra=cat.get(t[-1], ""))
+        build_title(*t)
     build_about()
     build_now()
     build_pipeline()
@@ -1216,7 +1236,6 @@ def main():
     build_more()
     build_building()
     build_toolkit()
-    build_milestones()
     build_games()
     build_opensource()
     build_extensions()

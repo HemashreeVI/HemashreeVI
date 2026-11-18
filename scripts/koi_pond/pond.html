@@ -257,6 +257,45 @@ function surface(p) {
   g.fillStyle = v; g.fillRect(0, 0, W, H);
 }
 
+// ---------------------------------------------------------------- night
+const FLIES = Array.from({ length: 16 }, () => ({ x: rnd() * W, y: 40 + rnd() * (H - 80), ax: 20 + rnd() * 40, ay: 10 + rnd() * 24,
+  kx: 1 + Math.floor(rnd() * 2), ky: 1 + Math.floor(rnd() * 3), kb: 2 + Math.floor(rnd() * 4), ph: rnd() * TAU }));
+const LANTERNS = [{ x: 40, y: 30, r: 260 }, { x: 975, y: 505, r: 300 }];
+function night(p) {
+  g.save();
+  // cool, dark night grade over the whole pond
+  g.globalCompositeOperation = 'multiply'; g.fillStyle = 'rgb(78,96,138)'; g.fillRect(0, 0, W, H);
+  g.globalCompositeOperation = 'screen';
+  // moonlight on the water where the koi swims, breathing slowly
+  const m = .2 + .03 * Math.sin(p * TAU);
+  let gr = g.createRadialGradient(W / 2, H / 2, 20, W / 2, H / 2, 300);
+  gr.addColorStop(0, `rgba(170,195,235,${m})`); gr.addColorStop(1, 'rgba(170,195,235,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  // the moon's reflection, broken up by ripples
+  for (let k = 0; k < 7; k++) {
+    const y = 96 + k * 9, w = 46 - Math.abs(k - 3) * 9 + 6 * Math.sin(p * TAU * 2 + k);
+    g.fillStyle = `rgba(235,240,255,${.22 - Math.abs(k - 3) * .04})`;
+    g.beginPath(); g.ellipse(700 + 5 * Math.sin(p * TAU + k * .7), y, Math.max(6, w), 2.2, 0, 0, TAU); g.fill();
+  }
+  // two lantern glows at the edge of the pond, flickering a little
+  LANTERNS.forEach((l, i) => {
+    const f = .34 + .05 * Math.sin(p * TAU * (3 + i) + i) + .02 * Math.sin(p * TAU * 11 + i * 2);
+    gr = g.createRadialGradient(l.x, l.y, 0, l.x, l.y, l.r);
+    gr.addColorStop(0, `rgba(225,232,245,${f * .8})`); gr.addColorStop(.35, `rgba(190,200,220,${f * .25})`); gr.addColorStop(1, 'rgba(190,200,220,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  });
+  // fireflies
+  for (const fl of FLIES) {
+    const x = fl.x + fl.ax * Math.sin(p * TAU * fl.kx + fl.ph), y = fl.y + fl.ay * Math.sin(p * TAU * fl.ky + fl.ph * 1.7);
+    const b = Math.max(0, Math.sin(p * TAU * fl.kb + fl.ph)) ** 2;
+    if (b < .02) continue;
+    gr = g.createRadialGradient(x, y, 0, x, y, 12);
+    gr.addColorStop(0, `rgba(240,245,255,${.9 * b})`); gr.addColorStop(.25, `rgba(205,215,235,${.4 * b})`); gr.addColorStop(1, 'rgba(205,215,235,0)');
+    g.fillStyle = gr; g.fillRect(x - 12, y - 12, 24, 24);
+  }
+  g.restore();
+}
+
 // ---------------------------------------------------------------- frame
 window.renderFrame = i => {
   const p = i / FRAMES;
@@ -272,6 +311,7 @@ window.renderFrame = i => {
   petals(p);
   for (const b of BLADES) drawBlade(b, p);
   for (const c of CLUMPS) drawClump(c, p);
+  night(p);
 };
 
 // koi.gif frames, decoded with WebCodecs
