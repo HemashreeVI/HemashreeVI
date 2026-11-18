@@ -38,5 +38,9 @@ def banner():
 
 
 OUT.mkdir(parents=True, exist_ok=True)
+# section titles for the org README, numbered on their own (they land in assets/cards/ with the others)
+bc.build_title("01", "CHROME EXTENSIONS", "Tools for", "the browser.", "5 EXTENSIONS · FREE · OPEN SOURCE", "org-tools",
+               extra=chess_layer.knight_hops("orgTN"))
+bc.build_title("02", "YOUTUBE", "Byte", "Decoded.", "BUILDS · WALKTHROUGHS · TECH VLOGS", "org-youtube")
 (OUT / "banner.svg").write_text(banner(), encoding="utf-8")
 print("assets/org/banner.svg")
