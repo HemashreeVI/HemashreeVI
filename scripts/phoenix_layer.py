@@ -88,3 +88,24 @@ def perched(uid, cx, base_y, s):
     return f"""<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -1.5;0 0" dur="3.2s" repeatCount="indefinite"/>
   {image("perched", cx - w * .52, base_y - h, s)}
 </g>"""
+
+
+def flies(uid, w, y, s=.38, dur=14, cross=.5, seed=3):
+    """Contribution City: the phoenix flies across the sky from left to right, flapping, in a gentle wave,
+    taking `cross` of the `dur` loop; a short trail of golden sparks drifts down behind it."""
+    _, fw, fh = _load("flap-level")
+    x0, x1 = -fw * s, w + fw * s
+    path = (f"M{x0:.0f} {y + 10} C{w * .22:.0f} {y - 20} {w * .38:.0f} {y - 62} {w * .58:.0f} {y - 48} "   # high over the tallest towers
+            f"S{w * .82:.0f} {y + 4} {x1:.0f} {y - 14}")                                               # down past the moon
+    kt = f"0;{cross:.3f};1"
+    rnd = random.Random(seed)
+    trail = "".join(
+        f'<circle cx="{-fw * s * .45 - i * 7:.0f}" cy="{rnd.uniform(4, 14):.0f}" r="{rnd.choice([.9, 1.1, 1.4])}" fill="{EMBER}" opacity="0">'
+        f'<animate attributeName="opacity" values="0;.8;0" dur="{rnd.uniform(.7, 1.2):.2f}s" begin="{rnd.uniform(0, 1):.2f}s" repeatCount="indefinite"/>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 0;-10 14" dur="{rnd.uniform(.7, 1.2):.2f}s" begin="{rnd.uniform(0, 1):.2f}s" repeatCount="indefinite"/></circle>'
+        for i in range(6))
+    return f"""<g>
+  <animateMotion dur="{dur}s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="{kt}" calcMode="linear" path="{path}"/>
+  {trail}
+  <g transform="scale({s})">{flapping(-fw / 2, -fh * .55, 1, .55)}</g>
+</g>"""

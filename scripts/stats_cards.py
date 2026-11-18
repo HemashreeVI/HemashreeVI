@@ -21,7 +21,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_cards import C, e, frame, stars, svg, text  # noqa: E402
-import phoenix_layer  # noqa: E402
 
 CARDS = ("stats.svg", "top-langs.svg", "streak.svg")
 PUBLISHED = "https://raw.githubusercontent.com/{user}/{user}/output/{name}"
@@ -200,10 +199,7 @@ def render_streak(s, user):
         if i:
             parts.append(f'<line x1="{48 + slot * i:.0f}" y1="84" x2="{48 + slot * i:.0f}" y2="206" stroke="{C["line2"]}"/>')
         if i == 1:
-            # the fire phoenix perches on top of the ring, a few sparks rising from it
-            parts.append(phoenix_layer.warmth("stkphx", cx, 70, 60, 30, sparks=5, seed=11, rise=40))
             parts.append(f'<circle cx="{cx}" cy="128" r="46" fill="none" stroke="{C["lav"]}" stroke-width="5"/>')
-            parts.append(phoenix_layer.perched("stkphx", cx + 2, 88, .3))
             parts.append(text(cx, 140, num, 34, colour, "serif", "middle", 'font-weight="700"'))
             parts.append(text(cx, 198, label, 15, C["lilac"], "sans", "middle", 'font-weight="700"'))
             parts.append(text(cx, 220, sub, 12, C["muted"], "mono", "middle"))

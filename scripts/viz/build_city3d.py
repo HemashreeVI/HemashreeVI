@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import build_cards as bc
+import phoenix_layer
 import scenery
 from data import load
 
@@ -452,6 +453,8 @@ def build(user, out):
             k, i = k + 1, i - 1
         return k
     p.append(bc.text(36, 44, "CONTRIBUTION CITY", 11, C['lav'], 'mono', 'start', 'letter-spacing="3"'))
+    # the fire phoenix crosses the night sky now and then, in front of the moon
+    p.append(phoenix_layer.flies("cityphx", W, moon[1] + 8))
     p.append(f'<text x="36" y="74" class="serif" font-size="24" fill="{C["silver"]}">{total:,} contributions</text>')
     p.append(f'<text x="36" y="98" class="sans" font-size="13" fill="{C["muted"]}">Each lot is one day · taller building = more contributions · 🌳 park = a day off · 🏗 crane = today</text>')
     bd = dt.date.fromisoformat(best[2])
