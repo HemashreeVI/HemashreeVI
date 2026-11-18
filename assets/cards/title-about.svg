@@ -74,6 +74,19 @@
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
-
+<defs>
+  <linearGradient id="pcQ-pc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D3D7DD"/><stop offset="1" stop-color="#6E737C"/>
+  </linearGradient>
+  <radialGradient id="pcQ-sh" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<clipPath id="pcQ-clip"><rect x="1040" y="0" width="80" height="96"/></clipPath>
+<g clip-path="url(#pcQ-clip)"><g>
+  <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+    keyTimes="0;.12;.2;.24;.28;.85;.95;1" values="1080 155;1080 155;1080 91;1080 95;1080 95;1080 95;1080 155;1080 155"/>
+  <ellipse cx="0" cy="1" rx="16.0" ry="3.2" fill="url(#pcQ-sh)"/><g transform="scale(0.8)" fill="url(#pcQ-pc)" stroke="#2A2C31" stroke-width=".8" stroke-linejoin="round"><path d="M-17 0h34v-4c0-2.5-2-4-4.5-4h-25c-2.5 0-4.5 1.5-4.5 4z"/><path d="M-14 -8h28l-2 -3h-24z"/><path d="M-12 -11C-12 -20 -6 -26 -6 -39h12c0 13 6 19 6 28z"/><ellipse cx="0" cy="-40" rx="9" ry="3"/><path d="M-9 -43L-11.5 -55L-5 -48L0 -58L5 -48L11.5 -55L9 -43z"/><circle cx="0" cy="-61" r="3"/><circle cx="-11.5" cy="-56" r="1.8"/><circle cx="11.5" cy="-56" r="1.8"/></g>
+</g></g>
 
 </svg>

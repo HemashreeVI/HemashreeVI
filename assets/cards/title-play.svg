@@ -74,6 +74,18 @@
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
-
+<defs>
+  <linearGradient id="pcR-pc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D3D7DD"/><stop offset="1" stop-color="#6E737C"/>
+  </linearGradient>
+  <radialGradient id="pcR-sh" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<g><animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" calcMode="spline"
+   keyTimes="0;.15;.45;.6;.9;1" values="930 95;930 95;1100 95;1100 95;930 95;930 95"
+   keySplines=".5 0 .3 1;.5 0 .3 1;.5 0 .3 1;.5 0 .3 1;.5 0 .3 1"/>
+  <ellipse cx="0" cy="1" rx="15.0" ry="3.0" fill="url(#pcR-sh)"/><g transform="scale(0.75)" fill="url(#pcR-pc)" stroke="#2A2C31" stroke-width=".8" stroke-linejoin="round"><path d="M-17 0h34v-4c0-2.5-2-4-4.5-4h-25c-2.5 0-4.5 1.5-4.5 4z"/><path d="M-14 -8h28l-2 -3h-24z"/><path d="M-11 -11L-9 -38h18L11 -11z"/><path d="M-12.5 -37h25v2h-25z"/><path d="M-12 -37V-51h6v5h3.5v-5h5v5h3.5v-5h6V-37z"/></g>
+</g>
 
 </svg>

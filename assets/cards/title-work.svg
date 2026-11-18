@@ -74,6 +74,17 @@
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
-
+<defs>
+  <linearGradient id="pcN-pc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D3D7DD"/><stop offset="1" stop-color="#6E737C"/>
+  </linearGradient>
+  <radialGradient id="pcN-sh" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<g><animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1;0;0" keyTimes="0;.08;.42;.55;.92;1"
+   keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1" path="M960 95 L960 81 L1010 81 L1010 95 L1010 81 L1060 81 L1060 95 L1060 81 L1110 81 L1110 95 L1110 95 L1110 81 L1060 81 L1060 95 L1060 81 L1010 81 L1010 95 L1010 81 L960 81 L960 95"/>
+  <ellipse cx="0" cy="1" rx="15.0" ry="3.0" fill="url(#pcN-sh)"/><g transform="scale(0.75)" fill="url(#pcN-pc)" stroke="#2A2C31" stroke-width=".8" stroke-linejoin="round"><path d="M-17 0h34v-4c0-2.5-2-4-4.5-4h-25c-2.5 0-4.5 1.5-4.5 4z"/><path d="M-14 -8h28l-2 -3h-24z"/><path d="M-11 -11C-11 -19 -5 -23 -7 -30C-13 -28 -17 -32 -15 -36C-12 -42 -5 -48 1 -52L3 -59L7 -52C14 -47 15 -33 12 -11z"/><circle cx="2" cy="-45" r="1.4" fill="#2A2C31"/><path d="M8 -50C11 -44 11 -36 10 -30" fill="none" stroke="#2A2C31" stroke-width=".8" opacity=".6"/></g>
+</g>
 
 </svg>

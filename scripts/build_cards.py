@@ -14,6 +14,8 @@ import random
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+import chess_layer
+
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "cards"
@@ -1203,6 +1205,7 @@ def build_footer():
 <rect x="380" y="196" width="440" height="1.2" fill="url(#{u}-rule)"/>
 {text(600, 236, "Open to roles in cybersecurity · computer vision · cyber-physical systems · backend & devops", 15, C['mist'], 'sans', 'middle')}
 {text(600, 280, "よろしくお願いします", 20, C['lilac'], 'serif', 'middle')}
+{chess_layer.checkmate("pcK")}
 """
     write("footer.svg", svg(W, H, u, "Let's build something that keeps people safe",
                             "Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします", body))
@@ -1223,8 +1226,15 @@ def main():
         ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
         ("10", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
+    # a silver chess piece turns up in some of the section titles
+    piece = {
+        "about": chess_layer.queen_rises("pcQ"),
+        "work": chess_layer.knight_hops("pcN"),
+        "play": chess_layer.rook_slides("pcR"),
+        "commits": chess_layer.pawn_marches("pcP"),
+    }
     for t in titles:
-        build_title(*t)
+        build_title(*t, extra=piece.get(t[-1], ""))
     build_about()
     build_now()
     build_pipeline()

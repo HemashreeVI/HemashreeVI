@@ -74,6 +74,18 @@
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
-
+<defs>
+  <linearGradient id="pcP-pc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D3D7DD"/><stop offset="1" stop-color="#6E737C"/>
+  </linearGradient>
+  <radialGradient id="pcP-sh" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<g opacity="1"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;.04;.93;.98;1" values="0;1;1;0;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+    keyTimes="0.000;0.080;0.140;0.240;0.300;0.400;0.460;0.560;0.620;0.720;0.780;1.000" values="930 95;930 95;966 95;966 95;1002 95;1002 95;1038 95;1038 95;1074 95;1074 95;1110 95;1110 95"/>
+  <ellipse cx="0" cy="1" rx="15.0" ry="3.0" fill="url(#pcP-sh)"/><g transform="scale(0.75)" fill="url(#pcP-pc)" stroke="#2A2C31" stroke-width=".8" stroke-linejoin="round"><path d="M-17 0h34v-4c0-2.5-2-4-4.5-4h-25c-2.5 0-4.5 1.5-4.5 4z"/><path d="M-14 -8h28l-2 -3h-24z"/><path d="M-11 -11C-11 -17 -5 -20 -5 -25h10c0 5 6 8 6 14z"/><ellipse cx="0" cy="-26" rx="8.5" ry="2.8"/><circle cx="0" cy="-35" r="8.5"/></g>
+</g>
 
 </svg>
