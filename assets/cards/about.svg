@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9CED6}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="about-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#1A1C20"/>
-    <stop offset=".55" stop-color="#0E0F11"/>
-    <stop offset="1" stop-color="#070809"/>
+    <stop offset="0" stop-color="#161B22"/>
+    <stop offset=".55" stop-color="#0D1117"/>
+    <stop offset="1" stop-color="#0D1117"/>
   </radialGradient>
   <radialGradient id="about-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#9AA0AA" stop-opacity=".22"/>
-    <stop offset="1" stop-color="#9AA0AA" stop-opacity="0"/>
+    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="about-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#F3F4F6" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#F3F4F6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="about-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C6C9CF"/>
-    <stop offset="1" stop-color="#C9CED6"/>
+    <stop offset=".5" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#C9D1D9"/>
   </linearGradient>
   <linearGradient id="about-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9CED6" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9CED6" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9CED6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
   </linearGradient>
   <pattern id="about-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9CED6" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity=".05"/>
   </pattern>
   <filter id="about-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="54"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="about-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8D9199"/>
-    <stop offset=".45" stop-color="#C9CED6"/>
+    <stop offset="0" stop-color="#8B949E"/>
+    <stop offset=".45" stop-color="#C9D1D9"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9CED6"/>
-    <stop offset="1" stop-color="#8D9199"/>
+    <stop offset=".55" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#8B949E"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -66,45 +66,41 @@
 </defs>
 
 
-<rect x="1" y="1" width="1198" height="484" rx="22" fill="url(#about-bg)" stroke="#25272C"/>
+<rect x="1" y="1" width="1198" height="484" rx="22" fill="url(#about-bg)" stroke="#30363D"/>
 <rect x="1" y="1" width="1198" height="484" rx="22" fill="url(#about-grid)"/>
 <ellipse cx="1020" cy="97" rx="420" ry="340" fill="url(#about-glowA)"/>
 <ellipse cx="180" cy="389" rx="300" ry="243" fill="url(#about-glowB)"/>
-<clipPath id="about-clip"><rect x="1" y="1" width="1198" height="484" rx="22"/></clipPath>
-<g clip-path="url(#about-clip)" style="pointer-events:none">
-  <g opacity=".11"><rect x="0" y="0" width="2400" height="486" filter="url(#about-smoke)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;-1200 0" dur="60s" repeatCount="indefinite"/></rect></g>
-</g>
-<rect x="32" y="34" width="760" height="418" rx="14" fill="#070809" fill-opacity=".85" stroke="#3B3E45"/>
-<path d="M32 70H792" stroke="#25272C"/>
+
+<rect x="32" y="34" width="760" height="418" rx="14" fill="#0D1117" fill-opacity=".85" stroke="#3D444D"/>
+<path d="M32 70H792" stroke="#30363D"/>
 <circle cx="52" cy="52" r="5" fill="#E3A6B4" fill-opacity=".7"/>
-<circle cx="70" cy="52" r="5" fill="#C9CED6" fill-opacity=".7"/>
-<circle cx="88" cy="52" r="5" fill="#A6DCC5" fill-opacity=".7"/>
-<text x="412.0" y="57" class="mono" font-size="12" fill="#8D9199" text-anchor="middle" >hemashree@vit-chennai: ~/about</text>
-<g><text x="60" y="100" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="100" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >whoami</text><text x="60" y="122" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="122" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >hemashree · software engineer</text></g><g><text x="60" y="150" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="150" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >cat education.txt</text><text x="60" y="172" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="172" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >B.Tech Computer Science Engineering @ VIT Chennai</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.013;0.033;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="200" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="200" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >cat focus.txt</text><text x="60" y="222" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="222" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >vision · reinforcement-learning · embedded · security</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.050;0.070;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="250" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="250" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >ls patents/</text><text x="60" y="272" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="272" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >smart-walker/  hazard-rover/</text><text x="78" y="294" class="mono" font-size="13" fill="#8D9199" text-anchor="start" >  # fall-risk prediction · disaster-zone hazard detection (filing in progress)</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.087;0.107;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="322" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="322" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >./status --open-to</text><text x="60" y="344" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="344" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >cybersecurity | computer-vision | cyber-physical-systems | backend &amp; devops</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.145;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="372" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text><text x="78" y="372" class="mono" font-size="13" fill="#F3F4F6" text-anchor="start" >echo $LANGUAGES</text><text x="60" y="394" class="mono" font-size="13" fill="#9AA0AA" text-anchor="start" >→</text><text x="78" y="394" class="mono" font-size="13" fill="#C6C9CF" text-anchor="start" >Tamil · English · Hindi · 日本語</text></g>
-<text x="60" y="422" class="mono" font-size="13" fill="#C9CED6" text-anchor="start" >$</text>
-<rect x="78" y="410" width="8" height="15" fill="#EEF0F3"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+<circle cx="70" cy="52" r="5" fill="#C9D1D9" fill-opacity=".7"/>
+<circle cx="88" cy="52" r="5" fill="#7EE787" fill-opacity=".7"/>
+<text x="412.0" y="57" class="mono" font-size="12" fill="#8B949E" text-anchor="middle" >hemashree@vit-chennai: ~/about</text>
+<g><text x="60" y="100" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="100" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >whoami</text><text x="60" y="122" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="122" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >hemashree · software engineer</text></g><g><text x="60" y="150" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="150" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >cat education.txt</text><text x="60" y="172" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="172" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >B.Tech Computer Science Engineering @ VIT Chennai</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.013;0.033;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="200" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="200" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >cat focus.txt</text><text x="60" y="222" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="222" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >vision · reinforcement-learning · embedded · security</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.050;0.070;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="250" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="250" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >ls patents/</text><text x="60" y="272" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="272" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >smart-walker/  hazard-rover/</text><text x="78" y="294" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >  # fall-risk prediction · disaster-zone hazard detection (filing in progress)</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.087;0.107;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="322" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="322" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >./status --open-to</text><text x="60" y="344" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="344" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >cybersecurity | computer-vision | cyber-physical-systems | backend &amp; devops</text></g><g opacity="0"><animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.125;0.145;.95;.98;1" values="0;0;1;1;0;0"/><text x="60" y="372" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text><text x="78" y="372" class="mono" font-size="13" fill="#E6EDF3" text-anchor="start" >echo $LANGUAGES</text><text x="60" y="394" class="mono" font-size="13" fill="#8B949E" text-anchor="start" >→</text><text x="78" y="394" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >Tamil · English · Hindi · 日本語</text></g>
+<text x="60" y="422" class="mono" font-size="13" fill="#C9D1D9" text-anchor="start" >$</text>
+<rect x="78" y="410" width="8" height="15" fill="#E6EDF3"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
 
 <g class="fadein" style="animation-delay:0.05s">
-  <rect x="822" y="40" width="346" height="124" rx="16" fill="#121316" stroke="#3B3E45"/>
-  <rect x="822" y="56" width="3" height="92" rx="1.5" fill="#C9CED6"/>
-  <text x="846" y="76" class="mono" font-size="11" fill="#C9CED6" text-anchor="start" letter-spacing="3">BASED IN</text>
-  <text x="846" y="114" class="serif" font-size="30" fill="#F3F4F6" text-anchor="start" >Chennai, India</text>
-  <text x="846" y="141" class="sans" font-size="13" fill="#8D9199" text-anchor="start" >open to opportunities</text>
+  <rect x="822" y="40" width="346" height="124" rx="16" fill="#161B22" stroke="#3D444D"/>
+  <rect x="822" y="56" width="3" height="92" rx="1.5" fill="#C9D1D9"/>
+  <text x="846" y="76" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="3">BASED IN</text>
+  <text x="846" y="114" class="serif" font-size="30" fill="#E6EDF3" text-anchor="start" >Chennai, India</text>
+  <text x="846" y="141" class="sans" font-size="13" fill="#8B949E" text-anchor="start" >open to opportunities</text>
 </g>
 <g class="fadein" style="animation-delay:0.16999999999999998s">
-  <rect x="822" y="180" width="346" height="124" rx="16" fill="#121316" stroke="#3B3E45"/>
-  <rect x="822" y="196" width="3" height="92" rx="1.5" fill="#C9CED6"/>
-  <text x="846" y="216" class="mono" font-size="11" fill="#C9CED6" text-anchor="start" letter-spacing="3">SPEAKS</text>
-  <text x="846" y="254" class="serif" font-size="30" fill="#F3F4F6" text-anchor="start" >4 languages</text>
-  <text x="846" y="281" class="sans" font-size="13" fill="#8D9199" text-anchor="start" >Tamil · English · Hindi · 日本語</text>
+  <rect x="822" y="180" width="346" height="124" rx="16" fill="#161B22" stroke="#3D444D"/>
+  <rect x="822" y="196" width="3" height="92" rx="1.5" fill="#C9D1D9"/>
+  <text x="846" y="216" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="3">SPEAKS</text>
+  <text x="846" y="254" class="serif" font-size="30" fill="#E6EDF3" text-anchor="start" >4 languages</text>
+  <text x="846" y="281" class="sans" font-size="13" fill="#8B949E" text-anchor="start" >Tamil · English · Hindi · 日本語</text>
 </g>
 <g class="fadein" style="animation-delay:0.29s">
-  <rect x="822" y="320" width="346" height="124" rx="16" fill="#121316" stroke="#3B3E45"/>
-  <rect x="822" y="336" width="3" height="92" rx="1.5" fill="#C9CED6"/>
-  <text x="846" y="356" class="mono" font-size="11" fill="#C9CED6" text-anchor="start" letter-spacing="3">BY NIGHT</text>
-  <text x="846" y="394" class="serif" font-size="30" fill="#F3F4F6" text-anchor="start" >Design Lead</text>
-  <text x="846" y="421" class="sans" font-size="13" fill="#8D9199" text-anchor="start" >posters, creatives and this README</text>
+  <rect x="822" y="320" width="346" height="124" rx="16" fill="#161B22" stroke="#3D444D"/>
+  <rect x="822" y="336" width="3" height="92" rx="1.5" fill="#C9D1D9"/>
+  <text x="846" y="356" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="3">BY NIGHT</text>
+  <text x="846" y="394" class="serif" font-size="30" fill="#E6EDF3" text-anchor="start" >Design Lead</text>
+  <text x="846" y="421" class="sans" font-size="13" fill="#8B949E" text-anchor="start" >posters, creatives and this README</text>
 </g>
 
 </svg>

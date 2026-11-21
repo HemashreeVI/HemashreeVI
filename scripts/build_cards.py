@@ -23,22 +23,22 @@ OUT = ROOT / "assets" / "cards"
 PHOTO = ROOT / "assets" / "photo.jpg"
 
 # ---------------------------------------------------------------- palette
-C = {   # black & silver, with slow smoke in every card
-    "bg0": "#070809",
-    "bg1": "#0E0F11",
-    "bg2": "#1A1C20",
-    "panel": "#121316",
-    "line": "#25272C",
-    "line2": "#3B3E45",
-    "violet": "#9AA0AA",   # deep silver (glows, strong strokes)
-    "lav": "#C9CED6",      # silver (accents, italic title words)
-    "lilac": "#EEF0F3",    # bright silver
-    "silver": "#F3F4F6",
-    "mist": "#C6C9CF",
-    "muted": "#8D9199",
-    "dim": "#5E626A",
+C = {   # GitHub's own dark colours, so every card sits on the profile page like part of it
+    "bg0": "#0D1117",      # GitHub page background
+    "bg1": "#0D1117",
+    "bg2": "#161B22",      # GitHub panels
+    "panel": "#161B22",
+    "line": "#30363D",     # GitHub borders
+    "line2": "#3D444D",
+    "violet": "#8B949E",
+    "lav": "#C9D1D9",      # silver accents
+    "lilac": "#E6EDF3",
+    "silver": "#E6EDF3",   # GitHub text
+    "mist": "#C9D1D9",
+    "muted": "#8B949E",    # GitHub muted text
+    "dim": "#6E7681",
     "rose": "#E3A6B4",
-    "mint": "#A6DCC5",
+    "mint": "#7EE787",
 }
 
 SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
@@ -330,6 +330,8 @@ SHOWCASE = [
      "desc": "Explains any GitHub profile's commits, pull requests and streaks in plain English."},
     {"slug": "worksync", "repo": "worksync", "tag": "Extension", "num": "1", "label": "commit per thing I do",
      "desc": "Backs up my Docs, Sheets, Colab notebooks and code to a private repo."},
+    {"slug": "nova-launchpad", "repo": "portfolio-extension", "tag": "Extension", "num": "6 in 1", "label": "jobs, mail, LeetCode, GitHub, YouTube, news",
+     "desc": "Nova Launchpad, my new tab for the job hunt: resume-matched jobs and daily nudges."},
 ]
 
 # ---------------------------------------------------------------- helpers
@@ -365,7 +367,7 @@ def base_defs(uid):
     <stop offset="1" stop-color="{C['bg0']}"/>
   </radialGradient>
   <radialGradient id="{uid}-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="{C['violet']}" stop-opacity=".22"/>
+    <stop offset="0" stop-color="{C['violet']}" stop-opacity="0"/>
     <stop offset="1" stop-color="{C['violet']}" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="{uid}-glowB" cx="50%" cy="50%" r="50%">
@@ -416,12 +418,8 @@ def frame(w, h, uid, glow=(0.75, 0.3)):
 
 
 def atmosphere(w, h, uid):
-    """Slow smoke drifting across the card."""
-    return f"""<clipPath id="{uid}-clip"><rect x="1" y="1" width="{w-2}" height="{h-2}" rx="22"/></clipPath>
-<g clip-path="url(#{uid}-clip)" style="pointer-events:none">
-  <g opacity=".11"><rect x="0" y="0" width="{w * 2:.0f}" height="{h}" filter="url(#{uid}-smoke)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;{-w:.0f} 0" dur="60s" repeatCount="indefinite"/></rect></g>
-</g>"""
+    """No effects: cards stay flat like GitHub's own panels."""
+    return ""
 
 
 def stars(w, h, n, seed, pad=20):
@@ -1286,7 +1284,7 @@ def main():
         ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ · GITLOOM", "work"),
         ("04", "RESEARCH & PATENTS", "Ideas,", "on file.", "2 PATENTS · 1 RESEARCH", "patents"),
         ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
-        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "5 EXTENSIONS · FREE", "extensions"),
+        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "6 EXTENSIONS · FREE", "extensions"),
         ("07", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
         ("08", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
         ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),

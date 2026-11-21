@@ -41,12 +41,12 @@
 
 <img src="./assets/cards/title-work.svg" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.svg" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
-<a href="https://github.com/HemashreeVI/rootlens" title="RootLens"><img src="./assets/cards/show-rootlens.svg" width="49%" alt="RootLens: under 2 minutes from a real incident to resolved. Finds why a microservice broke, rolls back the bad change, then checks it worked."></a>
+<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.webp" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
+<a href="https://github.com/HemashreeVI/rootlens" title="RootLens"><img src="./assets/cards/show-rootlens.webp" width="49%" alt="RootLens: under 2 minutes from a real incident to resolved. Finds why a microservice broke, rolls back the bad change, then checks it worked."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ"><img src="./assets/cards/show-triageiq.svg" width="49%" alt="TriageIQ: 0 emails sent without approval. Sorts every support email and drafts a grounded reply with a local model."></a>
-<a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom"><img src="./assets/cards/show-gitloom.svg" width="49%" alt="GitLoom: 10 templates in one HTML file. Paste a GitHub username and get a portfolio website you can host anywhere."></a>
+<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ"><img src="./assets/cards/show-triageiq.webp" width="49%" alt="TriageIQ: 0 emails sent without approval. Sorts every support email and drafts a grounded reply with a local model."></a>
+<a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom"><img src="./assets/cards/show-gitloom.webp" width="49%" alt="GitLoom: 10 templates in one HTML file. Paste a GitHub username and get a portfolio website you can host anywhere."></a>
 </p>
 
 <p align="center">
@@ -56,27 +56,28 @@
 
 <img src="./assets/cards/title-patents.svg" width="100%" alt="04 Research and patents: Ideas, on file. 2 patents and 1 research project.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent)"><img src="./assets/cards/show-walker.svg" width="49%" alt="Smart Walker (patent): under $30 of hardware on an Arduino. A walker that predicts a fall before it happens, from tilt and load sensors. Diagram."></a>
-<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/cards/show-rover.svg" width="49%" alt="Hazard-Detection Rover (patent): 6 of 6 hazard scenarios handled. A rover that explores a disaster zone and flags obstacles, heat and toxic gas."></a>
+<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent)"><img src="./assets/cards/show-walker.webp" width="49%" alt="Smart Walker (patent): under $30 of hardware on an Arduino. A walker that predicts a fall before it happens, from tilt and load sensors. Diagram."></a>
+<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/cards/show-rover.webp" width="49%" alt="Hazard-Detection Rover (patent): 6 of 6 hazard scenarios handled. A rover that explores a disaster zone and flags obstacles, heat and toxic gas."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.svg" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. Reads a panoramic X-ray, charts findings per tooth and writes a report; test mAP@50 38.7%. Screenshots of the app."></a>
+<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.webp" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. Reads a panoramic X-ray, charts findings per tooth and writes a report; test mAP@50 38.7%. Screenshots of the app."></a>
 </p>
 
 <img src="./assets/cards/title-opensource.svg" width="100%" alt="05 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
 
-<img src="./assets/cards/title-extensions.svg" width="100%" alt="06 Chrome extensions: Tools I built for the browser.">
+<img src="./assets/cards/title-extensions.svg" width="100%" alt="06 Chrome extensions: Tools I built for the browser. 6 extensions.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/job-radar" title="Job Radar"><img src="./assets/cards/show-job-radar.svg" width="49%" alt="Job Radar: 1 click to save any job, matched to my projects."></a>
-<a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap"><img src="./assets/cards/show-repo-recap.svg" width="49%" alt="Repo Recap: understand any GitHub repo in 10 seconds."></a>
+<a href="https://github.com/HemashreeVI/job-radar" title="Job Radar"><img src="./assets/cards/show-job-radar.webp" width="49%" alt="Job Radar: 1 click to save any job, matched to my projects."></a>
+<a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap"><img src="./assets/cards/show-repo-recap.webp" width="49%" alt="Repo Recap: understand any GitHub repo in 10 seconds."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/byte-decoded-clipper" title="Byte Decoded Clipper"><img src="./assets/cards/show-byte-decoded-clipper.svg" width="49%" alt="Byte Decoded Clipper: 60-second Shorts scripts from any article."></a>
-<a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded"><img src="./assets/cards/show-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, no API keys."></a>
+<a href="https://github.com/HemashreeVI/byte-decoded-clipper" title="Byte Decoded Clipper"><img src="./assets/cards/show-byte-decoded-clipper.webp" width="49%" alt="Byte Decoded Clipper: 60-second Shorts scripts from any article."></a>
+<a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded"><img src="./assets/cards/show-contributions-decoded.webp" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, no API keys."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/worksync" title="WorkSync"><img src="./assets/cards/show-worksync.svg" width="49%" alt="WorkSync: one commit per thing I do, backing up my Docs, Sheets, Colab and code."></a>
+<a href="https://github.com/HemashreeVI/worksync" title="WorkSync"><img src="./assets/cards/show-worksync.webp" width="49%" alt="WorkSync: one commit per thing I do, backing up my Docs, Sheets, Colab and code."></a>
+<a href="https://github.com/HemashreeVI/portfolio-extension" title="Nova Launchpad"><img src="./assets/cards/show-nova-launchpad.webp" width="49%" alt="Nova Launchpad: 6 in 1 new tab for the job hunt with resume-matched jobs, placement mail, LeetCode and GitHub reminders, my YouTube channel and tech news."></a>
 </p>
 
 <img src="./assets/cards/title-youtube.svg" width="100%" alt="07 YouTube: Byte Decoded.">

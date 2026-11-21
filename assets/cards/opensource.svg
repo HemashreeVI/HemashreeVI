@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9CED6}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="oss-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#1A1C20"/>
-    <stop offset=".55" stop-color="#0E0F11"/>
-    <stop offset="1" stop-color="#070809"/>
+    <stop offset="0" stop-color="#161B22"/>
+    <stop offset=".55" stop-color="#0D1117"/>
+    <stop offset="1" stop-color="#0D1117"/>
   </radialGradient>
   <radialGradient id="oss-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#9AA0AA" stop-opacity=".22"/>
-    <stop offset="1" stop-color="#9AA0AA" stop-opacity="0"/>
+    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="oss-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#F3F4F6" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#F3F4F6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="oss-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C6C9CF"/>
-    <stop offset="1" stop-color="#C9CED6"/>
+    <stop offset=".5" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#C9D1D9"/>
   </linearGradient>
   <linearGradient id="oss-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9CED6" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9CED6" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9CED6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
   </linearGradient>
   <pattern id="oss-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9CED6" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity=".05"/>
   </pattern>
   <filter id="oss-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="50"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="oss-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8D9199"/>
-    <stop offset=".45" stop-color="#C9CED6"/>
+    <stop offset="0" stop-color="#8B949E"/>
+    <stop offset=".45" stop-color="#C9D1D9"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9CED6"/>
-    <stop offset="1" stop-color="#8D9199"/>
+    <stop offset=".55" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#8B949E"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -65,13 +65,9 @@
   </filter>
 </defs>
 
-<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#oss-bg)" stroke="#25272C"/>
+<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#oss-bg)" stroke="#30363D"/>
 <rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#oss-grid)"/>
 <ellipse cx="300" cy="115" rx="420" ry="231" fill="url(#oss-glowA)"/>
 <ellipse cx="900" cy="214" rx="300" ry="165" fill="url(#oss-glowB)"/>
-<clipPath id="oss-clip"><rect x="1" y="1" width="1198" height="328" rx="22"/></clipPath>
-<g clip-path="url(#oss-clip)" style="pointer-events:none">
-  <g opacity=".11"><rect x="0" y="0" width="2400" height="330" filter="url(#oss-smoke)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;-1200 0" dur="60s" repeatCount="indefinite"/></rect></g>
-</g><rect x="32" y="28" width="440" height="274" rx="18" fill="#121316" stroke="#3B3E45"/><text x="56" y="60" class="mono" font-size="11" fill="#C9CED6" text-anchor="start" letter-spacing="3">CONTRIBUTION</text><rect x="324" y="44" width="124" height="24" rx="12" fill="#8957E5" fill-opacity=".22" stroke="#A371F7"/><text x="386" y="60" class="mono" font-size="10.5" fill="#D2A8FF" text-anchor="middle" letter-spacing="2">MERGED</text><text x="56" y="102" class="serif" font-size="26" fill="#F3F4F6" text-anchor="start" >first-contributions</text><text x="56" y="126" class="mono" font-size="12" fill="#8D9199" text-anchor="start" >firstcontributions/first-contributions #126858</text><text x="56" y="152" class="serif" font-size="15" fill="#C6C9CF" text-anchor="start" font-style="italic">“Add Hemashree to Contributors list”</text><path d="M56 236H424" stroke="#8D9199" stroke-width="3" stroke-linecap="round"/><path d="M110 236C140 236 140 204 170 204H300C330 204 330 236 360 236" fill="none" stroke="#A371F7" stroke-width="3"/><circle cx="80" cy="236" r="7" fill="#070809" stroke="#8D9199" stroke-width="3"/><circle cx="110" cy="236" r="7" fill="#070809" stroke="#8D9199" stroke-width="3"/><circle cx="360" cy="236" r="7" fill="#070809" stroke="#8D9199" stroke-width="3"/><circle cx="400" cy="236" r="7" fill="#070809" stroke="#8D9199" stroke-width="3"/><circle cx="200" cy="204" r="7" fill="#070809" stroke="#A371F7" stroke-width="3"/><circle cx="250" cy="204" r="7" fill="#070809" stroke="#A371F7" stroke-width="3"/><circle r="5" fill="#fff"><animateMotion dur="3.2s" repeatCount="indefinite" path="M110 236C140 236 140 204 170 204H300C330 204 330 236 360 236"/></circle><circle class="pulse" cx="360" cy="236" r="10" fill="none" stroke="#A371F7" stroke-width="2"/><text x="56" y="278" class="mono" font-size="11" fill="#8D9199" text-anchor="start" >main</text><text x="200" y="186" class="mono" font-size="11" fill="#D2A8FF" text-anchor="start" >my branch</text><text x="424" y="278" class="mono" font-size="11" fill="#8D9199" text-anchor="end" letter-spacing="2">OCT 2026</text><text x="504" y="60" class="mono" font-size="11" fill="#C9CED6" text-anchor="start" letter-spacing="3">MY OPEN-SOURCE TOOLS · MIT LICENSED</text><text x="1168" y="60" class="mono" font-size="11" fill="#A6DCC5" text-anchor="end" letter-spacing="2">14 MIT REPOS · FREE TO USE &amp; FORK</text><rect x="504" y="80" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="524" cy="103" r="4" fill="#A6DCC5" style="animation-delay:0.0s"/><text x="540" y="101" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >ReadMeow</text><text x="540" y="117" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >profile READMEs, designed for you</text><rect x="840" y="80" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="860" cy="103" r="4" fill="#C9CED6" style="animation-delay:0.3s"/><text x="876" y="101" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >gitpulse</text><text x="876" y="117" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >4 free tools for your GitHub</text><rect x="504" y="136" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="524" cy="159" r="4" fill="#E3A6B4" style="animation-delay:0.6s"/><text x="540" y="157" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >PortPilot</text><text x="540" y="173" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >who's using my port? free it</text><rect x="840" y="136" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="860" cy="159" r="4" fill="#A6DCC5" style="animation-delay:0.9s"/><text x="876" y="157" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >typewave</text><text x="876" y="173" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >mechanical keyboard sounds</text><rect x="504" y="192" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="524" cy="215" r="4" fill="#C9CED6" style="animation-delay:1.2s"/><text x="540" y="213" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >typo-arcade</text><text x="540" y="229" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >a typing test that plays like a game</text><rect x="840" y="192" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="860" cy="215" r="4" fill="#E3A6B4" style="animation-delay:1.5s"/><text x="876" y="213" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >token-meter</text><text x="876" y="229" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >tokens &amp; context, per message</text><rect x="504" y="248" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="524" cy="271" r="4" fill="#A6DCC5" style="animation-delay:1.8s"/><text x="540" y="269" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >Pit Wall</text><text x="540" y="285" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >replay real F1 races</text><rect x="840" y="248" width="324" height="46" rx="12" fill="#121316" stroke="#3B3E45"/><circle class="pulse" cx="860" cy="271" r="4" fill="#C9CED6" style="animation-delay:2.1s"/><text x="876" y="269" class="serif" font-size="15" fill="#F3F4F6" text-anchor="start" >ferrodo</text><text x="876" y="285" class="sans" font-size="11.5" fill="#8D9199" text-anchor="start" >terminal todo manager in Rust</text>
+<rect x="32" y="28" width="440" height="274" rx="18" fill="#161B22" stroke="#3D444D"/><text x="56" y="60" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="3">CONTRIBUTION</text><rect x="324" y="44" width="124" height="24" rx="12" fill="#8957E5" fill-opacity=".22" stroke="#A371F7"/><text x="386" y="60" class="mono" font-size="10.5" fill="#D2A8FF" text-anchor="middle" letter-spacing="2">MERGED</text><text x="56" y="102" class="serif" font-size="26" fill="#E6EDF3" text-anchor="start" >first-contributions</text><text x="56" y="126" class="mono" font-size="12" fill="#8B949E" text-anchor="start" >firstcontributions/first-contributions #126858</text><text x="56" y="152" class="serif" font-size="15" fill="#C9D1D9" text-anchor="start" font-style="italic">“Add Hemashree to Contributors list”</text><path d="M56 236H424" stroke="#8B949E" stroke-width="3" stroke-linecap="round"/><path d="M110 236C140 236 140 204 170 204H300C330 204 330 236 360 236" fill="none" stroke="#A371F7" stroke-width="3"/><circle cx="80" cy="236" r="7" fill="#0D1117" stroke="#8B949E" stroke-width="3"/><circle cx="110" cy="236" r="7" fill="#0D1117" stroke="#8B949E" stroke-width="3"/><circle cx="360" cy="236" r="7" fill="#0D1117" stroke="#8B949E" stroke-width="3"/><circle cx="400" cy="236" r="7" fill="#0D1117" stroke="#8B949E" stroke-width="3"/><circle cx="200" cy="204" r="7" fill="#0D1117" stroke="#A371F7" stroke-width="3"/><circle cx="250" cy="204" r="7" fill="#0D1117" stroke="#A371F7" stroke-width="3"/><circle r="5" fill="#fff"><animateMotion dur="3.2s" repeatCount="indefinite" path="M110 236C140 236 140 204 170 204H300C330 204 330 236 360 236"/></circle><circle class="pulse" cx="360" cy="236" r="10" fill="none" stroke="#A371F7" stroke-width="2"/><text x="56" y="278" class="mono" font-size="11" fill="#8B949E" text-anchor="start" >main</text><text x="200" y="186" class="mono" font-size="11" fill="#D2A8FF" text-anchor="start" >my branch</text><text x="424" y="278" class="mono" font-size="11" fill="#8B949E" text-anchor="end" letter-spacing="2">OCT 2026</text><text x="504" y="60" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="3">MY OPEN-SOURCE TOOLS · MIT LICENSED</text><text x="1168" y="60" class="mono" font-size="11" fill="#7EE787" text-anchor="end" letter-spacing="2">14 MIT REPOS · FREE TO USE &amp; FORK</text><rect x="504" y="80" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="524" cy="103" r="4" fill="#7EE787" style="animation-delay:0.0s"/><text x="540" y="101" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >ReadMeow</text><text x="540" y="117" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >profile READMEs, designed for you</text><rect x="840" y="80" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="860" cy="103" r="4" fill="#C9D1D9" style="animation-delay:0.3s"/><text x="876" y="101" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >gitpulse</text><text x="876" y="117" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >4 free tools for your GitHub</text><rect x="504" y="136" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="524" cy="159" r="4" fill="#E3A6B4" style="animation-delay:0.6s"/><text x="540" y="157" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >PortPilot</text><text x="540" y="173" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >who's using my port? free it</text><rect x="840" y="136" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="860" cy="159" r="4" fill="#7EE787" style="animation-delay:0.9s"/><text x="876" y="157" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >typewave</text><text x="876" y="173" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >mechanical keyboard sounds</text><rect x="504" y="192" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="524" cy="215" r="4" fill="#C9D1D9" style="animation-delay:1.2s"/><text x="540" y="213" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >typo-arcade</text><text x="540" y="229" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >a typing test that plays like a game</text><rect x="840" y="192" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="860" cy="215" r="4" fill="#E3A6B4" style="animation-delay:1.5s"/><text x="876" y="213" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >token-meter</text><text x="876" y="229" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >tokens &amp; context, per message</text><rect x="504" y="248" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="524" cy="271" r="4" fill="#7EE787" style="animation-delay:1.8s"/><text x="540" y="269" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >Pit Wall</text><text x="540" y="285" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >replay real F1 races</text><rect x="840" y="248" width="324" height="46" rx="12" fill="#161B22" stroke="#3D444D"/><circle class="pulse" cx="860" cy="271" r="4" fill="#C9D1D9" style="animation-delay:2.1s"/><text x="876" y="269" class="serif" font-size="15" fill="#E6EDF3" text-anchor="start" >ferrodo</text><text x="876" y="285" class="sans" font-size="11.5" fill="#8B949E" text-anchor="start" >terminal todo manager in Rust</text>
 </svg>

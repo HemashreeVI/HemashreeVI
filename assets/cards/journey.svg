@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9CED6}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="jour-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#1A1C20"/>
-    <stop offset=".55" stop-color="#0E0F11"/>
-    <stop offset="1" stop-color="#070809"/>
+    <stop offset="0" stop-color="#161B22"/>
+    <stop offset=".55" stop-color="#0D1117"/>
+    <stop offset="1" stop-color="#0D1117"/>
   </radialGradient>
   <radialGradient id="jour-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#9AA0AA" stop-opacity=".22"/>
-    <stop offset="1" stop-color="#9AA0AA" stop-opacity="0"/>
+    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="jour-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#F3F4F6" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#F3F4F6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="jour-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C6C9CF"/>
-    <stop offset="1" stop-color="#C9CED6"/>
+    <stop offset=".5" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#C9D1D9"/>
   </linearGradient>
   <linearGradient id="jour-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9CED6" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9CED6" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9CED6" stop-opacity="0"/>
+    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
   </linearGradient>
   <pattern id="jour-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9CED6" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity=".05"/>
   </pattern>
   <filter id="jour-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="60"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="jour-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8D9199"/>
-    <stop offset=".45" stop-color="#C9CED6"/>
+    <stop offset="0" stop-color="#8B949E"/>
+    <stop offset=".45" stop-color="#C9D1D9"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9CED6"/>
-    <stop offset="1" stop-color="#8D9199"/>
+    <stop offset=".55" stop-color="#C9D1D9"/>
+    <stop offset="1" stop-color="#8B949E"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -65,96 +65,92 @@
   </filter>
 </defs>
 
-<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-bg)" stroke="#25272C"/>
+<rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-bg)" stroke="#30363D"/>
 <rect x="1" y="1" width="1198" height="398" rx="22" fill="url(#jour-grid)"/>
 <ellipse cx="360" cy="200" rx="420" ry="280" fill="url(#jour-glowA)"/>
 <ellipse cx="840" cy="200" rx="300" ry="200" fill="url(#jour-glowB)"/>
-<clipPath id="jour-clip"><rect x="1" y="1" width="1198" height="398" rx="22"/></clipPath>
-<g clip-path="url(#jour-clip)" style="pointer-events:none">
-  <g opacity=".11"><rect x="0" y="0" width="2400" height="400" filter="url(#jour-smoke)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;-1200 0" dur="60s" repeatCount="indefinite"/></rect></g>
-</g><path d="M90 200H1110" stroke="#3B3E45" stroke-width="2"/>
+<path d="M90 200H1110" stroke="#3D444D" stroke-width="2"/>
 <path d="M90 200H1110" stroke="url(#jour-silver)" stroke-width="2" stroke-dasharray="1020" stroke-dashoffset="1020">
   <animate attributeName="stroke-dashoffset" values="1020;0;0" keyTimes="0;.6;1" dur="8s" repeatCount="indefinite"/>
 </path>
-<path d="M90 192V174" stroke="#3B3E45"/>
-<circle cx="90" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="90" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<path d="M90 192V174" stroke="#3D444D"/>
+<circle cx="90" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="90" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.000;0.020;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="16" y="52" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="90" y="78" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">AUG 2023</text>
-<text x="90" y="108" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >VIT Chennai</text>
-<text x="90" y="136" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >B.Tech CSE</text>
-<text x="90" y="156" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >Team lead · CodeYGen</text>
-<path d="M236 208V226" stroke="#3B3E45"/>
-<circle cx="236" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="236" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="16" y="52" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="90" y="78" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">AUG 2023</text>
+<text x="90" y="108" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >VIT Chennai</text>
+<text x="90" y="136" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >B.Tech CSE</text>
+<text x="90" y="156" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >Team lead · CodeYGen</text>
+<path d="M236 208V226" stroke="#3D444D"/>
+<circle cx="236" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="236" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.086;0.106;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="162" y="226" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="236" y="252" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">MAY–JUL 2025</text>
-<text x="236" y="282" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Research intern</text>
-<text x="236" y="310" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >Pose estimation</text>
-<text x="236" y="330" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >MMPose</text>
-<path d="M381 192V174" stroke="#3B3E45"/>
-<circle cx="381" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="381" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="162" y="226" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="236" y="252" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">MAY–JUL 2025</text>
+<text x="236" y="282" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Research intern</text>
+<text x="236" y="310" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >Pose estimation</text>
+<text x="236" y="330" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >MMPose</text>
+<path d="M381 192V174" stroke="#3D444D"/>
+<circle cx="381" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="381" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.171;0.191;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="307" y="52" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="381" y="78" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">JUN 2025</text>
-<text x="381" y="108" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Singapore</text>
-<text x="381" y="136" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >NUS Industry 4.0</text>
-<text x="381" y="156" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >SuperAI · IBM Gen AI</text>
-<path d="M527 208V226" stroke="#3B3E45"/>
-<circle cx="527" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="527" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="307" y="52" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="381" y="78" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">JUN 2025</text>
+<text x="381" y="108" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Singapore</text>
+<text x="381" y="136" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >NUS Industry 4.0</text>
+<text x="381" y="156" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >SuperAI · IBM Gen AI</text>
+<path d="M527 208V226" stroke="#3D444D"/>
+<circle cx="527" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="527" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.257;0.277;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="453" y="226" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="527" y="252" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">JUL–SEP 2025</text>
-<text x="527" y="282" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Dental X-ray AI</text>
-<text x="527" y="310" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >YOLOv9 · 31 classes</text>
-<text x="527" y="330" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >13,000+ images</text>
-<path d="M673 192V174" stroke="#3B3E45"/>
-<circle cx="673" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="673" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="453" y="226" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="527" y="252" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">JUL–SEP 2025</text>
+<text x="527" y="282" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Dental X-ray AI</text>
+<text x="527" y="310" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >YOLOv9 · 31 classes</text>
+<text x="527" y="330" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >13,000+ images</text>
+<path d="M673 192V174" stroke="#3D444D"/>
+<circle cx="673" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="673" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.343;0.363;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="599" y="52" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="673" y="78" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">2025–26</text>
-<text x="673" y="108" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >2 patents</text>
-<text x="673" y="136" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >Smart walker · rover</text>
-<text x="673" y="156" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >filing in progress</text>
-<path d="M819 208V226" stroke="#3B3E45"/>
-<circle cx="819" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="819" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="599" y="52" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="673" y="78" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">2025–26</text>
+<text x="673" y="108" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >2 patents</text>
+<text x="673" y="136" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >Smart walker · rover</text>
+<text x="673" y="156" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >filing in progress</text>
+<path d="M819 208V226" stroke="#3D444D"/>
+<circle cx="819" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="819" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.429;0.449;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="745" y="226" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="819" y="252" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">2026</text>
-<text x="819" y="282" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Backend &amp; DevOps</text>
-<text x="819" y="310" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >SeatLock · RootLens</text>
-<text x="819" y="330" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >TriageIQ</text>
-<path d="M964 192V174" stroke="#3B3E45"/>
-<circle cx="964" cy="200" r="7" fill="#070809" stroke="#C9CED6" stroke-width="2"/>
-<circle cx="964" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="745" y="226" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="819" y="252" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">2026</text>
+<text x="819" y="282" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Backend &amp; DevOps</text>
+<text x="819" y="310" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >SeatLock · RootLens</text>
+<text x="819" y="330" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >TriageIQ</text>
+<path d="M964 192V174" stroke="#3D444D"/>
+<circle cx="964" cy="200" r="7" fill="#0D1117" stroke="#C9D1D9" stroke-width="2"/>
+<circle cx="964" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.514;0.534;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="890" y="52" width="148" height="122" rx="14" fill="#121316" stroke="#3B3E45" />
-<text x="964" y="78" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">OCT 2026</text>
-<text x="964" y="108" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Open source</text>
-<text x="964" y="136" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >first PR merged</text>
-<text x="964" y="156" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >14 MIT repos</text>
-<path d="M1110 208V226" stroke="#3B3E45"/>
-<circle cx="1110" cy="200" r="9" fill="#070809" stroke="#EEF0F3" stroke-width="2"/>
-<circle cx="1110" cy="200" r="3" fill="#F3F4F6" opacity="0">
+<rect x="890" y="52" width="148" height="122" rx="14" fill="#161B22" stroke="#3D444D" />
+<text x="964" y="78" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">OCT 2026</text>
+<text x="964" y="108" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Open source</text>
+<text x="964" y="136" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >first PR merged</text>
+<text x="964" y="156" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >14 MIT repos</text>
+<path d="M1110 208V226" stroke="#3D444D"/>
+<circle cx="1110" cy="200" r="9" fill="#0D1117" stroke="#E6EDF3" stroke-width="2"/>
+<circle cx="1110" cy="200" r="3" fill="#E6EDF3" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.600;0.620;1" dur="8s" repeatCount="indefinite"/>
 </circle>
-<rect x="1036" y="226" width="148" height="122" rx="14" fill="#121316" stroke="#EEF0F3" stroke-dasharray="4 4"/>
-<text x="1110" y="252" class="mono" font-size="10" fill="#C9CED6" text-anchor="middle" letter-spacing="1.5">NOW</text>
-<text x="1110" y="282" class="serif" font-size="16" fill="#F3F4F6" text-anchor="middle" >Building 4 more</text>
-<text x="1110" y="310" class="sans" font-size="12" fill="#C6C9CF" text-anchor="middle" >+ grinding LeetCode</text>
-<text x="1110" y="330" class="sans" font-size="12" fill="#8D9199" text-anchor="middle" >next stop: your team?</text>
+<rect x="1036" y="226" width="148" height="122" rx="14" fill="#161B22" stroke="#E6EDF3" stroke-dasharray="4 4"/>
+<text x="1110" y="252" class="mono" font-size="10" fill="#C9D1D9" text-anchor="middle" letter-spacing="1.5">NOW</text>
+<text x="1110" y="282" class="serif" font-size="16" fill="#E6EDF3" text-anchor="middle" >Building 4 more</text>
+<text x="1110" y="310" class="sans" font-size="12" fill="#C9D1D9" text-anchor="middle" >+ grinding LeetCode</text>
+<text x="1110" y="330" class="sans" font-size="12" fill="#8B949E" text-anchor="middle" >next stop: your team?</text>
 </svg>
