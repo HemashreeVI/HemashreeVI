@@ -60,7 +60,7 @@
 <a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/cards/show-rover.svg" width="49%" alt="Hazard-Detection Rover (patent): 6 of 6 hazard scenarios handled. A rover that explores a disaster zone and flags obstacles, heat and toxic gas."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.svg" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. YOLOv9 on 13,000+ X-rays with heatmaps of where it looked; test mAP@50 38.7%."></a>
+<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.svg" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. Reads a panoramic X-ray, charts findings per tooth and writes a report; test mAP@50 38.7%. Screenshots of the app."></a>
 </p>
 
 <img src="./assets/cards/title-opensource.svg" width="100%" alt="05 Open source: Built in the open.">

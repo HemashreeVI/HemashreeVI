@@ -318,7 +318,7 @@ SHOWCASE = [
     {"slug": "rover", "repo": "disaster-response-rover-nodered", "tag": "Patent", "num": "6 / 6", "label": "hazard scenarios handled",
      "desc": "A rover that explores a disaster zone and flags obstacles, heat and toxic gas."},
     {"slug": "dental", "repo": "AI_Malocclusion_Detection", "tag": "Research", "num": "31", "label": "dental conditions detected",
-     "desc": "YOLOv9 on 13,000+ X-rays, with heatmaps of where it looked. Test mAP@50: 38.7%."},
+     "desc": "Reads a panoramic X-ray, charts findings per tooth and writes a report. Test mAP@50: 38.7%."},
     # chrome extensions
     {"slug": "job-radar", "repo": "job-radar", "tag": "Extension", "num": "1 click", "label": "to save any job",
      "desc": "Saves jobs from LinkedIn, Naukri or careers pages and matches them to my projects."},
@@ -1249,7 +1249,8 @@ def build_showcase():
 <clipPath id="{u}-shot"><rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10"/></clipPath>
 <image x="{ix}" y="{iy}" width="{iw}" height="{ih}" preserveAspectRatio="xMidYMin slice" clip-path="url(#{u}-shot)" href="data:image/webp;base64,{shot}"/>
 <rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10" fill="none" stroke="{C['line2']}"/>
-<text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-silver)">{e(p['num'])}</text>
+<defs><linearGradient id="{u}-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7EE787"/><stop offset="1" stop-color="#3FB950"/></linearGradient></defs>
+<text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-green)">{e(p['num'])}</text>
 {text(24 + num_w + 14, iy + ih + 52, p['label'], 15, C['muted'], 'sans')}
 {"".join(text(24, iy + ih + 86 + i * 22, ln, 15, C['mist'], 'sans') for i, ln in enumerate(lines[:2]))}
 """
