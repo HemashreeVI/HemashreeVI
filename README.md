@@ -41,22 +41,26 @@
 
 <img src="./assets/cards/title-work.svg" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock on GitHub"><img src="./assets/cards/tile-seatlock.svg" width="49%" alt="SeatLock: a ticket-booking backend where thousands of buyers race for one seat and nobody gets double-booked. Three locking strategies, version fencing and a partial unique index; a Kafka payment saga with a transactional outbox; a Redis waiting room. 200 threads race for one seat and exactly one wins; k6 finds zero double-bookings; 2,171 requests per second with fast reject. Java 21, Spring Boot, PostgreSQL, Redis, Kafka, k6, Testcontainers."></a>
-<a href="https://github.com/HemashreeVI/rootlens" title="RootLens on GitHub"><img src="./assets/cards/tile-rootlens.svg" width="49%" alt="RootLens: an incident-response lab that detects a failing microservice, investigates the cause, decides on a fix within strict limits, rolls back the bad release and verifies recovery, with an audit log of every decision. A real incident went from open to resolved in under 2 minutes; 118 unit tests."></a>
+<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.svg" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
+<a href="https://github.com/HemashreeVI/rootlens" title="RootLens"><img src="./assets/cards/show-rootlens.svg" width="49%" alt="RootLens: under 2 minutes from a real incident to resolved. Finds why a microservice broke, rolls back the bad change, then checks it worked."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ on GitHub"><img src="./assets/cards/tile-triageiq.svg" width="49%" alt="TriageIQ: an AI support inbox that runs fully on-device. Emails flow through Kafka, a local 3B model classifies them with a safe fallback, RAG over solved tickets drafts a grounded reply, and a human approves every reply before it is sent."></a>
-<a href="https://hemashreevi.github.io/GitLoom/" title="Try GitLoom live"><img src="./assets/cards/tile-gitloom.svg" width="49%" alt="GitLoom: type a GitHub username and it reads the public repos, languages and activity in the browser, then weaves them into a portfolio website in a live studio. Ten templates, one HTML file to host free, no servers or sign-ups. JavaScript, HTML, CSS, GitHub REST API, GitHub Pages."></a>
+<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ"><img src="./assets/cards/show-triageiq.svg" width="49%" alt="TriageIQ: 0 emails sent without approval. Sorts every support email and drafts a grounded reply with a local model."></a>
+<a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom"><img src="./assets/cards/show-gitloom.svg" width="49%" alt="GitLoom: 10 templates in one HTML file. Paste a GitHub username and get a portfolio website you can host anywhere."></a>
 </p>
+
 <p align="center">
   <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=flat-square&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Try GitLoom live"></a>
   <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-GitLoom_1_min_demo-F0A8D0?style=flat-square&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
 </p>
 
-<img src="./assets/cards/title-patents.svg" width="100%" alt="04 Patents: Ideas, on file. 2 filings in progress.">
+<img src="./assets/cards/title-patents.svg" width="100%" alt="04 Research and patents: Ideas, on file. 2 patents and 1 research project.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent) on GitHub"><img src="./assets/cards/tile-walker.svg" width="49%" alt="Patent 01, Smart Walker: a walker that predicts a fall before it happens. Dual IMUs and load cells, sensor fusion, fall-risk prediction, standalone on Arduino for under $30. Co-inventor, filing in progress."></a>
-<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent) on GitHub"><img src="./assets/cards/tile-rover.svg" width="49%" alt="Patent 02, Hazard-Detection Rover: a rover that explores a disaster zone and flags hazards for rescuers. Q-learning navigation, CNN hazard perception, multi-hazard detection, emergency stop and a live rescue dashboard. Co-inventor, filing in progress."></a>
+<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent)"><img src="./assets/cards/show-walker.svg" width="49%" alt="Smart Walker (patent): under $30 of hardware on an Arduino. A walker that predicts a fall before it happens, from tilt and load sensors. Diagram."></a>
+<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/cards/show-rover.svg" width="49%" alt="Hazard-Detection Rover (patent): 6 of 6 hazard scenarios handled. A rover that explores a disaster zone and flags obstacles, heat and toxic gas."></a>
+</p>
+<p align="center">
+<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.svg" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. YOLOv9 on 13,000+ X-rays with heatmaps of where it looked; test mAP@50 38.7%."></a>
 </p>
 
 <img src="./assets/cards/title-opensource.svg" width="100%" alt="05 Open source: Built in the open.">
@@ -64,16 +68,15 @@
 
 <img src="./assets/cards/title-extensions.svg" width="100%" alt="06 Chrome extensions: Tools I built for the browser.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/job-radar" title="Job Radar on GitHub"><img src="./assets/cards/ext-job-radar.svg" width="49%" alt="Job Radar: save any job from LinkedIn, Naukri or a careers page in one click, see which of my projects match it, and get a follow-up reminder after 5 days."></a>
-<a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap on GitHub"><img src="./assets/cards/ext-repo-recap.svg" width="49%" alt="Repo Recap: a sidebar on every GitHub repo with what it does, its tech stack, how to run it and how active it is."></a>
+<a href="https://github.com/HemashreeVI/job-radar" title="Job Radar"><img src="./assets/cards/show-job-radar.svg" width="49%" alt="Job Radar: 1 click to save any job, matched to my projects."></a>
+<a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap"><img src="./assets/cards/show-repo-recap.svg" width="49%" alt="Repo Recap: understand any GitHub repo in 10 seconds."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/byte-decoded-clipper" title="Byte Decoded Clipper on GitHub"><img src="./assets/cards/ext-byte-decoded-clipper.svg" width="49%" alt="Byte Decoded Clipper: turns any tech article into a timed 60-second YouTube Short script with on-screen text and hashtags."></a>
-<a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded on GitHub"><img src="./assets/cards/ext-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, from commits and pull requests to the plus and minus lines and the contribution calendar."></a>
+<a href="https://github.com/HemashreeVI/byte-decoded-clipper" title="Byte Decoded Clipper"><img src="./assets/cards/show-byte-decoded-clipper.svg" width="49%" alt="Byte Decoded Clipper: 60-second Shorts scripts from any article."></a>
+<a href="https://github.com/HemashreeVI/contributions-decoded" title="Contributions Decoded"><img src="./assets/cards/show-contributions-decoded.svg" width="49%" alt="Contributions Decoded: explains any GitHub profile in plain English, no API keys."></a>
 </p>
-
 <p align="center">
-<a href="https://github.com/HemashreeVI/worksync" title="WorkSync on GitHub"><img src="./assets/cards/ext-worksync.svg" width="49%" alt="WorkSync: my Chrome work, backed up to GitHub. Saves Google Docs, Sheets, Slides, Colab notebooks and code; one commit per thing I do; a daily journal in a private repo. Built with the Git Data API, Manifest V3, auto-sync."></a>
+<a href="https://github.com/HemashreeVI/worksync" title="WorkSync"><img src="./assets/cards/show-worksync.svg" width="49%" alt="WorkSync: one commit per thing I do, backing up my Docs, Sheets, Colab and code."></a>
 </p>
 
 <img src="./assets/cards/title-youtube.svg" width="100%" alt="07 YouTube: Byte Decoded.">

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-labelledby="t04-t t04-d">
-<title id="t04-t">04 Patents: Ideas, on file.</title>
-<desc id="t04-d">2 FILINGS IN PROGRESS</desc>
+<title id="t04-t">04 Research &amp; Patents: Ideas, on file.</title>
+<desc id="t04-d">2 PATENTS · 1 RESEARCH</desc>
 
 <style>
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
@@ -66,8 +66,8 @@
 </defs>
 
 <text x="30" y="32" class="mono" font-size="12" fill="#F3F4F6" text-anchor="start" letter-spacing="3">04</text>
-<text x="58" y="32" class="mono" font-size="12" fill="#C9CED6" text-anchor="start" letter-spacing="3">PATENTS</text>
-<text x="1170" y="32" class="mono" font-size="11" fill="#8D9199" text-anchor="end" letter-spacing="3">2 FILINGS IN PROGRESS</text>
+<text x="58" y="32" class="mono" font-size="12" fill="#C9CED6" text-anchor="start" letter-spacing="3">RESEARCH &amp; PATENTS</text>
+<text x="1170" y="32" class="mono" font-size="11" fill="#8D9199" text-anchor="end" letter-spacing="3">2 PATENTS · 1 RESEARCH</text>
 <text x="30" y="80" class="serif" font-size="40" fill="#F3F4F6">Ideas, <tspan fill="url(#t04-sweep)" font-style="italic">on file.</tspan></text>
 <rect x="30" y="96" width="1140" height="1.2" fill="url(#t04-rule)"/>
 <circle cy="96.6" r="2.6" fill="#fff">

@@ -300,6 +300,38 @@ EXTENSIONS = [
      "tags": ["Git Data API", "Manifest V3", "auto-sync"]},
 ]
 
+
+# Project cards: a real screenshot from each repo (assets/shots/), its headline number and one line.
+SHOWCASE = [
+    # main projects
+    {"slug": "seatlock", "repo": "SeatLock", "tag": "Backend", "num": "0", "label": "double-bookings, 200 threads racing",
+     "desc": "A ticket-booking backend where 200 buyers race for one seat and exactly one wins."},
+    {"slug": "rootlens", "repo": "rootlens", "tag": "Reliability", "num": "< 2 min", "label": "real incident, open to resolved",
+     "desc": "Finds why a microservice broke, rolls back the bad change, then checks it worked."},
+    {"slug": "triageiq", "repo": "TriageIQ", "tag": "AI", "num": "0", "label": "emails sent without approval",
+     "desc": "Sorts every support email and drafts a grounded reply with a local model."},
+    {"slug": "gitloom", "repo": "GitLoom", "tag": "Web app", "num": "10", "label": "templates, one HTML file",
+     "desc": "Paste a GitHub username and get a portfolio website you can host anywhere."},
+    # research & patents
+    {"slug": "walker", "repo": "smart_walker", "tag": "Patent", "num": "< $30", "label": "of hardware, standalone on Arduino",
+     "desc": "A walker that predicts a fall before it happens, from tilt and load sensors."},
+    {"slug": "rover", "repo": "disaster-response-rover-nodered", "tag": "Patent", "num": "6 / 6", "label": "hazard scenarios handled",
+     "desc": "A rover that explores a disaster zone and flags obstacles, heat and toxic gas."},
+    {"slug": "dental", "repo": "AI_Malocclusion_Detection", "tag": "Research", "num": "31", "label": "dental conditions detected",
+     "desc": "YOLOv9 on 13,000+ X-rays, with heatmaps of where it looked. Test mAP@50: 38.7%."},
+    # chrome extensions
+    {"slug": "job-radar", "repo": "job-radar", "tag": "Extension", "num": "1 click", "label": "to save any job",
+     "desc": "Saves jobs from LinkedIn, Naukri or careers pages and matches them to my projects."},
+    {"slug": "repo-recap", "repo": "repo-recap", "tag": "Extension", "num": "10 s", "label": "to understand any repo",
+     "desc": "A sidebar on GitHub: what a repo does, its tech stack and how to run it."},
+    {"slug": "byte-decoded-clipper", "repo": "byte-decoded-clipper", "tag": "Extension", "num": "60 s", "label": "Shorts from any article",
+     "desc": "Turns an article into a timed Shorts script with Chrome's on-device AI."},
+    {"slug": "contributions-decoded", "repo": "contributions-decoded", "tag": "Extension", "num": "0", "label": "API keys needed",
+     "desc": "Explains any GitHub profile's commits, pull requests and streaks in plain English."},
+    {"slug": "worksync", "repo": "worksync", "tag": "Extension", "num": "1", "label": "commit per thing I do",
+     "desc": "Backs up my Docs, Sheets, Colab notebooks and code to a private repo."},
+]
+
 # ---------------------------------------------------------------- helpers
 def e(s):
     return escape(str(s), {'"': "&quot;"})
@@ -1194,6 +1226,36 @@ def build_extensions():
         desc = f"{x['name']}: {x['pitch']} " + "; ".join(x['points']) + ". Built with " + ", ".join(x['tags']) + "."
         write(f"ext-{x['slug']}.svg", svg(W, H, u, x['name'], desc, "".join(parts)))
 
+
+# ---------------------------------------------------------------- project cards (screenshot + headline number)
+def build_showcase():
+    W, H = 600, 492
+    for k, p in enumerate(SHOWCASE):
+        u = f"sc{k}"
+        shot = base64.b64encode((ROOT / "assets" / "shots" / f"{p['slug']}.webp").read_bytes()).decode()
+        ix, iy, iw, ih = 16, 46, 568, 325
+        tag_w = len(p['tag']) * 7.4 + 26
+        num_size = 40
+        num_w = len(p['num']) * num_size * 0.6
+        lines = wrap(p['desc'], 66)
+        dots = "".join(f'<circle cx="{24 + i * 16}" cy="23" r="5" fill="{c}"/>' for i, c in enumerate(["#D97B7B", "#D9B96B", "#7FBF8F"]))
+        body = f"""
+{frame(W, H, u, (0.8, 0.15))}
+{dots}
+<text x="76" y="28" class="mono" font-size="13"><tspan fill="{C['muted']}">HemashreeVI /</tspan> <tspan fill="{C['silver']}" font-weight="600">{e(p['repo'])}</tspan></text>
+<rect x="{W - 18 - tag_w:.0f}" y="12" width="{tag_w:.0f}" height="22" rx="11" fill="{C['panel']}" stroke="{C['line2']}"/>
+<circle cx="{W - 18 - tag_w + 12:.0f}" cy="23" r="3" fill="{C['lav']}"/>
+{text(W - 18 - tag_w / 2 + 5, 27.5, p['tag'], 11.5, C['mist'], 'sans', 'middle')}
+<clipPath id="{u}-shot"><rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10"/></clipPath>
+<image x="{ix}" y="{iy}" width="{iw}" height="{ih}" preserveAspectRatio="xMidYMin slice" clip-path="url(#{u}-shot)" href="data:image/webp;base64,{shot}"/>
+<rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10" fill="none" stroke="{C['line2']}"/>
+<text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-silver)">{e(p['num'])}</text>
+{text(24 + num_w + 14, iy + ih + 52, p['label'], 15, C['muted'], 'sans')}
+{"".join(text(24, iy + ih + 86 + i * 22, ln, 15, C['mist'], 'sans') for i, ln in enumerate(lines[:2]))}
+"""
+        desc = f"{p['repo']} ({p['tag']}): {p['num']} {p['label']}. {p['desc']} Screenshot from the project."
+        write(f"show-{p['slug']}.svg", svg(W, H, u, p['repo'], desc, body))
+
 # ---------------------------------------------------------------- footer
 def build_footer():
     W, H, u = 1200, 330, "foot"
@@ -1221,7 +1283,7 @@ def main():
         ("01", "ABOUT", "Hello, I'm", "Hemashree.", "WHO I AM", "about"),
         ("02", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
         ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ · GITLOOM", "work"),
-        ("04", "PATENTS", "Ideas,", "on file.", "2 FILINGS IN PROGRESS", "patents"),
+        ("04", "RESEARCH & PATENTS", "Ideas,", "on file.", "2 PATENTS · 1 RESEARCH", "patents"),
         ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
         ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "5 EXTENSIONS · FREE", "extensions"),
         ("07", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
@@ -1252,6 +1314,7 @@ def main():
     build_games()
     build_opensource()
     build_extensions()
+    build_showcase()
     build_youtube()
     build_social_icons()
     build_footer()
