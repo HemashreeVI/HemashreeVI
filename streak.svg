@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 240" width="1200" height="240" role="img" aria-labelledby="stk-t stk-d">
+<title id="stk-t">Contribution streak of HemashreeVI</title>
+<desc id="stk-d">Total contributions: 605 (Jan 1, 2026 – present); Current streak: 13 (Nov 9, 2026 – Nov 21, 2026); Longest streak: 13 (Nov 9, 2026 – Nov 21, 2026)</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9CED6}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="stk-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#1A1C20"/>
+    <stop offset=".55" stop-color="#0E0F11"/>
+    <stop offset="1" stop-color="#070809"/>
+  </radialGradient>
+  <radialGradient id="stk-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#9AA0AA" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#9AA0AA" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="stk-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#F3F4F6" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#F3F4F6" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="stk-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".5" stop-color="#C6C9CF"/>
+    <stop offset="1" stop-color="#C9CED6"/>
+  </linearGradient>
+  <linearGradient id="stk-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#C9CED6" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#C9CED6" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#C9CED6" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="stk-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#C9CED6" stroke-opacity=".05"/>
+  </pattern>
+  <filter id="stk-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="47"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="stk-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8D9199"/>
+    <stop offset=".45" stop-color="#C9CED6"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#C9CED6"/>
+    <stop offset="1" stop-color="#8D9199"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="stk-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="1198" height="238" rx="22" fill="url(#stk-bg)" stroke="#25272C"/>
+<rect x="1" y="1" width="1198" height="238" rx="22" fill="url(#stk-grid)"/>
+<ellipse cx="600" cy="72" rx="420" ry="168" fill="url(#stk-glowA)"/>
+<ellipse cx="600" cy="168" rx="300" ry="120" fill="url(#stk-glowB)"/>
+<clipPath id="stk-clip"><rect x="1" y="1" width="1198" height="238" rx="22"/></clipPath>
+<g clip-path="url(#stk-clip)" style="pointer-events:none">
+  <g opacity=".11"><rect x="0" y="0" width="2400" height="240" filter="url(#stk-smoke)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;-1200 0" dur="60s" repeatCount="indefinite"/></rect></g>
+</g><circle class="twinkle" cx="462" cy="66" r="1" fill="#F3F4F6" style="animation-delay:3.6s"/>
+<circle class="twinkle" cx="467" cy="199" r="1.2" fill="#F3F4F6" style="animation-delay:2.2s"/>
+<circle class="twinkle" cx="465" cy="166" r="0.8" fill="#F3F4F6" style="animation-delay:3.1s"/>
+<circle class="twinkle" cx="787" cy="188" r="1.6" fill="#F3F4F6" style="animation-delay:3.8s"/>
+<circle class="twinkle" cx="1165" cy="216" r="1.2" fill="#F3F4F6" style="animation-delay:0.7s"/>
+<circle class="twinkle" cx="779" cy="144" r="0.8" fill="#F3F4F6" style="animation-delay:0.5s"/>
+<circle class="twinkle" cx="702" cy="107" r="1.2" fill="#F3F4F6" style="animation-delay:3.4s"/>
+<circle class="twinkle" cx="270" cy="165" r="1.6" fill="#F3F4F6" style="animation-delay:0.5s"/>
+<circle class="twinkle" cx="797" cy="45" r="1" fill="#F3F4F6" style="animation-delay:2.8s"/>
+<circle class="twinkle" cx="1157" cy="31" r="1.2" fill="#F3F4F6" style="animation-delay:0.9s"/>
+<circle class="twinkle" cx="50" cy="136" r="1.6" fill="#F3F4F6" style="animation-delay:3.6s"/>
+<circle class="twinkle" cx="1002" cy="80" r="1" fill="#F3F4F6" style="animation-delay:0.4s"/>
+<circle class="twinkle" cx="128" cy="24" r="1.6" fill="#F3F4F6" style="animation-delay:3.4s"/>
+<circle class="twinkle" cx="287" cy="37" r="0.8" fill="#F3F4F6" style="animation-delay:1.8s"/><text x="48" y="50" class="kick">CONTRIBUTION STREAK</text><text x="232" y="140" class="serif" font-size="34" fill="#F3F4F6" text-anchor="middle" font-weight="700">605</text><text x="232" y="176" class="sans" font-size="15" fill="#C6C9CF" text-anchor="middle" >Total contributions</text><text x="232" y="200" class="mono" font-size="12" fill="#8D9199" text-anchor="middle" >Jan 1, 2026 – present</text><line x1="416" y1="84" x2="416" y2="206" stroke="#3B3E45"/><circle cx="600" cy="128" r="46" fill="none" stroke="#C9CED6" stroke-width="5"/><text x="600" y="140" class="serif" font-size="34" fill="#EEF0F3" text-anchor="middle" font-weight="700">13</text><text x="600" y="198" class="sans" font-size="15" fill="#EEF0F3" text-anchor="middle" font-weight="700">Current streak</text><text x="600" y="220" class="mono" font-size="12" fill="#8D9199" text-anchor="middle" >Nov 9, 2026 – Nov 21, 2026</text><line x1="784" y1="84" x2="784" y2="206" stroke="#3B3E45"/><text x="968" y="140" class="serif" font-size="34" fill="#F3F4F6" text-anchor="middle" font-weight="700">13</text><text x="968" y="176" class="sans" font-size="15" fill="#C6C9CF" text-anchor="middle" >Longest streak</text><text x="968" y="200" class="mono" font-size="12" fill="#8D9199" text-anchor="middle" >Nov 9, 2026 – Nov 21, 2026</text>
+</svg>
