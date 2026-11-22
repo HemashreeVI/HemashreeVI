@@ -385,7 +385,7 @@ def base_defs(uid):
     <stop offset="1" stop-color="{C['lav']}" stop-opacity="0"/>
   </linearGradient>
   <pattern id="{uid}-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="{C['lav']}" stroke-opacity=".05"/>
+    <path d="M28 0H0V28" fill="none" stroke="{C['lav']}" stroke-opacity="0"/>
   </pattern>
   <filter id="{uid}-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="{sum(map(ord, uid)) % 97}"/>
