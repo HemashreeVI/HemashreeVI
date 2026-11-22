@@ -1267,21 +1267,38 @@ GITHUB_PATH = ("M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6
 
 
 def id_card(u, ox=0, oy=0):
-    """A swinging ID card on a lanyard, with a GitHub tag hanging from the clip. 346 x 480 units."""
+    """A swinging ID card on a black, glowing GitHub lanyard, laid out like a GitHub profile sidebar. 346 x 486."""
     photo = base64.b64encode((ROOT / "assets" / "id-photo.webp").read_bytes()).decode()
-    cx = 173                      # centre line
-    x0, y0, w, h = 23, 116, 300, 364
+    badges = [(n, base64.b64encode((ROOT / "assets" / "badges" / f"{n}.png").read_bytes()).decode())
+              for n in ("pull-shark", "pair-extraordinaire", "yolo", "quickdraw")]
+    cx = 173
+    x0, y0, w, h = 23, 122, 300, 358
     per = 2 * (w + h)
-    rows = [("BASED IN", "Chennai, India", "open to opportunities"),
-            ("SPEAKS", "4 languages", "Tamil · English · Hindi · 日本語"),
-            ("BY NIGHT", "Design Lead", "posters & creatives")]
-    row_svg = []
-    for k, (lab, big, small) in enumerate(rows):
-        ry = y0 + 220 + k * 38
-        row_svg.append(f"""<rect x="{x0 + 18}" y="{ry - 15}" width="3" height="34" rx="1.5" fill="url(#{u}-neon)"/>
-{text(x0 + 30, ry - 2, lab, 9, C['lav'], 'mono', 'start', 'letter-spacing="2.5"')}
-<text x="{x0 + 30}" y="{ry + 15}" class="sans" font-size="15" font-weight="700" fill="{C['silver']}">{e(big)}<tspan font-size="11" font-weight="400" fill="{C['muted']}">  {e(small)}</tspan></text>""")
-    bars = "".join(f'<rect x="{x0 + 186 + i * 4}" y="{y0 + h - 34}" width="{[2,1,3,1,2][i % 5]}" height="18" fill="{C["mist"]}" opacity=".7"/>' for i in range(24))
+    gh = lambda x, y, sc, fill="#F0F6FC", rot=0: f'<g transform="translate({x} {y}) rotate({rot}) scale({sc}) translate(-12 -12)"><path d="{GITHUB_PATH}" fill="{fill}"/></g>'
+    # lanyard straps: black with a neon glow and GitHub logos along them
+    straps = []
+    for side in (-1, 1):
+        x1, y1, x2, y2 = cx + side * 92, -6, cx + side * 10, 86
+        straps.append(f'<path d="M{x1} {y1} L{x2} {y2}" stroke="url(#{u}-neon)" stroke-width="26" stroke-linecap="round" opacity=".55" filter="url(#{u}-glow)"/>')
+        straps.append(f'<path d="M{x1} {y1} L{x2} {y2}" stroke="#05060A" stroke-width="22" stroke-linecap="round"/>')
+        straps.append(f'<path d="M{x1} {y1} L{x2} {y2}" stroke="url(#{u}-neon)" stroke-width="22" stroke-linecap="round" fill="none" opacity=".9" stroke-dasharray="0" style="mix-blend-mode:normal" mask="url(#{u}-edge)"/>')
+        ang = math.degrees(math.atan2(y2 - y1, x2 - x1))
+        for t in (.22, .5, .78):
+            straps.append(gh(x1 + (x2 - x1) * t, y1 + (y2 - y1) * t, .42, "#E6EDF3", ang - 90 if side < 0 else ang + 90))
+    icon = {
+        "uni": '<path d="M-6 -2 L0 -6 L6 -2 Z M-5 -1 V4 M-1.7 -1 V4 M1.7 -1 V4 M5 -1 V4 M-6.5 5 H6.5" stroke="#A9B8FF" stroke-width="1.3" fill="none"/>',
+        "link": '<path d="M-1.5 2.5 l-1.8 1.8 a2.4 2.4 0 0 1 -3.4 -3.4 l2.6 -2.6 a2.4 2.4 0 0 1 3.4 0 M1.5 -2.5 l1.8 -1.8 a2.4 2.4 0 0 1 3.4 3.4 l-2.6 2.6 a2.4 2.4 0 0 1 -3.4 0" stroke="#A9B8FF" stroke-width="1.3" fill="none" transform="translate(0.3 0)"/>',
+        "pin": '<path d="M0 6 C-4 1 -5 -1 -5 -2.5 A5 5 0 0 1 5 -2.5 C5 -1 4 1 0 6 Z" stroke="#A9B8FF" stroke-width="1.3" fill="none"/><circle cx="0" cy="-2.6" r="1.6" fill="#A9B8FF"/>',
+        "play": '<rect x="-6" y="-4.5" width="12" height="9" rx="2.5" fill="#FF3355"/><path d="M-1.5 -2 L2.5 0 L-1.5 2 Z" fill="#fff"/>',
+    }
+    rows = [("uni", "VIT Chennai · B.Tech CSE"), ("pin", "Chennai, India · open to work"),
+            ("link", "hemashreevi.github.io"), ("play", "Byte Decoded on YouTube")]
+    row_svg = "".join(f'<g transform="translate({x0 + 26} {y0 + 150 + k * 22})">{icon[ic]}</g>'
+                      + text(x0 + 40, y0 + 154 + k * 22, label, 12, C['mist'], 'sans') for k, (ic, label) in enumerate(rows))
+    bx = x0 + 18
+    badge_svg = "".join(f'<circle cx="{bx + 20 + k * 44}" cy="{y0 + 318}" r="19" fill="#0D1117" stroke="{C["line2"]}"/>'
+                        f'<image x="{bx + 3 + k * 44}" y="{y0 + 301}" width="34" height="34" href="data:image/png;base64,{b}"><title>{n.replace("-", " ").title()}</title></image>'
+                        for k, (n, b) in enumerate(badges))
     return f"""
 <defs>
   <linearGradient id="{u}-neon" x1="0" y1="0" x2="1" y2="1">
@@ -1291,21 +1308,20 @@ def id_card(u, ox=0, oy=0):
     <stop offset="0" stop-color="#60A5FA"/><stop offset=".55" stop-color="#A78BFA"/><stop offset="1" stop-color="#F472B6"/>
   </linearGradient>
   <linearGradient id="{u}-face" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#101633"/><stop offset=".6" stop-color="#151236"/><stop offset="1" stop-color="#2A1236"/>
+    <stop offset="0" stop-color="#0F1533"/><stop offset=".6" stop-color="#141136"/><stop offset="1" stop-color="#2A1236"/>
   </linearGradient>
-  <radialGradient id="{u}-blue" cx="15%" cy="20%" r="70%"><stop offset="0" stop-color="#2563EB" stop-opacity=".35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-  <radialGradient id="{u}-pink" cx="90%" cy="85%" r="60%"><stop offset="0" stop-color="#DB2777" stop-opacity=".3"/><stop offset="1" stop-color="#DB2777" stop-opacity="0"/></radialGradient>
-  <filter id="{u}-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <clipPath id="{u}-ph"><circle cx="{cx}" cy="{y0 + 80}" r="44"/></clipPath>
-  <linearGradient id="{u}-strap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#6D28D9"/></linearGradient>
+  <radialGradient id="{u}-blue" cx="15%" cy="15%" r="70%"><stop offset="0" stop-color="#2563EB" stop-opacity=".35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+  <radialGradient id="{u}-pink" cx="90%" cy="90%" r="60%"><stop offset="0" stop-color="#DB2777" stop-opacity=".3"/><stop offset="1" stop-color="#DB2777" stop-opacity="0"/></radialGradient>
+  <filter id="{u}-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="{u}-glow2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="{u}-ph"><circle cx="{x0 + 62}" cy="{y0 + 82}" r="40"/></clipPath>
 </defs>
 <g transform="translate({ox} {oy})"><g>
   <animateTransform attributeName="transform" type="rotate" values="-1.6 {cx} 0;1.6 {cx} 0;-1.6 {cx} 0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
-  <!-- lanyard -->
-  <path d="M{cx - 80} -4 L{cx - 9} 82 M{cx + 80} -4 L{cx + 9} 82" stroke="url(#{u}-strap)" stroke-width="14" stroke-linecap="round"/>
-  <text class="mono" font-size="7.5" letter-spacing="2" fill="#C4B5FD" transform="translate({cx - 76} 6) rotate(47)">HEMASHREEVI</text>
-  <rect x="{cx - 13}" y="78" width="26" height="20" rx="4" fill="#9CA3AF" stroke="#E5E7EB" stroke-width="1"/>
-  <rect x="{cx - 6}" y="96" width="12" height="24" rx="3" fill="none" stroke="#D1D5DB" stroke-width="2.5"/>
+  {''.join(s for s in straps if 'mask=' not in s)}
+  <rect x="{cx - 16}" y="80" width="32" height="22" rx="5" fill="#2B2F3A" stroke="#9CA3AF" stroke-width="1.2"/>
+  {gh(cx, 91, .55, "#E6EDF3")}
+  <rect x="{cx - 7}" y="100" width="14" height="28" rx="4" fill="none" stroke="#C9CED6" stroke-width="2.5"/>
   <!-- card -->
   <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-face)"/>
   <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-blue)"/>
@@ -1314,26 +1330,29 @@ def id_card(u, ox=0, oy=0):
   <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="70 {per - 70}" opacity=".9">
     <animate attributeName="stroke-dashoffset" values="0;-{per}" dur="5s" repeatCount="indefinite"/></rect>
   <rect x="{cx - 22}" y="{y0 + 12}" width="44" height="7" rx="3.5" fill="#0A0C1C" stroke="{C['line2']}"/>
-  {text(x0 + 18, y0 + 34, "@HemashreeVI", 9.5, C['muted'], 'mono')}
-  <rect x="{x0 + w - 56}" y="{y0 + 22}" width="38" height="17" rx="8.5" fill="none" stroke="url(#{u}-neon)"/>
-  {text(x0 + w - 37, y0 + 34, "ID", 9.5, "#F0ABFC", 'mono', 'middle', 'font-weight="700" letter-spacing="2"')}
-  <circle cx="{cx}" cy="{y0 + 80}" r="49" fill="none" stroke="url(#{u}-neon)" stroke-width="2.5" filter="url(#{u}-glow)"/>
-  <image x="{cx - 44}" y="{y0 + 36}" width="88" height="88" clip-path="url(#{u}-ph)" href="data:image/webp;base64,{photo}"/>
-  <text x="{cx}" y="{y0 + 160}" text-anchor="middle" class="sans" font-size="30" font-weight="900" letter-spacing="1" fill="#FFFFFF">HEMASHREE</text>
-  <text x="{cx}" y="{y0 + 181}" text-anchor="middle" class="sans" font-size="13" font-weight="800" letter-spacing="3" fill="url(#{u}-name)">SOFTWARE ENGINEER</text>
-  {text(cx, y0 + 198, "B.Tech CSE · VIT Chennai · open to work", 10.5, C['muted'], 'sans', 'middle')}
-  {''.join(row_svg)}
-  <path d="M{x0 + 18} {y0 + h - 46}H{x0 + w - 18}" stroke="{C['line2']}"/>
-  {text(x0 + 18, y0 + h - 26, "ID  HVI-2027", 11, C['lav'], 'mono', 'start', 'font-weight="600" letter-spacing="1.5"')}
-  {text(x0 + 18, y0 + h - 13, "valid: always building", 8.5, C['dim'], 'mono')}
-  {bars}
-  <!-- GitHub tag hanging from the strap -->
-  <g><animateTransform attributeName="transform" type="rotate" values="10 {cx + 44} 36;-8 {cx + 44} 36;10 {cx + 44} 36" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
-    <path d="M{cx + 44} 36 l16 30" stroke="#D1D5DB" stroke-width="1.6" stroke-dasharray="2.5 2"/>
-    <circle cx="{cx + 60}" cy="68" r="3" fill="none" stroke="#D1D5DB" stroke-width="1.4"/>
-    <rect x="{cx + 42}" y="71" width="36" height="42" rx="9" fill="#0D1117" stroke="url(#{u}-neon)" stroke-width="1.6" filter="url(#{u}-glow)"/>
-    <g transform="translate({cx + 48} {77}) scale(1)"><path d="{GITHUB_PATH}" fill="#F0F6FC"/></g>
-    {text(cx + 60, 109, "GitHub", 6.5, C['mist'], 'mono', 'middle')}
+  {text(x0 + 18, y0 + 32, "HemashreeVI / README.md", 9, C['muted'], 'mono')}
+  <rect x="{x0 + w - 52}" y="{y0 + 21}" width="34" height="16" rx="8" fill="none" stroke="url(#{u}-neon)"/>
+  {text(x0 + w - 35, y0 + 32.5, "ID", 9, "#F0ABFC", 'mono', 'middle', 'font-weight="700" letter-spacing="2"')}
+  <circle cx="{x0 + 62}" cy="{y0 + 82}" r="44" fill="none" stroke="url(#{u}-neon)" stroke-width="2.5" filter="url(#{u}-glow)"/>
+  <image x="{x0 + 22}" y="{y0 + 42}" width="80" height="80" clip-path="url(#{u}-ph)" href="data:image/webp;base64,{photo}"/>
+  <text x="{x0 + 120}" y="{y0 + 76}" class="sans" font-size="31" font-weight="900" letter-spacing=".5" fill="#FFFFFF">HEMA</text>
+  <text x="{x0 + 120}" y="{y0 + 106}" class="sans" font-size="31" font-weight="900" letter-spacing=".5" fill="url(#{u}-name)">SHREE</text>
+  {text(x0 + 121, y0 + 125, "Software Engineer & Builder", 11.5, C['mist'], 'sans', 'start', 'font-weight="600"')}
+  {row_svg}
+  <rect x="{x0 + 18}" y="{y0 + 240}" width="{w - 36}" height="28" rx="7" fill="#0D1117" fill-opacity=".7" stroke="{C['line2']}"/>
+  {gh(x0 + 100, y0 + 254, .55, "#E6EDF3")}
+  {text(x0 + 114, y0 + 258, "github.com/HemashreeVI", 11.5, C['silver'], 'sans', 'start', 'font-weight="700"')}
+  {text(x0 + 18, y0 + 290, "Achievements", 11, C['silver'], 'sans', 'start', 'font-weight="700"')}
+  {badge_svg}
+  {text(x0 + w - 18, y0 + 322, "HVI-2027", 9, C['dim'], 'mono', 'end', 'letter-spacing="1.5"')}
+  <!-- the GitHub tag hanging from the strap -->
+  <g><animateTransform attributeName="transform" type="rotate" values="9 {cx + 52} 40;-7 {cx + 52} 40;9 {cx + 52} 40" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+    <path d="M{cx + 52} 40 L{cx + 62} 66" stroke="#C9CED6" stroke-width="2" stroke-dasharray="3 2.2"/>
+    <circle cx="{cx + 62}" cy="69" r="4" fill="none" stroke="#C9CED6" stroke-width="1.8"/>
+    <rect x="{cx + 36}" y="72" width="52" height="60" rx="13" fill="#05060A" stroke="url(#{u}-neon)" stroke-width="2.4" filter="url(#{u}-glow2)"/>
+    <rect x="{cx + 36}" y="72" width="52" height="60" rx="13" fill="#05060A" stroke="url(#{u}-neon)" stroke-width="2"/>
+    {gh(cx + 62, 97, 1.15)}
+    {text(cx + 62, 124, "GitHub", 8, C['mist'], 'mono', 'middle', 'font-weight="600"')}
   </g>
 </g></g>"""
 
