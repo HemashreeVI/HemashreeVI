@@ -643,8 +643,8 @@ def build_title(num, kicker, plain, italic, right, slug, extra=""):
 
 # ---------------------------------------------------------------- about
 def build_about():
-    W, H, u = 1200, 486, "about"
-    tx, ty, tw, th = 32, 34, 760, 418
+    W, H, u = 1200, 630, "about"
+    tx, ty, tw, th = 32, 34, 740, 562
     rows, y, step, i = [], ty + 66, 22, 0
     cycle = 16
     for cmd, outs in TERMINAL:
@@ -665,19 +665,7 @@ def build_about():
         i += 1
     cursor_y = y - step + 4
 
-    side = []
-    sx, sy = 822, 40
-    for k, (lab, big, small) in enumerate(ABOUT_SIDE):
-        yy = sy + k * 140
-        side.append(f"""
-<g class="fadein" style="animation-delay:{0.05 + k * 0.12}s">
-  <rect x="{sx}" y="{yy}" width="346" height="124" rx="16" fill="{C['panel']}" stroke="{C['line2']}"/>
-  <rect x="{sx}" y="{yy + 16}" width="3" height="92" rx="1.5" fill="{C['lav']}"/>
-  {text(sx + 24, yy + 36, lab, 11, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
-  {text(sx + 24, yy + 74, big, 30, C['silver'], 'serif')}
-  {text(sx + 24, yy + 101, small, 13, C['muted'], 'sans')}
-</g>""")
-
+    side = [f'<g transform="translate(796 14) scale(1.12)">{id_card(u + "id")}</g>']
     body = f"""
 {frame(W, H, u, (0.85, 0.2))}
 <rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="14" fill="{C['bg0']}" fill-opacity=".85" stroke="{C['line2']}"/>
@@ -1356,7 +1344,9 @@ def id_card(u, ox=0, oy=0):
 
   <!-- card: full black, with a soft theme glow at the bottom -->
   <ellipse cx="{cx}" cy="{y0 + h - 4}" rx="{w * .46:.0f}" ry="22" fill="url(#{u}-neon)" opacity=".55" filter="url(#{u}-glow2)"/>
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="20" fill="#000000" stroke="#30363D"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="20" fill="none" stroke="url(#{u}-neon)" stroke-width="6" opacity=".7" filter="url(#{u}-glow2)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="20" fill="#000000"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="20" fill="none" stroke="url(#{u}-neon)" stroke-width="2" filter="url(#{u}-glow)"/>
   <rect x="{x0}" y="{y0 + h - 60}" width="{w}" height="60" rx="20" fill="url(#{u}-endglow)"/>
   <rect x="{x0 + 22}" y="{y0 + h - 1.5}" width="{w - 44}" height="2" rx="1" fill="url(#{u}-neon)" opacity=".9"/>
   <rect x="{cx - 22}" y="{y0 + 10}" width="44" height="7" rx="3.5" fill="#0D1117" stroke="#30363D"/>

@@ -91,7 +91,9 @@
 
   <!-- card: full black, with a soft theme glow at the bottom -->
   <ellipse cx="173" cy="516" rx="147" ry="22" fill="url(#idc-neon)" opacity=".55" filter="url(#idc-glow2)"/>
-  <rect x="13" y="122" width="320" height="398" rx="20" fill="#000000" stroke="#30363D"/>
+  <rect x="13" y="122" width="320" height="398" rx="20" fill="none" stroke="url(#idc-neon)" stroke-width="6" opacity=".7" filter="url(#idc-glow2)"/>
+  <rect x="13" y="122" width="320" height="398" rx="20" fill="#000000"/>
+  <rect x="13" y="122" width="320" height="398" rx="20" fill="none" stroke="url(#idc-neon)" stroke-width="2" filter="url(#idc-glow)"/>
   <rect x="13" y="460" width="320" height="60" rx="20" fill="url(#idc-endglow)"/>
   <rect x="35" y="518.5" width="276" height="2" rx="1" fill="url(#idc-neon)" opacity=".9"/>
   <rect x="151" y="132" width="44" height="7" rx="3.5" fill="#0D1117" stroke="#30363D"/>
