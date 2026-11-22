@@ -9,7 +9,7 @@
 </p>
 
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/cards/banner.webp" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node.">
+  <img src="./assets/cards/hero.svg" width="100%" alt="HEMASHREE, Software Engineer. B.Tech Computer Science Engineering at VIT Chennai. Building systems that see, decide and keep people safe.">
 </a>
 
 <p align="center">
@@ -126,4 +126,4 @@
   <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chesscom.svg" width="52" height="52" alt="Chess.com"></a>
 </p>
 
-<a href="https://hemashreevi.github.io"><img src="./assets/cards/footer.svg" width="100%" alt="Let's build something that keeps people safe. Open to roles in cybersecurity, computer vision, cyber-physical systems, backend and DevOps. よろしくお願いします"></a>
+<a href="https://hemashreevi.github.io"><img src="./assets/cards/banner.webp" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node."></a>
