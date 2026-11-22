@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#3B5BDB}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#A9B8FF}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="foot-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#F1F4FE"/>
-    <stop offset="1" stop-color="#EAEEFC"/>
+    <stop offset="0" stop-color="#171B3A"/>
+    <stop offset=".55" stop-color="#0F1228"/>
+    <stop offset="1" stop-color="#0A0C1C"/>
   </radialGradient>
   <radialGradient id="foot-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#3047C9" stop-opacity="0"/>
-    <stop offset="1" stop-color="#3047C9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="foot-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#1B2559" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#1B2559" stop-opacity="0"/>
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="foot-silver" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#3047C9"/>
-    <stop offset=".55" stop-color="#3B5BDB"/>
-    <stop offset="1" stop-color="#5B7CF0"/>
+    <stop offset="0" stop-color="#6EA8FF"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#E3A6F0"/>
   </linearGradient>
   <linearGradient id="foot-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#3B5BDB" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#3B5BDB" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#3B5BDB" stop-opacity="0"/>
+    <stop offset="0" stop-color="#A9B8FF" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#A9B8FF" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#A9B8FF" stop-opacity="0"/>
   </linearGradient>
   <pattern id="foot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#3B5BDB" stroke-opacity="0"/>
+    <path d="M28 0H0V28" fill="none" stroke="#A9B8FF" stroke-opacity="0"/>
   </pattern>
   <filter id="foot-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="52"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="foot-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#5E6A92"/>
-    <stop offset=".45" stop-color="#3B5BDB"/>
+    <stop offset="0" stop-color="#9097B8"/>
+    <stop offset=".45" stop-color="#A9B8FF"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#3B5BDB"/>
-    <stop offset="1" stop-color="#5E6A92"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#9097B8"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -66,47 +66,47 @@
 </defs>
 
 
-<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#foot-bg)" stroke="#D9DFF5"/>
+<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#foot-bg)" stroke="#272C50"/>
 <rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#foot-grid)"/>
 <ellipse cx="600" cy="248" rx="420" ry="231" fill="url(#foot-glowA)"/>
 <ellipse cx="600" cy="82" rx="300" ry="165" fill="url(#foot-glowB)"/>
 
-<circle class="twinkle" cx="296" cy="178" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.7s"/>
-<circle class="twinkle" cx="570" cy="188" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.6s"/>
-<circle class="twinkle" cx="564" cy="180" r="1" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:4.0s"/>
-<circle class="twinkle" cx="566" cy="263" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:1.6s"/>
-<circle class="twinkle" cx="1019" cy="87" r="1" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.5s"/>
-<circle class="twinkle" cx="627" cy="235" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:0.6s"/>
-<circle class="twinkle" cx="1131" cy="32" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.3s"/>
-<circle class="twinkle" cx="333" cy="192" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.9s"/>
-<circle class="twinkle" cx="1088" cy="135" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.9s"/>
-<circle class="twinkle" cx="176" cy="126" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:0.5s"/>
-<circle class="twinkle" cx="272" cy="300" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.1s"/>
-<circle class="twinkle" cx="1012" cy="142" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.3s"/>
-<circle class="twinkle" cx="640" cy="138" r="1" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.6s"/>
-<circle class="twinkle" cx="811" cy="289" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:4.0s"/>
-<circle class="twinkle" cx="799" cy="67" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.9s"/>
-<circle class="twinkle" cx="1069" cy="185" r="1" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.5s"/>
-<circle class="twinkle" cx="1166" cy="97" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:0.3s"/>
-<circle class="twinkle" cx="1011" cy="307" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:1.4s"/>
-<circle class="twinkle" cx="97" cy="280" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:1.2s"/>
-<circle class="twinkle" cx="912" cy="273" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.4s"/>
-<circle class="twinkle" cx="903" cy="130" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.2s"/>
-<circle class="twinkle" cx="1089" cy="101" r="1" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:4.0s"/>
-<circle class="twinkle" cx="379" cy="42" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.8s"/>
-<circle class="twinkle" cx="1147" cy="105" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:0.6s"/>
-<circle class="twinkle" cx="69" cy="272" r="1.2" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:1.4s"/>
-<circle class="twinkle" cx="180" cy="270" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:1.8s"/>
-<circle class="twinkle" cx="623" cy="207" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.5s"/>
-<circle class="twinkle" cx="1111" cy="167" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:2.5s"/>
-<circle class="twinkle" cx="850" cy="292" r="1.6" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.9s"/>
-<circle class="twinkle" cx="625" cy="179" r="0.8" fill="#5B7CF0" fill-opacity=".35" style="animation-delay:3.2s"/>
-<text x="600" y="64" class="mono" font-size="12" fill="#3B5BDB" text-anchor="middle" letter-spacing="4">LET'S BUILD SOMETHING THAT KEEPS PEOPLE SAFE</text>
+<circle class="twinkle" cx="296" cy="178" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.7s"/>
+<circle class="twinkle" cx="570" cy="188" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.6s"/>
+<circle class="twinkle" cx="564" cy="180" r="1" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:4.0s"/>
+<circle class="twinkle" cx="566" cy="263" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:1.6s"/>
+<circle class="twinkle" cx="1019" cy="87" r="1" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.5s"/>
+<circle class="twinkle" cx="627" cy="235" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:0.6s"/>
+<circle class="twinkle" cx="1131" cy="32" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.3s"/>
+<circle class="twinkle" cx="333" cy="192" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.9s"/>
+<circle class="twinkle" cx="1088" cy="135" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.9s"/>
+<circle class="twinkle" cx="176" cy="126" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:0.5s"/>
+<circle class="twinkle" cx="272" cy="300" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.1s"/>
+<circle class="twinkle" cx="1012" cy="142" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.3s"/>
+<circle class="twinkle" cx="640" cy="138" r="1" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.6s"/>
+<circle class="twinkle" cx="811" cy="289" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:4.0s"/>
+<circle class="twinkle" cx="799" cy="67" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.9s"/>
+<circle class="twinkle" cx="1069" cy="185" r="1" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.5s"/>
+<circle class="twinkle" cx="1166" cy="97" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:0.3s"/>
+<circle class="twinkle" cx="1011" cy="307" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:1.4s"/>
+<circle class="twinkle" cx="97" cy="280" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:1.2s"/>
+<circle class="twinkle" cx="912" cy="273" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.4s"/>
+<circle class="twinkle" cx="903" cy="130" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.2s"/>
+<circle class="twinkle" cx="1089" cy="101" r="1" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:4.0s"/>
+<circle class="twinkle" cx="379" cy="42" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.8s"/>
+<circle class="twinkle" cx="1147" cy="105" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:0.6s"/>
+<circle class="twinkle" cx="69" cy="272" r="1.2" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:1.4s"/>
+<circle class="twinkle" cx="180" cy="270" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:1.8s"/>
+<circle class="twinkle" cx="623" cy="207" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.5s"/>
+<circle class="twinkle" cx="1111" cy="167" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:2.5s"/>
+<circle class="twinkle" cx="850" cy="292" r="1.6" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.9s"/>
+<circle class="twinkle" cx="625" cy="179" r="0.8" fill="#E3A6F0" fill-opacity=".35" style="animation-delay:3.2s"/>
+<text x="600" y="64" class="mono" font-size="12" fill="#A9B8FF" text-anchor="middle" letter-spacing="4">LET'S BUILD SOMETHING THAT KEEPS PEOPLE SAFE</text>
 <text x="600" y="168" class="serif" font-size="96" font-style="italic" text-anchor="middle" fill="url(#foot-silver)" letter-spacing="2">Hemashree</text>
 <text x="600" y="168" class="serif" font-size="96" font-style="italic" text-anchor="middle" fill="none" stroke="#fff" stroke-width="1.4" stroke-dasharray="120 900" letter-spacing="2" opacity=".8">Hemashree<animate attributeName="stroke-dashoffset" values="1020;0" dur="6s" repeatCount="indefinite"/></text>
 <rect x="380" y="196" width="440" height="1.2" fill="url(#foot-rule)"/>
-<text x="600" y="236" class="sans" font-size="15" fill="#3A4570" text-anchor="middle" >Open to roles in cybersecurity · computer vision · cyber-physical systems · backend &amp; devops</text>
-<text x="600" y="280" class="serif" font-size="20" fill="#5B7CF0" text-anchor="middle" >よろしくお願いします</text>
+<text x="600" y="236" class="sans" font-size="15" fill="#C8CCE0" text-anchor="middle" >Open to roles in cybersecurity · computer vision · cyber-physical systems · backend &amp; devops</text>
+<text x="600" y="280" class="serif" font-size="20" fill="#E3A6F0" text-anchor="middle" >よろしくお願いします</text>
 <circle cx="1140" cy="280" r="0.8" fill="#FFB15C" opacity="0"><animate attributeName="opacity" values="0;.7;.4;0" dur="3.8s" begin="3.8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;10 -60" dur="3.8s" begin="3.8s" repeatCount="indefinite"/></circle>
 <circle cx="1155" cy="271" r="1.2" fill="#FFB15C" opacity="0"><animate attributeName="opacity" values="0;.7;.4;0" dur="2.3s" begin="0.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-1 -60" dur="2.3s" begin="0.6s" repeatCount="indefinite"/></circle>
 <circle cx="1103" cy="277" r="1.0" fill="#FFB15C" opacity="0"><animate attributeName="opacity" values="0;.7;.4;0" dur="3.3s" begin="0.1s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;-3 -60" dur="3.3s" begin="0.1s" repeatCount="indefinite"/></circle>

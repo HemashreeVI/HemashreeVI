@@ -23,22 +23,22 @@ OUT = ROOT / "assets" / "cards"
 PHOTO = ROOT / "assets" / "photo.jpg"
 
 # ---------------------------------------------------------------- palette
-C = {   # light periwinkle & indigo, matching the profile banner (assets/cards/banner.webp)
-    "bg0": "#EAEEFC",
-    "bg1": "#F1F4FE",
-    "bg2": "#FFFFFF",
-    "panel": "#FFFFFF",
-    "line": "#D9DFF5",
-    "line2": "#C4CDF0",
-    "violet": "#3047C9",   # deep indigo
-    "lav": "#3B5BDB",      # banner blue (accents, italic title words)
-    "lilac": "#5B7CF0",
-    "silver": "#1B2559",   # main text: deep navy
-    "mist": "#3A4570",
-    "muted": "#5E6A92",
-    "dim": "#8A94B8",
-    "rose": "#D6336C",
-    "mint": "#2F9E44",
+C = {   # deep navy with a blue glow on one side and a plum glow on the other, like the profile photo
+    "bg0": "#0A0C1C",
+    "bg1": "#0F1228",
+    "bg2": "#171B3A",
+    "panel": "#131733",
+    "line": "#272C50",
+    "line2": "#3A4068",
+    "violet": "#6EA8FF",   # photo blue (gradient start)
+    "lav": "#A9B8FF",      # periwinkle accents, italic title words
+    "lilac": "#E3A6F0",    # photo plum-pink (gradient end)
+    "silver": "#EEF0F7",   # main text
+    "mist": "#C8CCE0",
+    "muted": "#9097B8",
+    "dim": "#6A7096",
+    "rose": "#E59AC8",
+    "mint": "#7EE787",
 }
 
 SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
@@ -367,12 +367,12 @@ def base_defs(uid):
     <stop offset="1" stop-color="{C['bg0']}"/>
   </radialGradient>
   <radialGradient id="{uid}-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="{C['violet']}" stop-opacity="0"/>
-    <stop offset="1" stop-color="{C['violet']}" stop-opacity="0"/>
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="{uid}-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="{C['silver']}" stop-opacity=".12"/>
-    <stop offset="1" stop-color="{C['silver']}" stop-opacity="0"/>
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="{uid}-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{C['violet']}"/>
@@ -1248,7 +1248,7 @@ def build_showcase():
 <clipPath id="{u}-shot"><rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10"/></clipPath>
 <image x="{ix}" y="{iy}" width="{iw}" height="{ih}" preserveAspectRatio="xMidYMin slice" clip-path="url(#{u}-shot)" href="data:image/webp;base64,{shot}"/>
 <rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10" fill="none" stroke="{C['line2']}"/>
-<defs><linearGradient id="{u}-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DA44E"/><stop offset="1" stop-color="#1A7F37"/></linearGradient></defs>
+<defs><linearGradient id="{u}-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7EE787"/><stop offset="1" stop-color="#3FB950"/></linearGradient></defs>
 <text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-green)">{e(p['num'])}</text>
 {text(24 + num_w + 14, iy + ih + 52, p['label'], 15, C['muted'], 'sans')}
 {"".join(text(24, iy + ih + 86 + i * 22, ln, 15, C['mist'], 'sans') for i, ln in enumerate(lines[:2]))}
