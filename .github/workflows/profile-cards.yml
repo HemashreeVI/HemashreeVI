@@ -33,6 +33,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # LeetCode card (solved, ranking, 52-week heatmap) from LeetCode's public API
       - run: python3 repo/scripts/leetcode_card.py hemashree_272005 dist/leetcode.svg
+      # HackerRank card (badges, stars, problems solved) from HackerRank's public profile API
+      - run: python3 repo/scripts/hackerrank_card.py shreejith2005 dist/hackerrank.svg
       # Contribution City: the contribution calendar as an isometric 3D city
       - run: |
           python3 repo/scripts/viz/build_city3d.py ${{ github.repository_owner }} dist/city.svg \

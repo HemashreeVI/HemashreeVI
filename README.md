@@ -93,7 +93,8 @@
 </p>
 
 <p align="center">
-  <a href="https://leetcode.com/u/hemashree_272005/"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/leetcode.svg" width="100%" alt="My LeetCode stats: problems solved by difficulty, ranking and a heatmap of the last 52 weeks. Updates automatically."></a>
+  <a href="https://leetcode.com/u/hemashree_272005/"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/leetcode.svg" width="49%" alt="My LeetCode stats: problems solved by difficulty, ranking and a heatmap of the last 52 weeks. Updates automatically."></a>
+  <a href="https://www.hackerrank.com/profile/shreejith2005"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/hackerrank.svg" width="49%" alt="My HackerRank badges with their stars and problems solved. Updates automatically."></a>
 </p>
 
 <details>
