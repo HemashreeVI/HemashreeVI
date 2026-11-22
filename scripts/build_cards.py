@@ -1272,7 +1272,7 @@ def id_card(u, ox=0, oy=0):
     badges = [(n, base64.b64encode((ROOT / "assets" / "badges" / f"{n}.png").read_bytes()).decode())
               for n in ("pull-shark", "pair-extraordinaire", "yolo", "quickdraw")]
     cx = 173
-    x0, y0, w, h = 23, 122, 300, 358
+    x0, y0, w, h = 13, 122, 320, 398
     per = 2 * (w + h)
     gh = lambda x, y, sc, fill="#F0F6FC", rot=0: f'<g transform="translate({x} {y}) rotate({rot}) scale({sc}) translate(-12 -12)"><path d="{GITHUB_PATH}" fill="{fill}"/></g>'
     # lanyard straps: black with a neon glow and GitHub logos along them
@@ -1291,14 +1291,44 @@ def id_card(u, ox=0, oy=0):
         "pin": '<path d="M0 6 C-4 1 -5 -1 -5 -2.5 A5 5 0 0 1 5 -2.5 C5 -1 4 1 0 6 Z" stroke="#A9B8FF" stroke-width="1.3" fill="none"/><circle cx="0" cy="-2.6" r="1.6" fill="#A9B8FF"/>',
         "play": '<rect x="-6" y="-4.5" width="12" height="9" rx="2.5" fill="#FF3355"/><path d="M-1.5 -2 L2.5 0 L-1.5 2 Z" fill="#fff"/>',
     }
-    rows = [("uni", "VIT Chennai · B.Tech CSE"), ("pin", "Chennai, India · open to work"),
-            ("link", "hemashreevi.github.io"), ("play", "Byte Decoded on YouTube")]
-    row_svg = "".join(f'<g transform="translate({x0 + 26} {y0 + 150 + k * 22})">{icon[ic]}</g>'
-                      + text(x0 + 40, y0 + 154 + k * 22, label, 12, C['mist'], 'sans') for k, (ic, label) in enumerate(rows))
-    bx = x0 + 18
-    badge_svg = "".join(f'<circle cx="{bx + 20 + k * 44}" cy="{y0 + 318}" r="19" fill="#0D1117" stroke="{C["line2"]}"/>'
-                        f'<image x="{bx + 3 + k * 44}" y="{y0 + 301}" width="34" height="34" href="data:image/png;base64,{b}"><title>{n.replace("-", " ").title()}</title></image>'
-                        for k, (n, b) in enumerate(badges))
+    P = "#0D1117"     # panels
+    B = "#30363D"     # panel borders
+    def panel(x, y, pw, ph, title, emoji):
+        return (f'<rect x="{x}" y="{y}" width="{pw}" height="{ph}" rx="9" fill="{P}" stroke="{B}"/>'
+                f'<text x="{x + 9}" y="{y + 17}" class="sans" font-size="10.5" font-weight="800" fill="#F0F6FC">{emoji} {e(title)}</text>')
+    L, T = x0 + 12, y0 + 12            # inner left / top
+    IW = w - 24
+    # tech stack tiles
+    tiles = [("Java", "#E76F00"), ("Py", "#3776AB"), ("Spring", "#6DB33F"), ("Docker", "#2496ED"),
+             ("Kafka", "#E6EDF3"), ("Redis", "#DC382D"), ("React", "#61DAFB"), ("YOLO", "#A855F7")]
+    tx0, ty0 = L + 140, T + 118
+    tile_svg = "".join(f'<rect x="{tx0 + 8 + (k % 4) * 33}" y="{ty0 + 24 + (k // 4) * 27}" width="30" height="23" rx="5" fill="#161B22" stroke="{c}" stroke-opacity=".75"/>'
+                       + text(tx0 + 23 + (k % 4) * 33, ty0 + 39 + (k // 4) * 27, n, 7.5 if len(n) > 4 else 8.5, c, 'mono', 'middle', 'font-weight="700"')
+                       for k, (n, c) in enumerate(tiles))
+    # github stats + language donut
+    stats = [("★", "Total stars", "75"), ("⧉", "Public repos", "44"), ("◆", "Contributions", "640+"), ("🏅", "Achievements", "4")]
+    sx0, sy0 = L, T + 212
+    stat_svg = "".join(text(sx0 + 10, sy0 + 50 + k * 16, f"{ic}  {lab}", 8.5, "#C9D1D9", 'sans')
+                       + text(sx0 + 112, sy0 + 50 + k * 16, val, 8.5, "#F0F6FC", 'mono', 'end', 'font-weight="700"') for k, (ic, lab, val) in enumerate(stats))
+    langs = [("JavaScript", 12, "#F1E05A"), ("Python", 8, "#3572A5"), ("HTML", 6, "#E34C26"), ("Java", 3, "#B07219"), ("Other", 15, "#8B949E")]
+    tot = sum(n for _, n, _ in langs); a0 = -math.pi / 2; dcx, dcy, R = sx0 + 145, sy0 + 52, 16
+    arcs = []
+    for name, n, col in langs:
+        a1 = a0 + 2 * math.pi * n / tot
+        large = 1 if a1 - a0 > math.pi else 0
+        arcs.append(f'<path d="M{dcx + R * math.cos(a0):.1f} {dcy + R * math.sin(a0):.1f} A{R} {R} 0 {large} 1 {dcx + R * math.cos(a1):.1f} {dcy + R * math.sin(a1):.1f}" stroke="{col}" stroke-width="7" fill="none"/>')
+        a0 = a1
+    legend = "".join(f'<circle cx="{sx0 + 128}" cy="{sy0 + 82 + k * 9}" r="2.2" fill="{col}"/>' + text(sx0 + 133, sy0 + 84.5 + k * 9, name, 6.5, "#8B949E", 'sans')
+                     for k, (name, _, col) in enumerate(langs[:3]))
+    # top repositories
+    repos = [("rootlens", 4), ("TriageIQ", 4), ("Nova", 4), ("Leetcode-Solutions", 3), ("smart-day", 3)]
+    rx0, ry0 = L + 182, T + 212
+    repo_svg = "".join(text(rx0 + 9, ry0 + 36 + k * 15, f"• {n if len(n) < 12 else n[:10] + '…'}", 8.5, "#C9D1D9", 'sans')
+                       + text(rx0 + IW - 182 - 8, ry0 + 36 + k * 15, f"★ {st}", 8, "#E3B341", 'mono', 'end') for k, (n, st) in enumerate(repos))
+    li = '<rect x="-8" y="-8" width="16" height="16" rx="3.5" fill="#0A66C2"/><text x="0" y="4.2" text-anchor="middle" font-family="Arial" font-weight="900" font-size="10.5" fill="#fff">in</text>'
+    mail = '<rect x="-8" y="-6" width="16" height="12" rx="2" fill="none" stroke="#E6EDF3" stroke-width="1.5"/><path d="M-7 -5 L0 1 L7 -5" stroke="#E6EDF3" stroke-width="1.5" fill="none"/>'
+    yt = '<rect x="-8.5" y="-6" width="17" height="12" rx="3.5" fill="#FF0033"/><path d="M-2.5 -3 L3.5 0 L-2.5 3 Z" fill="#fff"/>'
+    cy0 = T + 336
     return f"""
 <defs>
   <linearGradient id="{u}-neon" x1="0" y1="0" x2="1" y2="1">
@@ -1314,7 +1344,8 @@ def id_card(u, ox=0, oy=0):
   <radialGradient id="{u}-pink" cx="90%" cy="90%" r="60%"><stop offset="0" stop-color="#DB2777" stop-opacity=".3"/><stop offset="1" stop-color="#DB2777" stop-opacity="0"/></radialGradient>
   <filter id="{u}-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <filter id="{u}-glow2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <clipPath id="{u}-ph"><circle cx="{x0 + 62}" cy="{y0 + 82}" r="40"/></clipPath>
+  <clipPath id="{u}-ph"><circle cx="{x0 + w - 52}" cy="{y0 + 68}" r="36"/></clipPath>
+  <linearGradient id="{u}-endglow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"/><stop offset="1" stop-color="#7C3AED" stop-opacity=".28"/></linearGradient>
 </defs>
 <g transform="translate({ox} {oy})"><g>
   <animateTransform attributeName="transform" type="rotate" values="-1.6 {cx} 0;1.6 {cx} 0;-1.6 {cx} 0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
@@ -1322,29 +1353,37 @@ def id_card(u, ox=0, oy=0):
   <rect x="{cx - 16}" y="80" width="32" height="22" rx="5" fill="#2B2F3A" stroke="#9CA3AF" stroke-width="1.2"/>
   {gh(cx, 91, .55, "#E6EDF3")}
   <rect x="{cx - 7}" y="100" width="14" height="28" rx="4" fill="none" stroke="#C9CED6" stroke-width="2.5"/>
-  <!-- card -->
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-face)"/>
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-blue)"/>
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-pink)"/>
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="none" stroke="url(#{u}-neon)" stroke-width="2" filter="url(#{u}-glow)"/>
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="70 {per - 70}" opacity=".9">
-    <animate attributeName="stroke-dashoffset" values="0;-{per}" dur="5s" repeatCount="indefinite"/></rect>
-  <rect x="{cx - 22}" y="{y0 + 12}" width="44" height="7" rx="3.5" fill="#0A0C1C" stroke="{C['line2']}"/>
-  {text(x0 + 18, y0 + 32, "HemashreeVI / README.md", 9, C['muted'], 'mono')}
-  <rect x="{x0 + w - 52}" y="{y0 + 21}" width="34" height="16" rx="8" fill="none" stroke="url(#{u}-neon)"/>
-  {text(x0 + w - 35, y0 + 32.5, "ID", 9, "#F0ABFC", 'mono', 'middle', 'font-weight="700" letter-spacing="2"')}
-  <circle cx="{x0 + 62}" cy="{y0 + 82}" r="44" fill="none" stroke="url(#{u}-neon)" stroke-width="2.5" filter="url(#{u}-glow)"/>
-  <image x="{x0 + 22}" y="{y0 + 42}" width="80" height="80" clip-path="url(#{u}-ph)" href="data:image/webp;base64,{photo}"/>
-  <text x="{x0 + 120}" y="{y0 + 76}" class="sans" font-size="31" font-weight="900" letter-spacing=".5" fill="#FFFFFF">HEMA</text>
-  <text x="{x0 + 120}" y="{y0 + 106}" class="sans" font-size="31" font-weight="900" letter-spacing=".5" fill="url(#{u}-name)">SHREE</text>
-  {text(x0 + 121, y0 + 125, "Software Engineer & Builder", 11.5, C['mist'], 'sans', 'start', 'font-weight="600"')}
-  {row_svg}
-  <rect x="{x0 + 18}" y="{y0 + 240}" width="{w - 36}" height="28" rx="7" fill="#0D1117" fill-opacity=".7" stroke="{C['line2']}"/>
-  {gh(x0 + 100, y0 + 254, .55, "#E6EDF3")}
-  {text(x0 + 114, y0 + 258, "github.com/HemashreeVI", 11.5, C['silver'], 'sans', 'start', 'font-weight="700"')}
-  {text(x0 + 18, y0 + 290, "Achievements", 11, C['silver'], 'sans', 'start', 'font-weight="700"')}
-  {badge_svg}
-  {text(x0 + w - 18, y0 + 322, "HVI-2027", 9, C['dim'], 'mono', 'end', 'letter-spacing="1.5"')}
+
+  <!-- card: full black, with a soft theme glow at the bottom -->
+  <ellipse cx="{cx}" cy="{y0 + h - 4}" rx="{w * .46:.0f}" ry="22" fill="url(#{u}-neon)" opacity=".55" filter="url(#{u}-glow2)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="20" fill="#000000" stroke="#30363D"/>
+  <rect x="{x0}" y="{y0 + h - 60}" width="{w}" height="60" rx="20" fill="url(#{u}-endglow)"/>
+  <rect x="{x0 + 22}" y="{y0 + h - 1.5}" width="{w - 44}" height="2" rx="1" fill="url(#{u}-neon)" opacity=".9"/>
+  <rect x="{cx - 22}" y="{y0 + 10}" width="44" height="7" rx="3.5" fill="#0D1117" stroke="#30363D"/>
+  {text(L, T + 14, "▣ README.md", 8.5, "#8B949E", 'mono')}
+  <text x="{L}" y="{T + 44}" class="sans" font-size="21" font-weight="900" fill="#F0F6FC">Hi there! 👋</text>
+  <text x="{L}" y="{T + 70}" class="sans" font-size="21" font-weight="900" fill="#F0F6FC">I'm <tspan fill="url(#{u}-name)">Hemashree</tspan></text>
+  {text(L, T + 88, "Software Engineer | Open Source Enthusiast |", 8.5, "#C9D1D9", 'sans')}
+  {text(L, T + 100, "Patent co-inventor", 8.5, "#C9D1D9", 'sans')}
+  <circle cx="{x0 + w - 52}" cy="{T + 56}" r="40" fill="none" stroke="url(#{u}-neon)" stroke-width="3" filter="url(#{u}-glow)"/>
+  <image x="{x0 + w - 88}" y="{T + 20}" width="72" height="72" clip-path="url(#{u}-ph)" href="data:image/webp;base64,{photo}"/>
+  {panel(L, T + 118, 132, 84, "About Me", "🚀")}
+  {text(L + 9, T + 148, "I build safe systems: vision", 7.8, "#C9D1D9", 'sans')}
+  {text(L + 9, T + 161, "models, backends and IoT,", 7.8, "#C9D1D9", 'sans')}
+  {text(L + 9, T + 174, "from idea to production.", 7.8, "#C9D1D9", 'sans')}
+  {panel(tx0, ty0, IW - 140, 84, "Tech Stack", "🛠")}
+  {tile_svg}
+  {panel(sx0, sy0, 174, 112, "GitHub Stats", "📊")}
+  {text(sx0 + 10, sy0 + 31, "@HemashreeVI", 8, "#F0F6FC", 'sans', 'start', 'font-weight="700"')}
+  {stat_svg}
+  {''.join(arcs)}{legend}
+  {panel(rx0, ry0, IW - 182, 112, "Top Repositories", "🔥")}
+  {repo_svg}
+  <rect x="{L}" y="{cy0}" width="{IW}" height="34" rx="9" fill="{P}" stroke="{B}"/>
+  <text x="{L + 9}" y="{cy0 + 21}" class="sans" font-size="10.5" font-weight="800" fill="#F0F6FC">🔗 Let's connect!</text>
+  <g transform="translate({L + 112} {cy0 + 17})">{li}</g><g transform="translate({L + 134} {cy0 + 17})">{mail}</g><g transform="translate({L + 156} {cy0 + 17})">{yt}</g>
+  {text(L + IW - 9, cy0 + 15, "Always open to collaborate", 7, "#8B949E", 'sans', 'end')}
+  {text(L + IW - 9, cy0 + 25, "on great projects ✨", 7, "#8B949E", 'sans', 'end')}
   <!-- the GitHub tag hanging from the strap -->
   <g><animateTransform attributeName="transform" type="rotate" values="9 {cx + 52} 40;-7 {cx + 52} 40;9 {cx + 52} 40" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
     <path d="M{cx + 52} 40 L{cx + 62} 66" stroke="#C9CED6" stroke-width="2" stroke-dasharray="3 2.2"/>
@@ -1358,7 +1397,7 @@ def id_card(u, ox=0, oy=0):
 
 
 def build_id_card():
-    W, H, u = 346, 486, "idc"
+    W, H, u = 346, 528, "idc"
     write("id-card.svg", svg(W, H, u, "ID card: Hemashree, Software Engineer",
           "An ID card swinging on a lanyard with a GitHub tag hanging from its clip: photo, HEMASHREE, Software Engineer, B.Tech CSE at VIT Chennai, open to work. "
           "Based in Chennai, India; speaks Tamil, English, Hindi and Japanese; Design Lead by night. ID HVI-2027.", id_card(u)))
