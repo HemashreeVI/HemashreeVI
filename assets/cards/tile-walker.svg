@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#3B5BDB}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="pt5-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#161B22"/>
-    <stop offset=".55" stop-color="#0D1117"/>
-    <stop offset="1" stop-color="#0D1117"/>
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#F1F4FE"/>
+    <stop offset="1" stop-color="#EAEEFC"/>
   </radialGradient>
   <radialGradient id="pt5-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
-    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3047C9" stop-opacity="0"/>
+    <stop offset="1" stop-color="#3047C9" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="pt5-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1B2559" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#1B2559" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="pt5-silver" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#3047C9"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5B7CF0"/>
   </linearGradient>
   <linearGradient id="pt5-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3B5BDB" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#3B5BDB" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#3B5BDB" stop-opacity="0"/>
   </linearGradient>
   <pattern id="pt5-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity="0"/>
+    <path d="M28 0H0V28" fill="none" stroke="#3B5BDB" stroke-opacity="0"/>
   </pattern>
   <filter id="pt5-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="87"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="pt5-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8B949E"/>
-    <stop offset=".45" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#5E6A92"/>
+    <stop offset=".45" stop-color="#3B5BDB"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#8B949E"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5E6A92"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -65,24 +65,24 @@
   </filter>
 </defs>
 
-<rect x="1" y="1" width="578" height="310" rx="22" fill="url(#pt5-bg)" stroke="#30363D"/>
+<rect x="1" y="1" width="578" height="310" rx="22" fill="url(#pt5-bg)" stroke="#D9DFF5"/>
 <rect x="1" y="1" width="578" height="310" rx="22" fill="url(#pt5-grid)"/>
 <ellipse cx="493" cy="62" rx="203" ry="218" fill="url(#pt5-glowA)"/>
 <ellipse cx="87" cy="250" rx="145" ry="156" fill="url(#pt5-glowB)"/>
-<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#7EE787"/><stop offset="1" stop-color="#E3A6B4"/></linearGradient></defs><g class="float"><g transform="translate(384 22) scale(.58)">
-<rect x="0" y="0" width="310" height="200" rx="16" fill="#0D1117" stroke="#3D444D"/>
-<text x="18" y="26" class="mono" font-size="10" fill="#8B949E" text-anchor="start" >IMU-1 · IMU-2 · load cells</text>
-<polyline points="20.0,90.0 22.7,93.6 25.4,97.2 28.1,100.5 30.8,103.6 33.5,106.3 36.2,108.5 38.9,110.2 41.6,111.4 44.3,111.9 47.0,111.9 49.7,111.2 52.4,110.0 55.1,108.2 57.8,105.9 60.5,103.2 63.2,100.1 65.9,96.7 68.6,93.1 71.3,89.4 74.0,85.8 76.7,82.3 79.4,79.0 82.1,76.0 84.8,73.4 87.5,71.2 90.2,69.6 92.9,68.5 95.6,68.0 98.3,68.2 101.0,68.9 103.7,70.2 106.4,72.1 109.1,74.5 111.8,77.3 114.5,80.4 117.2,83.9 119.9,87.4 122.6,91.1 125.3,94.7 128.0,98.2 130.7,101.5 133.4,104.5 136.1,107.0 138.8,109.1 141.5,110.6 144.2,111.6 146.9,112.0 149.6,111.8 152.3,110.9 155.0,109.5 157.7,107.6 160.4,105.1 163.1,102.3 165.8,99.1 168.5,95.6 171.2,92.0 173.9,88.3 176.6,84.7 179.3,81.3 182.0,78.0 184.7,75.1 187.4,72.7 190.1,70.6 192.8,69.2 195.5,68.3 198.2,68.0 200.9,68.3 203.6,69.2 206.3,70.7 209.0,72.8 211.7,62.0 214.4,67.6 217.1,73.7 219.8,80.3 222.5,87.2 225.2,94.2 227.9,101.0 230.6,107.6 233.3,113.6 236.0,119.0 238.7,123.6 241.4,127.3 244.1,129.9 246.8,131.4 249.5,131.8 252.2,131.0 254.9,129.1 257.6,126.1 260.3,122.1 263.0,117.2 265.7,111.5 268.4,105.3 271.1,98.6 273.8,91.7 276.5,84.8 279.2,78.0 281.9,71.5 284.6,65.5 287.3,60.2" fill="none" stroke="#C9D1D9" stroke-width="1.6" stroke-dasharray="600" stroke-dashoffset="600">
+<defs><linearGradient id="proj-risk" x1="0" x2="1"><stop offset="0" stop-color="#2F9E44"/><stop offset="1" stop-color="#D6336C"/></linearGradient></defs><g class="float"><g transform="translate(384 22) scale(.58)">
+<rect x="0" y="0" width="310" height="200" rx="16" fill="#EAEEFC" stroke="#C4CDF0"/>
+<text x="18" y="26" class="mono" font-size="10" fill="#5E6A92" text-anchor="start" >IMU-1 · IMU-2 · load cells</text>
+<polyline points="20.0,90.0 22.7,93.6 25.4,97.2 28.1,100.5 30.8,103.6 33.5,106.3 36.2,108.5 38.9,110.2 41.6,111.4 44.3,111.9 47.0,111.9 49.7,111.2 52.4,110.0 55.1,108.2 57.8,105.9 60.5,103.2 63.2,100.1 65.9,96.7 68.6,93.1 71.3,89.4 74.0,85.8 76.7,82.3 79.4,79.0 82.1,76.0 84.8,73.4 87.5,71.2 90.2,69.6 92.9,68.5 95.6,68.0 98.3,68.2 101.0,68.9 103.7,70.2 106.4,72.1 109.1,74.5 111.8,77.3 114.5,80.4 117.2,83.9 119.9,87.4 122.6,91.1 125.3,94.7 128.0,98.2 130.7,101.5 133.4,104.5 136.1,107.0 138.8,109.1 141.5,110.6 144.2,111.6 146.9,112.0 149.6,111.8 152.3,110.9 155.0,109.5 157.7,107.6 160.4,105.1 163.1,102.3 165.8,99.1 168.5,95.6 171.2,92.0 173.9,88.3 176.6,84.7 179.3,81.3 182.0,78.0 184.7,75.1 187.4,72.7 190.1,70.6 192.8,69.2 195.5,68.3 198.2,68.0 200.9,68.3 203.6,69.2 206.3,70.7 209.0,72.8 211.7,62.0 214.4,67.6 217.1,73.7 219.8,80.3 222.5,87.2 225.2,94.2 227.9,101.0 230.6,107.6 233.3,113.6 236.0,119.0 238.7,123.6 241.4,127.3 244.1,129.9 246.8,131.4 249.5,131.8 252.2,131.0 254.9,129.1 257.6,126.1 260.3,122.1 263.0,117.2 265.7,111.5 268.4,105.3 271.1,98.6 273.8,91.7 276.5,84.8 279.2,78.0 281.9,71.5 284.6,65.5 287.3,60.2" fill="none" stroke="#3B5BDB" stroke-width="1.6" stroke-dasharray="600" stroke-dashoffset="600">
   <animate attributeName="stroke-dashoffset" values="600;0;0" keyTimes="0;.7;1" dur="4s" repeatCount="indefinite"/>
 </polyline>
-<rect x="210" y="40" width="80" height="100" fill="#E3A6B4" fill-opacity=".08" stroke="#E3A6B4" stroke-dasharray="3 3"/>
-<text x="250" y="156" class="mono" font-size="10" fill="#E3A6B4" text-anchor="middle" >FALL RISK ↑</text>
-<rect x="18" y="168" width="274" height="8" rx="4" fill="#161B22"/>
+<rect x="210" y="40" width="80" height="100" fill="#D6336C" fill-opacity=".08" stroke="#D6336C" stroke-dasharray="3 3"/>
+<text x="250" y="156" class="mono" font-size="10" fill="#D6336C" text-anchor="middle" >FALL RISK ↑</text>
+<rect x="18" y="168" width="274" height="8" rx="4" fill="#FFFFFF"/>
 <rect x="18" y="168" width="40" height="8" rx="4" fill="url(#proj-risk)">
   <animate attributeName="width" values="40;40;250;250" keyTimes="0;.5;.75;1" dur="4s" repeatCount="indefinite"/>
-</rect></g></g><text x="28" y="44" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" letter-spacing="2">PATENT 01 · IoT · FILING IN PROGRESS</text><text x="27" y="80" class="serif" font-size="28" fill="url(#pt5-silver)" text-anchor="start" >Smart Walker</text><text x="28" y="108" class="serif" font-size="14.5" fill="#C9D1D9" text-anchor="start" font-style="italic">A walker that predicts a fall before it</text><text x="28" y="128" class="serif" font-size="14.5" fill="#C9D1D9" text-anchor="start" font-style="italic">happens.</text><rect x="28" y="170" width="524" height="1" fill="#3D444D"/><text x="28" y="202" class="serif" font-size="22" fill="#E6EDF3" text-anchor="start" >2× IMU</text><text x="28" y="222" class="sans" font-size="11" fill="#8B949E" text-anchor="start" >+ load cells, fused</text><text x="206" y="202" class="serif" font-size="22" fill="#E6EDF3" text-anchor="start" >&lt; $30</text><text x="206" y="222" class="sans" font-size="11" fill="#8B949E" text-anchor="start" >standalone on Arduino</text><text x="384" y="202" class="serif" font-size="22" fill="#E6EDF3" text-anchor="start" >Patent</text><text x="384" y="222" class="sans" font-size="11" fill="#8B949E" text-anchor="start" >co-inventor</text><rect x="28" y="254" width="65" height="24" rx="12" fill="#161B22" stroke="#3D444D"/><text x="39" y="270" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" >Arduino</text>
-<rect x="100.69999999999999" y="254" width="40" height="24" rx="12" fill="#161B22" stroke="#3D444D"/><text x="111.69999999999999" y="270" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" >C++</text>
-<rect x="149.0" y="254" width="65" height="24" rx="12" fill="#161B22" stroke="#3D444D"/><text x="160.0" y="270" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" >MPU6050</text>
-<rect x="221.7" y="254" width="52" height="24" rx="12" fill="#161B22" stroke="#3D444D"/><text x="232.7" y="270" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" >HX711</text>
-<rect x="282.2" y="254" width="101" height="24" rx="12" fill="#161B22" stroke="#3D444D"/><text x="293.2" y="270" class="mono" font-size="10" fill="#C9D1D9" text-anchor="start" >Sensor fusion</text><text x="558" y="292" class="mono" font-size="11" fill="#8B949E" text-anchor="end" >open ↗</text>
+</rect></g></g><text x="28" y="44" class="mono" font-size="10" fill="#3B5BDB" text-anchor="start" letter-spacing="2">PATENT 01 · IoT · FILING IN PROGRESS</text><text x="27" y="80" class="serif" font-size="28" fill="url(#pt5-silver)" text-anchor="start" >Smart Walker</text><text x="28" y="108" class="serif" font-size="14.5" fill="#3A4570" text-anchor="start" font-style="italic">A walker that predicts a fall before it</text><text x="28" y="128" class="serif" font-size="14.5" fill="#3A4570" text-anchor="start" font-style="italic">happens.</text><rect x="28" y="170" width="524" height="1" fill="#C4CDF0"/><text x="28" y="202" class="serif" font-size="22" fill="#1B2559" text-anchor="start" >2× IMU</text><text x="28" y="222" class="sans" font-size="11" fill="#5E6A92" text-anchor="start" >+ load cells, fused</text><text x="206" y="202" class="serif" font-size="22" fill="#1B2559" text-anchor="start" >&lt; $30</text><text x="206" y="222" class="sans" font-size="11" fill="#5E6A92" text-anchor="start" >standalone on Arduino</text><text x="384" y="202" class="serif" font-size="22" fill="#1B2559" text-anchor="start" >Patent</text><text x="384" y="222" class="sans" font-size="11" fill="#5E6A92" text-anchor="start" >co-inventor</text><rect x="28" y="254" width="65" height="24" rx="12" fill="#FFFFFF" stroke="#C4CDF0"/><text x="39" y="270" class="mono" font-size="10" fill="#3A4570" text-anchor="start" >Arduino</text>
+<rect x="100.69999999999999" y="254" width="40" height="24" rx="12" fill="#FFFFFF" stroke="#C4CDF0"/><text x="111.69999999999999" y="270" class="mono" font-size="10" fill="#3A4570" text-anchor="start" >C++</text>
+<rect x="149.0" y="254" width="65" height="24" rx="12" fill="#FFFFFF" stroke="#C4CDF0"/><text x="160.0" y="270" class="mono" font-size="10" fill="#3A4570" text-anchor="start" >MPU6050</text>
+<rect x="221.7" y="254" width="52" height="24" rx="12" fill="#FFFFFF" stroke="#C4CDF0"/><text x="232.7" y="270" class="mono" font-size="10" fill="#3A4570" text-anchor="start" >HX711</text>
+<rect x="282.2" y="254" width="101" height="24" rx="12" fill="#FFFFFF" stroke="#C4CDF0"/><text x="293.2" y="270" class="mono" font-size="10" fill="#3A4570" text-anchor="start" >Sensor fusion</text><text x="558" y="292" class="mono" font-size="11" fill="#5E6A92" text-anchor="end" >open ↗</text>
 </svg>

@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#3B5BDB}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="t04-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#161B22"/>
-    <stop offset=".55" stop-color="#0D1117"/>
-    <stop offset="1" stop-color="#0D1117"/>
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#F1F4FE"/>
+    <stop offset="1" stop-color="#EAEEFC"/>
   </radialGradient>
   <radialGradient id="t04-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
-    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3047C9" stop-opacity="0"/>
+    <stop offset="1" stop-color="#3047C9" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="t04-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1B2559" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#1B2559" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="t04-silver" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#3047C9"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5B7CF0"/>
   </linearGradient>
   <linearGradient id="t04-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3B5BDB" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#3B5BDB" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#3B5BDB" stop-opacity="0"/>
   </linearGradient>
   <pattern id="t04-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity="0"/>
+    <path d="M28 0H0V28" fill="none" stroke="#3B5BDB" stroke-opacity="0"/>
   </pattern>
   <filter id="t04-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="22"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="t04-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8B949E"/>
-    <stop offset=".45" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#5E6A92"/>
+    <stop offset=".45" stop-color="#3B5BDB"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#8B949E"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5E6A92"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -65,12 +65,13 @@
   </filter>
 </defs>
 
-<text x="30" y="32" class="mono" font-size="12" fill="#E6EDF3" text-anchor="start" letter-spacing="3">04</text>
-<text x="58" y="32" class="mono" font-size="12" fill="#C9D1D9" text-anchor="start" letter-spacing="3">RESEARCH &amp; PATENTS</text>
-<text x="1170" y="32" class="mono" font-size="11" fill="#8B949E" text-anchor="end" letter-spacing="3">2 PATENTS · 1 RESEARCH</text>
-<text x="30" y="80" class="serif" font-size="40" fill="#E6EDF3">Ideas, <tspan fill="url(#t04-sweep)" font-style="italic">on file.</tspan></text>
+<rect x="1" y="1" width="1198" height="102" rx="16" fill="#F1F4FE" stroke="#D9DFF5"/>
+<text x="30" y="32" class="mono" font-size="12" fill="#1B2559" text-anchor="start" letter-spacing="3">04</text>
+<text x="58" y="32" class="mono" font-size="12" fill="#3B5BDB" text-anchor="start" letter-spacing="3">RESEARCH &amp; PATENTS</text>
+<text x="1170" y="32" class="mono" font-size="11" fill="#5E6A92" text-anchor="end" letter-spacing="3">2 PATENTS · 1 RESEARCH</text>
+<text x="30" y="80" class="serif" font-size="40" fill="#1B2559">Ideas, <tspan fill="url(#t04-sweep)" font-style="italic">on file.</tspan></text>
 <rect x="30" y="96" width="1140" height="1.2" fill="url(#t04-rule)"/>
-<circle cy="96.6" r="2.6" fill="#fff">
+<circle cy="96.6" r="2.6" fill="#3B5BDB">
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>

@@ -23,22 +23,22 @@ OUT = ROOT / "assets" / "cards"
 PHOTO = ROOT / "assets" / "photo.jpg"
 
 # ---------------------------------------------------------------- palette
-C = {   # GitHub's own dark colours, so every card sits on the profile page like part of it
-    "bg0": "#0D1117",      # GitHub page background
-    "bg1": "#0D1117",
-    "bg2": "#161B22",      # GitHub panels
-    "panel": "#161B22",
-    "line": "#30363D",     # GitHub borders
-    "line2": "#3D444D",
-    "violet": "#8B949E",
-    "lav": "#C9D1D9",      # silver accents
-    "lilac": "#E6EDF3",
-    "silver": "#E6EDF3",   # GitHub text
-    "mist": "#C9D1D9",
-    "muted": "#8B949E",    # GitHub muted text
-    "dim": "#6E7681",
-    "rose": "#E3A6B4",
-    "mint": "#7EE787",
+C = {   # light periwinkle & indigo, matching the profile banner (assets/cards/banner.webp)
+    "bg0": "#EAEEFC",
+    "bg1": "#F1F4FE",
+    "bg2": "#FFFFFF",
+    "panel": "#FFFFFF",
+    "line": "#D9DFF5",
+    "line2": "#C4CDF0",
+    "violet": "#3047C9",   # deep indigo
+    "lav": "#3B5BDB",      # banner blue (accents, italic title words)
+    "lilac": "#5B7CF0",
+    "silver": "#1B2559",   # main text: deep navy
+    "mist": "#3A4570",
+    "muted": "#5E6A92",
+    "dim": "#8A94B8",
+    "rose": "#D6336C",
+    "mint": "#2F9E44",
 }
 
 SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
@@ -375,9 +375,9 @@ def base_defs(uid):
     <stop offset="1" stop-color="{C['silver']}" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="{uid}-silver" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="{C['mist']}"/>
-    <stop offset="1" stop-color="{C['lav']}"/>
+    <stop offset="0" stop-color="{C['violet']}"/>
+    <stop offset=".55" stop-color="{C['lav']}"/>
+    <stop offset="1" stop-color="{C['lilac']}"/>
   </linearGradient>
   <linearGradient id="{uid}-rule" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{C['lav']}" stop-opacity="0"/>
@@ -429,7 +429,7 @@ def stars(w, h, n, seed, pad=20):
         x, y = rnd.uniform(pad, w - pad), rnd.uniform(pad, h - pad)
         r = rnd.choice([0.8, 1, 1.2, 1.6])
         d = rnd.uniform(0, 4)
-        out.append(f'<circle class="twinkle" cx="{x:.0f}" cy="{y:.0f}" r="{r}" fill="{C["silver"]}" style="animation-delay:{d:.1f}s"/>')
+        out.append(f'<circle class="twinkle" cx="{x:.0f}" cy="{y:.0f}" r="{r}" fill="{C["lilac"]}" fill-opacity=".35" style="animation-delay:{d:.1f}s"/>')
     return "\n".join(out)
 
 
@@ -626,12 +626,13 @@ def build_title(num, kicker, plain, italic, right, slug, extra=""):
     W, H, u = 1200, 104, f"t{num}"
     width_plain = len(plain) * 19
     body = f"""
+<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="16" fill="{C['bg1']}" stroke="{C['line']}"/>
 {text(30, 32, num, 12, C['silver'], 'mono', 'start', 'letter-spacing="3"')}
 {text(58, 32, kicker, 12, C['lav'], 'mono', 'start', 'letter-spacing="3"')}
 {text(1170, 32, right, 11, C['muted'], 'mono', 'end', 'letter-spacing="3"')}
 <text x="30" y="80" class="serif" font-size="40" fill="{C['silver']}">{e(plain)} <tspan fill="url(#{u}-sweep)" font-style="italic">{e(italic)}</tspan></text>
 <rect x="30" y="96" width="1140" height="1.2" fill="url(#{u}-rule)"/>
-<circle cy="96.6" r="2.6" fill="#fff">
+<circle cy="96.6" r="2.6" fill="{C['lav']}">
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
 </circle>
@@ -1247,7 +1248,7 @@ def build_showcase():
 <clipPath id="{u}-shot"><rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10"/></clipPath>
 <image x="{ix}" y="{iy}" width="{iw}" height="{ih}" preserveAspectRatio="xMidYMin slice" clip-path="url(#{u}-shot)" href="data:image/webp;base64,{shot}"/>
 <rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10" fill="none" stroke="{C['line2']}"/>
-<defs><linearGradient id="{u}-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7EE787"/><stop offset="1" stop-color="#3FB950"/></linearGradient></defs>
+<defs><linearGradient id="{u}-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DA44E"/><stop offset="1" stop-color="#1A7F37"/></linearGradient></defs>
 <text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-green)">{e(p['num'])}</text>
 {text(24 + num_w + 14, iy + ih + 52, p['label'], 15, C['muted'], 'sans')}
 {"".join(text(24, iy + ih + 86 + i * 22, ln, 15, C['mist'], 'sans') for i, ln in enumerate(lines[:2]))}

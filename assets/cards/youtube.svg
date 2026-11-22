@@ -6,7 +6,7 @@
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
 .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
-.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#C9D1D9}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#3B5BDB}
 .twinkle{animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
 .pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
@@ -21,30 +21,30 @@
 
 <defs>
   <radialGradient id="yt-bg" cx="70%" cy="30%" r="90%">
-    <stop offset="0" stop-color="#161B22"/>
-    <stop offset=".55" stop-color="#0D1117"/>
-    <stop offset="1" stop-color="#0D1117"/>
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#F1F4FE"/>
+    <stop offset="1" stop-color="#EAEEFC"/>
   </radialGradient>
   <radialGradient id="yt-glowA" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#8B949E" stop-opacity="0"/>
-    <stop offset="1" stop-color="#8B949E" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3047C9" stop-opacity="0"/>
+    <stop offset="1" stop-color="#3047C9" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="yt-glowB" cx="50%" cy="50%" r="50%">
-    <stop offset="0" stop-color="#E6EDF3" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#E6EDF3" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1B2559" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#1B2559" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="yt-silver" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#FFFFFF"/>
-    <stop offset=".5" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#3047C9"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5B7CF0"/>
   </linearGradient>
   <linearGradient id="yt-rule" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#C9D1D9" stop-opacity="0"/>
-    <stop offset=".25" stop-color="#C9D1D9" stop-opacity=".8"/>
-    <stop offset="1" stop-color="#C9D1D9" stop-opacity="0"/>
+    <stop offset="0" stop-color="#3B5BDB" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#3B5BDB" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#3B5BDB" stop-opacity="0"/>
   </linearGradient>
   <pattern id="yt-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-    <path d="M28 0H0V28" fill="none" stroke="#C9D1D9" stroke-opacity="0"/>
+    <path d="M28 0H0V28" fill="none" stroke="#3B5BDB" stroke-opacity="0"/>
   </pattern>
   <filter id="yt-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="43"/>
@@ -52,11 +52,11 @@
     <feGaussianBlur stdDeviation="6"/>
   </filter>
   <linearGradient id="yt-sweep" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#8B949E"/>
-    <stop offset=".45" stop-color="#C9D1D9"/>
+    <stop offset="0" stop-color="#5E6A92"/>
+    <stop offset=".45" stop-color="#3B5BDB"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
-    <stop offset=".55" stop-color="#C9D1D9"/>
-    <stop offset="1" stop-color="#8B949E"/>
+    <stop offset=".55" stop-color="#3B5BDB"/>
+    <stop offset="1" stop-color="#5E6A92"/>
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
@@ -65,9 +65,9 @@
   </filter>
 </defs>
 
-<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#yt-bg)" stroke="#30363D"/>
+<rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#yt-bg)" stroke="#D9DFF5"/>
 <rect x="1" y="1" width="1198" height="328" rx="22" fill="url(#yt-grid)"/>
 <ellipse cx="900" cy="132" rx="420" ry="231" fill="url(#yt-glowA)"/>
 <ellipse cx="300" cy="198" rx="300" ry="165" fill="url(#yt-glowB)"/>
-<radialGradient id="yt-red" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF0033" stop-opacity=".35"/><stop offset="1" stop-color="#FF0033" stop-opacity="0"/></radialGradient><ellipse cx="860" cy="165" rx="360" ry="200" fill="url(#yt-red)"/><g transform="translate(40 40)"><rect width="68" height="48" rx="14" fill="#FF0033"/><path d="M27 14L45 24L27 34Z" fill="#fff"/></g><text x="124" y="60" class="mono" font-size="11" fill="#FF8FA3" text-anchor="start" letter-spacing="3">YOUTUBE CHANNEL</text><text x="124" y="84" class="mono" font-size="16" fill="#C9D1D9" text-anchor="start" >@shreejith-l7o · 60+ videos</text><text x="38" y="152" class="serif" font-size="44" fill="url(#yt-silver)" text-anchor="start" >Byte Decoded</text><text x="40" y="186" class="sans" font-size="15" fill="#8B949E" text-anchor="start" >Dev builds, AI/ML, project walkthroughs and tech vlogs.</text><g transform="translate(40 216)"><rect width="190" height="50" rx="25" fill="#FF0033"><animate attributeName="opacity" values="1;.82;1" dur="2s" repeatCount="indefinite"/></rect><text x="78" y="31" class="sans" font-size="16" font-weight="700" fill="#fff" letter-spacing="1.5">SUBSCRIBE</text><g transform="translate(40 25)"><g><path d="M-9 6V-1a9 9 0 0 1 18 0V6l3 3H-12Z M-3 11a3 3 0 0 0 6 0" fill="#fff"/><animateTransform attributeName="transform" type="rotate" values="0;18;-18;12;-12;0;0" keyTimes="0;.06;.12;.18;.24;.3;1" dur="3s" repeatCount="indefinite"/></g></g></g><text x="250" y="248" class="mono" font-size="12" fill="#6E7681" text-anchor="start" >▸ click anywhere on this card</text><rect x="640" y="34" width="520" height="262" rx="16" fill="#0D1117" stroke="#3D444D"/><rect x="640" y="34" width="520" height="262" rx="16" fill="url(#yt-grid)"/><rect x="680" y="184" width="56" height="40" rx="6" fill="#C9D1D9" fill-opacity=".18"><animate attributeName="height" values="40;70;40" dur="2.0s" repeatCount="indefinite"/><animate attributeName="y" values="184;154;184" dur="2.0s" repeatCount="indefinite"/></rect><rect x="772" y="147" width="56" height="77" rx="6" fill="#E3A6B4" fill-opacity=".18"><animate attributeName="height" values="77;107;77" dur="2.4s" repeatCount="indefinite"/><animate attributeName="y" values="147;117;147" dur="2.4s" repeatCount="indefinite"/></rect><rect x="864" y="180" width="56" height="44" rx="6" fill="#7EE787" fill-opacity=".18"><animate attributeName="height" values="44;74;44" dur="2.8s" repeatCount="indefinite"/><animate attributeName="y" values="180;150;180" dur="2.8s" repeatCount="indefinite"/></rect><rect x="956" y="143" width="56" height="81" rx="6" fill="#C9D1D9" fill-opacity=".18"><animate attributeName="height" values="81;111;81" dur="3.2s" repeatCount="indefinite"/><animate attributeName="y" values="143;113;143" dur="3.2s" repeatCount="indefinite"/></rect><rect x="1048" y="176" width="56" height="48" rx="6" fill="#E3A6B4" fill-opacity=".18"><animate attributeName="height" values="48;78;48" dur="3.6s" repeatCount="indefinite"/><animate attributeName="y" values="176;146;176" dur="3.6s" repeatCount="indefinite"/></rect><circle cx="900.0" cy="146" r="44" fill="#FF0033" fill-opacity=".25"><animate attributeName="r" values="40;58;40" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values=".35;0;.35" dur="2.4s" repeatCount="indefinite"/></circle><rect x="858.0" y="116" width="84" height="60" rx="18" fill="#FF0033"/><path d="M889.0 131L915.0 146L889.0 161Z" fill="#fff"/><rect x="664" y="262" width="472" height="5" rx="2.5" fill="#3D444D"/><rect x="664" y="262" width="0" height="5" rx="2.5" fill="#FF0033"><animate attributeName="width" values="0;472" dur="8s" repeatCount="indefinite"/></rect><circle cy="264.5" r="7" fill="#FF0033"><animate attributeName="cx" values="664;1136" dur="8s" repeatCount="indefinite"/></circle><text x="664" y="250" class="mono" font-size="11" fill="#C9D1D9" text-anchor="start" letter-spacing="2">▶ NEW VIDEOS</text><text x="1136" y="250" class="mono" font-size="11" fill="#8B949E" text-anchor="end" >@shreejith-l7o</text>
+<radialGradient id="yt-red" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF0033" stop-opacity=".35"/><stop offset="1" stop-color="#FF0033" stop-opacity="0"/></radialGradient><ellipse cx="860" cy="165" rx="360" ry="200" fill="url(#yt-red)"/><g transform="translate(40 40)"><rect width="68" height="48" rx="14" fill="#FF0033"/><path d="M27 14L45 24L27 34Z" fill="#fff"/></g><text x="124" y="60" class="mono" font-size="11" fill="#FF8FA3" text-anchor="start" letter-spacing="3">YOUTUBE CHANNEL</text><text x="124" y="84" class="mono" font-size="16" fill="#3A4570" text-anchor="start" >@shreejith-l7o · 60+ videos</text><text x="38" y="152" class="serif" font-size="44" fill="url(#yt-silver)" text-anchor="start" >Byte Decoded</text><text x="40" y="186" class="sans" font-size="15" fill="#5E6A92" text-anchor="start" >Dev builds, AI/ML, project walkthroughs and tech vlogs.</text><g transform="translate(40 216)"><rect width="190" height="50" rx="25" fill="#FF0033"><animate attributeName="opacity" values="1;.82;1" dur="2s" repeatCount="indefinite"/></rect><text x="78" y="31" class="sans" font-size="16" font-weight="700" fill="#fff" letter-spacing="1.5">SUBSCRIBE</text><g transform="translate(40 25)"><g><path d="M-9 6V-1a9 9 0 0 1 18 0V6l3 3H-12Z M-3 11a3 3 0 0 0 6 0" fill="#fff"/><animateTransform attributeName="transform" type="rotate" values="0;18;-18;12;-12;0;0" keyTimes="0;.06;.12;.18;.24;.3;1" dur="3s" repeatCount="indefinite"/></g></g></g><text x="250" y="248" class="mono" font-size="12" fill="#8A94B8" text-anchor="start" >▸ click anywhere on this card</text><rect x="640" y="34" width="520" height="262" rx="16" fill="#EAEEFC" stroke="#C4CDF0"/><rect x="640" y="34" width="520" height="262" rx="16" fill="url(#yt-grid)"/><rect x="680" y="184" width="56" height="40" rx="6" fill="#3B5BDB" fill-opacity=".18"><animate attributeName="height" values="40;70;40" dur="2.0s" repeatCount="indefinite"/><animate attributeName="y" values="184;154;184" dur="2.0s" repeatCount="indefinite"/></rect><rect x="772" y="147" width="56" height="77" rx="6" fill="#D6336C" fill-opacity=".18"><animate attributeName="height" values="77;107;77" dur="2.4s" repeatCount="indefinite"/><animate attributeName="y" values="147;117;147" dur="2.4s" repeatCount="indefinite"/></rect><rect x="864" y="180" width="56" height="44" rx="6" fill="#2F9E44" fill-opacity=".18"><animate attributeName="height" values="44;74;44" dur="2.8s" repeatCount="indefinite"/><animate attributeName="y" values="180;150;180" dur="2.8s" repeatCount="indefinite"/></rect><rect x="956" y="143" width="56" height="81" rx="6" fill="#3B5BDB" fill-opacity=".18"><animate attributeName="height" values="81;111;81" dur="3.2s" repeatCount="indefinite"/><animate attributeName="y" values="143;113;143" dur="3.2s" repeatCount="indefinite"/></rect><rect x="1048" y="176" width="56" height="48" rx="6" fill="#D6336C" fill-opacity=".18"><animate attributeName="height" values="48;78;48" dur="3.6s" repeatCount="indefinite"/><animate attributeName="y" values="176;146;176" dur="3.6s" repeatCount="indefinite"/></rect><circle cx="900.0" cy="146" r="44" fill="#FF0033" fill-opacity=".25"><animate attributeName="r" values="40;58;40" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values=".35;0;.35" dur="2.4s" repeatCount="indefinite"/></circle><rect x="858.0" y="116" width="84" height="60" rx="18" fill="#FF0033"/><path d="M889.0 131L915.0 146L889.0 161Z" fill="#fff"/><rect x="664" y="262" width="472" height="5" rx="2.5" fill="#C4CDF0"/><rect x="664" y="262" width="0" height="5" rx="2.5" fill="#FF0033"><animate attributeName="width" values="0;472" dur="8s" repeatCount="indefinite"/></rect><circle cy="264.5" r="7" fill="#FF0033"><animate attributeName="cx" values="664;1136" dur="8s" repeatCount="indefinite"/></circle><text x="664" y="250" class="mono" font-size="11" fill="#3A4570" text-anchor="start" letter-spacing="2">▶ NEW VIDEOS</text><text x="1136" y="250" class="mono" font-size="11" fill="#5E6A92" text-anchor="end" >@shreejith-l7o</text>
 </svg>

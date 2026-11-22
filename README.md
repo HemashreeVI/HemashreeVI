@@ -9,7 +9,7 @@
 </p>
 
 <a href="https://hemashreevi.github.io">
-  <img src="./assets/cards/hero.svg" width="100%" alt="HEMASHREE, Software Engineer. B.Tech Computer Science Engineering at VIT Chennai. Building systems that see, decide and keep people safe.">
+  <img src="./assets/cards/banner.webp" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node.">
 </a>
 
 <p align="center">
