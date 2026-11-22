@@ -1256,6 +1256,94 @@ def build_showcase():
         desc = f"{p['repo']} ({p['tag']}): {p['num']} {p['label']}. {p['desc']} Screenshot from the project."
         write(f"show-{p['slug']}.svg", svg(W, H, u, p['repo'], desc, body))
 
+
+# ---------------------------------------------------------------- ID card on a lanyard (About section)
+GITHUB_PATH = ("M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04"
+    "-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 "
+    "1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303"
+    "-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23"
+    ".645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896"
+    "-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12")
+
+
+def id_card(u, ox=0, oy=0):
+    """A swinging ID card on a lanyard, with a GitHub tag hanging from the clip. 346 x 480 units."""
+    photo = base64.b64encode((ROOT / "assets" / "id-photo.webp").read_bytes()).decode()
+    cx = 173                      # centre line
+    x0, y0, w, h = 23, 116, 300, 364
+    per = 2 * (w + h)
+    rows = [("BASED IN", "Chennai, India", "open to opportunities"),
+            ("SPEAKS", "4 languages", "Tamil · English · Hindi · 日本語"),
+            ("BY NIGHT", "Design Lead", "posters & creatives")]
+    row_svg = []
+    for k, (lab, big, small) in enumerate(rows):
+        ry = y0 + 220 + k * 38
+        row_svg.append(f"""<rect x="{x0 + 18}" y="{ry - 15}" width="3" height="34" rx="1.5" fill="url(#{u}-neon)"/>
+{text(x0 + 30, ry - 2, lab, 9, C['lav'], 'mono', 'start', 'letter-spacing="2.5"')}
+<text x="{x0 + 30}" y="{ry + 15}" class="sans" font-size="15" font-weight="700" fill="{C['silver']}">{e(big)}<tspan font-size="11" font-weight="400" fill="{C['muted']}">  {e(small)}</tspan></text>""")
+    bars = "".join(f'<rect x="{x0 + 186 + i * 4}" y="{y0 + h - 34}" width="{[2,1,3,1,2][i % 5]}" height="18" fill="{C["mist"]}" opacity=".7"/>' for i in range(24))
+    return f"""
+<defs>
+  <linearGradient id="{u}-neon" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3B82F6"/><stop offset=".5" stop-color="#A855F7"/><stop offset="1" stop-color="#EC4899"/>
+  </linearGradient>
+  <linearGradient id="{u}-name" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#60A5FA"/><stop offset=".55" stop-color="#A78BFA"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <linearGradient id="{u}-face" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#101633"/><stop offset=".6" stop-color="#151236"/><stop offset="1" stop-color="#2A1236"/>
+  </linearGradient>
+  <radialGradient id="{u}-blue" cx="15%" cy="20%" r="70%"><stop offset="0" stop-color="#2563EB" stop-opacity=".35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+  <radialGradient id="{u}-pink" cx="90%" cy="85%" r="60%"><stop offset="0" stop-color="#DB2777" stop-opacity=".3"/><stop offset="1" stop-color="#DB2777" stop-opacity="0"/></radialGradient>
+  <filter id="{u}-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="{u}-ph"><circle cx="{cx}" cy="{y0 + 80}" r="44"/></clipPath>
+  <linearGradient id="{u}-strap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#6D28D9"/></linearGradient>
+</defs>
+<g transform="translate({ox} {oy})"><g>
+  <animateTransform attributeName="transform" type="rotate" values="-1.6 {cx} 0;1.6 {cx} 0;-1.6 {cx} 0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+  <!-- lanyard -->
+  <path d="M{cx - 80} -4 L{cx - 9} 82 M{cx + 80} -4 L{cx + 9} 82" stroke="url(#{u}-strap)" stroke-width="14" stroke-linecap="round"/>
+  <text class="mono" font-size="7.5" letter-spacing="2" fill="#C4B5FD" transform="translate({cx - 76} 6) rotate(47)">HEMASHREEVI</text>
+  <rect x="{cx - 13}" y="78" width="26" height="20" rx="4" fill="#9CA3AF" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="{cx - 6}" y="96" width="12" height="24" rx="3" fill="none" stroke="#D1D5DB" stroke-width="2.5"/>
+  <!-- card -->
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-face)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-blue)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="url(#{u}-pink)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="none" stroke="url(#{u}-neon)" stroke-width="2" filter="url(#{u}-glow)"/>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="22" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="70 {per - 70}" opacity=".9">
+    <animate attributeName="stroke-dashoffset" values="0;-{per}" dur="5s" repeatCount="indefinite"/></rect>
+  <rect x="{cx - 22}" y="{y0 + 12}" width="44" height="7" rx="3.5" fill="#0A0C1C" stroke="{C['line2']}"/>
+  {text(x0 + 18, y0 + 34, "@HemashreeVI", 9.5, C['muted'], 'mono')}
+  <rect x="{x0 + w - 56}" y="{y0 + 22}" width="38" height="17" rx="8.5" fill="none" stroke="url(#{u}-neon)"/>
+  {text(x0 + w - 37, y0 + 34, "ID", 9.5, "#F0ABFC", 'mono', 'middle', 'font-weight="700" letter-spacing="2"')}
+  <circle cx="{cx}" cy="{y0 + 80}" r="49" fill="none" stroke="url(#{u}-neon)" stroke-width="2.5" filter="url(#{u}-glow)"/>
+  <image x="{cx - 44}" y="{y0 + 36}" width="88" height="88" clip-path="url(#{u}-ph)" href="data:image/webp;base64,{photo}"/>
+  <text x="{cx}" y="{y0 + 160}" text-anchor="middle" class="sans" font-size="30" font-weight="900" letter-spacing="1" fill="#FFFFFF">HEMASHREE</text>
+  <text x="{cx}" y="{y0 + 181}" text-anchor="middle" class="sans" font-size="13" font-weight="800" letter-spacing="3" fill="url(#{u}-name)">SOFTWARE ENGINEER</text>
+  {text(cx, y0 + 198, "B.Tech CSE · VIT Chennai · open to work", 10.5, C['muted'], 'sans', 'middle')}
+  {''.join(row_svg)}
+  <path d="M{x0 + 18} {y0 + h - 46}H{x0 + w - 18}" stroke="{C['line2']}"/>
+  {text(x0 + 18, y0 + h - 26, "ID  HVI-2027", 11, C['lav'], 'mono', 'start', 'font-weight="600" letter-spacing="1.5"')}
+  {text(x0 + 18, y0 + h - 13, "valid: always building", 8.5, C['dim'], 'mono')}
+  {bars}
+  <!-- GitHub tag hanging from the strap -->
+  <g><animateTransform attributeName="transform" type="rotate" values="10 {cx + 44} 36;-8 {cx + 44} 36;10 {cx + 44} 36" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+    <path d="M{cx + 44} 36 l16 30" stroke="#D1D5DB" stroke-width="1.6" stroke-dasharray="2.5 2"/>
+    <circle cx="{cx + 60}" cy="68" r="3" fill="none" stroke="#D1D5DB" stroke-width="1.4"/>
+    <rect x="{cx + 42}" y="71" width="36" height="42" rx="9" fill="#0D1117" stroke="url(#{u}-neon)" stroke-width="1.6" filter="url(#{u}-glow)"/>
+    <g transform="translate({cx + 48} {77}) scale(1)"><path d="{GITHUB_PATH}" fill="#F0F6FC"/></g>
+    {text(cx + 60, 109, "GitHub", 6.5, C['mist'], 'mono', 'middle')}
+  </g>
+</g></g>"""
+
+
+def build_id_card():
+    W, H, u = 346, 486, "idc"
+    write("id-card.svg", svg(W, H, u, "ID card: Hemashree, Software Engineer",
+          "An ID card swinging on a lanyard with a GitHub tag hanging from its clip: photo, HEMASHREE, Software Engineer, B.Tech CSE at VIT Chennai, open to work. "
+          "Based in Chennai, India; speaks Tamil, English, Hindi and Japanese; Design Lead by night. ID HVI-2027.", id_card(u)))
+
 # ---------------------------------------------------------------- footer
 def build_footer():
     W, H, u = 1200, 330, "foot"
@@ -1315,6 +1403,7 @@ def main():
     build_opensource()
     build_extensions()
     build_showcase()
+    build_id_card()
     build_youtube()
     build_social_icons()
     build_footer()

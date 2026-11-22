@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 346 486" width="346" height="486" role="img" aria-labelledby="idc-t idc-d">
+<title id="idc-t">ID card: Hemashree, Software Engineer</title>
+<desc id="idc-d">An ID card swinging on a lanyard with a GitHub tag hanging from its clip: photo, HEMASHREE, Software Engineer, B.Tech CSE at VIT Chennai, open to work. Based in Chennai, India; speaks Tamil, English, Hindi and Japanese; Design Lead by night. ID HVI-2027.</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#A9B8FF}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="idc-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#171B3A"/>
+    <stop offset=".55" stop-color="#0F1228"/>
+    <stop offset="1" stop-color="#0A0C1C"/>
+  </radialGradient>
+  <radialGradient id="idc-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="idc-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="idc-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EA8FF"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#E3A6F0"/>
+  </linearGradient>
+  <linearGradient id="idc-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#A9B8FF" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#A9B8FF" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#A9B8FF" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="idc-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#A9B8FF" stroke-opacity="0"/>
+  </pattern>
+  <filter id="idc-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="13"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="idc-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#9097B8"/>
+    <stop offset=".45" stop-color="#A9B8FF"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#9097B8"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="idc-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<defs>
+  <linearGradient id="idc-neon" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3B82F6"/><stop offset=".5" stop-color="#A855F7"/><stop offset="1" stop-color="#EC4899"/>
+  </linearGradient>
+  <linearGradient id="idc-name" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#60A5FA"/><stop offset=".55" stop-color="#A78BFA"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <linearGradient id="idc-face" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#101633"/><stop offset=".6" stop-color="#151236"/><stop offset="1" stop-color="#2A1236"/>
+  </linearGradient>
+  <radialGradient id="idc-blue" cx="15%" cy="20%" r="70%"><stop offset="0" stop-color="#2563EB" stop-opacity=".35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+  <radialGradient id="idc-pink" cx="90%" cy="85%" r="60%"><stop offset="0" stop-color="#DB2777" stop-opacity=".3"/><stop offset="1" stop-color="#DB2777" stop-opacity="0"/></radialGradient>
+  <filter id="idc-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="idc-ph"><circle cx="173" cy="196" r="44"/></clipPath>
+  <linearGradient id="idc-strap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset="1" stop-color="#6D28D9"/></linearGradient>
+</defs>
+<g transform="translate(0 0)"><g>
+  <animateTransform attributeName="transform" type="rotate" values="-1.6 173 0;1.6 173 0;-1.6 173 0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+  <!-- lanyard -->
+  <path d="M93 -4 L164 82 M253 -4 L182 82" stroke="url(#idc-strap)" stroke-width="14" stroke-linecap="round"/>
+  <text class="mono" font-size="7.5" letter-spacing="2" fill="#C4B5FD" transform="translate(97 6) rotate(47)">HEMASHREEVI</text>
+  <rect x="160" y="78" width="26" height="20" rx="4" fill="#9CA3AF" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="167" y="96" width="12" height="24" rx="3" fill="none" stroke="#D1D5DB" stroke-width="2.5"/>
+  <!-- card -->
+  <rect x="23" y="116" width="300" height="364" rx="22" fill="url(#idc-face)"/>
+  <rect x="23" y="116" width="300" height="364" rx="22" fill="url(#idc-blue)"/>
+  <rect x="23" y="116" width="300" height="364" rx="22" fill="url(#idc-pink)"/>
+  <rect x="23" y="116" width="300" height="364" rx="22" fill="none" stroke="url(#idc-neon)" stroke-width="2" filter="url(#idc-glow)"/>
+  <rect x="23" y="116" width="300" height="364" rx="22" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="70 1258" opacity=".9">
+    <animate attributeName="stroke-dashoffset" values="0;-1328" dur="5s" repeatCount="indefinite"/></rect>
+  <rect x="151" y="128" width="44" height="7" rx="3.5" fill="#0A0C1C" stroke="#3A4068"/>
+  <text x="41" y="150" class="mono" font-size="9.5" fill="#9097B8" text-anchor="start" >@HemashreeVI</text>
+  <rect x="267" y="138" width="38" height="17" rx="8.5" fill="none" stroke="url(#idc-neon)"/>
+  <text x="286" y="150" class="mono" font-size="9.5" fill="#F0ABFC" text-anchor="middle" font-weight="700" letter-spacing="2">ID</text>
+  <circle cx="173" cy="196" r="49" fill="none" stroke="url(#idc-neon)" stroke-width="2.5" filter="url(#idc-glow)"/>
+  <image x="129" y="152" width="88" height="88" clip-path="url(#idc-ph)" href="data:image/webp;base64,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"/>
+  <text x="173" y="276" text-anchor="middle" class="sans" font-size="30" font-weight="900" letter-spacing="1" fill="#FFFFFF">HEMASHREE</text>
+  <text x="173" y="297" text-anchor="middle" class="sans" font-size="13" font-weight="800" letter-spacing="3" fill="url(#idc-name)">SOFTWARE ENGINEER</text>
+  <text x="173" y="314" class="sans" font-size="10.5" fill="#9097B8" text-anchor="middle" >B.Tech CSE · VIT Chennai · open to work</text>
+  <rect x="41" y="321" width="3" height="34" rx="1.5" fill="url(#idc-neon)"/>
+<text x="53" y="334" class="mono" font-size="9" fill="#A9B8FF" text-anchor="start" letter-spacing="2.5">BASED IN</text>
+<text x="53" y="351" class="sans" font-size="15" font-weight="700" fill="#EEF0F7">Chennai, India<tspan font-size="11" font-weight="400" fill="#9097B8">  open to opportunities</tspan></text><rect x="41" y="359" width="3" height="34" rx="1.5" fill="url(#idc-neon)"/>
+<text x="53" y="372" class="mono" font-size="9" fill="#A9B8FF" text-anchor="start" letter-spacing="2.5">SPEAKS</text>
+<text x="53" y="389" class="sans" font-size="15" font-weight="700" fill="#EEF0F7">4 languages<tspan font-size="11" font-weight="400" fill="#9097B8">  Tamil · English · Hindi · 日本語</tspan></text><rect x="41" y="397" width="3" height="34" rx="1.5" fill="url(#idc-neon)"/>
+<text x="53" y="410" class="mono" font-size="9" fill="#A9B8FF" text-anchor="start" letter-spacing="2.5">BY NIGHT</text>
+<text x="53" y="427" class="sans" font-size="15" font-weight="700" fill="#EEF0F7">Design Lead<tspan font-size="11" font-weight="400" fill="#9097B8">  posters &amp; creatives</tspan></text>
+  <path d="M41 434H305" stroke="#3A4068"/>
+  <text x="41" y="454" class="mono" font-size="11" fill="#A9B8FF" text-anchor="start" font-weight="600" letter-spacing="1.5">ID  HVI-2027</text>
+  <text x="41" y="467" class="mono" font-size="8.5" fill="#6A7096" text-anchor="start" >valid: always building</text>
+  <rect x="209" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="213" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="217" y="446" width="3" height="18" fill="#C8CCE0" opacity=".7"/><rect x="221" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="225" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="229" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="233" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="237" y="446" width="3" height="18" fill="#C8CCE0" opacity=".7"/><rect x="241" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="245" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="249" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="253" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="257" y="446" width="3" height="18" fill="#C8CCE0" opacity=".7"/><rect x="261" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="265" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="269" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="273" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="277" y="446" width="3" height="18" fill="#C8CCE0" opacity=".7"/><rect x="281" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="285" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="289" y="446" width="2" height="18" fill="#C8CCE0" opacity=".7"/><rect x="293" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/><rect x="297" y="446" width="3" height="18" fill="#C8CCE0" opacity=".7"/><rect x="301" y="446" width="1" height="18" fill="#C8CCE0" opacity=".7"/>
+  <!-- GitHub tag hanging from the strap -->
+  <g><animateTransform attributeName="transform" type="rotate" values="10 217 36;-8 217 36;10 217 36" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+    <path d="M217 36 l16 30" stroke="#D1D5DB" stroke-width="1.6" stroke-dasharray="2.5 2"/>
+    <circle cx="233" cy="68" r="3" fill="none" stroke="#D1D5DB" stroke-width="1.4"/>
+    <rect x="215" y="71" width="36" height="42" rx="9" fill="#0D1117" stroke="url(#idc-neon)" stroke-width="1.6" filter="url(#idc-glow)"/>
+    <g transform="translate(221 77) scale(1)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="#F0F6FC"/></g>
+    <text x="233" y="109" class="mono" font-size="6.5" fill="#C8CCE0" text-anchor="middle" >GitHub</text>
+  </g>
+</g></g>
+</svg>
