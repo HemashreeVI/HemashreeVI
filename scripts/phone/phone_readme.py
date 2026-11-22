@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 M = json.loads((ROOT / "assets/phone/manifest.json").read_text())
-TOTAL = 320   # phone width in the README: fits a phone-width GitHub page (~340px)
+TOTAL = 240   # phone width in the README (was 320); both phones scale with it
 SCALE = TOTAL / M["top"]["w"]
 
 GH = "https://github.com/HemashreeVI/"
