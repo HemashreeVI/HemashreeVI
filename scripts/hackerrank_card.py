@@ -37,13 +37,15 @@ def fetch(user):
         stars = int(b.get("stars") or 0)
         solved = int(b.get("solved") or 0)
         if stars or solved:
-            out.append({"name": name, "stars": stars, "solved": solved, "total": int(b.get("total_challenges") or 0)})
+            out.append({"name": name, "stars": stars, "solved": solved, "total": int(b.get("total_challenges") or 0),
+                        "points": float(b.get("current_points") or 0), "next": float(b.get("progress_to_next_star") or 0),
+                        "rank": b.get("hacker_rank")})
     out.sort(key=lambda b: (-b["stars"], -b["solved"]))
     return {"user": prof.get("username") or user, "badges": out}
 
 
 def demo():
-    return {"user": "shreejith2005", "badges": [{"name": "Java", "stars": 4, "solved": 40, "total": 60}, {"name": "Problem Solving", "stars": 3, "solved": 25, "total": 560},
+    return {"user": "shreejith2005", "badges": [{"name": "Java", "stars": 0, "solved": 2, "total": 64, "points": 8, "next": .32, "rank": 2339568}, {"name": "Problem Solving", "stars": 3, "solved": 25, "total": 560},
             {"name": "Python", "stars": 3, "solved": 20, "total": 115}, {"name": "SQL", "stars": 2, "solved": 18, "total": 58},
             {"name": "C++", "stars": 1, "solved": 5, "total": 40}, {"name": "30 Days of Code", "stars": 1, "solved": 4, "total": 30}]}
 
@@ -59,13 +61,26 @@ def render(d):
     solved = sum(b["solved"] for b in d["badges"])
     stars = sum(b["stars"] for b in d["badges"])
     rows = []
+    n = len(bs)
+    rh = 52 if n <= 3 else 40          # fewer badges: taller, fuller rows
     for k, b in enumerate(bs):
-        col, row = k % 2, k // 2
-        x, y = 30 + col * 278, 96 + row * 58
-        rows.append(f'<rect x="{x}" y="{y - 22}" width="262" height="48" rx="10" fill="{C["panel"]}" stroke="{C["line2"]}"/>'
-                    + text(x + 14, y - 1, b["name"] if len(b["name"]) < 22 else b["name"][:20] + "…", 14, C['silver'], 'sans', 'start', 'font-weight="700"')
-                    + text(x + 14, y + 16, f'{b["solved"]} solved', 11, C['muted'], 'mono')
-                    + "".join(star(x + 170 + i * 16, y + 4, i < b["stars"]) for i in range(5)))
+        y = 70 + k * (rh + 10)
+        frac = min(1, b.get("next", 0))
+        rows.append(f'<rect x="30" y="{y}" width="{W - 60}" height="{rh}" rx="10" fill="{C["panel"]}" stroke="{C["line2"]}"/>'
+                    + text(46, y + 22, b["name"], 15, C['silver'], 'sans', 'start', 'font-weight="700"')
+                    + text(46, y + 40, f'{b["solved"]} / {b["total"]} solved · {b.get("points", 0):g} pts' + (f' · rank #{b["rank"]:,}' if b.get("rank") else ""), 10.5, C['muted'], 'mono')
+                    + "".join(star(W - 140 + i * 18, y + 18, i < b["stars"]) for i in range(5))
+                    + f'<rect x="{W - 148}" y="{y + 32}" width="98" height="5" rx="2.5" fill="{C["line"]}"/>'
+                    + f'<rect x="{W - 148}" y="{y + 32}" width="{max(3, 98 * frac):.0f}" height="5" rx="2.5" fill="#00EA64"/>'
+                    + text(W - 46, y + 37, f"{round(frac * 100)}%", 9, C['dim'], 'mono', 'start'))
+    if n and n <= 3:
+        # what the badges add up to, so the card doesn't look empty
+        tot_solved = sum(b["solved"] for b in bs); tot_ch = sum(b["total"] for b in bs) or 1
+        y = 70 + n * (rh + 10) + 6
+        rows.append(text(30, y + 14, "Progress across my badges", 11, C['lav'], 'mono', 'start', 'letter-spacing="1"')
+                    + f'<rect x="30" y="{y + 24}" width="{W - 60}" height="8" rx="4" fill="{C["line"]}"/>'
+                    + f'<rect x="30" y="{y + 24}" width="{max(6, (W - 60) * tot_solved / tot_ch):.0f}" height="8" rx="4" fill="#00EA64"/>'
+                    + text(W - 30, y + 14, f"{tot_solved} of {tot_ch} challenges", 11, C['mist'], 'mono', 'end'))
     if not bs:
         rows.append(text(W / 2, 160, "No badges yet", 14, C['muted'], 'sans', 'middle'))
     body = f"""{bc.frame(W, H, u, (0.8, 0.2))}
