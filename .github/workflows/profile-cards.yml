@@ -27,13 +27,19 @@ jobs:
           rm -f dist/stats.svg dist/top-langs.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # About card: terminal + ID card with real GitHub numbers (stars, repos, contributions, languages, top repos)
+      - run: python3 repo/scripts/about_live.py ${{ github.repository_owner }} dist/about.svg dist/achievements.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # LeetCode card (solved, ranking, 52-week heatmap) from LeetCode's public API
+      - run: python3 repo/scripts/leetcode_card.py hemashree_272005 dist/leetcode.svg
       # Contribution City: the contribution calendar as an isometric 3D city
       - run: |
           python3 repo/scripts/viz/build_city3d.py ${{ github.repository_owner }} dist/city.svg \
             || curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/output/city.svg" -o dist/city.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # Publishes dist/ as the whole output branch (achievements.svg, streak.svg, city.svg)
+      # Publishes dist/ as the whole output branch (achievements.svg, streak.svg, about.svg, city.svg)
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output

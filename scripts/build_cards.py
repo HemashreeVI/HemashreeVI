@@ -642,7 +642,7 @@ def build_title(num, kicker, plain, italic, right, slug, extra=""):
 
 
 # ---------------------------------------------------------------- about
-def build_about():
+def build_about(live=None):
     W, H, u = 1200, 630, "about"
     tx, ty, tw, th = 32, 34, 740, 562
     rows, y, step, i = [], ty + 66, 22, 0
@@ -665,7 +665,7 @@ def build_about():
         i += 1
     cursor_y = y - step + 4
 
-    side = [f'<g transform="translate(796 14) scale(1.12)">{id_card(u + "id")}</g>']
+    side = [f'<g transform="translate(796 14) scale(1.12)">{id_card(u + "id", live=live)}</g>']
     body = f"""
 {frame(W, H, u, (0.85, 0.2))}
 <rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="14" fill="{C['bg0']}" fill-opacity=".85" stroke="{C['line2']}"/>
@@ -1254,6 +1254,13 @@ GITHUB_PATH = ("M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6
     "-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12")
 
 
+LIVE_DEFAULT = {   # last known values; the nightly workflow replaces them with live ones
+    "stars": 75, "repos": 44, "contributions": 648, "achievements": 4,
+    "langs": [["JavaScript", 12, "#F1E05A"], ["Python", 8, "#3572A5"], ["HTML", 6, "#E34C26"], ["Java", 3, "#B07219"], ["Other", 15, "#8B949E"]],
+    "top_repos": [["rootlens", 4], ["TriageIQ", 4], ["Nova", 4], ["Leetcode-Solutions", 3], ["smart-day", 3]],
+}
+
+
 TECH_ICONS = [  # Simple Icons (simpleicons.org, CC0): name, brand colour, 24x24 path
     ('Java', '#F89820', 'M11.915 0 11.7.215C9.515 2.4 7.47 6.39 6.046 10.483c-1.064 1.024-3.633 2.81-3.711 3.551-.093.87 1.746 2.611 1.55 3.235-.198.625-1.304 1.408-1.014 1.939.1.188.823.011 1.277-.491a13.389 13.389 0 0 0-.017 2.14c.076.906.27 1.668.643 2.232.372.563.956.911 1.667.911.397 0 .727-.114 1.024-.264.298-.149.571-.33.91-.5.68-.34 1.634-.666 3.53-.604 1.903.062 2.872.39 3.559.704.687.314 1.15.664 1.925.664.767 0 1.395-.336 1.807-.9.412-.563.631-1.33.72-2.24.06-.623.055-1.32 0-2.066.454.45 1.117.604 1.213.424.29-.53-.816-1.314-1.013-1.937-.198-.624 1.642-2.366 1.549-3.236-.08-.748-2.707-2.568-3.748-3.586C16.428 6.374 14.308 2.394 12.13.215zm.175 6.038a2.95 2.95 0 0 1 2.943 2.942 2.95 2.95 0 0 1-2.943 2.943A2.95 2.95 0 0 1 9.148 8.98a2.95 2.95 0 0 1 2.942-2.942zM8.685 7.983a3.515 3.515 0 0 0-.145.997c0 1.951 1.6 3.55 3.55 3.55 1.95 0 3.55-1.598 3.55-3.55 0-.329-.046-.648-.132-.951.334.095.64.208.915.336a42.699 42.699 0 0 1 2.042 5.829c.678 2.545 1.01 4.92.846 6.607-.082.844-.29 1.51-.606 1.94-.315.431-.713.651-1.315.651-.593 0-.932-.27-1.673-.61-.741-.338-1.825-.694-3.792-.758-1.974-.064-3.073.293-3.821.669-.375.188-.659.373-.911.5s-.466.2-.752.2c-.53 0-.876-.209-1.16-.64-.285-.43-.474-1.101-.545-1.948-.141-1.693.176-4.069.823-6.614a43.155 43.155 0 0 1 1.934-5.783c.348-.167.749-.31 1.192-.425zm-3.382 4.362a.216.216 0 0 1 .13.031c-.166.56-.323 1.116-.463 1.665a33.849 33.849 0 0 0-.547 2.555 3.9 3.9 0 0 0-.2-.39c-.58-1.012-.914-1.642-1.16-2.08.315-.24 1.679-1.755 2.24-1.781zm13.394.01c.562.027 1.926 1.543 2.24 1.783-.246.438-.58 1.068-1.16 2.08a4.428 4.428 0 0 0-.163.309 32.354 32.354 0 0 0-.562-2.49 40.579 40.579 0 0 0-.482-1.652.216.216 0 0 1 .127-.03z'),
     ('Python', '#3776AB', 'M11.858 0c-.978.005-1.913.088-2.736.234C6.7.662 6.26 1.558 6.26 3.21v2.182h5.725v.727H4.111c-1.664 0-3.121 1-3.577 2.903-.526 2.181-.549 3.542 0 5.82.407 1.694 1.379 2.902 3.043 2.902h1.969v-2.616c0-1.89 1.635-3.557 3.576-3.557h5.72c1.591 0 2.862-1.31 2.862-2.91v-5.45c0-1.553-1.309-2.718-2.863-2.977A18 18 0 0 0 11.858 0M8.762 1.755c.591 0 1.074.491 1.074 1.095 0 .601-.483 1.087-1.074 1.087A1.08 1.08 0 0 1 7.688 2.85c0-.604.48-1.095 1.074-1.095m9.656 4.364v2.543c0 1.971-1.671 3.63-3.577 3.63H9.122c-1.566 0-2.862 1.34-2.862 2.91v5.452c0 1.551 1.349 2.464 2.862 2.91 1.813.532 3.55.628 5.72 0 1.44-.418 2.862-1.258 2.862-2.91V18.47h-5.719v-.727h8.582c1.664 0 2.284-1.16 2.862-2.903.598-1.793.573-3.518 0-5.819-.41-1.656-1.196-2.903-2.862-2.903zm-3.216 13.807a1.08 1.08 0 0 1 1.074 1.088c0 .604-.48 1.094-1.074 1.094-.592 0-1.075-.49-1.075-1.094 0-.601.483-1.088 1.075-1.088'),
@@ -1266,7 +1273,9 @@ TECH_ICONS = [  # Simple Icons (simpleicons.org, CC0): name, brand colour, 24x24
 ]
 
 
-def id_card(u, ox=0, oy=0):
+def id_card(u, ox=0, oy=0, live=None):
+    """live: real numbers from GitHub (scripts/about_live.py); without it the card shows the last known values."""
+    live = live or LIVE_DEFAULT
     """A swinging ID card on a black, glowing GitHub lanyard, laid out like a GitHub profile sidebar. 346 x 486."""
     photo = base64.b64encode((ROOT / "assets" / "id-photo.webp").read_bytes()).decode()
     badges = [(n, base64.b64encode((ROOT / "assets" / "badges" / f"{n}.png").read_bytes()).decode())
@@ -1306,11 +1315,12 @@ def id_card(u, ox=0, oy=0):
                        f'<g transform="translate({tx0 + 15.5 + (k % 4) * 33} {ty0 + 28 + (k // 4) * 27}) scale(.62)"><path d="{d}" fill="{c}"/></g>'
                        for k, (name, c, d) in enumerate(tiles))
     # github stats + language donut
-    stats = [("★", "Total stars", "75"), ("⧉", "Public repos", "44"), ("◆", "Contributions", "640+"), ("🏅", "Achievements", "4")]
+    stats = [("★", "Total stars", str(live["stars"])), ("⧉", "Public repos", str(live["repos"])),
+             ("◆", "Contributions", str(live["contributions"])), ("🏅", "Achievements", str(live["achievements"]))]
     sx0, sy0 = L, T + 212
     stat_svg = "".join(text(sx0 + 10, sy0 + 50 + k * 16, f"{ic}  {lab}", 8.5, "#C9D1D9", 'sans')
                        + text(sx0 + 112, sy0 + 50 + k * 16, val, 8.5, "#F0F6FC", 'mono', 'end', 'font-weight="700"') for k, (ic, lab, val) in enumerate(stats))
-    langs = [("JavaScript", 12, "#F1E05A"), ("Python", 8, "#3572A5"), ("HTML", 6, "#E34C26"), ("Java", 3, "#B07219"), ("Other", 15, "#8B949E")]
+    langs = [tuple(x) for x in live["langs"]]
     tot = sum(n for _, n, _ in langs); a0 = -math.pi / 2; dcx, dcy, R = sx0 + 145, sy0 + 52, 16
     arcs = []
     for name, n, col in langs:
@@ -1321,7 +1331,7 @@ def id_card(u, ox=0, oy=0):
     legend = "".join(f'<circle cx="{sx0 + 128}" cy="{sy0 + 82 + k * 9}" r="2.2" fill="{col}"/>' + text(sx0 + 133, sy0 + 84.5 + k * 9, name, 6.5, "#8B949E", 'sans')
                      for k, (name, _, col) in enumerate(langs[:3]))
     # top repositories
-    repos = [("rootlens", 4), ("TriageIQ", 4), ("Nova", 4), ("Leetcode-Solutions", 3), ("smart-day", 3)]
+    repos = [tuple(x) for x in live["top_repos"]]
     rx0, ry0 = L + 182, T + 212
     repo_svg = "".join(text(rx0 + 9, ry0 + 36 + k * 15, f"• {n if len(n) < 12 else n[:10] + '…'}", 8.5, "#C9D1D9", 'sans')
                        + text(rx0 + IW - 182 - 8, ry0 + 36 + k * 15, f"★ {st}", 8, "#E3B341", 'mono', 'end') for k, (n, st) in enumerate(repos))

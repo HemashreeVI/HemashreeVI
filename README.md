@@ -23,7 +23,7 @@
 </p>
 
 <img src="./assets/cards/title-about.svg?v=28a3ae43" width="100%" alt="01 About: Hello, I'm Hemashree.">
-<img src="./assets/cards/about.svg?v=7a9b6d07" width="100%" alt="ID card on a GitHub lanyard: Hi there, I'm Hemashree, Software Engineer, open source enthusiast and patent co-inventor; about me, tech stack, GitHub stats, top repositories and links. Next to it an animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
+<img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/about.svg" width="100%" alt="ID card on a GitHub lanyard: Hi there, I'm Hemashree, Software Engineer, open source enthusiast and patent co-inventor; about me, tech stack, GitHub stats, top repositories and links. Next to it an animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
 
 <img src="./assets/cards/title-journey.svg?v=3208a0e9" width="100%" alt="02 Journey: The road so far.">
 <img src="./assets/cards/journey.svg?v=ec3279ac" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
@@ -93,7 +93,7 @@
 </p>
 
 <p align="center">
-  <a href="https://leetcode.com/u/hemashree_272005/"><img src="https://leetcard.jacoblin.cool/hemashree_272005?theme=dark&font=Inter&ext=heatmap" width="560" alt="My LeetCode stats: problems solved by difficulty, ranking and a heatmap of the last 52 weeks. Updates automatically."></a>
+  <a href="https://leetcode.com/u/hemashree_272005/"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/leetcode.svg" width="100%" alt="My LeetCode stats: problems solved by difficulty, ranking and a heatmap of the last 52 weeks. Updates automatically."></a>
 </p>
 
 <details>
