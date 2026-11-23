@@ -53,6 +53,11 @@ def portrait_dots(rnd):
     body = stretch(np.percentile(a[m], 3), np.percentile(a[m], 98)) ** .7
     face = stretch(np.percentile(a[sm], 4), np.percentile(a[sm], 96)) ** .7
     edges = np.clip(np.asarray(grey.filter(ImageFilter.FIND_EDGES), dtype=np.float32) / 255 * 2.5, 0, 1)
+    # hair: dark, not very colourful, not skin, in the upper part of the picture (the suit below is navy)
+    mx = rgb.max(axis=2); sat = (mx - rgb.min(axis=2)) / np.maximum(mx, 1e-3)
+    yy = np.arange(ph)[:, None] / ph
+    hair = (alpha > .5) & (skin < .3) & (mx < .32) & ((sat < .5) | (yy < .35)) & (yy < .78)
+    hair = np.asarray(Image.fromarray((hair * 255).astype(np.uint8)).filter(ImageFilter.MedianFilter(5)), dtype=np.float32) / 255 > .5
     val = (1 - skin) * np.clip(.18 + .82 * body + .3 * edges, 0, 1) + skin * face
     ox, oy = (W - pw) / 2, 8
     pts = []
@@ -67,19 +72,27 @@ def portrait_dots(rnd):
             v = val[yi, xi] * alpha[yi, xi]
             if v > .08 and rnd.random() < .45 + v:
                 size = (1.3, 1.9, 2.5, 3.0)[min(3, int(v * 4))]
-                pts.append((ox + jx, oy + jy, vivid(rgb[yi, xi], v), size))
+                kind = 'hair' if hair[yi, xi] else 'skin' if skin[yi, xi] > .5 else ''
+                pts.append((ox + jx, oy + jy, vivid(rgb[yi, xi], v, kind), size))
             x += step
         y += step * .87
         row += 1
     return pts
 
 
-def vivid(c, v=1.0):
-    """Photo colour made bright and saturated enough to glow on black, snapped to a small palette."""
+def vivid(c, v=1.0, kind=""):
+    """Photo colour made bright and saturated enough to glow on black, snapped to a small palette.
+    Hair stays near-black (a dark blue-violet sheen so it still shows on black); skin is lifted lighter."""
     import colorsys
     h, s_, _ = colorsys.rgb_to_hsv(*c)
-    s_ = min(1, s_ * 1.35 + .12)
-    v = .62 + .38 * v
+    if kind == "hair":
+        h, s_, v = .7, .45, .22 + .3 * v
+    elif kind == "skin":
+        s_ = min(1, s_ * .95 + .05)
+        v = .78 + .22 * v
+    else:
+        s_ = min(1, s_ * 1.35 + .12)
+        v = .62 + .38 * v
     r, g, b = colorsys.hsv_to_rgb(h, s_, v)
     q = lambda t: min(255, round(t * 255 / 24) * 24)
     return f"#{q(r):02X}{q(g):02X}{q(b):02X}"

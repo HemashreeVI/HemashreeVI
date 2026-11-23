@@ -83,6 +83,7 @@
 <p align="center">
   <img src="koi/pond.webp" width="100%" alt="My koi pond: the pixel-art git koi, drawn every night from my public GitHub activity (languages colour it, contributions grow it, streaks mark it), swims in a pond with lily pads, pink lotus flowers, reeds and six more colourful fish.">
   <br>
+  <img src="./assets/cards/stipple.svg?v=f9f12fbb" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
   
 </p>
 <p align="center">
@@ -121,5 +122,3 @@
 </p>
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/banner.webp?v=716c1f51" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node."></a>
-
-<img src="./assets/cards/stipple.svg?v=a5846049" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
