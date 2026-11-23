@@ -121,3 +121,5 @@
 </p>
 
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/banner.webp?v=716c1f51" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node."></a>
+
+<img src="./assets/cards/stipple.svg?v=f4940fde" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
