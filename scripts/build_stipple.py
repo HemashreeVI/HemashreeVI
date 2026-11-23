@@ -17,8 +17,8 @@ SRC = ROOT / "assets" / "portrait-cut.webp"
 OUT = ROOT / "assets" / "cards" / "stipple.svg"
 
 W, H = 1200, 600
-INK = "#ECE8DC"          # warm off-white dots, like paper under a lamp
-N_DOTS = 24000
+INK = "#ECE8DC"          # stars
+GRID = 3.4          # dot spacing in px; smaller = more dots, sharper face
 SEED = 7
 
 # 5 x 7 block font: only the letters the name needs
@@ -33,45 +33,73 @@ FONT = {
 
 
 def portrait_dots(rnd):
+    """Halftone stipple: a dense jittered grid where each dot's size and brightness follow the photo,
+    coloured from the photo. The face is contrast-stretched on its own so eyes, brows and glasses read."""
     im = Image.open(SRC).convert("RGBA")
-    im = im.crop((60, 0, im.width - 40, round(im.height * 0.66)))   # head and shoulders
-    ph = 480                                   # portrait height on the card
+    im = im.crop((110, 0, im.width - 90, round(im.height * 0.47)))   # head and shoulders, face large
+    ph = 510
     pw = round(im.width * ph / im.height)
     im = im.resize((pw, ph), Image.LANCZOS)
     alpha = np.asarray(im.getchannel("A"), dtype=np.float32) / 255
-    grey = ImageOps.grayscale(im.convert("RGB")).filter(ImageFilter.UnsharpMask(4, 160, 2))
+    rgb = np.asarray(im.convert("RGB"), dtype=np.float32) / 255
+    grey = ImageOps.grayscale(im.convert("RGB")).filter(ImageFilter.UnsharpMask(3, 120, 1))
     a = np.asarray(grey, dtype=np.float32)
     m = alpha > .5
-    lo, hi = np.percentile(a[m], 2), np.percentile(a[m], 99)
-    lum = np.clip((a - lo) / (hi - lo), 0, 1)
-    edges = np.asarray(grey.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.GaussianBlur(1)), dtype=np.float32) / 255
-    edges = np.clip(edges * 3, 0, 1)
-    # light areas get dense dots, edges get extra, and the whole figure keeps a faint base so the dark suit still reads
-    dens = (0.05 + lum ** 1.8 + 0.35 * edges) * alpha
-    dens = dens / dens.sum()
-    idx = np.random.default_rng(SEED).choice(dens.size, size=N_DOTS, replace=True, p=dens.ravel())
-    ys, xs = np.divmod(idx, pw)
-    ox, oy = (W - pw) / 2, 14
-    pts = [(ox + x + rnd.random(), oy + y + rnd.random()) for x, y in zip(xs, ys)]
+    r, g, bl = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    skin = ((r - bl > .08) & (r > g) & (r > .25)).astype(np.float32) * alpha
+    skin = np.asarray(Image.fromarray((skin * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(5)), dtype=np.float32) / 255
+    sm = skin > .5
+    stretch = lambda lo, hi: np.clip((a - lo) / (hi - lo), 0, 1)
+    body = stretch(np.percentile(a[m], 3), np.percentile(a[m], 98)) ** .7
+    face = stretch(np.percentile(a[sm], 4), np.percentile(a[sm], 96)) ** .7
+    edges = np.clip(np.asarray(grey.filter(ImageFilter.FIND_EDGES), dtype=np.float32) / 255 * 2.5, 0, 1)
+    val = (1 - skin) * np.clip(.18 + .82 * body + .3 * edges, 0, 1) + skin * face
+    ox, oy = (W - pw) / 2, 8
+    pts = []
+    step = GRID
+    row = 0
+    y = 0.0
+    while y < ph - 1:
+        x = step / 2 if row % 2 else 0.0
+        while x < pw - 1:
+            jx, jy = x + rnd.uniform(-.2, .2) * step, y + rnd.uniform(-.2, .2) * step
+            xi, yi = min(pw - 1, max(0, int(jx))), min(ph - 1, max(0, int(jy)))
+            v = val[yi, xi] * alpha[yi, xi]
+            if v > .08 and rnd.random() < .45 + v:
+                size = (1.3, 1.9, 2.5, 3.0)[min(3, int(v * 4))]
+                pts.append((ox + jx, oy + jy, vivid(rgb[yi, xi], v), size))
+            x += step
+        y += step * .87
+        row += 1
     return pts
 
 
+def vivid(c, v=1.0):
+    """Photo colour made bright and saturated enough to glow on black, snapped to a small palette."""
+    import colorsys
+    h, s_, _ = colorsys.rgb_to_hsv(*c)
+    s_ = min(1, s_ * 1.35 + .12)
+    v = .62 + .38 * v
+    r, g, b = colorsys.hsv_to_rgb(h, s_, v)
+    q = lambda t: min(255, round(t * 255 / 24) * 24)
+    return f"#{q(r):02X}{q(g):02X}{q(b):02X}"
+
+
 def dot_paths(pts, groups=4):
-    """All dots as zero-length round-capped strokes: far smaller than one <circle> per dot."""
-    buckets = [[] for _ in range(groups)]
-    for i, (x, y) in enumerate(pts):
-        buckets[i % groups].append(f"M{x:.1f} {y:.1f}h0")
-    out = []
-    for g, b in enumerate(buckets):
-        out.append(f'<path class="tw tw{g}" d="{"".join(b)}" stroke="{INK}" stroke-width="1.35" stroke-linecap="round" fill="none"/>')
-    return "\n".join(out)
+    """All dots as zero-length round-capped strokes, one path per colour: far smaller than one <circle> per dot."""
+    from collections import defaultdict
+    by = defaultdict(list)
+    for i, (x, y, col, w) in enumerate(pts):
+        by[(col, w, i % groups)].append(f"M{x:.1f} {y:.1f}h0")
+    return "\n".join(f'<path class="tw tw{g}" d="{"".join(d)}" stroke="{col}" stroke-width="{w}" stroke-linecap="round" fill="none"/>'
+                     for (col, w, g), d in sorted(by.items()))
 
 
-def ring(cx, cy, rx, ry, rot, dur, rev=False):
+def ring(cx, cy, rx, ry, rot, dur, rev=False, col=INK):
     """A thin elliptical orbit with a dotted track sliding along it."""
     return (f'<g transform="rotate({rot} {cx} {cy})">'
-            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{INK}" stroke-opacity=".22" stroke-width="1"/>'
-            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{INK}" stroke-opacity=".55" stroke-width="2.2" '
+            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{col}" stroke-opacity=".22" stroke-width="1"/>'
+            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{col}" stroke-opacity=".55" stroke-width="2.2" '
             f'stroke-linecap="round" stroke-dasharray="0 14" pathLength="1400">'
             f'<animate attributeName="stroke-dashoffset" from="0" to="{"" if rev else "-"}1400" dur="{dur}s" repeatCount="indefinite"/></ellipse>'
             f'</g>')
@@ -98,14 +126,14 @@ def block_name(name, y0, cell=13, gap=2, letter_gap=13):
             for c, bit in enumerate(row):
                 if bit == "1":
                     out.append(f'<rect x="{lx + c * step:.1f}" y="{y0 + r * step}" width="{cell}" height="{cell}" rx="1.5"/>')
-    return (f'<g class="name" fill="{INK}" stroke="#000" stroke-width="1.2">'
+    return (f'<g class="name" fill="url(#neon)" stroke="#000" stroke-width="1.2">'
             + "".join(out) + "</g>")
 
 
 def main():
     rnd = random.Random(SEED)
     pts = portrait_dots(rnd)
-    cx, cy = W / 2, 250
+    cx, cy = W / 2, 330
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-labelledby="t d">
 <title id="t">HEMASHREE</title>
 <desc id="d">A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and her name in block pixel letters.</desc>
@@ -118,12 +146,18 @@ def main():
 .name rect{{animation:nm 4s ease-in-out infinite}}
 @keyframes nm{{0%,100%{{opacity:.96}}50%{{opacity:.8}}}}
 </style>
+<defs>
+  <linearGradient id="neon" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="1000" y2="0">
+    <stop offset="0" stop-color="#60A5FA"/><stop offset=".5" stop-color="#A78BFA"/><stop offset="1" stop-color="#F472B6"/>
+  </linearGradient>
+  <filter id="glow" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
 <rect width="{W}" height="{H}" rx="18" fill="#000"/>
 {stars(rnd)}
-{ring(cx, cy, 440, 120, -8, 90)}
-{ring(cx, cy + 40, 360, 92, 14, 70, rev=True)}
+{ring(cx, cy, 440, 120, -8, 90, col="#60A5FA")}
+{ring(cx, cy + 40, 360, 92, 14, 70, rev=True, col="#F472B6")}
 <g>{dot_paths(pts)}</g>
-{block_name("HEMASHREE", 470)}
+<g filter="url(#glow)">{block_name("HEMASHREE", 478)}</g>
 </svg>
 """
     OUT.write_text(svg, encoding="utf-8")
