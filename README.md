@@ -30,12 +30,12 @@
 
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
-<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.webp?v=b78e8b77" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
-<a href="https://github.com/HemashreeVI/rootlens" title="RootLens"><img src="./assets/cards/show-rootlens.webp?v=361ade9b" width="49%" alt="RootLens: under 2 minutes from a real incident to resolved. Finds why a microservice broke, rolls back the bad change, then checks it worked."></a>
+<a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.webp?v=c755cb19" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
+<a href="https://github.com/HemashreeVI/rootlens" title="RootLens"><img src="./assets/cards/show-rootlens.webp?v=8625da08" width="49%" alt="RootLens: under 2 minutes from a real incident to resolved. Finds why a microservice broke, rolls back the bad change, then checks it worked."></a>
 </p>
 <p align="center">
-<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ"><img src="./assets/cards/show-triageiq.webp?v=f9997ece" width="49%" alt="TriageIQ: 0 emails sent without approval. Sorts every support email and drafts a grounded reply with a local model."></a>
-<a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom"><img src="./assets/cards/show-gitloom.webp?v=96cb1f1c" width="49%" alt="GitLoom: 10 templates in one HTML file. Paste a GitHub username and get a portfolio website you can host anywhere."></a>
+<a href="https://github.com/HemashreeVI/TriageIQ" title="TriageIQ"><img src="./assets/cards/show-triageiq.webp?v=b9917535" width="49%" alt="TriageIQ: 0 emails sent without approval. Sorts every support email and drafts a grounded reply with a local model."></a>
+<a href="https://hemashreevi.github.io/GitLoom/" title="GitLoom"><img src="./assets/cards/show-gitloom.webp?v=c236ce5d" width="49%" alt="GitLoom: 10 templates in one HTML file. Paste a GitHub username and get a portfolio website you can host anywhere."></a>
 </p>
 
 <p align="center">

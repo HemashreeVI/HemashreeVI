@@ -1215,11 +1215,70 @@ def build_extensions():
 
 
 # ---------------------------------------------------------------- project cards (screenshot + headline number)
+NEON_ACCENTS = {  # main project cards: black ID-card style, one colour per project
+    "seatlock": ("#FFB454", "#FF7A1A"),
+    "rootlens": ("#7EE787", "#2EA043"),
+    "triageiq": ("#67E8F9", "#22A6D8"),
+    "gitloom": ("#F9A8D4", "#EC4899"),
+}
+
+
+def neon_showcase(W, H, u, p, shot):
+    """A main project card in the style of the ID card: black face, glowing blue-violet-pink border, coloured details."""
+    hi, lo = NEON_ACCENTS[p['slug']]
+    m = 10
+    s = (W - 2 * m) / W
+    cw, ch = W - 2 * m, H * s
+    oy = (H - ch) / 2
+    ix, iy, iw, ih = 16, 46, 568, 325
+    tag_w = len(p['tag']) * 7.4 + 26
+    num_size = 40
+    num_w = len(p['num']) * num_size * 0.6
+    lines = wrap(p['desc'], 66)
+    dots = "".join(f'<circle cx="{24 + i * 16}" cy="23" r="5" fill="{c}"/>' for i, c in enumerate(["#FF5F57", "#FEBC2E", "#28C840"]))
+    return f"""
+<defs>
+  <linearGradient id="{u}-neon" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3B82F6"/><stop offset=".5" stop-color="#A855F7"/><stop offset="1" stop-color="#EC4899"/>
+  </linearGradient>
+  <linearGradient id="{u}-num" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{hi}"/><stop offset="1" stop-color="{lo}"/></linearGradient>
+  <linearGradient id="{u}-end" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"/><stop offset="1" stop-color="#7C3AED" stop-opacity=".22"/></linearGradient>
+  <radialGradient id="{u}-tint" cx="100%" cy="0%" r="60%"><stop offset="0" stop-color="{lo}" stop-opacity=".16"/><stop offset="1" stop-color="{lo}" stop-opacity="0"/></radialGradient>
+  <filter id="{u}-glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="{u}-glow2" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter>
+  <filter id="{u}-txt" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="{u}-shot"><rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10"/></clipPath>
+</defs>
+<rect x="{m}" y="{oy:.1f}" width="{cw}" height="{ch:.1f}" rx="20" fill="none" stroke="url(#{u}-neon)" stroke-width="6" opacity=".75" filter="url(#{u}-glow2)"/>
+<rect x="{m}" y="{oy:.1f}" width="{cw}" height="{ch:.1f}" rx="20" fill="#000000"/>
+<rect x="{m}" y="{oy:.1f}" width="{cw}" height="{ch:.1f}" rx="20" fill="url(#{u}-tint)"/>
+<rect x="{m}" y="{oy + ch - 70:.1f}" width="{cw}" height="70" rx="20" fill="url(#{u}-end)"/>
+<rect x="{m}" y="{oy:.1f}" width="{cw}" height="{ch:.1f}" rx="20" fill="none" stroke="url(#{u}-neon)" stroke-width="2"/>
+<g transform="translate({m} {oy:.1f}) scale({s:.4f})">
+{dots}
+<text x="76" y="28" class="mono" font-size="13"><tspan fill="#8B949E">HemashreeVI /</tspan> <tspan fill="#F0F6FC" font-weight="700">{e(p['repo'])}</tspan></text>
+<rect x="{W - 18 - tag_w:.0f}" y="12" width="{tag_w:.0f}" height="22" rx="11" fill="#0D1117" stroke="{hi}" stroke-opacity=".8"/>
+<rect x="{W - 18 - tag_w:.0f}" y="12" width="{tag_w:.0f}" height="22" rx="11" fill="none" stroke="{hi}" stroke-width="2" opacity=".5" filter="url(#{u}-glow)"/>
+<circle cx="{W - 18 - tag_w + 12:.0f}" cy="23" r="3" fill="{hi}"/>
+{text(W - 18 - tag_w / 2 + 5, 27.5, p['tag'], 11.5, hi, 'sans', 'middle', 'font-weight="600"')}
+<image x="{ix}" y="{iy}" width="{iw}" height="{ih}" preserveAspectRatio="xMidYMin slice" clip-path="url(#{u}-shot)" href="data:image/webp;base64,{shot}"/>
+<rect x="{ix}" y="{iy}" width="{iw}" height="{ih}" rx="10" fill="none" stroke="#30363D"/>
+<text x="24" y="{iy + ih + 54}" class="mono" font-size="{num_size}" font-weight="700" fill="url(#{u}-num)" filter="url(#{u}-txt)">{e(p['num'])}</text>
+{text(24 + num_w + 14, iy + ih + 52, p['label'], 15, "#8B949E", 'sans')}
+{"".join(text(24, iy + ih + 86 + i * 22, ln, 15, "#C9D1D9", 'sans') for i, ln in enumerate(lines[:2]))}
+</g>
+"""
+
+
 def build_showcase():
     W, H = 600, 492
     for k, p in enumerate(SHOWCASE):
         u = f"sc{k}"
         shot = base64.b64encode((ROOT / "assets" / "shots" / f"{p['slug']}.webp").read_bytes()).decode()
+        desc = f"{p['repo']} ({p['tag']}): {p['num']} {p['label']}. {p['desc']} Screenshot from the project."
+        if p['slug'] in NEON_ACCENTS:
+            write(f"show-{p['slug']}.svg", svg(W, H, u, p['repo'], desc, neon_showcase(W, H, u, p, shot)))
+            continue
         ix, iy, iw, ih = 16, 46, 568, 325
         tag_w = len(p['tag']) * 7.4 + 26
         num_size = 40
@@ -1241,7 +1300,6 @@ def build_showcase():
 {text(24 + num_w + 14, iy + ih + 52, p['label'], 15, C['muted'], 'sans')}
 {"".join(text(24, iy + ih + 86 + i * 22, ln, 15, C['mist'], 'sans') for i, ln in enumerate(lines[:2]))}
 """
-        desc = f"{p['repo']} ({p['tag']}): {p['num']} {p['label']}. {p['desc']} Screenshot from the project."
         write(f"show-{p['slug']}.svg", svg(W, H, u, p['repo'], desc, body))
 
 
