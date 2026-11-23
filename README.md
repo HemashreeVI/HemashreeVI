@@ -83,6 +83,7 @@
 <p align="center">
   <img src="koi/pond.webp" width="100%" alt="My koi pond: the pixel-art git koi, drawn every night from my public GitHub activity (languages colour it, contributions grow it, streaks mark it), swims in a pond with lily pads, pink lotus flowers, reeds and six more colourful fish.">
   <br>
+  <img src="./assets/cards/stipple.svg?v=743ace02" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
   
 </p>
 <p align="center">
