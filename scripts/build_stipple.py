@@ -18,7 +18,6 @@ OUT = ROOT / "assets" / "cards" / "stipple.svg"
 
 W, H = 1200, 600
 INK = "#ECE8DC"          # stars
-LIPS = (.32, .528, .055, .03)   # mouth ellipse in the crop: centre x, centre y, radius x, radius y (fractions)
 GRID = 3.4          # dot spacing in px; smaller = more dots, sharper face
 SEED = 7
 
@@ -59,10 +58,6 @@ def portrait_dots(rnd):
     yy = np.arange(ph)[:, None] / ph
     hair = (alpha > .5) & (skin < .3) & (mx < .32) & ((sat < .5) | (yy < .35)) & (yy < .78)
     hair = np.asarray(Image.fromarray((hair * 255).astype(np.uint8)).filter(ImageFilter.MedianFilter(5)), dtype=np.float32) / 255 > .5
-    # lips: located by hand in the crop (centre 32% across, 53% down), minus the dark line between them
-    xx = np.arange(pw)[None, :] / pw
-    ell = ((xx - LIPS[0]) / LIPS[2]) ** 2 + ((yy - LIPS[1]) / LIPS[3]) ** 2 < 1
-    lips = ell & (alpha > .5) & (a > np.percentile(a[ell], 30))
     val = (1 - skin) * np.clip(.18 + .82 * body + .3 * edges, 0, 1) + skin * face
     ox, oy = (W - pw) / 2, 8
     pts = []
@@ -77,7 +72,7 @@ def portrait_dots(rnd):
             v = val[yi, xi] * alpha[yi, xi]
             if v > .08 and rnd.random() < .45 + v:
                 size = (1.3, 1.9, 2.5, 3.0)[min(3, int(v * 4))]
-                kind = 'hair' if hair[yi, xi] else 'lips' if lips[yi, xi] else 'skin' if skin[yi, xi] > .5 else ''
+                kind = 'hair' if hair[yi, xi] else 'skin' if skin[yi, xi] > .5 else ''
                 pts.append((ox + jx, oy + jy, vivid(rgb[yi, xi], v, kind), size))
             x += step
         y += step * .87
@@ -92,8 +87,6 @@ def vivid(c, v=1.0, kind=""):
     h, s_, _ = colorsys.rgb_to_hsv(*c)
     if kind == "hair":
         h, s_, v = .7, .45, .22 + .3 * v
-    elif kind == "lips":
-        h, s_, v = .975, .5, .86 + .14 * v
     elif kind == "skin":
         s_ = min(.6, s_ * .9 + .08)
         v = .86 + .14 * v
