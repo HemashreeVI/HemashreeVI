@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-labelledby="t06-t t06-d">
-<title id="t06-t">06 Chrome Extensions: Tools I built for the browser.</title>
-<desc id="t06-d">6 EXTENSIONS · FREE</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-labelledby="t05-t t05-d">
+<title id="t05-t">05 Chrome Extensions: Tools I built for the browser.</title>
+<desc id="t05-d">6 EXTENSIONS · FREE</desc>
 
 <style>
 .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
@@ -20,38 +20,38 @@
 </style>
 
 <defs>
-  <radialGradient id="t06-bg" cx="70%" cy="30%" r="90%">
+  <radialGradient id="t05-bg" cx="70%" cy="30%" r="90%">
     <stop offset="0" stop-color="#171B3A"/>
     <stop offset=".55" stop-color="#0F1228"/>
     <stop offset="1" stop-color="#0A0C1C"/>
   </radialGradient>
-  <radialGradient id="t06-glowA" cx="50%" cy="50%" r="50%">
+  <radialGradient id="t05-glowA" cx="50%" cy="50%" r="50%">
     <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
     <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="t06-glowB" cx="50%" cy="50%" r="50%">
+  <radialGradient id="t05-glowB" cx="50%" cy="50%" r="50%">
     <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
     <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="t06-silver" x1="0" y1="0" x2="1" y2="0">
+  <linearGradient id="t05-silver" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#6EA8FF"/>
     <stop offset=".55" stop-color="#A9B8FF"/>
     <stop offset="1" stop-color="#E3A6F0"/>
   </linearGradient>
-  <linearGradient id="t06-rule" x1="0" y1="0" x2="1" y2="0">
+  <linearGradient id="t05-rule" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#A9B8FF" stop-opacity="0"/>
     <stop offset=".25" stop-color="#A9B8FF" stop-opacity=".8"/>
     <stop offset="1" stop-color="#A9B8FF" stop-opacity="0"/>
   </linearGradient>
-  <pattern id="t06-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+  <pattern id="t05-grid" width="28" height="28" patternUnits="userSpaceOnUse">
     <path d="M28 0H0V28" fill="none" stroke="#A9B8FF" stroke-opacity="0"/>
   </pattern>
-  <filter id="t06-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="24"/>
+  <filter id="t05-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="23"/>
     <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
     <feGaussianBlur stdDeviation="6"/>
   </filter>
-  <linearGradient id="t06-sweep" x1="0" y1="0" x2="1" y2="0">
+  <linearGradient id="t05-sweep" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="#9097B8"/>
     <stop offset=".45" stop-color="#A9B8FF"/>
     <stop offset=".5" stop-color="#FFFFFF"/>
@@ -60,17 +60,17 @@
     <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
   </linearGradient>
-  <filter id="t06-soft" x="-50%" y="-50%" width="200%" height="200%">
+  <filter id="t05-soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="3"/>
   </filter>
 </defs>
 
 <rect x="1" y="1" width="1198" height="102" rx="16" fill="#0F1228" stroke="#272C50"/>
-<text x="30" y="32" class="mono" font-size="12" fill="#EEF0F7" text-anchor="start" letter-spacing="3">06</text>
+<text x="30" y="32" class="mono" font-size="12" fill="#EEF0F7" text-anchor="start" letter-spacing="3">05</text>
 <text x="58" y="32" class="mono" font-size="12" fill="#A9B8FF" text-anchor="start" letter-spacing="3">CHROME EXTENSIONS</text>
 <text x="1170" y="32" class="mono" font-size="11" fill="#9097B8" text-anchor="end" letter-spacing="3">6 EXTENSIONS · FREE</text>
-<text x="30" y="80" class="serif" font-size="40" fill="#EEF0F7">Tools I built <tspan fill="url(#t06-sweep)" font-style="italic">for the browser.</tspan></text>
-<rect x="30" y="96" width="1140" height="1.2" fill="url(#t06-rule)"/>
+<text x="30" y="80" class="serif" font-size="40" fill="#EEF0F7">Tools I built <tspan fill="url(#t05-sweep)" font-style="italic">for the browser.</tspan></text>
+<rect x="30" y="96" width="1140" height="1.2" fill="url(#t05-rule)"/>
 <circle cy="96.6" r="2.6" fill="#A9B8FF">
   <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
   <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>

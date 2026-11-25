@@ -26,7 +26,8 @@
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/about.svg" width="100%" alt="ID card on a GitHub lanyard: Hi there, I'm Hemashree, Software Engineer, open source enthusiast and patent co-inventor; about me, tech stack, GitHub stats, top repositories and links. Next to it an animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
 
 
-<img src="./assets/cards/edu.svg" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
+<img src="./assets/cards/title-education.svg?v=1543dd57" width="100%" alt="02 Education &amp; programs: Where I learned.">
+<img src="./assets/cards/edu.svg?v=0ba1aab6" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
 
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
@@ -43,10 +44,10 @@
   <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-GitLoom_1_min_demo-F0A8D0?style=flat-square&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
 </p>
 
-<img src="./assets/cards/title-opensource.svg?v=4fa61623" width="100%" alt="05 Open source: Built in the open.">
+<img src="./assets/cards/title-opensource.svg?v=0d8bf3a9" width="100%" alt="04 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg?v=768244c6" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
 
-<img src="./assets/cards/title-extensions.svg?v=ecba2f6c" width="100%" alt="06 Chrome extensions: Tools I built for the browser. 6 extensions.">
+<img src="./assets/cards/title-extensions.svg?v=46e7f49b" width="100%" alt="05 Chrome extensions: Tools I built for the browser. 6 extensions.">
 <p align="center">
 <a href="https://github.com/HemashreeVI/job-radar" title="Job Radar"><img src="./assets/cards/show-job-radar.webp?v=16ee4993" width="49%" alt="Job Radar: 1 click to save any job, matched to my projects."></a>
 <a href="https://github.com/HemashreeVI/repo-recap" title="Repo Recap"><img src="./assets/cards/show-repo-recap.webp?v=732c7537" width="49%" alt="Repo Recap: understand any GitHub repo in 10 seconds."></a>
@@ -60,13 +61,13 @@
 <a href="https://github.com/HemashreeVI/portfolio-extension" title="Nova Launchpad"><img src="./assets/cards/show-nova-launchpad.webp?v=b5be620a" width="49%" alt="Nova Launchpad: 6 in 1 new tab for the job hunt with resume-matched jobs, placement mail, LeetCode and GitHub reminders, my YouTube channel and tech news."></a>
 </p>
 
-<img src="./assets/cards/title-youtube.svg?v=01d187b7" width="100%" alt="07 YouTube: Byte Decoded.">
+<img src="./assets/cards/title-youtube.svg?v=1c6c7787" width="100%" alt="06 YouTube: Byte Decoded.">
 <a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg?v=7c7a8d04" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
 
-<img src="./assets/cards/title-play.svg?v=ae343079" width="100%" alt="08 Play: Play on my portfolio.">
+<img src="./assets/cards/title-play.svg?v=18ae84e0" width="100%" alt="07 Play: Play on my portfolio.">
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/games.svg?v=222edb79" width="100%" alt="Four portfolio mini-games: Keep them standing, Freshness check, Incident hunt and Hiragana sprint. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D)."></a>
 
-<img src="./assets/cards/title-commits.svg?v=5cb10beb" width="100%" alt="09 Commit log: A year of building.">
+<img src="./assets/cards/title-commits.svg?v=2c34f528" width="100%" alt="08 Commit log: A year of building.">
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/city.svg" width="100%" alt="Contribution City: my GitHub contributions as a 3D isometric city, one lot per day. Busier days are taller buildings, from low-rises and office blocks to glass skyscrapers; days off are parks with trees; cars drive the avenues; the best day is a landmark tower and today has a crane. The island city sits in a harbour at night under mountains and a full moon, with a river, a ferry, a cable-stayed bridge and reflections in the water. Redrawn twice a day.">
@@ -103,7 +104,7 @@
 
 </details>
 
-<img src="./assets/cards/title-connect.svg?v=08545cef" width="100%" alt="10 Connect: Let's talk.">
+<img src="./assets/cards/title-connect.svg?v=6a86f837" width="100%" alt="09 Connect: Let's talk.">
 
 <p align="center">
   <a href="mailto:shreejith2005@gmail.com" title="Email me"><img src="./assets/icons/social-gmail.svg?v=5acc644d" width="52" height="52" alt="Gmail"></a>&nbsp;&nbsp;

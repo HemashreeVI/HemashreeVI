@@ -52,21 +52,47 @@ def logo(key, fallback, x, y, w, h):
             f'font-size="26" font-weight="800" letter-spacing="2" fill="{color}">{fallback}</text>')
 
 
+# ID-card look: near-black card, neon blue → violet → pink border with a soft glow
+INK = "#07060D"        # card background
+TILE = "#0E0C18"       # tile background
+TILE_LINE = "#2B2645"
+WHITE = "#FFFFFF"
+SOFT = "#CFCBE6"       # secondary text
+NEON = ("#4F7BFF", "#9B5CFF", "#FF4FD8")
+SANS = "font-family=\"Inter,'Segoe UI',Arial,sans-serif\""
+MONO = "font-family=\"'JetBrains Mono',Menlo,Consolas,monospace\""
+
+
 def build():
     rows = (len(ITEMS) + 1) // 2
-    w, h = 1200, 60 + (rows - 1) * 148 + 124 + 30
-    tile_w, tile_h, gap = 548, 124, 24
+    tile_w, tile_h, gap = 540, 124, 22
+    m = 14                                   # margin so the glow has room
+    top = 78
+    w, h = 1200, top + rows * tile_h + (rows - 1) * gap + 30 + m
     x0 = (w - 2 * tile_w - gap) // 2
     panel_w = 210
-    parts = [f'<defs><linearGradient id="edu-dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B2BD9"/>'
-             f'<stop offset=".45" stop-color="#1E1F6B"/><stop offset="1" stop-color="#121A4A"/></linearGradient></defs>',
-             f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="18" fill="{C["bg1"]}" stroke="{C["line"]}" stroke-width="2"/>',
-             f'<text x="40" y="40" font-family="JetBrains Mono,Menlo,monospace" font-size="12" letter-spacing="3" fill="{C["muted"]}">EDUCATION &amp; PROGRAMS</text>']
+    stops = "".join(f'<stop offset="{i / 2}" stop-color="{c}"/>' for i, c in enumerate(NEON))
+    parts = [f'<defs>'
+             f'<linearGradient id="edu-neon" x1="0" y1="0" x2="1" y2="1">{stops}</linearGradient>'
+             f'<linearGradient id="edu-accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B794FF"/><stop offset="1" stop-color="#FF7AD9"/></linearGradient>'
+             f'<linearGradient id="edu-dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B2BD9"/>'
+             f'<stop offset=".45" stop-color="#1E1F6B"/><stop offset="1" stop-color="#121A4A"/></linearGradient>'
+             f'<filter id="edu-glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"/></filter>'
+             f'</defs>',
+             # glow layer, then the crisp border on top
+             f'<rect x="{m}" y="{m}" width="{w - 2 * m}" height="{h - 2 * m}" rx="24" fill="none" stroke="url(#edu-neon)" '
+             f'stroke-width="6" filter="url(#edu-glow)" opacity=".85"><animate attributeName="opacity" values=".55;.95;.55" '
+             f'dur="4s" repeatCount="indefinite"/></rect>',
+             f'<rect x="{m}" y="{m}" width="{w - 2 * m}" height="{h - 2 * m}" rx="24" fill="{INK}" stroke="url(#edu-neon)" stroke-width="2.5"/>',
+             f'<rect x="{m + 22}" y="{m + 20}" width="10" height="10" rx="2" fill="none" stroke="{SOFT}" stroke-width="1.5"/>'
+             f'<text x="{m + 40}" y="{m + 30}" {MONO} font-size="12" fill="{SOFT}">education.md</text>',
+             f'<text x="{w - m - 24}" y="{m + 31}" {SANS} font-size="13" font-weight="700" fill="url(#edu-accent)" text-anchor="end">'
+             f'🎓 2009 → NOW</text>']
     for i, (key, fb, name, line, when) in enumerate(ITEMS):
         x = x0 + (i % 2) * (tile_w + gap)
         if i == len(ITEMS) - 1 and len(ITEMS) % 2:      # odd tile out: centre it
             x = (w - tile_w) // 2
-        y = 60 + (i // 2) * (tile_h + gap)
+        y = top + (i // 2) * (tile_h + gap)
         px, py, ph = x + 12, y + 12, tile_h - 24
         dark = key in DARK_PANELS
         if isinstance(key, tuple):
@@ -82,12 +108,12 @@ def build():
             art = logo(key, fb, px + 10, py + 8, panel_w - 20, ph - 16)
         tx = px + panel_w + 22
         parts.append(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="{0.2 + i * 0.2}s" dur=".6s" fill="freeze"/>'
-                     f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="14" fill="{C["panel"]}" stroke="{C["line2"]}"/>'
-                     f'<rect x="{px}" y="{py}" width="{panel_w}" height="{ph}" rx="10" fill="{"url(#edu-dark)" if dark else "#FFFFFF"}"/>'
+                     f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="16" fill="{TILE}" stroke="{TILE_LINE}" stroke-width="1.5"/>'
+                     f'<rect x="{px}" y="{py}" width="{panel_w}" height="{ph}" rx="11" fill="{"url(#edu-dark)" if dark else "#FFFFFF"}"/>'
                      + art
-                     + f'<text x="{tx}" y="{y + 46}" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="{C["silver"]}">{esc(name)}</text>'
-                     f'<text x="{tx}" y="{y + 70}" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="{C["mist"]}">{esc(line)}</text>'
-                     f'<text x="{tx}" y="{y + 94}" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="1.5" fill="{C["violet"]}">{esc(when)}</text></g>')
+                     + f'<text x="{tx}" y="{y + 46}" {SANS} font-size="18" font-weight="800" fill="{WHITE}">{esc(name)}</text>'
+                     f'<text x="{tx}" y="{y + 70}" {SANS} font-size="13" fill="{SOFT}">{esc(line)}</text>'
+                     f'<text x="{tx}" y="{y + 94}" {MONO} font-size="11" font-weight="700" letter-spacing="1.5" fill="url(#edu-accent)">{esc(when)}</text></g>')
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
            f'aria-label="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
            + "".join(parts) + "</svg>")

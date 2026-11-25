@@ -1497,15 +1497,14 @@ def main():
     build_hero()
     titles = [
         ("01", "ABOUT", "Hello, I'm", "Hemashree.", "WHO I AM", "about"),
-        ("02", "JOURNEY", "The road", "so far.", "2023 → NOW", "journey"),
+        ("02", "EDUCATION & PROGRAMS", "Where I", "learned.", "SCHOOL · UNIVERSITY · PROGRAMS", "education"),
         ("03", "MAIN PROJECTS", "Things I've", "built.", "SEATLOCK · ROOTLENS · TRIAGEIQ · GITLOOM", "work"),
-        ("04", "RESEARCH & PATENTS", "Ideas,", "on file.", "2 PATENTS · 1 RESEARCH", "patents"),
-        ("05", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
-        ("06", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "6 EXTENSIONS · FREE", "extensions"),
-        ("07", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
-        ("08", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
-        ("09", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
-        ("10", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
+        ("04", "OPEN SOURCE", "Built in", "the open.", "MERGED PRS · MIT REPOS", "opensource"),
+        ("05", "CHROME EXTENSIONS", "Tools I built", "for the browser.", "6 EXTENSIONS · FREE", "extensions"),
+        ("06", "YOUTUBE", "Byte", "Decoded.", "TECH · PROJECTS · AI · CODING", "youtube"),
+        ("07", "PLAY", "Play on my", "portfolio.", "4 MINI-GAMES", "play"),
+        ("08", "COMMIT LOG", "A year of", "building.", "CONTRIBUTIONS", "commits"),
+        ("09", "CONNECT", "Let's", "talk.", "SAY HI", "connect"),
     ]
     # a silver chess piece turns up in some of the section titles
     piece = {
