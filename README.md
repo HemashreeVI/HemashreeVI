@@ -1,7 +1,3 @@
-<a href="https://hemashreevi.github.io">
-  <img src="./assets/intro/opening-move.webp?v=4d7ef67f" width="100%" alt="The Opening Move: a short chess film. A spotlight fades up on a black marble chessboard. Close-ups of four black pieces, each one a project: the rook is SeatLock, it holds the line; the knight is RootLens, it jumps straight to the root cause; the bishop is TriageIQ, it cuts across the noise; the pawn is WorkSync, one step every day. Then the queen: HEMASHREE, Software Engineer, moves in every direction. Checkmate: the ivory king, labelled impossible, lies fallen behind the queen while the move log reads SeatLock, RootLens, TriageIQ, WorkSync, queen takes king, checkmate. The camera tilts over the whole board with every piece named, and ends on: your move.">
-</a>
-
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=HemashreeVI&label=PROFILE%20VIEWS&color=839DFB&style=flat-square&base=1000" alt="Profile views">
   <a href="https://github.com/HemashreeVI?tab=followers"><img src="https://img.shields.io/github/followers/HemashreeVI?label=FOLLOWERS&style=flat-square&logo=github&logoColor=E6E9F0&color=7FE0E8&labelColor=10131F" alt="GitHub followers"></a>
