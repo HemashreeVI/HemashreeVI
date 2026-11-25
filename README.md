@@ -192,4 +192,8 @@ Team Leader, **CodeYGen Club** · Design Lead, **Fitness Club**
   <a href="https://www.chess.com/member/hemashreevi" title="Play me on Chess.com"><img src="./assets/icons/social-chesscom.svg?v=d2cb3027" width="52" height="52" alt="Chess.com"></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/HemashreeVI/HemashreeVI/issues/new?template=ask.yml" title="Ask me anything"><img src="https://img.shields.io/badge/%F0%9F%92%AC_Ask_me_anything-an_AI_answers_from_this_profile-A9B8FF?style=for-the-badge&labelColor=10131F" alt="Ask me anything: open an issue and an AI answers from this profile"></a>
+</p>
+
 <a href="https://hemashreevi.github.io"><img src="./assets/cards/banner.webp?v=716c1f51" width="100%" alt="HEMASHREE, Software Engineer: backend, AI, IoT, patent co-inventor. Building systems that see, decide and keep people safe. hemashreevi.github.io, GitHub HemashreeVI, Founding Engineer at Node."></a>

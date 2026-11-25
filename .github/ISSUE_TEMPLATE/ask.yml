@@ -1,0 +1,15 @@
+name: 💬 Ask Hemashree
+description: Ask anything about my projects, skills or experience. An AI answers from this profile within a minute.
+title: "Ask: "
+labels: ["ask"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Write your question in the **title** (after `Ask:`) or below. An AI bot answers using only what's on this profile, then closes the issue.
+        Examples: *What did you build with Kafka?* · *Which projects use computer vision?* · *Are you open to internships?*
+  - type: textarea
+    id: details
+    attributes:
+      label: Anything to add? (optional)
+      placeholder: More context for your question

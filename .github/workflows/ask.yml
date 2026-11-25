@@ -1,0 +1,50 @@
+# Ask Hemashree: answers "Ask: ..." issues from this profile's own content.
+# Free by default (GitHub Models via GITHUB_TOKEN). Add an ANTHROPIC_API_KEY
+# repository secret to answer with Claude instead. See scripts/ask/answer.py.
+name: Ask Hemashree
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      question:
+        description: "Test question (answer goes to the run summary; no issue is created)"
+        required: true
+        default: "What did Hemashree build with Kafka?"
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+concurrency:
+  group: ask-${{ github.event.issue.number || github.run_id }}
+
+jobs:
+  answer:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.issue.title, 'Ask:') ||
+      startsWith(github.event.issue.title, 'ask:') ||
+      contains(github.event.issue.labels.*.name, 'ask')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the Anthropic SDK (only when a Claude key is configured)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python3 -m pip install --quiet anthropic
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Answer
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python3 scripts/ask/answer.py --question "$QUESTION"
+          else
+            python3 scripts/ask/answer.py
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          QUESTION: ${{ github.event.inputs.question }}
