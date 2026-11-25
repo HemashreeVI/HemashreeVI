@@ -20,7 +20,7 @@ LOGOS = ROOT / "assets/logos"
 
 ITEMS = [
     ("mirs", "MIRS", "MIRS", "School", "2009 – 2023"),
-    ("cambridge", "CAMBRIDGE", "Cambridge English", "Key English Test (KET) · Pass", "DEC 2017"),
+    ("cambridge", "CAMBRIDGE", "Cambridge English", "Key English Test (KET) · Pass", ""),
     ("vit", "VIT", "VIT Chennai", "B.Tech Computer Science Engineering", "AUG 2023 → NOW"),
     (("nus", "ntu"), "NUS · NTU", "NUS & NTU, Singapore", "Introduction to Industry 4.0 Programme", "JUN 2025 · SINGAPORE"),
     ("superai", "SUPERAI", "SuperAI 2025", "AI conference · Marina Bay Sands", "18–19 JUN 2025 · SINGAPORE"),
@@ -84,7 +84,7 @@ def build():
                      f'<text x="{tx}" y="{y + 70}" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="{C["mist"]}">{esc(line)}</text>'
                      f'<text x="{tx}" y="{y + 94}" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="1.5" fill="{C["violet"]}">{esc(when)}</text></g>')
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
-           f'aria-label="Education and programs: MIRS school, 2009 to 2023; Cambridge English Key English Test, pass, December 2017; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
+           f'aria-label="Education and programs: MIRS school, 2009 to 2023; Cambridge English Key English Test, pass; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
            + "".join(parts) + "</svg>")
     out = ROOT / "assets/cards/edu.svg"
     out.write_text(svg)
