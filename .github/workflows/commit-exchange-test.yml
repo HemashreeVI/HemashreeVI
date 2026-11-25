@@ -1,0 +1,19 @@
+# Manual test of the HemashreeVI/commit-exchange Action (writes the card, publishes nothing).
+name: Commit Exchange Action test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - id: card
+        uses: HemashreeVI/commit-exchange@main
+        with:
+          theme: aurora
+          publish_branch: ""
+      - run: |
+          ls -la "${{ steps.card.outputs.path }}"
+          head -c 400 "${{ steps.card.outputs.path }}"; echo
+          grep -o 'Commit Exchange: [^<]*' "${{ steps.card.outputs.path }}" | head -1
