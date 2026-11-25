@@ -27,7 +27,7 @@
 
 
 <img src="./assets/cards/title-education.svg?v=1543dd57" width="100%" alt="02 Education &amp; programs: Where I learned.">
-<img src="./assets/cards/edu.svg?v=0ba1aab6" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
+<img src="./assets/cards/edu.svg?v=6ba76ad2" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
 
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">

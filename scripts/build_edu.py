@@ -65,10 +65,9 @@ MONO = "font-family=\"'JetBrains Mono',Menlo,Consolas,monospace\""
 
 def build():
     rows = (len(ITEMS) + 1) // 2
-    tile_w, tile_h, gap = 540, 124, 22
-    m = 14                                   # margin so the glow has room
-    top = 78
-    w, h = 1200, top + rows * tile_h + (rows - 1) * gap + 30 + m
+    tile_w, tile_h, gap = 536, 124, 32          # wider gap so each tile's glow has room
+    top = 34
+    w, h = 1200, top + rows * tile_h + (rows - 1) * gap + 34
     x0 = (w - 2 * tile_w - gap) // 2
     panel_w = 210
     stops = "".join(f'<stop offset="{i / 2}" stop-color="{c}"/>' for i, c in enumerate(NEON))
@@ -77,17 +76,10 @@ def build():
              f'<linearGradient id="edu-accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B794FF"/><stop offset="1" stop-color="#FF7AD9"/></linearGradient>'
              f'<linearGradient id="edu-dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B2BD9"/>'
              f'<stop offset=".45" stop-color="#1E1F6B"/><stop offset="1" stop-color="#121A4A"/></linearGradient>'
-             f'<filter id="edu-glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"/></filter>'
+             f'<filter id="edu-glow" x="-15%" y="-40%" width="130%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>'
              f'</defs>',
-             # glow layer, then the crisp border on top
-             f'<rect x="{m}" y="{m}" width="{w - 2 * m}" height="{h - 2 * m}" rx="24" fill="none" stroke="url(#edu-neon)" '
-             f'stroke-width="6" filter="url(#edu-glow)" opacity=".85"><animate attributeName="opacity" values=".55;.95;.55" '
-             f'dur="4s" repeatCount="indefinite"/></rect>',
-             f'<rect x="{m}" y="{m}" width="{w - 2 * m}" height="{h - 2 * m}" rx="24" fill="{INK}" stroke="url(#edu-neon)" stroke-width="2.5"/>',
-             f'<rect x="{m + 22}" y="{m + 20}" width="10" height="10" rx="2" fill="none" stroke="{SOFT}" stroke-width="1.5"/>'
-             f'<text x="{m + 40}" y="{m + 30}" {MONO} font-size="12" fill="{SOFT}">education.md</text>',
-             f'<text x="{w - m - 24}" y="{m + 31}" {SANS} font-size="13" font-weight="700" fill="url(#edu-accent)" text-anchor="end">'
-             f'🎓 2009 → NOW</text>']
+             # outer frame: the profile's usual card style
+             f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="18" fill="{C["bg1"]}" stroke="{C["line"]}" stroke-width="2"/>']
     for i, (key, fb, name, line, when) in enumerate(ITEMS):
         x = x0 + (i % 2) * (tile_w + gap)
         if i == len(ITEMS) - 1 and len(ITEMS) % 2:      # odd tile out: centre it
@@ -108,7 +100,11 @@ def build():
             art = logo(key, fb, px + 10, py + 8, panel_w - 20, ph - 16)
         tx = px + panel_w + 22
         parts.append(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="{0.2 + i * 0.2}s" dur=".6s" fill="freeze"/>'
-                     f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="16" fill="{TILE}" stroke="{TILE_LINE}" stroke-width="1.5"/>'
+                     # each tile: neon glow underneath, then a black card with a crisp neon border (like the ID card)
+                     f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="16" fill="none" stroke="url(#edu-neon)" '
+                     f'stroke-width="5" filter="url(#edu-glow)" opacity=".8"><animate attributeName="opacity" values=".45;.9;.45" '
+                     f'dur="4s" begin="{i * 0.5}s" repeatCount="indefinite"/></rect>'
+                     f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="16" fill="{INK}" stroke="url(#edu-neon)" stroke-width="2"/>'
                      f'<rect x="{px}" y="{py}" width="{panel_w}" height="{ph}" rx="11" fill="{"url(#edu-dark)" if dark else "#FFFFFF"}"/>'
                      + art
                      + f'<text x="{tx}" y="{y + 46}" {SANS} font-size="18" font-weight="800" fill="{WHITE}">{esc(name)}</text>'
