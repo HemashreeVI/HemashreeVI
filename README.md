@@ -21,9 +21,61 @@
 <img src="./assets/cards/title-about.svg?v=28a3ae43" width="100%" alt="01 About: Hello, I'm Hemashree.">
 <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/about.svg" width="100%" alt="ID card on a GitHub lanyard: Hi there, I'm Hemashree, Software Engineer, open source enthusiast and patent co-inventor; about me, tech stack, GitHub stats, top repositories and links. Next to it an animated terminal: whoami, Hemashree, software engineer. Education: B.Tech Computer Science Engineering at VIT Chennai. Focus: vision, reinforcement learning, embedded, security. Patents: smart walker, sensor-fusion fall-risk prediction (filing in progress). Open to cybersecurity, computer vision, cyber-physical systems, backend and DevOps. Languages: Tamil, English, Hindi, Japanese.">
 
+<details>
+<summary><picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/about-off-light.svg"><img src="./assets/cards/toggles/about-off-dark.svg" width="440" alt="Show full profile"></picture></summary>
+
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/about-on-light.svg"><img src="./assets/cards/toggles/about-on-dark.svg" width="440" alt="Full profile open"></picture>
+
+### 👋 Hi, I'm Hemashree
+
+I'm a **B.Tech Computer Science Engineering** student at **VIT Chennai** (2023 → now) who builds systems that **see, decide and keep people safe**: concurrency-safe backends, self-healing microservices, on-device AI, computer vision and IoT.
+
+**🎯 Open to:** software engineering roles in **backend & DevOps**, **computer vision**, **cybersecurity** and **cyber-physical systems**.
+
+**🔭 Focus areas:** vision · reinforcement learning · embedded · security
+
+| Area | Tools |
+|---|---|
+| **Languages** | Python · Java · C++ · JavaScript · SQL |
+| **Backend & DevOps** | Spring Boot · FastAPI · Flask · Docker · Kafka · Redis · Prometheus · Grafana · GitHub Actions · k6 |
+| **AI & vision** | PyTorch · TensorFlow · OpenCV · YOLOv8/v9 · Grad-CAM · MMPose · Q-learning · RAG · Ollama · watsonx |
+| **Data** | PostgreSQL · SQLite · MySQL · Redis · Qdrant · Firebase |
+| **Embedded & IoT** | Arduino · ESP32 · Raspberry Pi · sensor fusion · LIDAR SLAM |
+| **Security** | threat modeling · intrusion detection · risk scoring |
+| **Frontend & design** | HTML · CSS · JavaScript · Three.js · SVG animation · Canva |
+
+**🗣️ Spoken:** Tamil · English · Hindi · 日本語 (studied Japanese as a subject at VIT Chennai)
+
+**✨ Beyond code:** Team Leader of the CodeYGen Club · Design Lead of the Fitness Club · I run the **[Byte Decoded](https://www.youtube.com/@shreejith-l7o)** YouTube channel · F1 fan · chess player
+
+</details>
+
 
 <img src="./assets/cards/title-education.svg?v=1543dd57" width="100%" alt="02 Education &amp; programs: Where I learned.">
 <img src="./assets/cards/edu.svg?v=6ba76ad2" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
+
+<details>
+<summary><picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/work-off-light.svg"><img src="./assets/cards/toggles/work-off-dark.svg" width="440" alt="Show work and research"></picture></summary>
+
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/work-on-light.svg"><img src="./assets/cards/toggles/work-on-dark.svg" width="440" alt="Work and research open"></picture>
+
+#### 🔬 Research Intern · VIT Chennai · May – Jul 2025
+Human pose estimation with **MMPose**, validated against **Kinovea** ground truth. → [heatmap-pose-estimation-kinovea](https://github.com/HemashreeVI/heatmap-pose-estimation-kinovea)
+
+#### 🦷 Dental X-ray AI (research) · Jul – Sep 2025
+Reads panoramic dental X-rays and explains what it sees: a **YOLOv9** pipeline detecting **31 dental conditions**, trained on **13,000+** X-rays (test mAP@50 **38.7%**), with per-finding **HiResCAM** heatmaps, an FDI tooth chart, a Gradio app and PDF reports. → [AI_Malocclusion_Detection](https://github.com/HemashreeVI/AI_Malocclusion_Detection)
+
+#### 🧾 Patents · co-inventor · filing in progress
+- **Smart Walker:** IoT-enabled walker with sensor-fusion fall-risk prediction and adaptive mobility assistance (dual IMUs + load cells, standalone on Arduino). Inventive disclosure filed with IIPRD. → [smart_walker](https://github.com/HemashreeVI/smart_walker)
+- **Hazard-Detection Rover:** autonomous disaster-zone exploration with Q-learning navigation, CNN hazard perception, multi-hazard detection and a live rescue dashboard. → [disaster-response-rover-nodered](https://github.com/HemashreeVI/disaster-response-rover-nodered)
+
+#### 🌐 Open source
+Merged pull request to [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions/pull/126858) (Oct 2026) · 14 MIT-licensed tools of my own
+
+#### 🧑‍🤝‍🧑 Leadership
+Team Leader, **CodeYGen Club** · Design Lead, **Fitness Club**
+
+</details>
 
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
@@ -39,6 +91,33 @@
   <a href="https://hemashreevi.github.io/GitLoom/"><img src="https://img.shields.io/badge/Try_it_live-GitLoom-8FE3C8?style=flat-square&labelColor=10131F&logo=googlechrome&logoColor=E6E9F0" alt="Try GitLoom live"></a>
   <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-GitLoom_1_min_demo-F0A8D0?style=flat-square&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
 </p>
+
+<details>
+<summary><picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/projects-off-light.svg"><img src="./assets/cards/toggles/projects-off-dark.svg" width="440" alt="Show project deep-dives"></picture></summary>
+
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/cards/toggles/projects-on-light.svg"><img src="./assets/cards/toggles/projects-on-dark.svg" width="440" alt="Project deep-dives open"></picture>
+
+#### 🎟️ [SeatLock](https://github.com/HemashreeVI/SeatLock): thousands of buyers, one seat, zero double-bookings
+- **Built:** 3 locking strategies (pessimistic, optimistic, Redis) · `@Version` fencing · partial unique index · Kafka saga + outbox · Redis waiting room
+- **Proof:** exactly **1 of 200** racing threads wins a seat · **0 double-bookings** under k6 load · **2,171 req/s** with fast reject
+- **Stack:** Java 21 · Spring Boot · PostgreSQL · Redis · Kafka · k6 · Testcontainers
+
+#### 🔍 [RootLens](https://github.com/HemashreeVI/rootlens): finds out why a microservice broke, then fixes it within strict limits
+- **Built:** detect → investigate → decide → act → verify · rolls back bad releases · audit log of every decision
+- **Proof:** **< 2 min** from a real incident to resolved · **118** unit tests
+- **Stack:** Python · FastAPI · Docker · Prometheus · Grafana · OpenTelemetry · SQLite · CI
+
+#### 📨 [TriageIQ](https://github.com/HemashreeVI/TriageIQ): sorts every support email and drafts a grounded reply, fully on-device
+- **Built:** Kafka pipeline · local LLM classifies with a safe fallback · RAG over solved tickets · a human approves every reply
+- **Proof:** **3B** local model, data never leaves the machine · top-3 similar past tickets as context · **0** emails sent without approval
+- **Stack:** Python · Kafka · Ollama · Qdrant · FastAPI · Docker · SSE
+
+#### 🧵 [GitLoom](https://hemashreevi.github.io/GitLoom/): your GitHub, woven into a portfolio website
+- **Built:** reads repos, languages and activity in the browser · live design studio · exports one `index.html` you can host free
+- **Proof:** **10** templates from the same data · **1** HTML file · **0** servers or sign-ups
+- **Stack:** JavaScript · HTML · CSS · GitHub REST API · GitHub Pages
+
+</details>
 
 <img src="./assets/cards/title-opensource.svg?v=0d8bf3a9" width="100%" alt="04 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg?v=768244c6" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>

@@ -134,7 +134,8 @@ def scene(t, mode):
     return "".join(out)
 
 
-def build(mode):
+def pill(mode, slide=True):
+    """defs + toggle (frame, scene window, glass knob), in banner coordinates."""
     t = THEMES[mode]
     oc, orow = ORB[mode]
     kx = SX + oc * PX + PX / 2                # knob rests on the sun / moon
@@ -158,9 +159,9 @@ def build(mode):
     window = f'<g clip-path="url(#win)"><use href="#scene"/></g>'
     # glass knob: the scene magnified behind a glossy sphere, sliding in on load
     mag = 1.35
-    knob = (f'<g transform="translate({kx} {ky})">'
-            f'<animateTransform attributeName="transform" type="translate" from="{kx0} {ky}" to="{kx} {ky}" dur="1.4s" '
-            f'calcMode="spline" keyTimes="0;1" keySplines=".25 .1 .25 1" fill="freeze"/>'
+    slide_anim = (f'<animateTransform attributeName="transform" type="translate" from="{kx0} {ky}" to="{kx} {ky}" dur="1.4s" '
+                  f'calcMode="spline" keyTimes="0;1" keySplines=".25 .1 .25 1" fill="freeze"/>') if slide else ""
+    knob = (f'<g transform="translate({kx} {ky})">' + slide_anim +
             f'<circle r="{r + 5}" fill="#000" opacity=".2" cy="10"/>'
             f'<g clip-path="url(#ball)"><g id="magnify">'
             f'<use href="#scene" transform="scale({mag}) translate({-kx} {-ky})"/>'
@@ -173,12 +174,18 @@ def build(mode):
                 f'<animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.15;.8;1" dur="{d}s" begin="{b}s" repeatCount="indefinite"/></circle>'
                 for c, d, b in ((-40, 4.2, 0), (-12, 5.1, 1.3), (18, 3.8, .6), (44, 4.6, 2.1), (-62, 5.4, 2.8), (60, 4.0, 3.3), (2, 4.9, 1.9)))
             + '</g>')
+    return defs, frame + window + knob
+
+
+def build(mode):
+    t = THEMES[mode]
+    defs, toggle = pill(mode)
     label = (f'<text x="{W / 2}" y="{SY + SH + 82}" text-anchor="middle" font-family="\'JetBrains Mono\',Menlo,Consolas,monospace" '
              f'font-size="15" letter-spacing="4" font-weight="700" fill="{t["muted"]}">{t["icon"]}  {t["label"]}</text>'
              f'<rect x="{W / 2 - 36}" y="{SY + SH + 96}" width="72" height="3" rx="1.5" fill="{t["accent"]}"/>'
              f'<text x="{W / 2}" y="{SY + SH + 122}" text-anchor="middle" font-family="Inter,\'Segoe UI\',Arial,sans-serif" '
              f'font-size="13" fill="{t["muted"]}">switch your GitHub theme to flip the switch</text>')
-    body = f'<rect width="{W}" height="{H + 30}" rx="20" fill="{t["page"]}"/>' + frame + window + knob + label
+    body = f'<rect width="{W}" height="{H + 30}" rx="20" fill="{t["page"]}"/>' + toggle + label
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{W}" height="{H + 30}" '
            f'viewBox="0 0 {W} {H + 30}" role="img" aria-label="A pill-shaped theme toggle with a glass snow-globe knob over a pixel-art '
            f'{"sunny landscape" if mode == "light" else "night landscape"}: a small house, a fence, hills and a tree. {t["label"].title()}.">'
