@@ -19,6 +19,7 @@ from build_cards import C  # noqa: E402
 LOGOS = ROOT / "assets/logos"
 
 ITEMS = [
+    ("mirs", "MIRS", "MIRS", "School", "2009 – 2023"),
     ("vit", "VIT", "VIT Chennai", "B.Tech Computer Science Engineering", "AUG 2023 → NOW"),
     (("nus", "ntu"), "NUS · NTU", "NUS & NTU, Singapore", "Introduction to Industry 4.0 Programme", "JUN 2025 · SINGAPORE"),
     ("superai", "SUPERAI", "SuperAI 2025", "AI conference · Marina Bay Sands", "18–19 JUN 2025 · SINGAPORE"),
@@ -51,7 +52,8 @@ def logo(key, fallback, x, y, w, h):
 
 
 def build():
-    w, h = 1200, 350
+    rows = (len(ITEMS) + 1) // 2
+    w, h = 1200, 60 + (rows - 1) * 148 + 124 + 30
     tile_w, tile_h, gap = 548, 124, 24
     x0 = (w - 2 * tile_w - gap) // 2
     panel_w = 210
@@ -61,6 +63,8 @@ def build():
              f'<text x="40" y="40" font-family="JetBrains Mono,Menlo,monospace" font-size="12" letter-spacing="3" fill="{C["muted"]}">EDUCATION &amp; PROGRAMS</text>']
     for i, (key, fb, name, line, when) in enumerate(ITEMS):
         x = x0 + (i % 2) * (tile_w + gap)
+        if i == len(ITEMS) - 1 and len(ITEMS) % 2:      # odd tile out: centre it
+            x = (w - tile_w) // 2
         y = 60 + (i // 2) * (tile_h + gap)
         px, py, ph = x + 12, y + 12, tile_h - 24
         dark = key in DARK_PANELS
@@ -79,7 +83,7 @@ def build():
                      f'<text x="{tx}" y="{y + 70}" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="{C["mist"]}">{esc(line)}</text>'
                      f'<text x="{tx}" y="{y + 94}" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="1.5" fill="{C["violet"]}">{esc(when)}</text></g>')
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
-           f'aria-label="Education and programs: VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
+           f'aria-label="Education and programs: MIRS school, 2009 to 2023; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
            + "".join(parts) + "</svg>")
     out = ROOT / "assets/cards/edu.svg"
     out.write_text(svg)

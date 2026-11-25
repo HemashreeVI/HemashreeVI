@@ -28,6 +28,8 @@
 <img src="./assets/cards/title-journey.svg?v=3208a0e9" width="100%" alt="02 Journey: The road so far.">
 <img src="./assets/cards/journey.svg?v=ec3279ac" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
 
+<img src="./assets/cards/edu.svg" width="100%" alt="Education and programs: MIRS school, 2009 to 2023; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
+
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
 <a href="https://github.com/HemashreeVI/SeatLock" title="SeatLock"><img src="./assets/cards/show-seatlock.webp?v=c755cb19" width="49%" alt="SeatLock: 0 double-bookings with 200 threads racing. A ticket-booking backend where 200 buyers race for one seat and exactly one wins."></a>
@@ -88,6 +90,12 @@
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/streak.svg" width="100%" alt="Contribution streak: total contributions, current streak and longest streak. Updated automatically twice a day.">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output-arcade/commit-run.svg" width="100%" alt="Commit Run: an arcade-style contribution grid for the last year. A small ship flies across it and lights up busy days, with my level, current streak, total stars, followers and top languages as power-ups. Updated twice a day.">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output-arcade/commit-exchange.svg" width="100%" alt="Commit Exchange: my contributions shown as a stock. Price is contributions in the last 30 days, with weekly candlesticks and volume bars, my most-starred repos as holdings and my languages as sector allocation. Updated twice a day.">
 </p>
 <p align="center">
   <a href="https://github.com/HemashreeVI?tab=achievements"><img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/achievements.svg" width="100%" alt="My GitHub achievements, updated automatically twice a day."></a>

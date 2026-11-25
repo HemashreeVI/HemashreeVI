@@ -1,0 +1,35 @@
+# Commit Run and Commit Exchange cards (scripts/viz/arcade.py), midnight theme.
+# Kept separate from profile-cards.yml so the existing cards and their `output`
+# branch are untouched; these two publish to their own `output-arcade` branch.
+name: Commit Run and Commit Exchange
+
+on:
+  schedule:
+    - cron: "17 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/arcade-cards.yml, scripts/viz/arcade.py, scripts/viz/themes.py]
+
+permissions:
+  contents: write
+
+concurrency: arcade-cards
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: repo
+      - run: python3 repo/scripts/viz/arcade.py ${{ github.repository_owner }} dist --theme midnight
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output-arcade
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
