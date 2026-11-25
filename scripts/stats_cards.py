@@ -185,7 +185,9 @@ def render_langs(s, user):
 def render_streak(s, user):
     w, h, u = 1200, 240, "stk"
     total, cur, c_start, longest, l_start, l_end = streaks(s["days"], s["today"])
-    first = s["days"][0][0] if s["days"] else None
+    # Start from the first day with a contribution, not from the first calendar year GitHub lists
+    # (that list can keep an empty year around after commits are removed).
+    first = next((d for d, n in s["days"] if n > 0), None)
     cols = [
         (fmt(total), "Total contributions", f"{short(first)} – present", C["silver"]),
         (str(cur), "Current streak", f"{short(c_start)} – {short(s['today'])}" if cur else "start one today", C["lilac"]),
