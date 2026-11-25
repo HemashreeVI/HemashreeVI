@@ -41,6 +41,31 @@ C = {   # deep navy with a blue glow on one side and a plum glow on the other, l
     "mint": "#7EE787",
 }
 
+# ---------------------------------------------------------------- light mode
+# CARD_MODE=light python3 scripts/build_cards.py  →  the same cards on a warm beige sheet,
+# written to assets/cards/light/ (the README picks one per visitor with prefers-color-scheme).
+import os  # noqa: E402
+import re as _re  # noqa: E402
+
+LIGHT = os.environ.get("CARD_MODE") == "light"
+C_LIGHT = {
+    "bg0": "#F4E9D8", "bg1": "#FBF4E9", "bg2": "#F1E4CF", "panel": "#FFFBF4", "line": "#E5D5BC", "line2": "#D3BF9F",
+    "violet": "#3F63D8", "lav": "#5B4FC4", "lilac": "#A0408F", "silver": "#2A211C", "mist": "#4A3F37",
+    "muted": "#7A6A5B", "dim": "#A39281", "rose": "#B83C78", "mint": "#2E8A4C",
+}
+# hard-coded colours outside the palette, mapped to their light-sheet equivalents
+RECOLOR = {"#F0F6FC": "#2A211C", "#E6EDF3": "#2A211C", "#C9D1D9": "#4A3F37", "#C9CED6": "#4A3F37",
+           "#8B949E": "#7A6A5B", "#0D1117": "#F4E9D8", "#05060A": "#F4E9D8", "#30363D": "#E5D5BC",
+           "#A9B8FF": "#5B4FC4", "#7EE787": "#2E8A4C", "#000000": "#FFFBF4"}
+if LIGHT:
+    C.update(C_LIGHT)
+    OUT = OUT / "light"
+
+
+def _recolor(svg_text):
+    return _re.sub(r"#[0-9A-Fa-f]{6}\b", lambda m: RECOLOR.get(m.group(0).upper(), m.group(0)), svg_text)
+
+
 SERIF = "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -487,6 +512,8 @@ def chips(x, y, labels, gap=8, maxw=None, **kw):
 
 
 def write(name, content):
+    if LIGHT:
+        content = _recolor(content)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / name).write_text(content, encoding="utf-8")
     print(f"  {name:28s} {len(content.encode()) / 1024:6.1f} KB")

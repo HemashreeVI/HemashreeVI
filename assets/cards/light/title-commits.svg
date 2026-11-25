@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 104" width="1200" height="104" role="img" aria-labelledby="t08-t t08-d">
+<title id="t08-t">08 Commit Log: A year of building.</title>
+<desc id="t08-d">CONTRIBUTIONS</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#5B4FC4}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="t08-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#F1E4CF"/>
+    <stop offset=".55" stop-color="#FBF4E9"/>
+    <stop offset="1" stop-color="#F4E9D8"/>
+  </radialGradient>
+  <radialGradient id="t08-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="t08-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="t08-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3F63D8"/>
+    <stop offset=".55" stop-color="#5B4FC4"/>
+    <stop offset="1" stop-color="#A0408F"/>
+  </linearGradient>
+  <linearGradient id="t08-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5B4FC4" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#5B4FC4" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#5B4FC4" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="t08-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#5B4FC4" stroke-opacity="0"/>
+  </pattern>
+  <filter id="t08-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="26"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="t08-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7A6A5B"/>
+    <stop offset=".45" stop-color="#5B4FC4"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#5B4FC4"/>
+    <stop offset="1" stop-color="#7A6A5B"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="t08-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="1198" height="102" rx="16" fill="#FBF4E9" stroke="#E5D5BC"/>
+<text x="30" y="32" class="mono" font-size="12" fill="#2A211C" text-anchor="start" letter-spacing="3">08</text>
+<text x="58" y="32" class="mono" font-size="12" fill="#5B4FC4" text-anchor="start" letter-spacing="3">COMMIT LOG</text>
+<text x="1170" y="32" class="mono" font-size="11" fill="#7A6A5B" text-anchor="end" letter-spacing="3">CONTRIBUTIONS</text>
+<text x="30" y="80" class="serif" font-size="40" fill="#2A211C">A year of <tspan fill="url(#t08-sweep)" font-style="italic">building.</tspan></text>
+<rect x="30" y="96" width="1140" height="1.2" fill="url(#t08-rule)"/>
+<circle cy="96.6" r="2.6" fill="#5B4FC4">
+  <animate attributeName="cx" values="30;1170" dur="6s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.8;1" dur="6s" repeatCount="indefinite"/>
+</circle>
+<defs><radialGradient id="pcP-sh" cx="50%" cy="50%" r="50%">
+  <stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+</radialGradient></defs>
+<g><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;.04;.93;.98;1" values="0;1;1;0;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite"
+    keyTimes="0.000;0.080;0.140;0.240;0.300;0.400;0.460;0.560;0.620;0.720;0.780;1.000" values="930 95;930 95;966 95;966 95;1002 95;1002 95;1038 95;1038 95;1074 95;1074 95;1110 95;1110 95"/>
+  <ellipse cx="0" cy="0" rx="11.5" ry="1.9" fill="url(#pcP-sh)"/><image x="-9.3" y="-32.3" width="18.6" height="32.3" href="data:image/webp;base64,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"/>
+</g>
+
+</svg>

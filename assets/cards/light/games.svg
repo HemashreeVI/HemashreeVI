@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="game-t game-d">
+<title id="game-t">Play on my portfolio</title>
+<desc id="game-d">Portfolio mini-games: Keep them standing: Stop a fall before it happens; Freshness check: Save a mango from spoiling; Incident hunt: Find the broken microservice; Hiragana sprint: Test your Japanese. Plus a 3D LIDAR hero, a Hiring-for switch and Detection mode (press D).</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#5B4FC4}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="game-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#F1E4CF"/>
+    <stop offset=".55" stop-color="#FBF4E9"/>
+    <stop offset="1" stop-color="#F4E9D8"/>
+  </radialGradient>
+  <radialGradient id="game-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="game-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="game-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#3F63D8"/>
+    <stop offset=".55" stop-color="#5B4FC4"/>
+    <stop offset="1" stop-color="#A0408F"/>
+  </linearGradient>
+  <linearGradient id="game-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5B4FC4" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#5B4FC4" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#5B4FC4" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="game-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#5B4FC4" stroke-opacity="0"/>
+  </pattern>
+  <filter id="game-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="22"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="game-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7A6A5B"/>
+    <stop offset=".45" stop-color="#5B4FC4"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#5B4FC4"/>
+    <stop offset="1" stop-color="#7A6A5B"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="game-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="1198" height="358" rx="22" fill="url(#game-bg)" stroke="#E5D5BC"/>
+<rect x="1" y="1" width="1198" height="358" rx="22" fill="url(#game-grid)"/>
+<ellipse cx="600" cy="72" rx="420" ry="252" fill="url(#game-glowA)"/>
+<ellipse cx="600" cy="288" rx="300" ry="180" fill="url(#game-glowB)"/>
+<text x="600" y="50" class="serif" font-size="17" fill="#4A3F37" text-anchor="middle" font-style="italic">My portfolio isn't just a page to read. It has 4 mini-games built from my projects.</text>
+<g>
+<rect x="32" y="76" width="273" height="190" rx="18" fill="#FFFBF4" stroke="#D3BF9F"/>
+<text x="52" y="102" class="mono" font-size="10.5" fill="#5B4FC4" text-anchor="start" letter-spacing="2.5">GAME 01</text>
+<g stroke="#2A211C" stroke-width="2" fill="none"><path d="M150 176V132H186V176"/><path d="M150 150H186"/></g><circle cx="168" cy="120" r="5" fill="#B83C78"><animate attributeName="cy" values="120;126;120" dur="1.2s" repeatCount="indefinite"/></circle>
+<text x="168" y="224" class="serif" font-size="19" fill="#2A211C" text-anchor="middle" >Keep them standing</text>
+<text x="168" y="248" class="sans" font-size="12.5" fill="#7A6A5B" text-anchor="middle" >Stop a fall before it happens</text>
+</g>
+<g>
+<rect x="319" y="76" width="273" height="190" rx="18" fill="#FFFBF4" stroke="#D3BF9F"/>
+<text x="339" y="102" class="mono" font-size="10.5" fill="#5B4FC4" text-anchor="start" letter-spacing="2.5">GAME 02</text>
+<ellipse cx="455" cy="150" rx="20" ry="26" fill="#2E8A4C" fill-opacity=".3" stroke="#2E8A4C"><animate attributeName="fill" values="#2E8A4C;#E9C46A;#B83C78;#2E8A4C" dur="5s" repeatCount="indefinite"/></ellipse><path d="M455 124q6 -10 14 -8" stroke="#2E8A4C" fill="none"/>
+<text x="455" y="224" class="serif" font-size="19" fill="#2A211C" text-anchor="middle" >Freshness check</text>
+<text x="455" y="248" class="sans" font-size="12.5" fill="#7A6A5B" text-anchor="middle" >Save a mango from spoiling</text>
+</g>
+<g>
+<rect x="606" y="76" width="273" height="190" rx="18" fill="#FFFBF4" stroke="#D3BF9F"/>
+<text x="626" y="102" class="mono" font-size="10.5" fill="#5B4FC4" text-anchor="start" letter-spacing="2.5">GAME 03</text>
+<circle cx="724" cy="136" r="6" fill="#5B4FC4" fill-opacity=".7"/><circle cx="756" cy="134" r="6" fill="#5B4FC4" fill-opacity=".7"/><circle cx="730" cy="164" r="6" fill="#5B4FC4" fill-opacity=".7"/><circle cx="756" cy="162" r="6" fill="#B83C78" fill-opacity=".7"/><circle cx="742" cy="150" r="16" fill="none" stroke="#2A211C" stroke-width="2"><animateMotion dur="4s" repeatCount="indefinite" path="M0 0L-14 -12L12 -14L-10 12L12 12Z"/></circle>
+<text x="742" y="224" class="serif" font-size="19" fill="#2A211C" text-anchor="middle" >Incident hunt</text>
+<text x="742" y="248" class="sans" font-size="12.5" fill="#7A6A5B" text-anchor="middle" >Find the broken microservice</text>
+</g>
+<g>
+<rect x="893" y="76" width="273" height="190" rx="18" fill="#FFFBF4" stroke="#D3BF9F"/>
+<text x="913" y="102" class="mono" font-size="10.5" fill="#5B4FC4" text-anchor="start" letter-spacing="2.5">GAME 04</text>
+<text x="1029" y="164" class="serif" font-size="40" fill="#2A211C" text-anchor="middle" >あ</text><circle cx="1029" cy="150" r="30" fill="none" stroke="#5B4FC4" stroke-dasharray="4 6" class="spin" style="transform-origin:1029px 150px"/>
+<text x="1029" y="224" class="serif" font-size="19" fill="#2A211C" text-anchor="middle" >Hiragana sprint</text>
+<text x="1029" y="248" class="sans" font-size="12.5" fill="#7A6A5B" text-anchor="middle" >Test your Japanese</text>
+</g><text x="600" y="310" class="sans" font-size="14" fill="#7A6A5B" text-anchor="middle">Plus a <tspan fill="#2A211C">3D LIDAR hero</tspan>, a <tspan fill="#2A211C">"Hiring for…" switch</tspan> that reshapes the page for your role, and <tspan fill="#2A211C">Detection mode</tspan> (press <tspan class="mono" fill="#A0408F">D</tspan>).</text><text x="600" y="338" class="mono" font-size="12" fill="#5B4FC4" text-anchor="middle" letter-spacing="3">hemashreevi.github.io</text>
+</svg>

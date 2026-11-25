@@ -3,10 +3,11 @@
 // a plain image shows the same in every browser and in the GitHub mobile app, while an SVG with a
 // screenshot inside it can be blocked by stricter image viewers. Needs Playwright and Pillow.
 //   python3 scripts/build_cards.py && node scripts/cards_to_webp.js
+//   CARD_MODE=light python3 scripts/build_cards.py && node scripts/cards_to_webp.js light
 const { chromium } = require('playwright');
 const { execFileSync } = require('child_process');
 const fs = require('fs'), os = require('os'), path = require('path');
-const dir = path.join(__dirname, '..', 'assets', 'cards');
+const dir = path.join(__dirname, '..', 'assets', 'cards', process.argv[2] || '');
 (async () => {
   const cards = fs.readdirSync(dir).filter(f => /^show-.*\.svg$/.test(f));
   const b = await chromium.launch();

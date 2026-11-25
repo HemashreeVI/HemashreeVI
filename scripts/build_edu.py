@@ -62,6 +62,11 @@ NEON = ("#4F7BFF", "#9B5CFF", "#FF4FD8")
 SANS = "font-family=\"Inter,'Segoe UI',Arial,sans-serif\""
 MONO = "font-family=\"'JetBrains Mono',Menlo,Consolas,monospace\""
 
+# CARD_MODE=light: same neon tiles on the warm beige sheet (C is already the light palette then)
+LIGHT = __import__("os").environ.get("CARD_MODE") == "light"
+if LIGHT:
+    INK, WHITE, SOFT = "#FFFBF4", "#2A211C", "#4A3F37"
+
 
 def build():
     rows = (len(ITEMS) + 1) // 2
@@ -113,7 +118,7 @@ def build():
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
            f'aria-label="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
            + "".join(parts) + "</svg>")
-    out = ROOT / "assets/cards/edu.svg"
+    out = ROOT / ("assets/cards/light/edu.svg" if LIGHT else "assets/cards/edu.svg")
     out.write_text(svg)
     print("wrote", out)
 
