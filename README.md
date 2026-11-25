@@ -28,7 +28,7 @@
 <img src="./assets/cards/title-journey.svg?v=3208a0e9" width="100%" alt="02 Journey: The road so far.">
 <img src="./assets/cards/journey.svg?v=ec3279ac" width="100%" alt="Timeline: VIT Chennai Aug 2023; research intern May to Jul 2025; Singapore, NUS Industry 4.0, SuperAI and IBM Gen AI Jun 2025; dental X-ray AI with YOLOv9 on 13,000+ images Jul to Sep 2025; patent co-inventor 2025 to 26; backend and DevOps 2026 with SeatLock, RootLens and TriageIQ; now building 4 more projects.">
 
-<img src="./assets/cards/edu.svg" width="100%" alt="Education and programs: MIRS school, 2009 to 2023; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
+<img src="./assets/cards/edu.svg" width="100%" alt="Education and programs: MIRS school, 2009 to 2023, Class 10 science topper with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech Computer Science Engineering, August 2023 to now; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore; IBM Generative AI certification with watsonx.">
 
 <img src="./assets/cards/title-work.svg?v=589cad11" width="100%" alt="03 Main projects: Things I've built. SeatLock, RootLens, TriageIQ and GitLoom.">
 <p align="center">
