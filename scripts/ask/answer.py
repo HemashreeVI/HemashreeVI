@@ -143,8 +143,23 @@ def answer(question):
     question = question.strip()[:MAX_QUESTION]
     if not question:
         return "It looks like the question was empty. Please open a new issue starting with “Ask:” and your question!"
-    text = ask_claude(question) if os.environ.get("ANTHROPIC_API_KEY") else ask_github_models(question)
+    try:
+        text = ask_claude(question) if os.environ.get("ANTHROPIC_API_KEY") else ask_github_models(question)
+    except Exception as err:                                      # never leave a visitor without a reply
+        print(f"AI backend unavailable: {err}", file=sys.stderr)
+        text = OFFLINE_REPLY
+    if not text:
+        text = OFFLINE_REPLY
     return re.sub(r"@(?=\w)", "@​", text)                    # never ping anyone
+
+
+OFFLINE_REPLY = """Thanks for the question! The AI answerer is offline right now, so here are the best places to find the answer:
+
+- **Projects:** [SeatLock](https://github.com/HemashreeVI/SeatLock) · [RootLens](https://github.com/HemashreeVI/rootlens) · [TriageIQ](https://github.com/HemashreeVI/TriageIQ) · [GitLoom](https://hemashreevi.github.io/GitLoom/)
+- **Full profile, work & research:** open the switches on [her profile](https://github.com/HemashreeVI)
+- **Portfolio:** [hemashreevi.github.io](https://hemashreevi.github.io)
+
+Hemashree will also see this issue and can reply herself."""
 
 
 # ---------------------------------------------------------------- GitHub issue plumbing
@@ -190,6 +205,10 @@ def main():
         return
     text = answer(question_from_issue(issue))
     n = issue["number"]
+    if text == OFFLINE_REPLY:                                     # leave it open for a human reply
+        gh("POST", f"/repos/{repo}/issues/{n}/comments", {"body": text})
+        print(f"issue #{n}: AI offline, left open")
+        return
     gh("POST", f"/repos/{repo}/issues/{n}/comments", {"body": text + FOOTER})
     gh("POST", f"/repos/{repo}/issues/{n}/labels", {"labels": ["answered"]})
     gh("PATCH", f"/repos/{repo}/issues/{n}", {"state": "closed", "state_reason": "completed"})
