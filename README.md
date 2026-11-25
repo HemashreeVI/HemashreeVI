@@ -81,9 +81,6 @@
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/streak.svg" width="100%" alt="Contribution streak: total contributions, current streak and longest streak. Updated automatically twice a day.">
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output-arcade/commit-run.svg" width="100%" alt="Commit Run: an arcade-style contribution grid for the last year. A small ship flies across it and lights up busy days, with my level, current streak, total stars, followers and top languages as power-ups. Updated twice a day.">
-</p>
-<p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output-arcade/commit-exchange.svg" width="100%" alt="Commit Exchange: my contributions shown as a stock. Price is contributions in the last 30 days, with weekly candlesticks and volume bars, my most-starred repos as holdings and my languages as sector allocation. Updated twice a day.">
 </p>
 <p align="center">
