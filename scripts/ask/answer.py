@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -80,17 +81,35 @@ def knowledge():
 
 # ---------------------------------------------------------------- backends
 
-def ask_github_models(question):
-    body = {"model": GH_MODEL, "temperature": 0.2, "max_tokens": 700,
+def _github_models_call(model, question):
+    body = {"model": model, "temperature": 0.2, "max_tokens": 700,
             "messages": [{"role": "system", "content": SYSTEM + "\n\n" + knowledge()},
                          {"role": "user", "content": question}]}
     req = urllib.request.Request("https://models.github.ai/inference/chat/completions",
                                  data=json.dumps(body).encode(),
                                  headers={"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
-                                          "Content-Type": "application/json", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=90) as r:
-        out = json.load(r)
-    return out["choices"][0]["message"]["content"].strip()
+                                          "Content-Type": "application/json", "Accept": "application/json",
+                                          "X-GitHub-Api-Version": "2022-11-28"})
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            status, raw = r.status, r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as err:
+        status, raw = err.code, err.read().decode("utf-8", "replace")
+    print(f"GitHub Models [{model}] → HTTP {status}, {len(raw)} bytes", file=sys.stderr)
+    if status >= 400 or not raw.strip():
+        raise RuntimeError(f"GitHub Models [{model}] HTTP {status}: {raw[:300]!r}")
+    return json.loads(raw)["choices"][0]["message"]["content"].strip()
+
+
+def ask_github_models(question):
+    errors = []
+    for model in dict.fromkeys((GH_MODEL, "openai/gpt-4o-mini", "openai/gpt-4.1-nano")):   # first that works
+        try:
+            return _github_models_call(model, question)
+        except Exception as err:                                      # try the next model
+            errors.append(str(err))
+            print(err, file=sys.stderr)
+    raise RuntimeError("all GitHub Models attempts failed:\n" + "\n".join(errors))
 
 
 def ask_claude(question):
