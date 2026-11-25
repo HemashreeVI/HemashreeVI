@@ -19,7 +19,7 @@ from build_cards import C  # noqa: E402
 LOGOS = ROOT / "assets/logos"
 
 ITEMS = [
-    ("mirs", "MIRS", "MIRS", "🏆 Class 10 Science Topper · 99/100", "SCHOOL · 2009 – 2023"),
+    ("mirs", "MIRS", "MIRS", "🏆 School Topper in Science · 99/100", "SCHOOL · 2009 – 2023"),
     ("cambridge", "CAMBRIDGE", "Cambridge English", "Key English Test (KET) · Passed", "INTERNATIONALLY RECOGNISED"),
     ("vit", "VIT", "VIT Chennai", "B.Tech Computer Science Engineering", "AUG 2023 → NOW"),
     (("nus", "ntu"), "NUS · NTU", "NUS & NTU, Singapore", "Introduction to Industry 4.0 Programme", "JUN 2025 · SINGAPORE"),
@@ -73,6 +73,11 @@ def build():
             art = (logo(key[0], fb, px + 6, py + 8, panel_w / 2 - 12, ph - 16)
                    + f'<line x1="{px + panel_w / 2}" y1="{py + 14}" x2="{px + panel_w / 2}" y2="{py + ph - 14}" stroke="#D0D4E4"/>'
                    + logo(key[1], fb, px + panel_w / 2 + 6, py + 8, panel_w / 2 - 12, ph - 16))
+        elif dark and (LOGOS / f"{key}.png").exists():      # photo-style logo: fill the whole panel
+            uri = "data:image/png;base64," + base64.b64encode((LOGOS / f"{key}.png").read_bytes()).decode()
+            art = (f'<clipPath id="clip-{key}"><rect x="{px}" y="{py}" width="{panel_w}" height="{ph}" rx="10"/></clipPath>'
+                   f'<image href="{uri}" x="{px}" y="{py}" width="{panel_w}" height="{ph}" '
+                   f'preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-{key})"/>')
         else:
             art = logo(key, fb, px + 10, py + 8, panel_w - 20, ph - 16)
         tx = px + panel_w + 22
@@ -84,7 +89,7 @@ def build():
                      f'<text x="{tx}" y="{y + 70}" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="{C["mist"]}">{esc(line)}</text>'
                      f'<text x="{tx}" y="{y + 94}" font-family="JetBrains Mono,Menlo,monospace" font-size="11" letter-spacing="1.5" fill="{C["violet"]}">{esc(when)}</text></g>')
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" '
-           f'aria-label="Education and programs: MIRS school, 2009 to 2023, Class 10 science topper with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
+           f'aria-label="Education and programs: MIRS school, 2009 to 2023, school topper in science with 99 out of 100; Cambridge English Key English Test, passed, an internationally recognised English certification; VIT Chennai, B.Tech CSE; NUS and NTU Singapore, Introduction to Industry 4.0 Programme, June 2025; SuperAI 2025 conference, Marina Bay Sands, Singapore, June 2025; IBM, Generative AI certification with watsonx.">'
            + "".join(parts) + "</svg>")
     out = ROOT / "assets/cards/edu.svg"
     out.write_text(svg)
