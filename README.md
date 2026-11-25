@@ -61,6 +61,10 @@
 <a href="https://github.com/HemashreeVI/portfolio-extension" title="Nova Launchpad"><img src="./assets/cards/show-nova-launchpad.webp?v=b5be620a" width="49%" alt="Nova Launchpad: 6 in 1 new tab for the job hunt with resume-matched jobs, placement mail, LeetCode and GitHub reminders, my YouTube channel and tech news."></a>
 </p>
 
+<p align="center">
+  <img src="./assets/cards/stipple.svg?v=743ace02" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
+</p>
+
 <img src="./assets/cards/title-youtube.svg?v=1c6c7787" width="100%" alt="06 YouTube: Byte Decoded.">
 <a href="https://www.youtube.com/@shreejith-l7o"><img src="./assets/cards/youtube.svg?v=7c7a8d04" width="100%" alt="My YouTube channel Byte Decoded (@shreejith-l7o): tech, projects, AI and coding, with dev builds, AI/ML, project walkthroughs and tech vlogs. Click to open the channel and subscribe."></a>
 
@@ -74,9 +78,6 @@
 </p>
 <p align="center">
   <img src="koi/pond.webp" width="100%" alt="My koi pond: the pixel-art git koi, drawn every night from my public GitHub activity (languages colour it, contributions grow it, streaks mark it), swims in a pond with lily pads, pink lotus flowers, reeds and six more colourful fish.">
-  <br>
-  <img src="./assets/cards/stipple.svg?v=743ace02" width="100%" alt="A stippled portrait of Hemashree drawn in thousands of light dots on black, with two orbit rings around her and HEMASHREE in block pixel letters.">
-  
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/HemashreeVI/HemashreeVI/output/streak.svg" width="100%" alt="Contribution streak: total contributions, current streak and longest streak. Updated automatically twice a day.">
