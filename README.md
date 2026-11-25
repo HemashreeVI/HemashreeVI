@@ -43,15 +43,6 @@
   <a href="https://hemashreevi.github.io/assets/video/gitloom-demo.mp4"><img src="https://img.shields.io/badge/Watch-GitLoom_1_min_demo-F0A8D0?style=flat-square&labelColor=10131F&logo=youtube&logoColor=E6E9F0" alt="Watch the GitLoom demo"></a>
 </p>
 
-<img src="./assets/cards/title-patents.svg?v=35a33c7e" width="100%" alt="04 Research and patents: Ideas, on file. 2 patents and 1 research project.">
-<p align="center">
-<a href="https://github.com/HemashreeVI/smart_walker" title="Smart Walker (patent)"><img src="./assets/cards/show-walker.webp?v=b0dd2fd2" width="49%" alt="Smart Walker (patent): under $30 of hardware on an Arduino. A walker that predicts a fall before it happens, from tilt and load sensors. Diagram."></a>
-<a href="https://github.com/HemashreeVI/disaster-response-rover-nodered" title="Hazard-Detection Rover (patent)"><img src="./assets/cards/show-rover.webp?v=a91a869e" width="49%" alt="Hazard-Detection Rover (patent): 6 of 6 hazard scenarios handled. A rover that explores a disaster zone and flags obstacles, heat and toxic gas."></a>
-</p>
-<p align="center">
-<a href="https://github.com/HemashreeVI/AI_Malocclusion_Detection" title="Dental X-ray AI (research)"><img src="./assets/cards/show-dental.webp?v=bcc69443" width="49%" alt="Dental X-ray AI (research): 31 dental conditions detected. Reads a panoramic X-ray, charts findings per tooth and writes a report; test mAP@50 38.7%. Screenshots of the app."></a>
-</p>
-
 <img src="./assets/cards/title-opensource.svg?v=4fa61623" width="100%" alt="05 Open source: Built in the open.">
 <a href="https://github.com/firstcontributions/first-contributions/pull/126858"><img src="./assets/cards/opensource.svg?v=768244c6" width="100%" alt="Open source: merged pull request #126858 to firstcontributions/first-contributions, plus my own MIT-licensed tools: ReadMeow, gitpulse, PortPilot, typewave, typo-arcade, token-meter, Pit Wall and ferrodo."></a>
 
