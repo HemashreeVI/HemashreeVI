@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 300" width="600" height="300" role="img" aria-labelledby="hr-t hr-d">
+<title id="hr-t">HackerRank badges of shreejith2005</title>
+<desc id="hr-d">HackerRank shreejith2005: 9 problems solved, 2 badge stars. Python 2 stars; Java 0 stars</desc>
+
+<style>
+.serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif}
+.sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.kick{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:12px;letter-spacing:3px;fill:#A9B8FF}
+.twinkle{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+.pulse{animation:pl 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.spin{animation:sp 60s linear infinite;transform-box:view-box}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fadein{animation:fi 1.2s ease-out both}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+
+<defs>
+  <radialGradient id="hr-bg" cx="70%" cy="30%" r="90%">
+    <stop offset="0" stop-color="#171B3A"/>
+    <stop offset=".55" stop-color="#0F1228"/>
+    <stop offset="1" stop-color="#0A0C1C"/>
+  </radialGradient>
+  <radialGradient id="hr-glowA" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#2A5AA8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#2A5AA8" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="hr-glowB" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#7A2F7E" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#7A2F7E" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="hr-silver" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6EA8FF"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#E3A6F0"/>
+  </linearGradient>
+  <linearGradient id="hr-rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#A9B8FF" stop-opacity="0"/>
+    <stop offset=".25" stop-color="#A9B8FF" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#A9B8FF" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="hr-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none" stroke="#A9B8FF" stroke-opacity="0"/>
+  </pattern>
+  <filter id="hr-smoke" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="4" seed="24"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.6 0 0 0 -1.25"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+  <linearGradient id="hr-sweep" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#9097B8"/>
+    <stop offset=".45" stop-color="#A9B8FF"/>
+    <stop offset=".5" stop-color="#FFFFFF"/>
+    <stop offset=".55" stop-color="#A9B8FF"/>
+    <stop offset="1" stop-color="#9097B8"/>
+    <animate attributeName="x1" values="-1;1.2" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;2.2" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+  <filter id="hr-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+</defs>
+
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#hr-bg)" stroke="#272C50"/>
+<rect x="1" y="1" width="598" height="298" rx="22" fill="url(#hr-grid)"/>
+<ellipse cx="480" cy="60" rx="210" ry="210" fill="url(#hr-glowA)"/>
+<ellipse cx="120" cy="240" rx="150" ry="150" fill="url(#hr-glowB)"/>
+
+<g transform="translate(30 14)"><path d="M11 0 L22 6.4 V19.2 L11 25.6 L0 19.2 V6.4 Z" fill="#00EA64"/>
+<path d="M7 7 V19 M15 7 V19 M7 13 H15" stroke="#0E141E" stroke-width="2.6" stroke-linecap="round"/></g>
+<text x="64" y="36" class="sans" font-size="20" fill="#EEF0F7" text-anchor="start" font-weight="700">shreejith2005</text>
+<text x="570" y="36" class="mono" font-size="14" fill="#C8CCE0" text-anchor="end" font-weight="700">★ 2  ·  9 solved</text>
+<rect x="30" y="70" width="540" height="52" rx="10" fill="#131733" stroke="#3A4068"/><text x="46" y="92" class="sans" font-size="15" fill="#EEF0F7" text-anchor="start" font-weight="700">Python</text><text x="46" y="110" class="mono" font-size="10.5" fill="#9097B8" text-anchor="start" >7 / 115 solved · 75 pts · rank #1,956,845</text><polygon transform="translate(460 88)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#FFC01E"/><polygon transform="translate(478 88)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#FFC01E"/><polygon transform="translate(496 88)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(514 88)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(532 88)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><rect x="452" y="102" width="98" height="5" rx="2.5" fill="#272C50"/><rect x="452" y="102" width="13" height="5" rx="2.5" fill="#00EA64"/><text x="554" y="107" class="mono" font-size="9" fill="#6A7096" text-anchor="start" >13%</text><rect x="30" y="132" width="540" height="52" rx="10" fill="#131733" stroke="#3A4068"/><text x="46" y="154" class="sans" font-size="15" fill="#EEF0F7" text-anchor="start" font-weight="700">Java</text><text x="46" y="172" class="mono" font-size="10.5" fill="#9097B8" text-anchor="start" >2 / 64 solved · 8 pts · rank #2,341,108</text><polygon transform="translate(460 150)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(478 150)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(496 150)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(514 150)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><polygon transform="translate(532 150)" points="0,-6 1.8,-1.9 6,-1.9 2.6,0.8 3.8,5 0,2.5 -3.8,5 -2.6,0.8 -6,-1.9 -1.8,-1.9" fill="#272C50"/><rect x="452" y="164" width="98" height="5" rx="2.5" fill="#272C50"/><rect x="452" y="164" width="31" height="5" rx="2.5" fill="#00EA64"/><text x="554" y="169" class="mono" font-size="9" fill="#6A7096" text-anchor="start" >32%</text><text x="30" y="214" class="mono" font-size="11" fill="#A9B8FF" text-anchor="start" letter-spacing="1">Progress across my badges</text><rect x="30" y="224" width="540" height="8" rx="4" fill="#272C50"/><rect x="30" y="224" width="27" height="8" rx="4" fill="#00EA64"/><text x="570" y="214" class="mono" font-size="11" fill="#C8CCE0" text-anchor="end" >9 of 179 challenges</text>
+<text x="30" y="286" class="mono" font-size="10" fill="#6A7096" text-anchor="start" >HackerRank · badges</text>
+</svg>
